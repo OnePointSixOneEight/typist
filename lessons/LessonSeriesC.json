@@ -1,0 +1,1107 @@
+{
+  "copyright": [
+    "Typist 3.0 - improved typing tutor program for UNIX systems",
+    "Copyright (C) 1998-2018  Simon Baldwin (simon_baldwin@yahoo.com)",
+    "",
+    "This program is free software; you can redistribute it and/or",
+    "modify it under the terms of the GNU General Public License",
+    "as published by the Free Software Foundation; either version 2",
+    "of the License, or (at your option) any later version.",
+    "",
+    "This program is distributed in the hope that it will be useful,",
+    "but WITHOUT ANY WARRANTY; without even the implied warranty of",
+    "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the",
+    "GNU General Public License for more details.",
+    "",
+    "You should have received a copy of the GNU General Public License",
+    "along with this program; if not, write to the Free Software",
+    "Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA."
+  ],
+  "typist": {
+    "version": 2,
+    "seriesName": "C",
+    "seriesDescription": "Colemak touch typing (C1 - C17)",
+    "seriesMenu": {
+      "title": "The C series contains the following 17 lessons",
+      "entries": [
+        {
+          "title": "Lesson C1     S, T, N and E",
+          "lessons": [
+            "lesson_C1.1",
+            "lesson_C1.2",
+            "lesson_C1.3",
+            "lesson_C1.4"
+          ]
+        },
+        {
+          "title": "Lesson C2     R and I",
+          "lessons": [
+            "lesson_C2.1",
+            "lesson_C2.2",
+            "lesson_C2.3"
+          ]
+        },
+        {
+          "title": "Lesson C2     A and O",
+          "lessons": [
+            "lesson_C3.1",
+            "lesson_C3.2",
+            "lesson_C3.3"
+          ]
+        },
+        {
+          "title": "Lesson C2     D and H",
+          "lessons": [
+            "lesson_C4.1",
+            "lesson_C4.2",
+            "lesson_C4.3",
+            "lesson_C4.4"
+          ]
+        },
+        {
+          "title": "Lesson C2     HOME row exercises",
+          "lessons": [
+            "lesson_C5.1",
+            "lesson_C5.2",
+            "lesson_C5.3",
+            "lesson_C5.4",
+            "lesson_C5.5",
+            "lesson_C5.6",
+            "lesson_C5.7"
+          ]
+        },
+        {
+          "title": "Lesson C2     P and L",
+          "lessons": [
+            "lesson_C6.1",
+            "lesson_C6.2",
+            "lesson_C6.3",
+            "lesson_C6.4"
+          ]
+        },
+        {
+          "title": "Lesson C2     F and U",
+          "lessons": [
+            "lesson_C7.1",
+            "lesson_C7.2",
+            "lesson_C7.3",
+            "lesson_C7.4"
+          ]
+        },
+        {
+          "title": "Lesson C2     W and Y",
+          "lessons": [
+            "lesson_C8.1",
+            "lesson_C8.2",
+            "lesson_C8.3",
+            "lesson_C8.4",
+            "lesson_C8.5"
+          ]
+        },
+        {
+          "title": "Lesson C2     G and J",
+          "lessons": [
+            "lesson_C9.1",
+            "lesson_C9.2",
+            "lesson_C9.3",
+            "lesson_C9.4",
+            "lesson_C9.5"
+          ]
+        },
+        {
+          "title": "Lesson C2     M and V",
+          "lessons": [
+            "lesson_C10.1",
+            "lesson_C10.2",
+            "lesson_C10.3",
+            "lesson_C10.4",
+            "lesson_C10.5"
+          ]
+        },
+        {
+          "title": "Lesson C2     B and K",
+          "lessons": [
+            "lesson_C11.1",
+            "lesson_C11.2",
+            "lesson_C11.3",
+            "lesson_C11.4",
+            "lesson_C11.5"
+          ]
+        },
+        {
+          "title": "Lesson C2     Q and C",
+          "lessons": [
+            "lesson_C12.1",
+            "lesson_C12.2",
+            "lesson_C12.3",
+            "lesson_C12.4",
+            "lesson_C12.5",
+            "lesson_C12.6"
+          ]
+        },
+        {
+          "title": "Lesson C2     Z and X",
+          "lessons": [
+            "lesson_C13.1",
+            "lesson_C13.2",
+            "lesson_C13.3",
+            "lesson_C13.4",
+            "lesson_C13.5"
+          ]
+        },
+        {
+          "title": "Lesson C2     Learning the SHIFT key",
+          "lessons": [
+            "lesson_C14.1",
+            "lesson_C14.2",
+            "lesson_C14.3",
+            "lesson_C14.4",
+            "lesson_C14.5",
+            "lesson_C14.6"
+          ]
+        },
+        {
+          "title": "Lesson C2     Learning punctuation",
+          "lessons": [
+            "lesson_C15.1",
+            "lesson_C15.2",
+            "lesson_C15.3",
+            "lesson_C15.4",
+            "lesson_C15.5",
+            "lesson_C15.6"
+          ]
+        },
+        {
+          "title": "Lesson C2     Frequent words",
+          "lessons": [
+            "lesson_C16.1",
+            "lesson_C16.2",
+            "lesson_C16.3",
+            "lesson_C16.4",
+            "lesson_C16.5",
+            "lesson_C16.6"
+          ]
+        },
+        {
+          "title": "Lesson C2     Alphabetic sentences",
+          "lessons": [
+            "lesson_C17.1",
+            "lesson_C17.2",
+            "lesson_C17.3",
+            "lesson_C17.4",
+            "lesson_C17.5",
+            "lesson_C17.6",
+            "lesson_C17.7",
+            "lesson_C17.8",
+            "lesson_C17.9",
+            "lesson_C17.10",
+            "lesson_C17.11",
+            "lesson_C17.12",
+            "lesson_C17.13",
+            "lesson_C17.14",
+            "lesson_C17.15",
+            "lesson_C17.16",
+            "lesson_C17.17",
+            "lesson_C17.18",
+            "lesson_C17.19",
+            "lesson_C17.20",
+            "lesson_C17.21"
+          ]
+        }
+      ]
+    },
+    "lesson_C1.1": {
+      "title": "Lesson C1.1: Tutorial",
+      "type": "Tutorial",
+      "text": [
+        "                            Lesson C1",
+        "                Welcome to the Colemak Course",
+        "",
+        "This course is intended for beginners as well as experienced typists.  The",
+        "Colemak keyboard is an alternative to the QWERTY (Sholes) keyboard layout.",
+        "You will find it easier to learn than the QWERTY and Dvorak keyboard layouts.",
+        "",
+        "Like the Dvorak keyboard, this is because the Colemak keyboard layout has been",
+        "scientifically designed to minimise cumulative finger motion while typing",
+        "English.  The ten letters on the home row (A, R, S, T, D, H, N, E, I, and O)",
+        "make up about 70% of all keystrokes.  These ten letters alone can form over",
+        "3000 words.  Needless to say, having these keys in the home row facilitates",
+        "both speed and accuracy.",
+        "",
+        "Unlike the Dvorak keyboard layout, however, the Colemak keyboard layout has",
+        "also specifically been designed to be easy to learn for people who are already",
+        "familiar with using a QWERTY keyboard layout.  Despite this, it appears that",
+        "the Colemak keyboard is as fast as, if not faster than, the Dvorak keyboard.",
+        "",
+        "For information about the Colemak keyboard layout, see <http://colemak.com/>."
+      ]
+    },
+    "lesson_C1.2": {
+      "title": "Lesson C1.2: Tutorial",
+      "type": "Tutorial",
+      "text": [
+        "                General Instructions",
+        "",
+        "The fingers of the left hand should be placed over the A-key, the R-key,",
+        "the S-key, and the T-key.  Similarly, the fingers of the right hand should be",
+        "placed over the N-key, the E-key, the I-key, and the O-key.  This is called the",
+        "HOME position.  Only these fingers should be used to press the keys that they",
+        "are above.",
+        "",
+        "In addition to these keys, the SPACE bar should be pressed with the thumb of",
+        "the right hand.  At the end of every line, the RETURN key should be pressed",
+        "with the fourth finger of the right hand."
+      ]
+    },
+    "lesson_C1.3": {
+      "title": "Lesson C1.3: Drill",
+      "type": "Drill",
+      "instructions": "(1) S, T, N and E",
+      "text": [
+        "sets tens ten tnt sestet tenet seen nene testee tenets essen sent senses",
+        "tenses teens stent sense tent nets tenseness net tense nests tennessee"
+      ]
+    },
+    "lesson_C1.4": {
+      "title": "Lesson C1.4: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "teen nest tents net tens teen tenets senses nests nest nets tenet sent sense",
+        "tenses tennessee essen tnt tent teens tense nene stent seen"
+      ]
+    },
+    "lesson_C2.1": {
+      "title": "Lesson C2.1: Drill",
+      "type": "Drill",
+      "instructions": "(1) R and I",
+      "text": [
+        "trite stress sire it entire terse tit sir tire sinner retire rinse inn tree",
+        "insist tier rite teeter resin stir siren enter"
+      ]
+    },
+    "lesson_C2.2": {
+      "title": "Lesson C2.2: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "sitter insert site sneer intern tie inner series steer tin riser its resent",
+        "sin rise rent rein iris stern in titter resist"
+      ]
+    },
+    "lesson_C2.3": {
+      "title": "Lesson C2.3: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": [
+        "eerie inert street is renter sit nine risen sister serene stint err snit",
+        "intent entree nit inter rest tennis re tint"
+      ]
+    },
+    "lesson_C3.1": {
+      "title": "Lesson C3.1: Drill",
+      "type": "Drill",
+      "instructions": "(1) A and O",
+      "text": [
+        "retain roe rant ratio toast sort stat tore earn noose teat eater oat trio tear",
+        "tone artist nor tattoo seat arise noise start toss tenant oasis"
+      ]
+    },
+    "lesson_C3.2": {
+      "title": "Lesson C3.2: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "one aria no arson sonata soon rear to ass soot irate sane onset star root",
+        "state oar errant resort tartan sonnet notes eat rotten stain ration"
+      ]
+    },
+    "lesson_C3.3": {
+      "title": "Lesson C3.3: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": [
+        "arose reason noon sass retina iota torn stairs iron estate toe are season not",
+        "attire tenor innate torso tease arisen note tar snort tarot"
+      ]
+    },
+    "lesson_C4.1": {
+      "title": "Lesson C4.1: Tutorial",
+      "type": "Tutorial",
+      "text": [
+        "                General Instructions",
+        "",
+        "When you need to press the D-key or the H-key, the first finger of the left or",
+        "right hand, respectively, should be used.  No other finger should be used."
+      ]
+    },
+    "lesson_C4.2": {
+      "title": "Lesson C4.2: Drill",
+      "type": "Drill",
+      "instructions": "(1) D and H",
+      "text": [
+        "odds the hard tooth tide ether raid other rend hire dress has noted ash aide",
+        "ha rider hiss soda ninth aside ahead hate toad shirt shed dare hid"
+      ]
+    },
+    "lesson_C4.3": {
+      "title": "Lesson C4.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "this dose horde ashen road shot shod idea hear hand read rash darts those",
+        "stand three stood shorn trend hint dote short darn ah staid her node had"
+      ]
+    },
+    "lesson_C4.4": {
+      "title": "Lesson C4.4: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": [
+        "heard horn third add these hot ode hers does heart hated did rhino sash door",
+        "teeth rid here sod hoe nerd head hose drier trash tread host date hat"
+      ]
+    },
+    "lesson_C5.1": {
+      "title": "Lesson C5.1: Drill",
+      "type": "Drill",
+      "instructions": "(1) HOME row exercises",
+      "text": [
+        "his hat is an aid in the hot heat",
+        "in his sad sod rest he sat on his hen"
+      ]
+    },
+    "lesson_C5.2": {
+      "title": "Lesson C5.2: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "ron did not don his hoe and tin hat",
+        "dan did not see the dot on his tie as he hid his tan hat"
+      ]
+    },
+    "lesson_C5.3": {
+      "title": "Lesson C5.3: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": "i do as i do and the end is not as sad as the one sid had"
+    },
+    "lesson_C5.4": {
+      "title": "Lesson C5.4: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": [
+        "add ado ads aha aid air and ani ant are art ash ass ate dad den",
+        "did die din dis doe don dos dot ear eat end eon era ere err eta",
+        "had hah has hat hen her hes hid hie his hit hod hoe hos hot ids"
+      ]
+    },
+    "lesson_C5.5": {
+      "title": "Lesson C5.5: Drill",
+      "type": "Drill",
+      "instructions": "(5)",
+      "text": [
+        "inn ins ion ire its net nit nod non nor not nth oar oat odd ode",
+        "oho ohs one ore ran rat red rho rid rod roe rot sad sat sea see",
+        "set she sin sir sis sit sod son sot tad tan tar tat tea tee ten",
+        "the tho tie tin tit toe ton too tor tot"
+      ]
+    },
+    "lesson_C5.6": {
+      "title": "Lesson C5.6: Drill",
+      "type": "Drill",
+      "instructions": "(6)",
+      "text": [
+        "adds aeon ahas aide aids airs ands anon ante anti ants area ares",
+        "dint dire dirt dish diss dodo doer does done dons door dose dote",
+        "hair hand hard hare hart hash hate hath hats head hear heat heed",
+        "inti into ions iota ired ires iris iron near neat need neon nerd"
+      ]
+    },
+    "lesson_C5.7": {
+      "title": "Lesson C5.7: Drill",
+      "type": "Drill",
+      "instructions": "(7)",
+      "text": [
+        "rash rate rats read rear redo reds reed rein rend rent rest rhea",
+        "sate sear seas seat seed seen seer sees send sent sera sere sets",
+        "soot sore sort sots star stir tads tans tare taro tars tart tats",
+        "toad toed toes tone tons toot tore torn tors tort toss tost"
+      ]
+    },
+    "lesson_C6.1": {
+      "title": "Lesson C6.1: Tutorial",
+      "type": "Tutorial",
+      "text": [
+        "                General Instructions",
+        "",
+        "The P-key and the L-key should be pressed only by the first finger of the left",
+        "or right hand."
+      ]
+    },
+    "lesson_C6.2": {
+      "title": "Lesson C6.2: Drill",
+      "type": "Drill",
+      "instructions": "(1) P and L",
+      "text": [
+        "toil dip lithe peer oiled spite less phase sold oops spiel slid patio slat",
+        "nope slit poet spelt leper hall plaid snoop spill"
+      ]
+    },
+    "lesson_C6.3": {
+      "title": "Lesson C6.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "padre paint dial pin land splat plop pale lead lip pail pond lope else pan",
+        "peal stilt shop plot steal pain spool load peter solid"
+      ]
+    },
+    "lesson_C6.4": {
+      "title": "Lesson C6.4: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": [
+        "pilot sleep pep lone ale spend lilt past spit lots steep pool ideal pal snipe",
+        "slope apple old petal polar let paste slip heist"
+      ]
+    },
+    "lesson_C7.1": {
+      "title": "Lesson C7.1: Tutorial",
+      "type": "Tutorial",
+      "text": [
+        "General Instructions",
+        "",
+        "The F-key and the U-key should be pressed only by the second finger of the left",
+        "or right hand."
+      ]
+    },
+    "lesson_C7.2": {
+      "title": "Lesson C7.2: Drill",
+      "type": "Drill",
+      "instructions": "(1) F and U",
+      "text": [
+        "urn file hound flora pupil feast upper fade spud fern spurn froth huh foal",
+        "dune sniff rerun furor tune fresh hush shaft lure left fuss usher"
+      ]
+    },
+    "lesson_C7.3": {
+      "title": "Lesson C7.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "thief surf taut fold found sour fire stunt elf letup fell tout fun tuft puff",
+        "us foe run fatal flout usurp flap ford four sinus fated dual roof"
+      ]
+    },
+    "lesson_C7.4": {
+      "title": "Lesson C7.4: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": [
+        "proud final fur utter fool round furl flare rude flute self hut stiff foul",
+        "unit fraud pulp flood route feed pause fund fetid hurl tofu fear"
+      ]
+    },
+    "lesson_C8.1": {
+      "title": "Lesson C8.1: Tutorial",
+      "type": "Tutorial",
+      "text": [
+        "General Instructions",
+        "",
+        "The W-key and the Y-key should be pressed only by the third finger of the left",
+        "or right hand."
+      ]
+    },
+    "lesson_C8.2": {
+      "title": "Lesson C8.2: Drill",
+      "type": "Drill",
+      "instructions": "(1) W and Y",
+      "text": [
+        "wasp way delay hewn fury twit newsy yet whir ray water hurry dawn holly widen",
+        "penny widow raspy yawn lily downy dwell"
+      ]
+    },
+    "lesson_C8.3": {
+      "title": "Lesson C8.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "wiry sissy warp snowy furry swift windy hefty wish filly sweat hype sway prawn",
+        "day fowl noisy wail surly rowdy wily"
+      ]
+    },
+    "lesson_C8.4": {
+      "title": "Lesson C8.4: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": [
+        "sweet lowly synod went posy strew your swine yap whoa paddy weep artsy aware",
+        "stray wade style woof sunny stow pray"
+      ]
+    },
+    "lesson_C8.5": {
+      "title": "Lesson C8.5: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": [
+        "wife days frown wispy ply howl phony awe hyena endow handy whet yeast stew",
+        "type word dandy show duly weird tasty newly"
+      ]
+    },
+    "lesson_C9.1": {
+      "title": "Lesson C9.1: Tutorial",
+      "type": "Tutorial",
+      "text": [
+        "General Instructions",
+        "",
+        "The G-key and the J-key should be pressed only by the first finger of the left",
+        "or right hand."
+      ]
+    },
+    "lesson_C9.2": {
+      "title": "Lesson C9.2: Drill",
+      "type": "Drill",
+      "instructions": "(1) G and J",
+      "text": [
+        "jaw gel jut gape jury night juror giant jade gut jug jaunt gofer jeer gash",
+        "just hog jot leg jog jet fight jilt guilt joy ghoul"
+      ]
+    },
+    "lesson_C9.3": {
+      "title": "Lesson C9.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "jewel slog jeans gal jig jail dough jar pang jelly rang jowls gag jaws jiffy",
+        "deign junta go jetty grass jaded fang joint gull"
+      ]
+    },
+    "lesson_C9.4": {
+      "title": "Lesson C9.4: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": [
+        "ajar dig jest gaffe fjord along join glass jolt groan jolly sting jeans green",
+        "jiffy golly jot fig jilt sag jetty gruff jail"
+      ]
+    },
+    "lesson_C9.5": {
+      "title": "Lesson C9.5: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": [
+        "sung jaw gushy jeer gala just age jig jaded glee jut tongs jar god jet grate",
+        "jade genre sharp jelly tangy proof ajar pager"
+      ]
+    },
+    "lesson_C10.1": {
+      "title": "Lesson C10.1: Tutorial",
+      "type": "Tutorial",
+      "text": [
+        "General Instructions",
+        "",
+        "The M-key and the V-key should be pressed only by the first finger of the left",
+        "or right hand."
+      ]
+    },
+    "lesson_C10.2": {
+      "title": "Lesson C10.2: Drill",
+      "type": "Drill",
+      "instructions": "(1) M and V",
+      "text": [
+        "envy mount vivid made motor navel moose lever madly levy muddy dive trump",
+        "raven harem vain nomad view month hover lemon naval imply valet"
+      ]
+    },
+    "lesson_C10.3": {
+      "title": "Lesson C10.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "gnome oven mean move grove swim vote swamp levee germ vat melee novel frame",
+        "eve humid vile swarm verge med five limp haven ramp vet mitt"
+      ]
+    },
+    "lesson_C10.4": {
+      "title": "Lesson C10.4: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": [
+        "seven maple mover venom lava yum drive moat wove swam savor maim given dove",
+        "dome ivory stomp very tumor sever sham avert loom vigor moldy"
+      ]
+    },
+    "lesson_C10.5": {
+      "title": "Lesson C10.5: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": [
+        "movie voter foam vast media devil metal grave muggy jar salve madam jot vie",
+        "just saver dream jet foil vow him jumpy aloof shave"
+      ]
+    },
+    "lesson_C11.1": {
+      "title": "Lesson C11.1: Tutorial",
+      "type": "Tutorial",
+      "text": [
+        "General Instructions",
+        "",
+        "The B-key and the K-key should be pressed only by the first finger of the left",
+        "or right hand."
+      ]
+    },
+    "lesson_C11.2": {
+      "title": "Lesson C11.2: Drill",
+      "type": "Drill",
+      "instructions": "(1) B and K",
+      "text": [
+        "make lamb disk boob smoke skim abort kin blush dorky buns fake snub pike fable",
+        "geeky beam eke brown waken butt nook bed oak buddy biker"
+      ]
+    },
+    "lesson_C11.3": {
+      "title": "Lesson C11.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "stake bide dusk been risk belly joke bolt baker skull bore peek buyer awoke",
+        "bliss looks babe kiddo sheik debut sky web frisk brief mark"
+      ]
+    },
+    "lesson_C11.4": {
+      "title": "Lesson C11.4: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": [
+        "adobe woke jamb bike brisk nuke bulge kiss boa shook bayou okra tuba flask",
+        "maybe desk brash week bongo flake jab murky bogus duke rehab"
+      ]
+    },
+    "lesson_C11.5": {
+      "title": "Lesson C11.5: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": [
+        "D|stoke about trike birth maker book bird king ivory bond kiwi veto bill wok",
+        "|vine point boost just jerky naive promo baggy speak stave tribe"
+      ]
+    },
+    "lesson_C12.1": {
+      "title": "Lesson C12.1: Tutorial",
+      "type": "Tutorial",
+      "text": [
+        "General Instructions",
+        "",
+        "The Q-key should be pressed only by fourth finger on the left hand.  The C-key",
+        "should only be pressed by the second finger on the left hand."
+      ]
+    },
+    "lesson_C12.2": {
+      "title": "Lesson C12.2: Drill",
+      "type": "Drill",
+      "instructions": "(1) Q and C",
+      "text": [
+        "circa quote quip cult quail craft quiet cute quash pubic quilt cheap quirk",
+        "rice squad colt quay cleft quite music quit croon quits"
+      ]
+    },
+    "lesson_C12.3": {
+      "title": "Lesson C12.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "cab equal curl quick quake manic quad reach quark chord quart pace quill sack",
+        "equip track squid sick quack squat poach quota eject"
+      ]
+    },
+    "lesson_C12.4": {
+      "title": "Lesson C12.4: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": [
+        "quark speck quail space quip chop quad comic quill squid clef quake close",
+        "quota color quash care quick squad each quart pouch"
+      ]
+    },
+    "lesson_C12.5": {
+      "title": "Lesson C12.5: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": [
+        "quack equip twice quite black quilt thick quirk sic quits curly quiet coach",
+        "quit quote gloss valor champ squat wares joy gasp vat"
+      ]
+    },
+    "lesson_C12.6": {
+      "title": "Lesson C12.6: Drill",
+      "type": "Drill",
+      "instructions": "(5)",
+      "text": [
+        "cross equal mown jest night vote coast quay tweak juicy lingo fit visa quilt",
+        "sob threw jar grit info valet clamp quits limbo"
+      ]
+    },
+    "lesson_C13.1": {
+      "title": "Lesson C13.1: Tutorial",
+      "type": "Tutorial",
+      "text": [
+        "General Instructions",
+        "",
+        "The Z-key and X-key should be pressed by fourth and third fingers on the left",
+        "hand, respectively."
+      ]
+    },
+    "lesson_C13.2": {
+      "title": "Lesson C13.2: Drill",
+      "type": "Drill",
+      "instructions": "(1) Z and X",
+      "text": [
+        "exec fuzz boxer buxom glitz exam zeal toxic jeez lax hertz extol prize text",
+        "ozone pixie size pixel booze ex zoom crux gauze fax woozy ax tizzy flux"
+      ]
+    },
+    "lesson_C13.3": {
+      "title": "Lesson C13.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "jinx zit oxide froze axle ooze extra dozen exit bozo waxy quiz tax ritzy ox",
+        "fizz index axes zinc apex zip exist buzz expo oxen fez tux dizzy proxy"
+      ]
+    },
+    "lesson_C13.4": {
+      "title": "Lesson C13.4: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": [
+        "detox zebra next doze max waltz affix zest sixty zone exact zoo excel frizz",
+        "fox sex blitz mixer gizmo foxy seize mix unzip flex fizzy six fixed"
+      ]
+    },
+    "lesson_C13.5": {
+      "title": "Lesson C13.5: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": [
+        "jerk valve whiz relax work equal fuzzy exert quark hoard evil mixed jolly",
+        "shook twang dove quota zero annex jibe key ranch regal wavy quick cozy"
+      ]
+    },
+    "lesson_C14.1": {
+      "title": "Lesson C14.1: Tutorial",
+      "type": "Tutorial",
+      "text": [
+        "Learning the SHIFT key",
+        "",
+        "To integrate the shift key rhythmically in your practice, a capital letter",
+        "should take three beats:",
+        "1. press the shift key opposite the hand to press the letter key",
+        "2. press the letter",
+        "3. release the shift key"
+      ]
+    },
+    "lesson_C14.2": {
+      "title": "Lesson C14.2: Drill",
+      "type": "Drill",
+      "instructions": "(1)",
+      "text": [
+        "Ada Anne Ana Ann Dad Dan Don Ed Eta Rita",
+        "Dan Nan Nat Ned Sid Sire Tad Ted Tod Rene"
+      ]
+    },
+    "lesson_C14.3": {
+      "title": "Lesson C14.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "The sad tot sat on a tan seat in his neat tent",
+        "He ate ten stones"
+      ]
+    },
+    "lesson_C14.4": {
+      "title": "Lesson C14.4: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": [
+        "On his date Otis has a thin suit",
+        "There is no tint on his shoes"
+      ]
+    },
+    "lesson_C14.5": {
+      "title": "Lesson C14.5: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": [
+        "Enos eats a thin hash diet in a dish as he sits on an odd seat",
+        "Dad does not eat desert",
+        "He had seen Ted dent his auto"
+      ]
+    },
+    "lesson_C14.6": {
+      "title": "Lesson C14.6: Drill",
+      "type": "Drill",
+      "instructions": "(5)",
+      "text": [
+        "Adna Anna Anne Dana Dead Edie Edna Enid Etta Heda",
+        "Nate Nina Neta Nona Odie Ohio Otto Stan Tess Thad Theo"
+      ]
+    },
+    "lesson_C15.1": {
+      "title": "Lesson C15.1: Tutorial",
+      "type": "Tutorial",
+      "text": [
+        "Learning punctuation",
+        "",
+        "The period/full stop is below the forth finger on the right hand.  Note that",
+        "the end of a sentence should be followed by two spaces; in abbreviations, it is",
+        "followed by one space.",
+        "",
+        "The comma is below the third finger on the right hand.",
+        "",
+        "The fourth finger of the right hand and the left SHIFT key should be used to",
+        "type a question point/mark."
+      ]
+    },
+    "lesson_C15.2": {
+      "title": "Lesson C15.2: Drill",
+      "type": "Drill",
+      "instructions": "(1)",
+      "text": [
+        "e.  e.  e.  e.  a.  s.  o.  n.  e.  t.  r.  h.  i.  d.  a.  a.",
+        "h.  r.  a.  i.  o.  n.  s.  d.  t.  e.  h.  o.  r.  i.  s.  a."
+      ]
+    },
+    "lesson_C15.3": {
+      "title": "Lesson C15.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": "Adana.  Andie.  Annie.  Aonia.  Ardie.  Denis.  Diana.  Dinah."
+    },
+    "lesson_C15.4": {
+      "title": "Lesson C15.4: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": [
+        "On the horse, Adana dined in haste on toast and dates.",
+        "Sated, as she had eaten she noted the sheen on the drones",
+        "and the shade in the sheds.  She hates to see an idiot",
+        "stand and shoot his tenth doe in the dense heath."
+      ]
+    },
+    "lesson_C15.5": {
+      "title": "Lesson C15.5: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": [
+        "An onion heats, stunned, a stout nose.  As does she?  As do I?",
+        "Do I send hands to douse teeth?  Are their suedes hoisted ahead?"
+      ]
+    },
+    "lesson_C15.6": {
+      "title": "Lesson C15.6: Drill",
+      "type": "Drill",
+      "instructions": "(5)",
+      "text": [
+        "The shy ape put on a red hat and ran off with the lot.  Can pa",
+        "go aft and lie on our old cot?  For a top fee, her act is to hop",
+        "in, lie on the rug, pat her pet cat, fit a fur on her ear, get",
+        "her fan, and run off."
+      ]
+    },
+    "lesson_C16.1": {
+      "title": "Lesson C16.1: Tutorial",
+      "type": "Tutorial",
+      "text": [
+        "Frequent words",
+        "",
+        "The following 135 words are so frequently used that they comprise 50% of all",
+        "words normally typed.  If you can type the next two exercises without errors,",
+        "half of all of your typed words will be correct!"
+      ]
+    },
+    "lesson_C16.2": {
+      "title": "Lesson C16.2: Drill",
+      "type": "Drill",
+      "instructions": "(1)",
+      "text": [
+        "a about after all also an and another any are as at back be because",
+        "been before being between both but by can could day did do down each",
+        "even first for from get good had has have he her here him his how I",
+        "if in into is it its just know last life like little long made make",
+        "many may me men more most Mr. Ms. much must my never new no not now"
+      ]
+    },
+    "lesson_C16.3": {
+      "title": "Lesson C16.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "of or on one only or other our out over own people said same see she",
+        "should so some state still such than that the their them then there",
+        "these they this those through time to too two under up very was way",
+        "we well were what when where which while who will with work would",
+        "years you your"
+      ]
+    },
+    "lesson_C16.4": {
+      "title": "Lesson C16.4: Tutorial",
+      "type": "Tutorial",
+      "text": [
+        "We now concentrate on words amongst the top one thousand most frequently used",
+        "that are 4 letters or more and that can be types using only the HOME row."
+      ]
+    },
+    "lesson_C16.5": {
+      "title": "Lesson C16.5: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": [
+        "that this other there said their then these than side does three read",
+        "hand here need near earth head stand state tree hard start don't north",
+        "ease those idea hear horse soon door short area order heard interest",
+        "road rain note star rest done stood street test stead heat tire distant"
+      ]
+    },
+    "lesson_C16.6": {
+      "title": "Lesson C16.6: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": [
+        "east heart reason ride store train root raise third hair either sand",
+        "sense nation dress stone iron trade seed tone rise sent noon radio",
+        "rather thin enter send rose dead desert shoe nine noise shine nose",
+        "death season sister seat shore sheet share station instant dear teeth"
+      ]
+    },
+    "lesson_C17.1": {
+      "title": "Lesson C17.1: Tutorial",
+      "type": "Tutorial",
+      "text": [
+        "Alphabetic sentences",
+        "",
+        "In this lesson we practice alphabetic sentences."
+      ]
+    },
+    "lesson_C17.2": {
+      "title": "Lesson C17.2: Drill",
+      "type": "Drill",
+      "instructions": "(1)",
+      "text": "Sixty-five quizzical sheep kept their jaws dry in a farm bungalow."
+    },
+    "lesson_C17.3": {
+      "title": "Lesson C17.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": "Balky Zulus find they can hoax weary men with quavery jumping."
+    },
+    "lesson_C17.4": {
+      "title": "Lesson C17.4: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": "Jerome quickly began to be vexed by the powerful blizzards."
+    },
+    "lesson_C17.5": {
+      "title": "Lesson C17.5: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": "Squawking gorillas could vex the brazen nymphs in a jiffy."
+    },
+    "lesson_C17.6": {
+      "title": "Lesson C17.6: Drill",
+      "type": "Drill",
+      "instructions": "(5)",
+      "text": "Can Jerry's equipment file saws, ax, hoe, knives and grind adz?"
+    },
+    "lesson_C17.7": {
+      "title": "Lesson C17.7: Drill",
+      "type": "Drill",
+      "instructions": "(6)",
+      "text": "Ben works at squeezing very juicy plums with flexed thumbs."
+    },
+    "lesson_C17.8": {
+      "title": "Lesson C17.8: Drill",
+      "type": "Drill",
+      "instructions": "(7)",
+      "text": "The black wizard quipping jovially flexed his muscles."
+    },
+    "lesson_C17.9": {
+      "title": "Lesson C17.9: Drill",
+      "type": "Drill",
+      "instructions": "(8)",
+      "text": "Will you pack my jugs of liquid veneer in five dozen boxes?"
+    },
+    "lesson_C17.10": {
+      "title": "Lesson C17.10: Drill",
+      "type": "Drill",
+      "instructions": "(9)",
+      "text": "Could the wizard jinx quivering folks by magic yelps?"
+    },
+    "lesson_C17.11": {
+      "title": "Lesson C17.11: Drill",
+      "type": "Drill",
+      "instructions": "(10)",
+      "text": "Brazen gazelles quickly examined the forward jeep."
+    },
+    "lesson_C17.12": {
+      "title": "Lesson C17.12: Drill",
+      "type": "Drill",
+      "instructions": "(11)",
+      "text": "The brown dog quickly jumped over the lazy fox."
+    },
+    "lesson_C17.13": {
+      "title": "Lesson C17.13: Drill",
+      "type": "Drill",
+      "instructions": "(12)",
+      "text": "Will the kind judge squelch the five or six brazen nymphs?"
+    },
+    "lesson_C17.14": {
+      "title": "Lesson C17.14: Drill",
+      "type": "Drill",
+      "instructions": "(13)",
+      "text": "Mix zippy Kadota figs with quivering cranberry jelly."
+    },
+    "lesson_C17.15": {
+      "title": "Lesson C17.15: Drill",
+      "type": "Drill",
+      "instructions": "(14)",
+      "text": "The wives quickly jerked extra big pizzas from the stand."
+    },
+    "lesson_C17.16": {
+      "title": "Lesson C17.16: Drill",
+      "type": "Drill",
+      "instructions": "(15)",
+      "text": "Lisa quickly mixed the very big jar of new soap."
+    },
+    "lesson_C17.17": {
+      "title": "Lesson C17.17: Drill",
+      "type": "Drill",
+      "instructions": "(16)",
+      "text": "The major will fix a quiet cozy nook for the vexed, bad Gypsy."
+    },
+    "lesson_C17.18": {
+      "title": "Lesson C17.18: Drill",
+      "type": "Drill",
+      "instructions": "(17)",
+      "text": "Pairs of lazy knowing oxen came by quietly evading the jam."
+    },
+    "lesson_C17.19": {
+      "title": "Lesson C17.19: Drill",
+      "type": "Drill",
+      "instructions": "(18)",
+      "text": "Juvenile zest for excitement whetted interest in parking by the quay."
+    },
+    "lesson_C17.20": {
+      "title": "Lesson C17.20: Drill",
+      "type": "Drill",
+      "instructions": "(19)",
+      "text": "Put your big ax, shovel and quartz where Mike's fence joins ours."
+    },
+    "lesson_C17.21": {
+      "title": "Lesson C17.21: Drill",
+      "type": "Drill",
+      "instructions": "(20)",
+      "text": "The brawny jaguar held fast till the quaking Zouave victim expired."
+    }
+  }
+}

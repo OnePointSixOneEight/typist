@@ -1,0 +1,2141 @@
+{
+  "copyright": [
+    "Typist 3.0 - improved typing tutor program for UNIX systems",
+    "Copyright (C) 1998-2018  Simon Baldwin (simon_baldwin@yahoo.com)",
+    "",
+    "This program is free software; you can redistribute it and/or",
+    "modify it under the terms of the GNU General Public License",
+    "as published by the Free Software Foundation; either version 2",
+    "of the License, or (at your option) any later version.",
+    "",
+    "This program is distributed in the hope that it will be useful,",
+    "but WITHOUT ANY WARRANTY; without even the implied warranty of",
+    "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the",
+    "GNU General Public License for more details.",
+    "",
+    "You should have received a copy of the GNU General Public License",
+    "along with this program; if not, write to the Free Software",
+    "Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA."
+  ],
+  "typist": {
+    "version": 2,
+    "seriesName": "V",
+    "seriesDescription": "Yet Another QWERTY (V1 - V19)",
+    "seriesMenu": {
+      "title": "The V series contains the following 19 lessons",
+      "entries": [
+        {
+          "title": "Lesson V1     R F U J",
+          "lessons": [
+            "lesson_V1.1",
+            "lesson_V1.2"
+          ]
+        },
+        {
+          "title": "Lesson V2     D K E I",
+          "lessons": [
+            "lesson_V2.1",
+            "lesson_V2.2",
+            "lesson_V2.3",
+            "lesson_V2.4",
+            "lesson_V2.5",
+            "lesson_V2.6",
+            "lesson_V2.7"
+          ]
+        },
+        {
+          "title": "Lesson V3     T Y G H",
+          "lessons": [
+            "lesson_V3.1",
+            "lesson_V3.2",
+            "lesson_V3.3",
+            "lesson_V3.4",
+            "lesson_V3.5",
+            "lesson_V3.6",
+            "lesson_V3.7",
+            "lesson_V3.8",
+            "lesson_V3.9"
+          ]
+        },
+        {
+          "title": "Lesson V4     S L W O",
+          "lessons": [
+            "lesson_V4.1",
+            "lesson_V4.2",
+            "lesson_V4.3",
+            "lesson_V4.4",
+            "lesson_V4.5",
+            "lesson_V4.6",
+            "lesson_V4.7",
+            "lesson_V4.8"
+          ]
+        },
+        {
+          "title": "Lesson V5     A ; Q P",
+          "lessons": [
+            "lesson_V5.1",
+            "lesson_V5.2",
+            "lesson_V5.3",
+            "lesson_V5.4",
+            "lesson_V5.5",
+            "lesson_V5.6",
+            "lesson_V5.7",
+            "lesson_V5.8",
+            "lesson_V5.9"
+          ]
+        },
+        {
+          "title": "Lesson V6     Shift Keys for Capitalization",
+          "lessons": [
+            "lesson_V6.1",
+            "lesson_V6.2",
+            "lesson_V6.3",
+            "lesson_V6.4",
+            "lesson_V6.5",
+            "lesson_V6.6"
+          ]
+        },
+        {
+          "title": "Lesson V7     Shift Lock and :",
+          "lessons": [
+            "lesson_V7.1",
+            "lesson_V7.2",
+            "lesson_V7.3",
+            "lesson_V7.4",
+            "lesson_V7.5",
+            "lesson_V7.6",
+            "lesson_V7.7",
+            "lesson_V7.8"
+          ]
+        },
+        {
+          "title": "Lesson V8     Introducing the Period",
+          "lessons": [
+            "lesson_V8.1",
+            "lesson_V8.2",
+            "lesson_V8.3",
+            "lesson_V8.4",
+            "lesson_V8.5",
+            "lesson_V8.6"
+          ]
+        },
+        {
+          "title": "Lesson V9     V and M",
+          "lessons": [
+            "lesson_V9.1",
+            "lesson_V9.2",
+            "lesson_V9.3",
+            "lesson_V9.4",
+            "lesson_V9.5",
+            "lesson_V9.6",
+            "lesson_V9.7"
+          ]
+        },
+        {
+          "title": "Lesson V10    B and N",
+          "lessons": [
+            "lesson_V10.1",
+            "lesson_V10.2",
+            "lesson_V10.3",
+            "lesson_V10.4",
+            "lesson_V10.5",
+            "lesson_V10.6",
+            "lesson_V10.7",
+            "lesson_V10.8"
+          ]
+        },
+        {
+          "title": "Lesson V11    C and Comma",
+          "lessons": [
+            "lesson_V11.1",
+            "lesson_V11.2",
+            "lesson_V11.3",
+            "lesson_V11.4",
+            "lesson_V11.5",
+            "lesson_V11.6",
+            "lesson_V11.7",
+            "lesson_V11.8",
+            "lesson_V11.9"
+          ]
+        },
+        {
+          "title": "Lesson V12    X and .",
+          "lessons": [
+            "lesson_V12.1",
+            "lesson_V12.2",
+            "lesson_V12.3",
+            "lesson_V12.4",
+            "lesson_V12.5",
+            "lesson_V12.6",
+            "lesson_V12.7",
+            "lesson_V12.8",
+            "lesson_V12.9"
+          ]
+        },
+        {
+          "title": "Lesson V13    Z and /",
+          "lessons": [
+            "lesson_V13.1",
+            "lesson_V13.2",
+            "lesson_V13.3",
+            "lesson_V13.4",
+            "lesson_V13.5",
+            "lesson_V13.6",
+            "lesson_V13.7",
+            "lesson_V13.8",
+            "lesson_V13.9",
+            "lesson_V13.10"
+          ]
+        },
+        {
+          "title": "Lesson V14    The Question Mark",
+          "lessons": [
+            "lesson_V14.1",
+            "lesson_V14.2",
+            "lesson_V14.3",
+            "lesson_V14.4",
+            "lesson_V14.5",
+            "lesson_V14.6",
+            "lesson_V14.7",
+            "lesson_V14.8",
+            "lesson_V14.9"
+          ]
+        },
+        {
+          "title": "Lesson V15    1, 4, 5, 6, 7",
+          "lessons": [
+            "lesson_V15.1",
+            "lesson_V15.2",
+            "lesson_V15.3",
+            "lesson_V15.4",
+            "lesson_V15.5",
+            "lesson_V15.6",
+            "lesson_V15.7",
+            "lesson_V15.8",
+            "lesson_V15.9",
+            "lesson_V15.10",
+            "lesson_V15.11",
+            "lesson_V15.12",
+            "lesson_V15.13",
+            "lesson_V15.14"
+          ]
+        },
+        {
+          "title": "Lesson V16    3 and 8",
+          "lessons": [
+            "lesson_V16.1",
+            "lesson_V16.2",
+            "lesson_V16.3",
+            "lesson_V16.4",
+            "lesson_V16.5",
+            "lesson_V16.6",
+            "lesson_V16.7",
+            "lesson_V16.8",
+            "lesson_V16.9"
+          ]
+        },
+        {
+          "title": "Lesson V17    2 and 9",
+          "lessons": [
+            "lesson_V17.1",
+            "lesson_V17.2",
+            "lesson_V17.3",
+            "lesson_V17.4",
+            "lesson_V17.5",
+            "lesson_V17.6",
+            "lesson_V17.7",
+            "lesson_V17.8",
+            "lesson_V17.9"
+          ]
+        },
+        {
+          "title": "Lesson V18    0 and the Hyphen",
+          "lessons": [
+            "lesson_V18.1",
+            "lesson_V18.2",
+            "lesson_V18.3",
+            "lesson_V18.4",
+            "lesson_V18.5",
+            "lesson_V18.6",
+            "lesson_V18.7",
+            "lesson_V18.8",
+            "lesson_V18.9",
+            "lesson_V18.10"
+          ]
+        },
+        {
+          "title": "Lesson V19    Practise",
+          "lessons": [
+            "lesson_V19.1",
+            "lesson_V19.2",
+            "lesson_V19.3",
+            "lesson_V19.4",
+            "lesson_V19.5",
+            "lesson_V19.6"
+          ]
+        }
+      ]
+    },
+    "lesson_V1.1": {
+      "title": "Lesson V1.1: Drill",
+      "type": "Drill",
+      "instructions": "(1)",
+      "text": [
+        "r r r r frf frf frf u u u u juj juj juj juj",
+        "frf juj frf juj frf juj frf juj frf juj frf juj"
+      ]
+    },
+    "lesson_V1.2": {
+      "title": "Lesson V1.2: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "fff jjj fff jjj fff jjj fff jjj fff jjj fff jjj",
+        "fff jjj fff jjj fff jjj fff jjj fff jjj fff jjj",
+        "",
+        "fru fru fru jur jur jur ruj ruj ruj urf urf urf",
+        "fru fru fru ruf ruf ruf urj urj urj fuj fuj fuj",
+        "",
+        "urf urf urf juf juf juf fuj fuj fuj fru fru fru",
+        "fur fur fur ruf ruf ruf urf urf urf jur jur jur"
+      ]
+    },
+    "lesson_V2.1": {
+      "title": "Lesson V2.1: Tutorial",
+      "type": "Tutorial",
+      "text": "(D K E I)"
+    },
+    "lesson_V2.2": {
+      "title": "Lesson V2.2: Drill",
+      "type": "Drill",
+      "instructions": "(1) Warmup",
+      "text": [
+        "fff jjj fff jjj fff jjj fff jjj fff jjj fff jjj",
+        "frf juj frf juj frf juj frf juj frf juj frf juj",
+        "",
+        "fur fur fur ruf ruf ruf jur jur jur ruj ruj ruj",
+        "urj urj urj juf juf juf fuj fuj fuj fur fur fur"
+      ]
+    },
+    "lesson_V2.3": {
+      "title": "Lesson V2.3: Drill",
+      "type": "Drill",
+      "instructions": "(2) New Key Control",
+      "text": [
+        "d d d d ddd ddd ddd ddd k k k k kkk kkk kkk kkk",
+        "ddd kkk ddd kkk ddd kkk ddd kkk ddd kkk ddd kkk"
+      ]
+    },
+    "lesson_V2.4": {
+      "title": "Lesson V2.4: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": [
+        "e e e e ded ded ded ded ded i i i i kik kik kik",
+        "ded kik ded kik ded kik ded kik ded kik ded kik"
+      ]
+    },
+    "lesson_V2.5": {
+      "title": "Lesson V2.5: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": [
+        "did did did ire ire ire rid rid rid eke eke eke",
+        "rid rid rid eke eke eke ire ire ire did did did",
+        "",
+        "kid kid kid fee fee fee red red red fir fir fir",
+        "red red red fir fir fir fee fee fee kid kid kid"
+      ]
+    },
+    "lesson_V2.6": {
+      "title": "Lesson V2.6: Drill",
+      "type": "Drill",
+      "instructions": "(5)",
+      "text": [
+        "free free free juke juke juke fire fire fire juke",
+        "fire fire fire juke juke juke free free free juke",
+        "",
+        "deer deer deer rude rude rude dire dire dire ride",
+        "rude rude rude dire dire dire deer deer deer ride"
+      ]
+    },
+    "lesson_V2.7": {
+      "title": "Lesson V2.7: Drill",
+      "type": "Drill",
+      "instructions": "(6)",
+      "text": [
+        "fired fired fired rider rider rider freed freed",
+        "rider rider rider freed freed freed fired fired",
+        "",
+        "did red ire fee rid deer rude fire feed juke rider",
+        "rid fee ire red did juke fire rude juke deed freed"
+      ]
+    },
+    "lesson_V3.1": {
+      "title": "Lesson V3.1: Tutorial",
+      "type": "Tutorial",
+      "text": "(T Y G H)"
+    },
+    "lesson_V3.2": {
+      "title": "Lesson V3.2: Drill",
+      "type": "Drill",
+      "instructions": "(1) Warmup",
+      "text": [
+        "fff jjj ddd kkk frf juj ded kik fff jjj ddd kkk",
+        "frf juj ded kik fur fur kid kid red red ire ire",
+        "",
+        "kid kid kid juke juke juke dire dire dire fire",
+        "rid rid rid rude rude rude ride ride ride feed",
+        "",
+        "did red ire fee rid deer rude fire feed juke rider",
+        "rid fee ire red did juke fire rude juke deed freed"
+      ]
+    },
+    "lesson_V3.3": {
+      "title": "Lesson V3.3: Drill",
+      "type": "Drill",
+      "instructions": "(2) T and Y",
+      "text": [
+        "t t t t ftf ftf ftf ftf y y y y jyj jyj jyj jyj",
+        "ftf jyj ftf jyj ftf jyj ftf jyj ftf jyj ftf jyj"
+      ]
+    },
+    "lesson_V3.4": {
+      "title": "Lesson V3.4: Drill",
+      "type": "Drill",
+      "instructions": "(3) G and H",
+      "text": [
+        "g g g g fgf fgf fgf fgf h h h h jhj jhj jhj jhj",
+        "fgf jhj fgf jhj fgf jhj fgf jhj fgf jhj fgf jhj"
+      ]
+    },
+    "lesson_V3.5": {
+      "title": "Lesson V3.5: Drill",
+      "type": "Drill",
+      "instructions": "(4) Word Drill",
+      "text": [
+        "hit hit hit hit hit hit get get get get get get",
+        "yet yet yet yet yet yet try try try try try try"
+      ]
+    },
+    "lesson_V3.6": {
+      "title": "Lesson V3.6: Drill",
+      "type": "Drill",
+      "instructions": "(5)",
+      "text": [
+        "the the the try try try get get get yet yet yet",
+        "try try try the the the yet yet yet get get get",
+        "",
+        "key key key hit hit hit tie tie tie kit kit kit",
+        "tie tie tie kit kit kit key key key hit hit hit"
+      ]
+    },
+    "lesson_V3.7": {
+      "title": "Lesson V3.7: Drill",
+      "type": "Drill",
+      "instructions": "(6)",
+      "text": [
+        "here here here they they they true true true",
+        "they they they true true true here here here",
+        "",
+        "there there there fruit fruit fruit right right right",
+        "fruit fruit fruit right right right there there there"
+      ]
+    },
+    "lesson_V3.8": {
+      "title": "Lesson V3.8: Drill",
+      "type": "Drill",
+      "instructions": "(7)",
+      "text": [
+        "third third third tired tired tired urged urged urged",
+        "tired tired tired urged urged urged third third third",
+        "",
+        "truth truth truth their their their dried dried dried",
+        "their their their dried dried dried truth truth truth"
+      ]
+    },
+    "lesson_V3.9": {
+      "title": "Lesson V3.9: Drill",
+      "type": "Drill",
+      "instructions": "(8)",
+      "text": [
+        "did they get the right dried fruit there yet",
+        "did they get the right dried fruit there yet"
+      ]
+    },
+    "lesson_V4.1": {
+      "title": "Lesson V4.1: Tutorial",
+      "type": "Tutorial",
+      "text": "(S L W O)"
+    },
+    "lesson_V4.2": {
+      "title": "Lesson V4.2: Drill",
+      "type": "Drill",
+      "instructions": "(1) Warmup",
+      "text": [
+        "frf juj ded kik ftf jyj fgf jhj frf juj ded kik",
+        "ded kik ftf jyj fgf jhj frf juj ded kik ftf jyj"
+      ]
+    },
+    "lesson_V4.3": {
+      "title": "Lesson V4.3: Drill",
+      "type": "Drill",
+      "instructions": "(2) S and L",
+      "text": [
+        "s s s s sss sss sss sss l l l l lll lll lll lll",
+        "sss lll sss lll sss lll sss lll sss lll sss lll"
+      ]
+    },
+    "lesson_V4.4": {
+      "title": "Lesson V4.4: Drill",
+      "type": "Drill",
+      "instructions": "(3) W and O",
+      "text": [
+        "w w w w sws sws sws sws o o o o lol lol lol lol",
+        "sws lol sws lol sws lol sws lol sws lol sws lol"
+      ]
+    },
+    "lesson_V4.5": {
+      "title": "Lesson V4.5: Drill",
+      "type": "Drill",
+      "instructions": "(4) Words Drill",
+      "text": [
+        "sow sow sow sow sow sow low low low low low low",
+        "row row row row row row how how how how how how"
+      ]
+    },
+    "lesson_V4.6": {
+      "title": "Lesson V4.6: Drill",
+      "type": "Drill",
+      "instructions": "(5)",
+      "text": [
+        "is is is so so so of of of do do do go go go to to to",
+        "go go go to to to do do do of of of so so so is is is",
+        "",
+        "too too too low low low set set set wit wit wit wit",
+        "sit sit sit lit lit lit wit wit wit low low low low"
+      ]
+    },
+    "lesson_V4.7": {
+      "title": "Lesson V4.7: Drill",
+      "type": "Drill",
+      "instructions": "(6)",
+      "text": [
+        "wool wool wool suit suit suit full full full wood wood",
+        "hole hole hole wool wool wool suit suit suit good good",
+        "",
+        "style style style order order order those those",
+        "loose loose loose style style style order order",
+        "",
+        "desire desire desire rulers rulers rulers worker",
+        "worker worker worker desire desire desire rulers"
+      ]
+    },
+    "lesson_V4.8": {
+      "title": "Lesson V4.8: Drill",
+      "type": "Drill",
+      "instructions": "(7)",
+      "text": [
+        "hold your wrists low while you strike the keys",
+        "we desire the right goods for our wool suits",
+        "if you will go with us you will see the fleet",
+        "we will try to fill your order for the wool suits",
+        "if we get the right goods we will fill your order"
+      ]
+    },
+    "lesson_V5.1": {
+      "title": "Lesson V5.1: Tutorial",
+      "type": "Tutorial",
+      "text": "(A ; Q P)"
+    },
+    "lesson_V5.2": {
+      "title": "Lesson V5.2: Drill",
+      "type": "Drill",
+      "instructions": "(1) Warmup",
+      "text": [
+        "frf juj ded kik ftf jyj fgf jhj frf juj ftf jyj fgf jhj",
+        "ded kik sws lol ded kik sws lol frf juj ftf jyj fgf jhj"
+      ]
+    },
+    "lesson_V5.3": {
+      "title": "Lesson V5.3: Drill",
+      "type": "Drill",
+      "instructions": "(2) A and ;",
+      "text": [
+        "a a a a aaa aaa aaa aaa ; ; ; ; ;;; ;;; ;;; ;;;",
+        "aaa ;;; aaa ;;; aaa ;;; aaa ;;; aaa ;;; aaa ;;;"
+      ]
+    },
+    "lesson_V5.4": {
+      "title": "Lesson V5.4: Drill",
+      "type": "Drill",
+      "instructions": "(3) Q and P",
+      "text": [
+        "q q q q aqa aqa aqa aqa p p p p ;p; ;p; ;p; ;p;",
+        "aqa ;p; aqa ;p; aqa ;p; aqa ;p; aqa ;p; aqa ;p;"
+      ]
+    },
+    "lesson_V5.5": {
+      "title": "Lesson V5.5: Drill",
+      "type": "Drill",
+      "instructions": "(4) Word Drill",
+      "text": [
+        "pa; pa; pa; pa; pa; pa; up; up; up; up; up; up;",
+        "pa; pa; pa; pa; pa; pa; up; up; up; up; up; up;"
+      ]
+    },
+    "lesson_V5.6": {
+      "title": "Lesson V5.6: Drill",
+      "type": "Drill",
+      "instructions": "(5)",
+      "text": [
+        "quay quay quay quay quay quip quip quip quip quip",
+        "quay quay quay quay quay quip quip quip quip quip"
+      ]
+    },
+    "lesson_V5.7": {
+      "title": "Lesson V5.7: Drill",
+      "type": "Drill",
+      "instructions": "(6)",
+      "text": [
+        "apt apt apt; put put put; sip sip sip; hip hip hip;",
+        "sip sip sip; hip hip hip; apt apt apt; put put put;",
+        "",
+        "quip quip quip; quit quit quit; aqua aqua aqua;",
+        "aqua aqua aqua; quip quip quip; quit quit quit;",
+        "",
+        "paid paid paid; pair pair pair; pass pass pass;",
+        "pair pair pair; pass pass pass; paid paid paid;"
+      ]
+    },
+    "lesson_V5.8": {
+      "title": "Lesson V5.8: Drill",
+      "type": "Drill",
+      "instructions": "(7)",
+      "text": [
+        "quote quote quote; paper paper paper; quite quite;",
+        "paper paper paper; quite quite quite; quote quote;",
+        "",
+        "prefer prefer prefer; prepay prepay prepay; quires;",
+        "prepay prepay prepay; prefer prefer prefer; quires;",
+        "",
+        "postage postage postage; quarter quarter quarter;",
+        "poultry poultry poultry; quality quality quality;"
+      ]
+    },
+    "lesson_V5.9": {
+      "title": "Lesson V5.9: Drill",
+      "type": "Drill",
+      "instructions": "(8)",
+      "text": [
+        "two quires of high quality paper were shipped today;",
+        "we shall pay you well to prepare the reports for us;",
+        "we quote a low figure for our high quality paper;",
+        "we prefer to prepay the postage for the two quires;"
+      ]
+    },
+    "lesson_V6.1": {
+      "title": "Lesson V6.1: Tutorial",
+      "type": "Tutorial",
+      "text": "(Shift Keys for Capitalization)"
+    },
+    "lesson_V6.2": {
+      "title": "Lesson V6.2: Drill",
+      "type": "Drill",
+      "instructions": "(1) Warmup",
+      "text": [
+        "frf juj ftf jyj fgf jhj ded kik sws lol aqa ;p;",
+        "aqa ;p; sws lol ded kik frf juj ftf jyj fgf jhj",
+        "",
+        "he will pay jed squire for the sugar this week;"
+      ]
+    },
+    "lesson_V6.3": {
+      "title": "Lesson V6.3: Drill",
+      "type": "Drill",
+      "instructions": "(2) Capital Letter Drill",
+      "text": [
+        "F F F F F F Fa Fa Fa Fa Fa Fa Fay Fay Fay Fay Fay Fay",
+        "J J J J J J Ja Ja Ja Ja Ja Ja Jay Jay Jay Jay Jay Jay",
+        "",
+        "R R R R R R Ra Ra Ra Ra Ra Ra Ray Ray Ray Ray Ray Ray",
+        "H H H H H H Ha Ha Ha Ha Ha Ha Hal Hal Hal Hal Hal Hal"
+      ]
+    },
+    "lesson_V6.4": {
+      "title": "Lesson V6.4: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": [
+        "Kay Kay Kay; Joe Joe Joe; Alf Alf Alf; Lou Lou Lou;",
+        "Joe Joe Joe; Kay Kay Kay; Lou Lou Lou; Alf Alf Alf;",
+        "",
+        "Dora Dora Dora; Ella Ella Ella; Pete Pete Pete;",
+        "Sara Sara Sara; Lola Lola Lola; Will Will Will;",
+        "",
+        "Garry Garry Garry; Harry Harry Harry; Paula Paula;",
+        "Harry Harry Harry; Taffy Taffy Taffy; Quail Quail;"
+      ]
+    },
+    "lesson_V6.5": {
+      "title": "Lesson V6.5: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": [
+        "Uriah Uriah Uriah; Yetta Yetta Yetta; Ollie Ollie;",
+        "Yetta Yetta Yetta; Ollie Ollie Ollie; Uriah Uriah;",
+        "",
+        "Walter Walter Walter; Esther Esther Esther; Isaiah;",
+        "Esther Esther Esther; Walter Walter Walter; Isaiah;",
+        "",
+        "Arthur Arthur Arthur; Lester Lester Lester; Quezon;",
+        "Quezon Quezon Quezon; Arthur Arthur Arthur; Philip;"
+      ]
+    },
+    "lesson_V6.6": {
+      "title": "Lesson V6.6: Drill",
+      "type": "Drill",
+      "instructions": "(5)",
+      "text": [
+        "Joseph likes to study; Joseph likes to study art;",
+        "Esther will write; Esther will write Larry today;",
+        "Arthur likes; Arthur likes to play the flute;",
+        "Kate says; Kate says she will stay till Friday;",
+        "Paul will take Willa to the Park Sherry Theater;"
+      ]
+    },
+    "lesson_V7.1": {
+      "title": "Lesson V7.1: Tutorial",
+      "type": "Tutorial",
+      "text": "(Shift Lock and :)"
+    },
+    "lesson_V7.2": {
+      "title": "Lesson V7.2: Drill",
+      "type": "Drill",
+      "instructions": "(1) Warmup",
+      "text": [
+        "frf juj ftf jyj fgf jhj ded kik sws lol aqa ;p;",
+        "aqa ;p; sws lol ded kik frf juj ftf jyj fgf jhj"
+      ]
+    },
+    "lesson_V7.3": {
+      "title": "Lesson V7.3: Drill",
+      "type": "Drill",
+      "instructions": "(2) Shift Lock Drill",
+      "text": [
+        "It is GOOD WORK; It is GOOD WORK; It is GOOD WORK;",
+        "It is GOOD WORK; It is GOOD WORK; It is GOOD WORK;"
+      ]
+    },
+    "lesson_V7.4": {
+      "title": "Lesson V7.4: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": [
+        "frf juj ftf jyj fgf jhj ded kik sws lol aqa ;p;",
+        "The TITLE of the REPORT is:  HOUSES FOR SALE",
+        "The TITLE of the REPORT is:  HOUSES FOR SALE",
+        "",
+        "aqa ;p; sws lol ded kik frf juj ftf jyj fgf jhj",
+        "We quote LOW FIGURES for HIGHEST QUALITY paper;",
+        "We quote LOW FIGURES for HIGHEST QUALITY paper;"
+      ]
+    },
+    "lesson_V7.5": {
+      "title": "Lesson V7.5: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": [
+        "frf juj ftf jyj fgf jhj ded kik sws lol aqa ;p;",
+        "The PARK POSTER reads:  KEEP OFF THE GRASS",
+        "The PARK POSTER reads:  KEEP OFF THE GRASS",
+        "",
+        "aqa ;p; sws lol ded kik frf juj ftf jyj fgf jhj",
+        "Paul quoted the old adage:  THE THRIFTY ARE WISE",
+        "Paul quoted the old adage:  THE THRIFTY ARE WISE"
+      ]
+    },
+    "lesson_V7.6": {
+      "title": "Lesson V7.6: Drill",
+      "type": "Drill",
+      "text": [
+        "frf juj ftf jyj fgf jhj ded kik sws lol aqa ;p;",
+        "You should STRIKE ALL THE KEYS with EQUAL POWER;",
+        "You should STRIKE ALL THE KEYS with EQUAL POWER;"
+      ]
+    },
+    "lesson_V7.7": {
+      "title": "Lesson V7.7: Drill",
+      "type": "Drill",
+      "instructions": "(5)",
+      "text": [
+        "frf juj ftf jyj fgf jhj ded kik sws lol aqa ;p;",
+        "GOOD WORK will lead to a HAPPY LIFE for you;",
+        "GOOD WORK will lead to a HAPPY LIFE for you;",
+        "",
+        "aqa ;p; sws lol ded kik frf juj ftf jyj fgf jhj",
+        "The DAILY DRILLS will HELP YOU type with EASE;",
+        "The DAILY DRILLS will HELP YOU type with EASE;"
+      ]
+    },
+    "lesson_V7.8": {
+      "title": "Lesson V7.8: Drill",
+      "type": "Drill",
+      "text": [
+        "frf juj ftf jyj fgf jhj ded kik sws lol aqa ;p;",
+        "GOOD SALARIES are USUALLY PAID to FAST TYPISTS;",
+        "GOOD SALARIES are USUALLY PAID to FAST TYPISTS;"
+      ]
+    },
+    "lesson_V8.1": {
+      "title": "Lesson V8.1: Tutorial",
+      "type": "Tutorial",
+      "text": "(Introducing the Period)"
+    },
+    "lesson_V8.2": {
+      "title": "Lesson V8.2: Drill",
+      "type": "Drill",
+      "instructions": "(1) Warmup",
+      "text": [
+        "frf juj ftf jyj fgf jhj ded kik sws lol aqa ;p;",
+        "aqa ;p; sws lol ded kik frf juj ftf jyj fgf jhj",
+        "",
+        "He will pay Jed Squire for the sugar this week;"
+      ]
+    },
+    "lesson_V8.3": {
+      "title": "Lesson V8.3: Drill",
+      "type": "Drill",
+      "instructions": "(2) The Period",
+      "text": [
+        ". . . . . . l.l l.l l.l l.l l.l l.l l.l l.l l.l",
+        "Hit it lightly.  Hit it lightly.  Hit it lightly.",
+        "Hit it lightly.  Hit it lightly.  Hit it lightly."
+      ]
+    },
+    "lesson_V8.4": {
+      "title": "Lesson V8.4: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(3)",
+      "text": [
+        "Strike all the keys with pep.  Strike the keys",
+        "as though they were red hot.  This is just how the",
+        "fast typist works.",
+        "",
+        "Type with thought.  Put forth your greatest efforts.",
+        "Let these two ideas guide you while you type.",
+        "",
+        "You should follow the daily drills as you are told.",
+        "These drills will show you that it is quite easy",
+        "to type well.",
+        "",
+        "Start your daily work without delay.  Keep at it",
+        "regularly.  It is steady work that will take you",
+        "to your goal."
+      ]
+    },
+    "lesson_V8.5": {
+      "title": "Lesson V8.5: Drill",
+      "type": "Drill",
+      "instructions": "(4) Keyboard Review",
+      "text": [
+        "for fat few fur foe fit fed fee for fat fir few fro;",
+        "fro few fir fat for fee fig foe fop fit fur fat fad;",
+        "",
+        "jug jig jut jar joy jag jaw jar jet jot jog jug joy;",
+        "joy jug jog jag jaw jot jig jut jar jig jaw jog jet;"
+      ]
+    },
+    "lesson_V8.6": {
+      "title": "Lesson V8.6: Drill",
+      "type": "Drill",
+      "instructions": "(5)",
+      "text": [
+        "rye rut row red rip ray rap rug rig rut rye rug rot;",
+        "rot rye rut row red rip rat rap rug rig rut rye rug;",
+        "",
+        "up us use uses urge ugly usage upper uproar upright;",
+        "us up use urge uses urge urges udder utters upstart;"
+      ]
+    },
+    "lesson_V9.1": {
+      "title": "Lesson V9.1: Tutorial",
+      "type": "Tutorial",
+      "text": "(V and M)"
+    },
+    "lesson_V9.2": {
+      "title": "Lesson V9.2: Drill",
+      "type": "Drill",
+      "instructions": "(1) Warmup",
+      "text": [
+        "frf juj ftf jyj fgf jhj ded kik sws lol aqa ;p;",
+        "aqa ;p; sws lol ded kik frf juj ftf jyj fgf jhj",
+        "",
+        "I will pay Joe Quig for the sugar today."
+      ]
+    },
+    "lesson_V9.3": {
+      "title": "Lesson V9.3: Drill",
+      "type": "Drill",
+      "instructions": "(2) New Keys (V, M)",
+      "text": [
+        "v v v v fvf fvf fvf fvf m m m m jmj jmj jmj jmj",
+        "fvf jmj fvf jmj fvf jmj fvf jmj fvf jmj fvf jmj"
+      ]
+    },
+    "lesson_V9.4": {
+      "title": "Lesson V9.4: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": [
+        "over over over; gave gave gave; have have have;",
+        "home home home; seem seem seem; time time time;",
+        "",
+        "ever ever ever; more more more; item item item;",
+        "live live live; vast vast vast; five five five;",
+        "",
+        "You must devote more time to your daily work.",
+        "You should go over every item with more thought."
+      ]
+    },
+    "lesson_V9.5": {
+      "title": "Lesson V9.5: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(4) Paragraph Practice",
+      "text": [
+        "You will surely make good if you give more time to",
+        "your daily work here.  You must make ever effort",
+        "to make good.",
+        "",
+        "You will improve your skill every day if you",
+        "devote some thought to your work.  You will surely",
+        "progress if you keep at your work regularly.  Just",
+        "have faith.",
+        "",
+        "Skillful typists make very good salaries.  All",
+        "types of firms require them.  So try your utmost to",
+        "develop your skill."
+      ]
+    },
+    "lesson_V9.6": {
+      "title": "Lesson V9.6: Drill",
+      "type": "Drill",
+      "instructions": "(5) Exercises on G, H, T, and Y",
+      "text": [
+        "go got get gas gag gap gay gig gray greed great;",
+        "go gig gay gap gas gag get gas gray great greed;",
+        "",
+        "her has had his hit hot hut hat hay hag had his;",
+        "his had hag hay hat hut hot hit his had has her;"
+      ]
+    },
+    "lesson_V9.7": {
+      "title": "Lesson V9.7: Drill",
+      "type": "Drill",
+      "text": [
+        "to try tip tap two tag too to try tip tap two;",
+        "to two tap tip try too try to top tap tag try;",
+        "",
+        "you yes yet yap yell year yoke your yowl yore;",
+        "yap yet yes you yore yowl your yoke year yell;"
+      ]
+    },
+    "lesson_V10.1": {
+      "title": "Lesson V10.1: Tutorial",
+      "type": "Tutorial",
+      "text": "(B and N)"
+    },
+    "lesson_V10.2": {
+      "title": "Lesson V10.2: Drill",
+      "type": "Drill",
+      "instructions": "(1) Warmup",
+      "text": [
+        "frf juj ftf jyj fgf jhj ded kik sws lol aqa ;p;",
+        "fgf jhj fvf jmj fgf jhj fvf jmj fgf jhj fvf jmj",
+        "",
+        "Paul Quigs will devote more time to his work."
+      ]
+    },
+    "lesson_V10.3": {
+      "title": "Lesson V10.3: Drill",
+      "type": "Drill",
+      "instructions": "(2) New Keys",
+      "text": [
+        "b b b b fbf fbf fbf fbf n n n n jnj jnj jnj jnj",
+        "fbf jnj fbf jnj fbf jnj fbf jnj fbf jnj fbf jnj"
+      ]
+    },
+    "lesson_V10.4": {
+      "title": "Lesson V10.4: Drill",
+      "type": "Drill",
+      "instructions": "(3) Word Drill",
+      "text": [
+        "bin bin bin bin bin bin nib nib nib nib nib nib",
+        "big big big big big big now now now now now now"
+      ]
+    },
+    "lesson_V10.5": {
+      "title": "Lesson V10.5: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": [
+        "bun bun bun; nip nip nip; fib fib fib; win win win;",
+        "fib fib fib; win win win; bun bun bun; nip nip nip;",
+        "",
+        "bent bent bent; nine nine nine; vent vent vent;",
+        "mend mend mend; vine vine vine; blow blow blow;",
+        "",
+        "We require more time to turn out a very good job.",
+        "Be prompt.  Never shirk.  Make promptness a habit."
+      ]
+    },
+    "lesson_V10.6": {
+      "title": "Lesson V10.6: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(5) Practice Paragraph",
+      "text": [
+        "Never put off until tomorrow any job you should",
+        "finish today.  Try to be prompt at all times.  No one",
+        "likes to be kept waiting.",
+        "",
+        "Keep on working just as diligently as you have",
+        "been doing up to this point.  You will soon be a",
+        "master of the keyboard.  You will have a valuable",
+        "skill that will repay you for your efforts.",
+        "",
+        "Remember this:  every boy and girl is able to",
+        "learn typing.  All they have to do is to put forth",
+        "their very best efforts.  This means thinking while",
+        "training every finger to strike the right key."
+      ]
+    },
+    "lesson_V10.7": {
+      "title": "Lesson V10.7: Drill",
+      "type": "Drill",
+      "instructions": "(6) Words with D, E, K, and I",
+      "text": [
+        "do dot due dye day dew dab den dim dog die dig dry dip",
+        "do dig dry dip die dog dim dab den dew day dye due dot",
+        "",
+        "ebb eke err eve end egg ever even edge earn east evil",
+        "err eke eve end ebb eel evil east earn edge envy easy"
+      ]
+    },
+    "lesson_V10.8": {
+      "title": "Lesson V10.8: Drill",
+      "type": "Drill",
+      "instructions": "(7)",
+      "text": [
+        "kid kin kit keg key king kind know knee knot knew",
+        "key keg kid kit kin knew knot knee knob king kind",
+        "",
+        "it is in if ire ill ink inn imp idle item isle iron",
+        "if in is it imp inn ill ire ink item idle iron isle"
+      ]
+    },
+    "lesson_V11.1": {
+      "title": "Lesson V11.1: Tutorial",
+      "type": "Tutorial",
+      "text": "(C and Comma)"
+    },
+    "lesson_V11.2": {
+      "title": "Lesson V11.2: Drill",
+      "type": "Drill",
+      "instructions": "(1) Warmup",
+      "text": [
+        "frf juj ftf jyj fgf jhj ded kik sws lol aqa ;p;",
+        "fvf jmj fbf jnj fvf jmj fbf jnj fvf jmj fbf jnj",
+        "",
+        "The Ben Mavis firm submitted the lowest quotation."
+      ]
+    },
+    "lesson_V11.3": {
+      "title": "Lesson V11.3: Drill",
+      "type": "Drill",
+      "instructions": "(2) New Key Review",
+      "text": [
+        "c c c c dcd dcd dcd dcd , , , , k,k k,k k,k k,k",
+        "dcd k,k dcd k,k dcd k,k dcd k,k dcd k,k dcd k,k"
+      ]
+    },
+    "lesson_V11.4": {
+      "title": "Lesson V11.4: Drill",
+      "type": "Drill",
+      "instructions": "(3) Word Drill",
+      "text": [
+        "can, can, can, can, can, cue, cue, cue, cue, cue,",
+        "can, can, can, can, can, cue, cue, cue, cue, cue,"
+      ]
+    },
+    "lesson_V11.5": {
+      "title": "Lesson V11.5: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": [
+        "cash, cash, cash, lack, lack, lack, lace, lace, lace,",
+        "lack, lack, lack, lace, lace, lace, cash, cash, cash,",
+        "",
+        "could, could, could, clerk, clerk, clerk, camp, camp,",
+        "clerk, clerk, clerk, could, could, could, cane, cane,"
+      ]
+    },
+    "lesson_V11.6": {
+      "title": "Lesson V11.6: Drill",
+      "type": "Drill",
+      "instructions": "(5)",
+      "text": [
+        "If you call before five, the bank will cash your check.",
+        "Charles Condon, sales manager, was in complete charge.",
+        "He may, if convenient, have it charged to his account."
+      ]
+    },
+    "lesson_V11.7": {
+      "title": "Lesson V11.7: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(6)",
+      "text": [
+        "Space once after a comma.  Space once after a",
+        "semicolon.  Space twice after a period that ends a",
+        "sentence.  Strike each key with the same force.",
+        "",
+        "The tabulator is a device which helps you to type faster.",
+        "It enables you to skip across the page to any point you",
+        "desire.",
+        "",
+        "First, set a tab stop at the point to which you",
+        "wish the carriage to jump.  Second, move the carriage",
+        "back to the left margin.  Third, hold the tabulator",
+        "bar or the tabulator key down until the carriage has",
+        "stopped."
+      ]
+    },
+    "lesson_V11.8": {
+      "title": "Lesson V11.8: Drill",
+      "type": "Drill",
+      "instructions": "(7)",
+      "text": [
+        "sub sum see sun set sit sin sip she ship shall shame",
+        "sit sin sip set sub sum see sod sob slip sweep super",
+        "",
+        "won win who why wet was weak wear west well what when",
+        "was wet why who win won what well wear west when what"
+      ]
+    },
+    "lesson_V11.9": {
+      "title": "Lesson V11.9: Drill",
+      "type": "Drill",
+      "instructions": "(8)",
+      "text": [
+        "lad lid lot let log lie lag lug lip last sate sawn",
+        "lip lag lug lie log let lot lid lad land lane last",
+        "",
+        "own out owl old one oak out oil off over oven open",
+        "off oil out oak one old owl our own open ours over"
+      ]
+    },
+    "lesson_V12.1": {
+      "title": "Lesson V12.1: Tutorial",
+      "type": "Tutorial",
+      "text": "(X and .)"
+    },
+    "lesson_V12.2": {
+      "title": "Lesson V12.2: Drill",
+      "type": "Drill",
+      "instructions": "(1) Warmup",
+      "text": [
+        "frf juj ftf jyj fgf jhj fvf jmj fbf jnj fvf jmj",
+        "ded kik sws lol aqa ;p; dcd k,k dcd k,k fvf jmj"
+      ]
+    },
+    "lesson_V12.3": {
+      "title": "Lesson V12.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "touch...learn...above...typing...talent...",
+        "average...special...that is...You do......",
+        "You do not"
+      ]
+    },
+    "lesson_V12.4": {
+      "title": "Lesson V12.4: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(3) Timed Drill:",
+      "text": [
+        "Touch typing is easy to learn.  You do not need",
+        "a mind that is above the average.  You do not",
+        "even need a special talent for typing."
+      ]
+    },
+    "lesson_V12.5": {
+      "title": "Lesson V12.5: Drill",
+      "type": "Drill",
+      "instructions": "(4) New Key Tryout",
+      "text": [
+        "x x x x sxs sxs sxs sxs . . . . l.l l.l l.l l.l",
+        "sxs l.l sxs l.l sxs l.l sxs l.l sxs l.l sxs l.l"
+      ]
+    },
+    "lesson_V12.6": {
+      "title": "Lesson V12.6: Drill",
+      "type": "Drill",
+      "instructions": "(5) Word Drill",
+      "text": [
+        "six six six six six six etc. etc. etc. etc. etc.",
+        "six six six six six six etc. etc. etc. etc. etc."
+      ]
+    },
+    "lesson_V12.7": {
+      "title": "Lesson V12.7: Drill",
+      "type": "Drill",
+      "instructions": "(6)",
+      "text": [
+        "fixes fixes fixes; mixes mixes mixes; taxes taxes;",
+        "mixes mixes mixes; fixes fixes fixes; boxes boxes;",
+        "",
+        "expert expert expert; expect expect expect; excels;",
+        "exceed exceed exceed; excuse excuse excuse; excels;",
+        "",
+        "Dr. Lux, tax expert, will examine the tax returns.",
+        "Mr. Cox examined the mixture with extreme care."
+      ]
+    },
+    "lesson_V12.8": {
+      "title": "Lesson V12.8: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(7) Practice Paragraph",
+      "text": [
+        "Mr. Roxbury and Mr. Saxton will examine the six",
+        "boxes of wax with extreme care.  These boxes were",
+        "returned by Prof. Maxton of Knoxville College.",
+        "",
+        "The Government tax experts were exceedingly",
+        "careful in examining the current tax receipts.  The",
+        "amount showed an excess of six million dollars over",
+        "the previous year.",
+        "",
+        "Sixteen boxes of explosives were packed with the",
+        "most extreme care and shipped by Fox Express Company.",
+        "These explosives are to be used in secret experiments",
+        "for the U. S. Government."
+      ]
+    },
+    "lesson_V12.9": {
+      "title": "Lesson V12.9: Drill",
+      "type": "Drill",
+      "instructions": "(8) Drill on A, Q, ;, P",
+      "text": [
+        "act ant and ask apt any art all age anle acid aged",
+        "age all art any ask act add axe ant aged able acid",
+        "",
+        "quit quip quote quite queer queen quack quaint quorum",
+        "quip quit quite quote queen queer quail quorum quaint",
+        "",
+        "pin pup put; pull palm pant; pint pile push; punch;",
+        "put pin pup; pant pull palm; push pick pile; paper;"
+      ]
+    },
+    "lesson_V13.1": {
+      "title": "Lesson V13.1: Tutorial",
+      "type": "Tutorial",
+      "text": "(Z and /)"
+    },
+    "lesson_V13.2": {
+      "title": "Lesson V13.2: Drill",
+      "type": "Drill",
+      "instructions": "(1) Warmup",
+      "text": [
+        "frf juj ftf jyj fgf jhj ded kik sws lol aqa ;p;",
+        "fvf jmj fbf jnj dcd k,k sxs l.l dcd k,k sxs l.l"
+      ]
+    },
+    "lesson_V13.3": {
+      "title": "Lesson V13.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "touch...learn...above...typing...talent...average",
+        "special...lessons...you do...for you...is the",
+        "do the...of the...in this"
+      ]
+    },
+    "lesson_V13.4": {
+      "title": "Lesson V13.4: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(3)",
+      "text": [
+        "Touch typing is easy to learn.  You do not need a",
+        "mind that is above the average.  You do not even",
+        "need a special talent for typing.",
+        "",
+        "All you need is the will to learn.  The lessons in",
+        "this book do the rest of the job for you; they",
+        "make touch typing easy for you to learn."
+      ]
+    },
+    "lesson_V13.5": {
+      "title": "Lesson V13.5: Drill",
+      "type": "Drill",
+      "instructions": "(4) New Key Tryout",
+      "text": [
+        "z z z z aza aza aza aza / / / / ;/; ;/; ;/; ;/;",
+        "aza ;/; aza ;/; aza ;/; aza ;/; aza ;/; aza ;/;"
+      ]
+    },
+    "lesson_V13.6": {
+      "title": "Lesson V13.6: Drill",
+      "type": "Drill",
+      "instructions": "(5) Word Drill",
+      "text": [
+        "zip zip zip zip zip c/o c/o c/o c/o c/o c/o",
+        "zip zip zip zip zip c/o c/o c/o c/o c/o c/o"
+      ]
+    },
+    "lesson_V13.7": {
+      "title": "Lesson V13.7: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(6)",
+      "text": [
+        "zest zest zest; lazy lazy lazy; size size size; zeal;",
+        "zero zero zero; zest zest zest; lazy lazy lazy; zeal;",
+        "",
+        "blaze blaze blaze; amaze amaze amaze; zebra zebra;",
+        "dizzy dizzy dizzy; blaze blaze blaze; amaze amaze;",
+        "",
+        "The lazy zebra at the zoo quickly drank the mixture.",
+        "Ship five dozen boxes of zinc trays by Zale Express."
+      ]
+    },
+    "lesson_V13.8": {
+      "title": "Lesson V13.8: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(7)",
+      "text": [
+        "The slant is controlled by the semicolon finger.",
+        "It is used in such abbreviations as n/c, which means",
+        "NO CHARGE; and c/o, which means CARE OF.",
+        "",
+        "If you work with zeal and zest, you will soon be a",
+        "competent typist.  The ability to type well is a",
+        "very valuable asset.",
+        "",
+        "You can develop your typing skill quickly by the proper",
+        "habits of work.  You should realize that poor work is a",
+        "mere waste of time.  Try to be exact.",
+        "",
+        "Every business firm is dependent on the services of",
+        "competent typists.  You are now equipping yourself with",
+        "a skill for which there is a constant demand."
+      ]
+    },
+    "lesson_V13.9": {
+      "title": "Lesson V13.9: Drill",
+      "type": "Drill",
+      "instructions": "(8)",
+      "text": [
+        "bag big bug bit bud bed bid bun bale bend bank bask",
+        "but bid bed bun bid big bag bud bask bale band bank",
+        "",
+        "not now nut nor note nose none nude noun nine nest",
+        "now not nor nut nose note nude none nine nest next"
+      ]
+    },
+    "lesson_V13.10": {
+      "title": "Lesson V13.10: Drill",
+      "type": "Drill",
+      "instructions": "(9)",
+      "text": [
+        "vim vet van vex vet vast vote veto vase vine vial",
+        "van vex vet vim vex vial vine vase veto vote vast",
+        "",
+        "man mix mat mad made mail main make mark mask mine",
+        "mad met mix men mask mark made main male made mint"
+      ]
+    },
+    "lesson_V14.1": {
+      "title": "Lesson V14.1: Tutorial",
+      "type": "Tutorial",
+      "text": "(The Question Mark)"
+    },
+    "lesson_V14.2": {
+      "title": "Lesson V14.2: Drill",
+      "type": "Drill",
+      "instructions": "(1) Warmup",
+      "text": [
+        "frf juj ftf jyj fgf jhj ded kik sws lol aqa ;p;",
+        "fvf jmj fbf jnj dcd k,k sxs l.l aza ;/; aza ;/;",
+        "",
+        "Liza quickly mixed the very big jar of new soap."
+      ]
+    },
+    "lesson_V14.3": {
+      "title": "Lesson V14.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "touch...learn...above...aside...typing",
+        "talent...amount...average...special...",
+        "lessons...definite...is the...of the",
+        "for you...you do...that is...in this",
+        "you do not"
+      ]
+    },
+    "lesson_V14.4": {
+      "title": "Lesson V14.4: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(3)",
+      "text": [
+        "Touch typing is easy to learn.  You do not need a mind",
+        "that is above the average.  You do not even need a",
+        "special talent for typing.",
+        "",
+        "All you need is the will to learn.  The lessons in this",
+        "book do the rest of the job for you; they make touch",
+        "typing easy for you to learn.",
+        "",
+        "Try to set aside each day a definite amount of time for",
+        "each lesson."
+      ]
+    },
+    "lesson_V14.5": {
+      "title": "Lesson V14.5: Drill",
+      "type": "Drill",
+      "instructions": "(4) New Key Tryout",
+      "text": [
+        "? ? ? ? ? ? Who?  Who?  Who?  Who?  Who?  Who?",
+        "? ? ? ? ? ? Why?  Why?  Why?  Why?  Why?  Why?"
+      ]
+    },
+    "lesson_V14.6": {
+      "title": "Lesson V14.6: Drill",
+      "type": "Drill",
+      "instructions": "(5)",
+      "text": [
+        "How much?  How many?  How soon?  How early?  How fast?",
+        "How many?  How much?  How fast?  How large?  How soon?",
+        "",
+        "Where is Max?  Where is Mary?  What is Cora sewing?",
+        "Where is Sam?  Where is Paul?  What is Zeke fixing?",
+        "",
+        "Can Max swim?  Can he dance?  Can he play tennis?",
+        "Can he dance?  Deos he swim?  Do you like tennis?"
+      ]
+    },
+    "lesson_V14.7": {
+      "title": "Lesson V14.7: Drill",
+      "type": "Drill",
+      "instructions": "(6)",
+      "text": [
+        "Did you open the mail?  Did you read the note?",
+        "Did you read the note?  Did you open the mail?",
+        "",
+        "Can Van do the work?  Will he require aid?  Who knows?",
+        "Can Jim complete it?  Is he quite capable?  Who knows?"
+      ]
+    },
+    "lesson_V14.8": {
+      "title": "Lesson V14.8: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(7) Practice Paragraph",
+      "text": [
+        "Do you set aside a definite amount of time each",
+        "day for practice?  Do you start work promptly?  Can",
+        "you make the various machine adjustments quickly?",
+        "",
+        "Do you keep your fingers curved?  Do you strike each key",
+        "sharply with the tip of the finger?  Do you keep your eyes",
+        "on the copy?",
+        "",
+        "Do you throw the carriage without looking up?  Do you keep",
+        "your right hand on the home keys when you throw the carriage?",
+        "Do you use the paper release to remove your paper?",
+        "",
+        "Do you practice the words in which you made errors?  Do you",
+        "practice them as explained in this book?  Do you follow the",
+        "instructions exactly as given?"
+      ]
+    },
+    "lesson_V14.9": {
+      "title": "Lesson V14.9: Drill",
+      "type": "Drill",
+      "instructions": "(8)",
+      "text": [
+        "lax vex six tax fix taxed fixing mixing taxing vexing",
+        "fix tax vex lax six fixed vexing taxing fixing mixing",
+        "",
+        "zip zoo zest zeal zinc zero lazy zone zoom zinc zealot",
+        "zoo zip zoom zone lazy zinc zeal zest zero zone zealot"
+      ]
+    },
+    "lesson_V15.1": {
+      "title": "Lesson V15.1: Tutorial",
+      "type": "Tutorial",
+      "text": "(1, 4, 5, 6, 7)"
+    },
+    "lesson_V15.2": {
+      "title": "Lesson V15.2: Drill",
+      "type": "Drill",
+      "instructions": "(1) Warmup",
+      "text": [
+        "frf juj ftf jyj fgf jhj ded kik sws lol aqa ;p;",
+        "fvf jmj fbf jnj dcd k,k sxs l.l aza ;/; aza ;/;"
+      ]
+    },
+    "lesson_V15.3": {
+      "title": "Lesson V15.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "touch...learn...above...aside...typing",
+        "talent...amount...follow...easily...become",
+        "typist...average...special...lessons...definite",
+        "exactly...quickly...surprised...is the...",
+        "of the...in the...in this...for you...",
+        "you will...you will be"
+      ]
+    },
+    "lesson_V15.4": {
+      "title": "Lesson V15.4: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(3)",
+      "text": [
+        "Touch typing is easy to learn.  You do not need a",
+        "mind that is above the average.  You do not even need",
+        "a special talent for typing."
+      ]
+    },
+    "lesson_V15.5": {
+      "title": "Lesson V15.5: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(4)",
+      "text": [
+        "Touch typing is easy to learn.  You do not need a",
+        "mind that is above the average.  You do not even need",
+        "a special talent for typing.",
+        "",
+        "All you need is the will to learn.  The lessons in this",
+        "book do the rest of the job for you; they make touch",
+        "typing easy for you to learn.",
+        "",
+        "Try to set aside each day a definite amount of time for",
+        "each lesson.  Follow each step in the lesson exactly as",
+        "given.  You will be surprised how easily and quickly",
+        "you will become a touch typist."
+      ]
+    },
+    "lesson_V15.6": {
+      "title": "Lesson V15.6: Drill",
+      "type": "Drill",
+      "instructions": "(5) 4 and 7",
+      "text": [
+        "f4f f4f f4f f4f f4f f4f j7j j7j j7j j7j j7j j7j",
+        "f4f j7j f4f j7j f4f j7j f4f j7j f4f j7j f4f j7j",
+        "",
+        "or 4 or 4 or 4 ru 7 ru 7 ru 7 or 4 ru 7 or 4 ru 7",
+        "or 4 ru 7 or 4 ru 7 or 4 ru 7 or 4 ru 7 or 4 ru 7"
+      ]
+    },
+    "lesson_V15.7": {
+      "title": "Lesson V15.7: Drill",
+      "type": "Drill",
+      "instructions": "(6)",
+      "text": [
+        "June 1; July 4; April 7; January 4; March 17, 1741",
+        "July 4; June 1; March 4; October 7; April 14, 1471",
+        "",
+        "What is the sum of 11 and 7 and 4 and 1 and 714?",
+        "What is the sum of 17 and 4 and 7 and 1 and 174?"
+      ]
+    },
+    "lesson_V15.8": {
+      "title": "Lesson V15.8: Drill",
+      "type": "Drill",
+      "instructions": "(7)",
+      "text": [
+        "Florence is 7 years 14 months and 17 days old today.",
+        "Veronica is 4 years 11 months and 14 days old today.",
+        "",
+        "Your order of November 14 was shipped on December 17.",
+        "Your order of December 11 was shipped on February 14.",
+        "",
+        "Policy No. 141174 will expire on Monday, November 14.",
+        "Policy No. 471714 will expire on Friday, December 17."
+      ]
+    },
+    "lesson_V15.9": {
+      "title": "Lesson V15.9: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(8) Practice Paragraph",
+      "text": [
+        "Henry Clay, American statesman and orator, was",
+        "born in Hanover County, Virginia, in 1777.",
+        "",
+        "On June 14, 1777, John Paul Jones became commander",
+        "of the American warship, THE RANGER.",
+        "",
+        "In April 1777, Lafayette landed at night on the",
+        "shore of South Carolina to help the colonies.  In",
+        "July 1777, Congress made Lafayette a general.",
+        "",
+        "June 14 is now observed as Flag Day because the",
+        "flag was adopted by Congress on June 14, 1777.  The",
+        "house where Betsy Ross, designer of the flag, lived",
+        "is now preserved as a shrine."
+      ]
+    },
+    "lesson_V15.10": {
+      "title": "Lesson V15.10: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(9)",
+      "text": [
+        "Do not erase.  Do not cross out.  Do not strike",
+        "one letter over another.  Let your errors stand.",
+        "Finish every line you start.",
+        "",
+        "You correct your typing errors by practicing the",
+        "words in which you made errors.  You have been doing",
+        "this in the previous lessons.  Keep right on doing so.",
+        "That is the best practice for training your fingers",
+        "to strike the right keys.",
+        "",
+        "Try your utmost to turn out attractive work.",
+        "Take pride in your typing product."
+      ]
+    },
+    "lesson_V15.11": {
+      "title": "Lesson V15.11: Drill",
+      "type": "Drill",
+      "instructions": "(10) 5 and 6",
+      "text": [
+        "f5f f5f f5f f5f f5f f5f j6j j6j j6j j6j j6j j6j",
+        "f5f j6j f5f j6j f5f j6j f5f j6j f5f j6j f5f j6j",
+        "",
+        "if 5 by 6 if 5 by 6 if 6 by 6 if 5 by 6 if 5 by 6",
+        "if 5 by 6 if 5 by 6 if 6 by 6 if 5 by 6 if 5 by 6"
+      ]
+    },
+    "lesson_V15.12": {
+      "title": "Lesson V15.12: Drill",
+      "type": "Drill",
+      "instructions": "(11)",
+      "text": [
+        "f4f j7j f5f j6j f4f j7j f5f j6j f4f j7j f5f j6j",
+        "15 lbs. coffee; 16 doz. eggs; 56 boxes oranges;",
+        "65 lbs. coffee; 14 doz. eggs; 75 boxes oranges;",
+        "",
+        "or 4 ru 7 it 5 my 6 or 4 ru 7 it 5 my 6 147 156",
+        "The Barton Market is at 516 West 147th Street.",
+        "The Baxter Market is at 165 East 165th Street."
+      ]
+    },
+    "lesson_V15.13": {
+      "title": "Lesson V15.13: Drill",
+      "type": "Drill",
+      "instructions": "(12)",
+      "text": [
+        "fr4 ju7 ft5 jy6 f4f j7j f5f j6j f4f j7j f5f j6j",
+        "Robert Fulton was born in Pennsylvania in 1765.",
+        "William Penn, English Quaker, was born in 1644.",
+        "",
+        "or 4 ru 7 it 5 by 6 or 4 ru 7 it 5 by 6 174 516",
+        "The sum of 15 and 51 and 65 and 41 and 475 is 647.",
+        "The sum of 51 and 15 and 56 and 14 and 475 is 611."
+      ]
+    },
+    "lesson_V15.14": {
+      "title": "Lesson V15.14: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(13)",
+      "text": [
+        "On June 15, 1775, George Washington was elected",
+        "by Congress the Chief Commander of the American forces.",
+        "He scored a brilliant victory at Trenton on Christmas",
+        "night, 1776.",
+        "",
+        "The Declaration of Independence, a famous state",
+        "paper, was issued by the American Continental Congress",
+        "on July 4w 1776.  It was drawn up by Thomas Jefferson.",
+        "",
+        "The invasion fleet consisted of 4 battleships, 15 light",
+        "cruisers, 6 aircraft carriers, 17 troopships, six submarines,",
+        "and 2 Dr. Strangeloves.  Air protection consisted of 14",
+        "bombers, 175 fighters, 6 helicopters, and 75 paratroop planes."
+      ]
+    },
+    "lesson_V16.1": {
+      "title": "Lesson V16.1: Tutorial",
+      "type": "Tutorial",
+      "text": "(3 and 8)"
+    },
+    "lesson_V16.2": {
+      "title": "Lesson V16.2: Drill",
+      "type": "Drill",
+      "instructions": "(1) Warmup",
+      "text": [
+        "f4f j7j f5f j6j f4f j7j f5f j6j f4f j7j f5f j6j",
+        "417 147 517 157 617 167 617 171 714 471 651 174"
+      ]
+    },
+    "lesson_V16.3": {
+      "title": "Lesson V16.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "never...typing...office...become...getting...",
+        "acquire...efforts...valuable...personal...",
+        "possible...business...shorthand...it is...",
+        "it can...to it...in the...to use...to have",
+        "if you...from you...why not"
+      ]
+    },
+    "lesson_V16.4": {
+      "title": "Lesson V16.4: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(3)",
+      "text": [
+        "Typing is a very valuable skill to acquire.  It is",
+        "valuable for personal use and as a means of getting",
+        "an office job."
+      ]
+    },
+    "lesson_V16.5": {
+      "title": "Lesson V16.5: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(4)",
+      "text": [
+        "Typing is a very valuable skill to acquire.  It is",
+        "valuable for personal use and as a means of getting",
+        "an office job.  This skill is yours to use; it can",
+        "never be taken from you.",
+        "",
+        "So why not put forth your best efforts to become a",
+        "good typist?  You can become a good typist if you",
+        "put your mind to it.  You should also, if possible,",
+        "learn shorthand.  Typing and shorthand are two very",
+        "valuable skills to have.",
+        "",
+        "These two skills will help you get a good start",
+        "in the business world."
+      ]
+    },
+    "lesson_V16.6": {
+      "title": "Lesson V16.6: Drill",
+      "type": "Drill",
+      "instructions": "(5) New Key Tryout",
+      "text": [
+        "d3d k8k d3d k8k d3d k8k d3d k8k d3d k8k d3d k8k",
+        "131 313 311 181 818 381 381 381 183 138 318 813",
+        "",
+        "bid 3 bid 3 bid 3 bid 3 oak 8 oak 8 oak 8 oak 8",
+        "bid 3 bid 3 bid 3 bid 3 oak 8 oak 8 oak 8 oak 8"
+      ]
+    },
+    "lesson_V16.7": {
+      "title": "Lesson V16.7: Drill",
+      "type": "Drill",
+      "instructions": "(6)",
+      "text": [
+        "d3d k8k d3d k8k d3d k8k d3d k8k 318 813 138 813 381",
+        "13 lbs.  lamb roast; 38 lbs. lamb chops; 8 lbs. bananas;",
+        "31 lbs.  lamb chops; 83 lbs. lamb roast; 3 lbs. peaches;",
+        "",
+        "lie 3 dye 3 pie 3 dye 3 Fiji 8 Fiji 8 Fiji 8",
+        "18 cans grape juice; 138 cans prune juice; 4 lbs. coffee;",
+        "47 cans prune juice; 143 cans grape juice; 8 lbs. onions;"
+      ]
+    },
+    "lesson_V16.8": {
+      "title": "Lesson V16.8: Drill",
+      "type": "Drill",
+      "instructions": "(7)",
+      "text": [
+        "d3d k8k d3d k8k d3d k8k 183 381 813 318 138 381",
+        "8 lbs. Swiss Cheese; 13 lbs. Kraft Cheese; 4 lbs. pears;",
+        "5 lbs. Kraft Cheese; 17 lbs. Swiss Cheese; 6 lbs. beans;",
+        "",
+        "pie 3 dye 3 pie 3 dye 3 Fiji 8 Fiji 8 Fiji 8 Fiji 8",
+        "The sum of 13 and 83 and 153 and 75 and 47 is 371.",
+        "The sum of 47 and 75 and 153 and 83 and 13 is 371."
+      ]
+    },
+    "lesson_V16.9": {
+      "title": "Lesson V16.9: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(8) Practice Paragraph",
+      "text": [
+        "John Jacob Astor was born in 1763 and died in",
+        "1848.  He came to America from England in 1784 and",
+        "set up a prosperous fur trade.  In 1811 he founded",
+        "the settlement of Astoria near the mouth of the",
+        "Columbia River.",
+        "",
+        "Alexander Graham Bell was born in Scotland on",
+        "March 3, 1847.  He invented the telephone in 1876.",
+        "The Bell Telephone Company was organized in 1877.",
+        "Mr. Bell also invented the gramophone in 1887.",
+        "",
+        "John Quincy Adams, sixth President of the",
+        "United States, was born in Massachusetts on July 11,",
+        "1767.  In 1817 he was appointed Secretary of State.",
+        "He died in 1848.",
+        "",
+        "Oliver Wendell Holmes, American jurist, was born",
+        "in Massachusetts on March 8, 1841; graduated from",
+        "Harvard in 1861; from Harvard Law School in 1866;",
+        "admitted to the Massachusetts Bar in 1867."
+      ]
+    },
+    "lesson_V17.1": {
+      "title": "Lesson V17.1: Tutorial",
+      "type": "Tutorial",
+      "text": "(2 and 9)"
+    },
+    "lesson_V17.2": {
+      "title": "Lesson V17.2: Drill",
+      "type": "Drill",
+      "instructions": "(1) Warmup",
+      "text": [
+        "f4f j7j f5f j6j d3d k8k f4f j7j f5f j6j d3d k8k",
+        "or4 ru7 it5 by6 ie3 ok8 or4 ru7 it5 by6 ie3 ok8",
+        "",
+        "The sum of 14 and 16 and 53 and 58 and 174 is 315."
+      ]
+    },
+    "lesson_V17.3": {
+      "title": "Lesson V17.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "strike...center...finger...spring...though...",
+        "expert...sharply...release...quickly...develop...",
+        "letting...squarely...practice...familiar...",
+        "fingertip...important...technique...releasing...",
+        "instantly...it is...do it...do this...with the...",
+        "you get."
+      ]
+    },
+    "lesson_V17.4": {
+      "title": "Lesson V17.4: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(3)",
+      "text": [
+        "Strike each key sharply with the fingertip and squarely",
+        "in the center.  Strike the key quickly, letting the",
+        "finger spring back as though the key were red hot."
+      ]
+    },
+    "lesson_V17.5": {
+      "title": "Lesson V17.5: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(4)",
+      "text": [
+        "Strike each key sharply with the fingertip and squarely",
+        "in the center.  Strike the key quickly, letting the",
+        "finger spring back as though the key were red hot.",
+        "",
+        "To type fast, it is just as important to release the",
+        "key quickly as it is to strike it quickly.  Expert",
+        "typists do this; you too, can do it, with practice.",
+        "",
+        "One good way to develop this technique is to practice",
+        "familiar words and phrases.  Type them over and over",
+        "again until you get the knack of hitting the keys quickly",
+        "and releasing the fingers instantly."
+      ]
+    },
+    "lesson_V17.6": {
+      "title": "Lesson V17.6: Drill",
+      "type": "Drill",
+      "instructions": "(5) New Key Tryout",
+      "text": [
+        "s2s s2s s2s s2s s2s s2s l9l l9l l9l l9l l9l l9l",
+        "s2s l9l s2s l9l s2s l9l s2s l9l s2s l9l s2s l9l",
+        "",
+        "bow 2 bow 2 bow 2 bow 2 two 9 two 9 two 9 two 9",
+        "bow 2 two 9 bow 2 two 9 bow 2 two 9 bow 2 two 9"
+      ]
+    },
+    "lesson_V17.7": {
+      "title": "Lesson V17.7: Drill",
+      "type": "Drill",
+      "instructions": "(6)",
+      "text": [
+        "s2s l9l s2s l9l s2s l9l s2s l9l s2s l9l s2s l9l s2s l9l",
+        "12 lbs. coffee; 19 lbs. Cottage Cheese; 9 lbs. peaches;",
+        "19 lbs. apples; 29 lbs. Cheddar Cheese; 2 lbs. bananas;",
+        "",
+        "low 2 fro 9 low 2 fro 9 low 2 fro 9 low 2 fro 9 29 192;",
+        "9 lbs. Smoked Tongue; 2 lbs. tomatoes; 9 lbs. avocados;",
+        "2 lbs. Cooked Tongue; 9 lbs. avocados; 2 lbs. tomatoes;"
+      ]
+    },
+    "lesson_V17.8": {
+      "title": "Lesson V17.8: Drill",
+      "type": "Drill",
+      "instructions": "(7)",
+      "text": [
+        "s2s l9l s2s l9l 219 921 192 s2s l9l s2s 191 291 129",
+        "The sum of 29 and 86 and 33 and 92 and 52 is 292.",
+        "The sum of 52 and 92 and 86 and 33 and 29 is 292.",
+        "",
+        "ow 2 to 9 ow 2 to 9 we 23 ok 98 we 23 ok 98 s2s l9l",
+        "George Washington was born on February 22, 1732.",
+        "Horatio Alger was born in 1834 and died in 1899."
+      ]
+    },
+    "lesson_V17.9": {
+      "title": "Lesson V17.9: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(8)",
+      "text": [
+        "Christopher Latham Sholes was the inventor of the first practical",
+        "typewriter.  He was born in Columbia County, Pennsylvania,",
+        "February 14, 1819.",
+        "",
+        "James Monroe, fifth President of The United States, was born on",
+        "April 28, 1758.  In 1782 he entered politics.  In 1799 he was appointed",
+        "Governor of Virginia.  In 1811 he became Secretary of State; in 1814,",
+        "Secretary of War; in 1816, President of The United States.",
+        "",
+        "On September 1, 1939, Germany launched undeclared war on Poland.",
+        "On September 3, 1939, Great Britain declared war on Germany.  On",
+        "December 8, 1941, The United States declared war against the Axis.",
+        "",
+        "Samuel F. B. Morse, inventor and artist, was born in 1791 and died in",
+        "1872.  In 1829 he went to Europe for three years.  For 12 years he",
+        "worked on perfecting the electrical telegraph, which was exhibited at New",
+        "York University in 1837."
+      ]
+    },
+    "lesson_V18.1": {
+      "title": "Lesson V18.1: Tutorial",
+      "type": "Tutorial",
+      "text": "(0 and the Hyphen)"
+    },
+    "lesson_V18.2": {
+      "title": "Lesson V18.2: Drill",
+      "type": "Drill",
+      "instructions": "(1) Warmup",
+      "text": [
+        "f4f j7j f5f j6j d3d k8k s2s l9l f4f j7j f5f j6j",
+        "s2s l9l d3d k8k f4f j7j f5f j6j f4f j7j f5f j6j",
+        "",
+        "The sum of 47 and 65 and 38 and 92 and 16 equals 258."
+      ]
+    },
+    "lesson_V18.3": {
+      "title": "Lesson V18.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "expert...typing...margin...always...before...",
+        "permits...others...reached...equipped...machines...",
+        "carriage...typewriter...approaching...you are...",
+        "of the...for the...on the...you may...before the"
+      ]
+    },
+    "lesson_V18.4": {
+      "title": "Lesson V18.4: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(3)",
+      "text": [
+        "Your typewriter is equipped with a bell which",
+        "rings to warn you that you are approaching the end",
+        "of the line"
+      ]
+    },
+    "lesson_V18.5": {
+      "title": "Lesson V18.5: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(4)",
+      "text": [
+        "Your typewriter is equipped with a bell which rings",
+        "to warn you that you are approaching the end of the",
+        "line.",
+        "",
+        "On some machines, the bell rings five spaces before",
+        "the margin stop is reached; on other machines, it",
+        "rings when there are six or seven spaces left.",
+        "",
+        "The ring of the bell permits you to keep your eyes",
+        "on the copy.  When you hear the bell, finish the",
+        "word you are typing and throw the carriage for the",
+        "next line.",
+        "",
+        "Do not look up to watch for the end of the line; you",
+        "may lose your place in the copy.  Always keep your",
+        "eyes on the copy like the expert typist."
+      ]
+    },
+    "lesson_V18.6": {
+      "title": "Lesson V18.6: Drill",
+      "type": "Drill",
+      "instructions": "(5) New Key Tryout",
+      "text": [
+        ";0; ;0; ;0; ;0; ;0; ;0; ;-; ;-; ;-; ;-; ;-; ;-;",
+        ";0; ;-; ;0; ;-; ;0; ;-; ;0; ;-; ;0; ;-; ;0; ;-;",
+        "",
+        "10-room; 10-room; 10-room; 10-room; 10-room;",
+        "20-room; 20-room; 20-room; 20-room; 20-room;"
+      ]
+    },
+    "lesson_V18.7": {
+      "title": "Lesson V18.7: Drill",
+      "type": "Drill",
+      "instructions": "(6)",
+      "text": [
+        "f4f j7j f5f j6j d3d k8k s2s l9l ;0; ;-; ;0; ;-;",
+        "one-half; one-fourth; one-eighth; three-quarters;",
+        "one-half; two-thirds; one-fourth; three-sevenths;",
+        "",
+        "f4f j7j f5f j6j d3d k8k s2s l9l ;0; ;-; ;0; ;-;",
+        "20-room house; 30-room house; 40-room house;",
+        "50-room house; 60-room house; 70-room house;"
+      ]
+    },
+    "lesson_V18.8": {
+      "title": "Lesson V18.8: Drill",
+      "type": "Drill",
+      "instructions": "(7)",
+      "text": [
+        "f4f j7j f5f j6j d3d k8k s2s l9l ;0; ;-; ;0; ;-;",
+        "One-fourth may be typewritten like this:  1/4.",
+        "One-eighth may be typewritten like this:  1/8.",
+        "",
+        "f4f j7j f5f j6j d3d k8k s2s l9l ;0; ;-; ;0; ;-;",
+        "Every expert was once a beginner--with ambition.",
+        "Every expert was once a beginner--with ambition."
+      ]
+    },
+    "lesson_V18.9": {
+      "title": "Lesson V18.9: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(8)",
+      "text": [
+        "As you have seen in the above sentence practice, the hyphen is used",
+        "for typing compound words.  Here are a few more examples:  up-to-date,",
+        "first-class, by-product.",
+        "",
+        "The hyphen is used also to divide words between syllables at the end",
+        "of a line.  When the bell rings, finish the word if it is short--less",
+        "than six letters.  If the word is longer, divide it at the end of a syllable.",
+        "",
+        "The hyphens in the following words show where they could be divided",
+        "at the end of a line:  after-noon, state-ment, hesi-tate, cer-ti-fi-",
+        "cate, exami-na-tion.",
+        "",
+        "The sum of 10 and 20 and 30 and 40 and 50 and 60 and 70 and 80 and 90",
+        "and 100 and 105 and 106 and 107 and 108 and 109 and 110 equals 1,195."
+      ]
+    },
+    "lesson_V18.10": {
+      "title": "Lesson V18.10: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(9)",
+      "text": [
+        "Have you seen the new 7-room house at 175 West",
+        "239th Street?  It is equipped with every up-to-date,",
+        "labor-saving device for the home.  You may inspect",
+        "it free of charge any day except Sunday between",
+        "10 a.m. and 4 p.m."
+      ]
+    },
+    "lesson_V19.1": {
+      "title": "Lesson V19.1: Drill",
+      "type": "Drill",
+      "instructions": "(1) Warmup",
+      "text": [
+        "f4f j7j f5f j6j d3d k8k s2s l9l ;0; ;-; ;0; ;-;",
+        "s2s l9l ;-; ;=; d3d k8k f4f j7j ;0; ;-; ;0; ;-;",
+        "",
+        "Max Zale made a long-distance flight of 2,590 miles."
+      ]
+    },
+    "lesson_V19.2": {
+      "title": "Lesson V19.2: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "called...fourth...typing...letter...always...",
+        "capital...holding...depress...fingers...release...",
+        "touching...slightly...position...right-hand...of the",
+        "for the...all the...with the...you have"
+      ]
+    },
+    "lesson_V19.3": {
+      "title": "Lesson V19.3: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(3)",
+      "text": [
+        "You type capital letters by holding down a key",
+        "called the shift key while you strike the letter key."
+      ]
+    },
+    "lesson_V19.4": {
+      "title": "Lesson V19.4: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(4)",
+      "text": [
+        "You type capital letters by holding down a key",
+        "called the shift key while you strike the letter key.",
+        "",
+        "There are two shift keys.  Hold down the left",
+        "shift key for typing right-hand capitals; hold down",
+        "the right shift key for typing left-hand capitals.",
+        "Always use the fourth finger for the shift key.",
+        "",
+        "Keep your wrists low but not touching the frame",
+        "of the machine.  Raise the other fingers slightly as",
+        "you depress the shift key with the fourth finger.",
+        "",
+        "Be sure that you hold the shift key all the way",
+        "down until you have struck the letter key; then re-",
+        "lease the shift key and return finger to home base."
+      ]
+    },
+    "lesson_V19.5": {
+      "title": "Lesson V19.5: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(5)",
+      "text": [
+        "Prepare a bill for the following items:  29 lbs. butter",
+        "@ $0.895; 36 doz. eggs @ $0.695;  28 doz. oranges",
+        "@ $0.575; 15 bu. potatoes @ $0.795.",
+        "",
+        "Our company ordered 15 Ajax Pencil Sharpeners at",
+        "$0.98; 6 doz. Circular Rubber Erasers at $.43; 24 No.  68",
+        "Spiral Stenographic Notebooks at $.075.",
+        "",
+        "Deliver the following order to Mrs. Beverly",
+        "Vinson at 390 West 135th Street, New York City:  2 lbs.",
+        "Temple Oranges at $.135; 3 lbs. Red Circle Coffee at",
+        "$.91; 2 lbs. Lima Beans at $.29.",
+        "",
+        "The Johnston Hardware Company, Toledo, Ohio has",
+        "ordered the following supplies:  15 Pruning Shears,",
+        "10-inch, at $.795; 24 Steel Rakes, 14-inch, at $.815;",
+        "16 Steel Spades, D-Handle, at $.935."
+      ]
+    },
+    "lesson_V19.6": {
+      "title": "Lesson V19.6: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(6)",
+      "text": [
+        "The backspace key is one of the most useful time-",
+        "saving devices on your typewriter.  You use it to back",
+        "up a space, to darken a light impression, or to pivot.",
+        "To pivot means to type a line so that the last letter",
+        "is at the right margin or other chosen point.",
+        "",
+        "For example, if you want a date line to end at the",
+        "right margin, place the carriage with the printing point",
+        "indicator at the right margin and backspace once for",
+        "each stroke in the date line.",
+        "",
+        "The most important use of the backspace key is in",
+        "centering words or lines."
+      ]
+    }
+  }
+}

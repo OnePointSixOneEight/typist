@@ -1,0 +1,810 @@
+{
+  "copyright": [
+    "Typist 3.0 - improved typing tutor program for UNIX systems",
+    "Copyright (C) 1998-2018  Simon Baldwin (simon_baldwin@yahoo.com)",
+    "",
+    "This program is free software; you can redistribute it and/or",
+    "modify it under the terms of the GNU General Public License",
+    "as published by the Free Software Foundation; either version 2",
+    "of the License, or (at your option) any later version.",
+    "",
+    "This program is distributed in the hope that it will be useful,",
+    "but WITHOUT ANY WARRANTY; without even the implied warranty of",
+    "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the",
+    "GNU General Public License for more details.",
+    "",
+    "You should have received a copy of the GNU General Public License",
+    "along with this program; if not, write to the Free Software",
+    "Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA."
+  ],
+  "typist": {
+    "version": 2,
+    "seriesName": "U",
+    "seriesDescription": "QWERTY Review (U1 - U13)",
+    "seriesMenu": {
+      "title": "The U series contains the following 13 lessons",
+      "entries": [
+        {
+          "title": "Lesson U1     Home row",
+          "lessons": [
+            "lesson_U1.1",
+            "lesson_U1.2"
+          ]
+        },
+        {
+          "title": "Lesson U2     Other letters",
+          "lessons": [
+            "lesson_U2.1",
+            "lesson_U2.2",
+            "lesson_U2.3",
+            "lesson_U2.4"
+          ]
+        },
+        {
+          "title": "Lesson U3     Shift numerals figs",
+          "lessons": [
+            "lesson_U3.1",
+            "lesson_U3.2",
+            "lesson_U3.3",
+            "lesson_U3.4",
+            "lesson_U3.5",
+            "lesson_U3.6",
+            "lesson_U3.7",
+            "lesson_U3.8"
+          ]
+        },
+        {
+          "title": "Lesson U4     Practise",
+          "lessons": [
+            "lesson_U4.1",
+            "lesson_U4.2",
+            "lesson_U4.3",
+            "lesson_U4.4",
+            "lesson_U4.5"
+          ]
+        },
+        {
+          "title": "Lesson U5     Drill on S Combinations",
+          "lessons": [
+            "lesson_U5.1",
+            "lesson_U5.2",
+            "lesson_U5.3",
+            "lesson_U5.4",
+            "lesson_U5.5"
+          ]
+        },
+        {
+          "title": "Lesson U6     Drill on R Combinations",
+          "lessons": [
+            "lesson_U6.1",
+            "lesson_U6.2",
+            "lesson_U6.3",
+            "lesson_U6.4",
+            "lesson_U6.5"
+          ]
+        },
+        {
+          "title": "Lesson U7     Drill on L Combinations",
+          "lessons": [
+            "lesson_U7.1",
+            "lesson_U7.2",
+            "lesson_U7.3",
+            "lesson_U7.4",
+            "lesson_U7.5"
+          ]
+        },
+        {
+          "title": "Lesson U8     Drill on D-T Combinations",
+          "lessons": [
+            "lesson_U8.1",
+            "lesson_U8.2",
+            "lesson_U8.3",
+            "lesson_U8.4",
+            "lesson_U8.5"
+          ]
+        },
+        {
+          "title": "Lesson U9     Drill on M-N Combinations",
+          "lessons": [
+            "lesson_U9.1",
+            "lesson_U9.2",
+            "lesson_U9.3",
+            "lesson_U9.4",
+            "lesson_U9.5"
+          ]
+        },
+        {
+          "title": "Lesson U10    Drill on com-con Combinations",
+          "lessons": [
+            "lesson_U10.1",
+            "lesson_U10.2",
+            "lesson_U10.3",
+            "lesson_U10.4",
+            "lesson_U10.5"
+          ]
+        },
+        {
+          "title": "Lesson U11    Drill on sion-tion Combinations",
+          "lessons": [
+            "lesson_U11.1",
+            "lesson_U11.2",
+            "lesson_U11.3",
+            "lesson_U11.4",
+            "lesson_U11.5"
+          ]
+        },
+        {
+          "title": "Lesson U12    Drill on ter, ther, tor, ture, ster, der",
+          "lessons": [
+            "lesson_U12.1",
+            "lesson_U12.2",
+            "lesson_U12.3",
+            "lesson_U12.4",
+            "lesson_U12.5"
+          ]
+        },
+        {
+          "title": "Lesson U13    self, tran, cial, cious, ology, ship, tive",
+          "lessons": [
+            "lesson_U13.1",
+            "lesson_U13.2",
+            "lesson_U13.3",
+            "lesson_U13.4",
+            "lesson_U13.5",
+            "lesson_U13.6",
+            "lesson_U13.7"
+          ]
+        }
+      ]
+    },
+    "lesson_U1.1": {
+      "title": "Lesson U1.1: Tutorial",
+      "type": "Tutorial",
+      "text": [
+        "                Welcome to Lesson U1",
+        "",
+        "Still don't know how to touch-type?  Let's start from the beginning and",
+        "drill you starting with the home row."
+      ]
+    },
+    "lesson_U1.2": {
+      "title": "Lesson U1.2: Drill",
+      "type": "Drill",
+      "instructions": "(1) Try this:",
+      "text": [
+        "has half hag gad gash glass sash ash slash shall flash",
+        "had hall gas gaff gall glad dash ask slag shad ah"
+      ]
+    },
+    "lesson_U2.1": {
+      "title": "Lesson U2.1: Drill",
+      "type": "Drill",
+      "instructions": "(1) Familiarize yourself with the top row and between the index fingers:",
+      "text": [
+        "juj kik lol ;p; jyj",
+        "frf ded sws aqa ftf"
+      ]
+    },
+    "lesson_U2.2": {
+      "title": "Lesson U2.2: Drill",
+      "type": "Drill",
+      "instructions": "(2) Some words:",
+      "text": [
+        "jug part ye aqua their hearty dry great why whose youth",
+        "kit free use type last lower drug light wheat proper your",
+        "lot dear its rear were pretty grip quiet where proud yellow",
+        "hear sweep old easy writer fresh group equip who please yes"
+      ]
+    },
+    "lesson_U2.3": {
+      "title": "Lesson U2.3: Drill",
+      "type": "Drill",
+      "instructions": "(3) Now for the bottom row:",
+      "text": [
+        "jmj k,k l.l ;/; jnj",
+        "fvf dcd sxs aza fbf"
+      ]
+    },
+    "lesson_U2.4": {
+      "title": "Lesson U2.4: Drill",
+      "type": "Drill",
+      "instructions": "(4) Some words:",
+      "text": [
+        "man come body vacant many tax ribbon lining believing",
+        "name can beam make examine none native baby commission",
+        "vain sex not cancel even mention woman brick quicken",
+        "become zero cave lazy benzine opening very branch textile"
+      ]
+    },
+    "lesson_U3.1": {
+      "title": "Lesson U3.1: Drill",
+      "type": "Drill",
+      "instructions": "(1)",
+      "text": "Do you live in Scranton, Pennsylvania?"
+    },
+    "lesson_U3.2": {
+      "title": "Lesson U3.2: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": "Mary Brown and Nancy Smith are in New York City."
+    },
+    "lesson_U3.3": {
+      "title": "Lesson U3.3: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": "Violet, Helen, Dora, Jennie, and Elsie are staying at the Hotel Commodore."
+    },
+    "lesson_U3.4": {
+      "title": "Lesson U3.4: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": [
+        "I have lived in Los Angeles, San Francisco, Portland, Chicago, St. Louis, and",
+        "Denver; Robert has lived in Boston, Philadelphia, Jersey City, and Utica."
+      ]
+    },
+    "lesson_U3.5": {
+      "title": "Lesson U3.5: Drill",
+      "type": "Drill",
+      "instructions": "(5)",
+      "text": [
+        "j7j k8k l9l ;0; j6j",
+        "f4f d3d s2s a1a f4f"
+      ]
+    },
+    "lesson_U3.6": {
+      "title": "Lesson U3.6: Drill",
+      "type": "Drill",
+      "instructions": "(6)",
+      "text": [
+        "j&j k*k l(l ;); j^j",
+        "f$f d#d s@s a!a f%f"
+      ]
+    },
+    "lesson_U3.7": {
+      "title": "Lesson U3.7: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(7)",
+      "text": [
+        "Please send me the book \"Facts & Figures.\"",
+        "Send us the items (3 dozen coats) right away.",
+        "The amount of the bill is $17,563.49; the discount is 2% 10 days, net 30 days.",
+        "The cards should be made up in the following sizes: 4 5/16 x 8 3/16 and",
+        "3 5/8 x 6 7/8."
+      ]
+    },
+    "lesson_U3.8": {
+      "title": "Lesson U3.8: Drill",
+      "type": "Drill",
+      "instructions": "(8)",
+      "text": [
+        "2's 3's 4's 5's",
+        "#' #2 #3 #4 #5"
+      ]
+    },
+    "lesson_U4.1": {
+      "title": "Lesson U4.1: Drill",
+      "type": "Drill",
+      "instructions": "(1)",
+      "text": ";'; ;\"; ;/; ;?; ;[; ;{; ;-; ;_;"
+    },
+    "lesson_U4.2": {
+      "title": "Lesson U4.2: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": "The quick brown fox jumps over the lazy dog."
+    },
+    "lesson_U4.3": {
+      "title": "Lesson U4.3: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": "This is a specimen of the work done on this machine."
+    },
+    "lesson_U4.4": {
+      "title": "Lesson U4.4: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": "Now is the time for all good men to come to the aid of their party."
+    },
+    "lesson_U4.5": {
+      "title": "Lesson U4.5: Drill",
+      "type": "Drill",
+      "instructions": "(5)",
+      "text": [
+        "1$ 2$ 3$ 4$ 5$ 6$ 7$ 8$ 9$ 10$",
+        "2 coats @ $20.00 5 hats @ $4.00"
+      ]
+    },
+    "lesson_U5.1": {
+      "title": "Lesson U5.1: Tutorial",
+      "type": "Tutorial",
+      "text": "(Drill on S Combinations)"
+    },
+    "lesson_U5.2": {
+      "title": "Lesson U5.2: Drill",
+      "type": "Drill",
+      "instructions": "(1)",
+      "text": "sas ses sis sos sus sc scr sh sk sl sm sn sp spl spr st str sw"
+    },
+    "lesson_U5.3": {
+      "title": "Lesson U5.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "says sides springs slips snows shops sweets streets",
+        "sees souls spreads schools smiles shoots swings strikes",
+        "sues speaks splashes screams skates sheets stones stresses"
+      ]
+    },
+    "lesson_U5.4": {
+      "title": "Lesson U5.4: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(3)",
+      "text": [
+        "She wishes to show us some samples.",
+        "The sisters wear the same size dresses.",
+        "She says she speaks to Sally in school.",
+        "The shipment was shipped by fast express.",
+        "Simplicity and sincerity are social assets."
+      ]
+    },
+    "lesson_U5.5": {
+      "title": "Lesson U5.5: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(4)",
+      "text": [
+        "    Safety first.  This slogan is well known.  Yet many care-",
+        "less people disregard it and so we have accidents.  It is pos-",
+        "sible to avoid many types of accidents by a little forethought.",
+        "Don't be careless.  Do your share to avoid mishaps."
+      ]
+    },
+    "lesson_U6.1": {
+      "title": "Lesson U6.1: Tutorial",
+      "type": "Tutorial",
+      "text": "(Drill on R Combinations)"
+    },
+    "lesson_U6.2": {
+      "title": "Lesson U6.2: Drill",
+      "type": "Drill",
+      "instructions": "(1)",
+      "text": "rar rer rir ror rur br cr dr fr gr pr shr tr thr"
+    },
+    "lesson_U6.3": {
+      "title": "Lesson U6.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "rare rural proper trader drier freer cracker",
+        "rear broker prefer trapper dresser fresher grammar",
+        "roar brewer prepare thrower shrewder creamer greater"
+      ]
+    },
+    "lesson_U6.4": {
+      "title": "Lesson U6.4: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(3)",
+      "text": [
+        "Every promise made should be observed.",
+        "The price of the property is really $2,500.",
+        "Try to remember to bring your grammar with you.",
+        "Proof of your brokerage experience will be required.",
+        "The orange grower must have favorable weather conditions."
+      ]
+    },
+    "lesson_U6.5": {
+      "title": "Lesson U6.5: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(4)",
+      "text": [
+        "    Some people break promises as readily as they make them.",
+        "As a result, they acquire a reputation for unreliability.  It",
+        "is particularly important to be reliable in the business world.",
+        "A person or firm that comes to be regarded as unreliable has a",
+        "poor chance of success."
+      ]
+    },
+    "lesson_U7.1": {
+      "title": "Lesson U7.1: Tutorial",
+      "type": "Tutorial",
+      "text": "(Drill on L Combinations)"
+    },
+    "lesson_U7.2": {
+      "title": "Lesson U7.2: Drill",
+      "type": "Drill",
+      "instructions": "(1)",
+      "text": "lal lel lil lol lul ly bl cl fl gl pl sl"
+    },
+    "lesson_U7.3": {
+      "title": "Lesson U7.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "loll play blow clear glass flesh slow fully",
+        "lisle plow blue class globe fleet sleep silly",
+        "label please blood claim gleam flail slight really"
+      ]
+    },
+    "lesson_U7.4": {
+      "title": "Lesson U7.4: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(3)",
+      "text": [
+        "The mill will close in April.",
+        "It is clear to all who will listen.",
+        "The clerk sells cloth of fine value.",
+        "You will rely on them to supply you.",
+        "He held the floor until a relatively late hour."
+      ]
+    },
+    "lesson_U7.5": {
+      "title": "Lesson U7.5: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(4)",
+      "text": [
+        "    Play is most important to a child.  All of us must play",
+        "a little.  All work and no play makes Jack a dull boy, the",
+        "old saying goes.  Play affords relaxation.  Some people claim",
+        "their work is so enthralling that they do not need to play.",
+        "Psychologists say that the stress of modern life demands that",
+        "all adults have some hobby away from their daily pursuit."
+      ]
+    },
+    "lesson_U8.1": {
+      "title": "Lesson U8.1: Tutorial",
+      "type": "Tutorial",
+      "text": "(Drill on D-T Combinations)"
+    },
+    "lesson_U8.2": {
+      "title": "Lesson U8.2: Drill",
+      "type": "Drill",
+      "instructions": "(1)",
+      "text": [
+        "dad ded did dod dud dr ld nd rd",
+        "tat tet tit tot tut th tr ct ft lt nt pt st"
+      ]
+    },
+    "lesson_U8.3": {
+      "title": "Lesson U8.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "did bend tot total that last rented mended",
+        "deed lend toot tutor this kept melted handed",
+        "dude bold tight taught them chest drafted founded",
+        "dodo board trait treats there first directed doubted"
+      ]
+    },
+    "lesson_U8.4": {
+      "title": "Lesson U8.4: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(3)",
+      "text": [
+        "The first shall be last.",
+        "Credit the cost to the estate.",
+        "Record your thoughts from time to time.",
+        "An effort should be made to settle the estate.",
+        "Rest assured you will succeed if you try hard."
+      ]
+    },
+    "lesson_U8.5": {
+      "title": "Lesson U8.5: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": [
+        "    To learn to typewrite is not difficult.  The keyboard",
+        "of the typewriter may be mastered in a few hours, but to",
+        "get speed in typewriting calls for a good deal of practice.",
+        "One of the best methods of getting up speed is to write a",
+        "selection over and over again until it can be written easily",
+        "and accurately."
+      ]
+    },
+    "lesson_U9.1": {
+      "title": "Lesson U9.1: Tutorial",
+      "type": "Tutorial",
+      "text": "(Drill on M-N Combinations)"
+    },
+    "lesson_U9.2": {
+      "title": "Lesson U9.2: Drill",
+      "type": "Drill",
+      "instructions": "(1)",
+      "text": [
+        "am em im om um mb mp ment",
+        "an en in on un ng nk"
+      ]
+    },
+    "lesson_U9.3": {
+      "title": "Lesson U9.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "amount damper only singing payment moment",
+        "emblem camper enter ringing enrollment judgment",
+        "immense hamper under longing engagement excitement",
+        "omnibus lumber income banking appointment settlement",
+        "umbrella bomber answer thinking entertainment employment"
+      ]
+    },
+    "lesson_U9.4": {
+      "title": "Lesson U9.4: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(3)",
+      "text": [
+        "We are informed that an increase in anticipated.",
+        "Please inform us if you are interested in an engine.",
+        "Banks will extend financial aid to the business man.",
+        "Unless your invoice is paid, no shipment can be made.",
+        "The amount of your investment in common stocks is $800."
+      ]
+    },
+    "lesson_U9.5": {
+      "title": "Lesson U9.5: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(8)",
+      "text": [
+        "    The employer must consider any increase in cost that",
+        "enters into the manufacture of his product.  Unless he includes",
+        "such cost in his selling price, he is unlikely to show a profit.",
+        "The installation of a cost system that enables the employer",
+        "to break down his costs to a unit basis is a prime necessity."
+      ]
+    },
+    "lesson_U10.1": {
+      "title": "Lesson U10.1: Tutorial",
+      "type": "Tutorial",
+      "text": "(Drill on com-con Combinations)"
+    },
+    "lesson_U10.2": {
+      "title": "Lesson U10.2: Drill",
+      "type": "Drill",
+      "instructions": "(1)",
+      "text": [
+        "com recom decom discom incom uncom",
+        "con recon decon discon incon uncon"
+      ]
+    },
+    "lesson_U10.3": {
+      "title": "Lesson U10.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "common commit decompose conduct consign incomplete",
+        "comply comment discomfort connect confuse unconvinced",
+        "combine compose disconnect consist contrast uncontrolled",
+        "commerce compare discontinue control contrary incomparable",
+        "commence complete inconvenient contract convince uncomfortable"
+      ]
+    },
+    "lesson_U10.4": {
+      "title": "Lesson U10.4: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(3)",
+      "text": [
+        "The lawyer consulted the complainant.",
+        "Please continue to comply with all recommendations.",
+        "Their income is derived from common stock commitments.",
+        "The concern communicated its conclusions convincingly.",
+        "Under the circumstances, the company will command control."
+      ]
+    },
+    "lesson_U10.5": {
+      "title": "Lesson U10.5: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(4)",
+      "text": [
+        "    Character shows itself in a man's conduct.  Deeds speak",
+        "louder than words.  Words sometimes confuse as issue where",
+        "deeds clarify it.  The test of a man's sincerity is not what",
+        "he says but what he does.  Consider this well and you will",
+        "never be confused in estimating a man's worth."
+      ]
+    },
+    "lesson_U11.1": {
+      "title": "Lesson U11.1: Tutorial",
+      "type": "Tutorial",
+      "text": "(Drill on sion-tion Combinations)"
+    },
+    "lesson_U11.2": {
+      "title": "Lesson U11.2: Drill",
+      "type": "Drill",
+      "instructions": "(1)",
+      "text": [
+        "asion esion ision osion usion",
+        "ation etion ition otion ution"
+      ]
+    },
+    "lesson_U11.3": {
+      "title": "Lesson U11.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "action motion quotation session caution ambition",
+        "nation ration invention division exhibition attention",
+        "portion station intention possession connection situation",
+        "location creation condition impression completion commission"
+      ]
+    },
+    "lesson_U11.4": {
+      "title": "Lesson U11.4: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(3)",
+      "text": [
+        "Information on the invention has been sent you.",
+        "The cancellation of the exhibition was announced.",
+        "Your communication of February 16 has been received.",
+        "Students are taught addition, subtraction, and division.",
+        "Your attention is called to the action of the Commission."
+      ]
+    },
+    "lesson_U11.5": {
+      "title": "Lesson U11.5: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(4)",
+      "text": [
+        "    Concentration is a valuable faculty.  The ability to direct",
+        "one's attention exclusively along certain lines accounts for",
+        "the success of some people.  Diffusion of effort is considered",
+        "an enemy of success.  We are told that this is an age of",
+        "specialization, and specialization demands concentration."
+      ]
+    },
+    "lesson_U12.1": {
+      "title": "Lesson U12.1: Tutorial",
+      "type": "Tutorial",
+      "text": "(Drill on ter, ther, tor, ture, ster, der Combinations)"
+    },
+    "lesson_U12.2": {
+      "title": "Lesson U12.2: Drill",
+      "type": "Drill",
+      "instructions": "(1)",
+      "text": [
+        "ater oter etor utor ider ather other eture uture ister",
+        "eter uter itor ader oder ether uther iture aster oster",
+        "iter ator otor eder uder ither ature oture ester uster"
+      ]
+    },
+    "lesson_U12.3": {
+      "title": "Lesson U12.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "water later actor order father future faster",
+        "alter matter motor wider mother nature poster",
+        "voter better factor reader rather feature master",
+        "writer letter doctor modern either fixture register"
+      ]
+    },
+    "lesson_U12.4": {
+      "title": "Lesson U12.4: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(3)",
+      "text": [
+        "The voter was required to register.",
+        "The reader made a study of the literature.",
+        "The actor was better in the theatre than in pictures.",
+        "The writer wrote a letter to his future sister-in-law.",
+        "The minister received a letter from his father and mother."
+      ]
+    },
+    "lesson_U12.5": {
+      "title": "Lesson U12.5: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(4)",
+      "text": [
+        "    The best letter writers express themselves simply.  They",
+        "avoid long words where shorter words will do.  They have some-",
+        "thing to say and they say it interestingly and to the point.",
+        "A business letter should not be a literary masterpiece, but",
+        "that is not to say that it should not have style."
+      ]
+    },
+    "lesson_U13.1": {
+      "title": "Lesson U13.1: Tutorial",
+      "type": "Tutorial",
+      "text": [
+        "(Drill on qu, ch, wh, dw, sw, tw Combinations)",
+        "(Drill on de, des, dis, ex, self, tran)",
+        "(Drill on cial, cious, ology, ship, tive)"
+      ]
+    },
+    "lesson_U13.2": {
+      "title": "Lesson U13.2: Drill",
+      "type": "Drill",
+      "instructions": "(1)",
+      "text": [
+        "quick each white sweet dwell exist desire transfer",
+        "quest touch where swell dwarf expose desert transact",
+        "quiet cheap whole twist expect degree dislike transmit",
+        "queen child wheat twenty express deprive dismiss translate"
+      ]
+    },
+    "lesson_U13.3": {
+      "title": "Lesson U13.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "special gracious active biology worship self-regard",
+        "official conscious native geology hardship self-respect",
+        "financial delicious positive pathology steamship self-defense"
+      ]
+    },
+    "lesson_U13.4": {
+      "title": "Lesson U13.4: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(3)",
+      "text": [
+        "The squadron marched quickly and quietly.",
+        "When will the twenty cars of wheat go forward?",
+        "The study of psychology is a \"must\" in college.",
+        "We desire to dispose of our financial interests.",
+        "A selfish person has his own self-interest at heart."
+      ]
+    },
+    "lesson_U13.5": {
+      "title": "Lesson U13.5: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(4)",
+      "text": [
+        "Raymond Investment Co.",
+        "120 Wall Street",
+        "Ney York, NY 10005",
+        "",
+        "Gentlemen:",
+        "",
+        "    For many years our medium has been the leading adver-",
+        "tising paper used by responsible investment firms who desire",
+        "to obtain new accounts.",
+        "",
+        "    Our records show that you are not now making use of the",
+        "Adviser, and we ask that you consider its use in connection",
+        "with your new promotion effort.",
+        "",
+        "Yours truly,"
+      ]
+    },
+    "lesson_U13.6": {
+      "title": "Lesson U13.6: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(5)",
+      "text": [
+        "Mr. Z. Dexter",
+        "250 Madison Avenue",
+        "New York, NY 10016",
+        "",
+        "Dear Mr. Dexter:",
+        "",
+        "I am enclosing herewith the annual report of our corporation",
+        "for the year just ended; also table showing Profit and Loss",
+        "Account for the past ten years.",
+        "",
+        "I am placing your name on our mailing list for all future",
+        "reports sent out by the company, and if at any time you have",
+        "any questions regarding the report or the company, if you",
+        "will advise me, I shall be happy to give you any additional",
+        "information that I may have.",
+        "",
+        "Very truly yours,"
+      ]
+    },
+    "lesson_U13.7": {
+      "title": "Lesson U13.7: Speed Test",
+      "type": "Paragraph",
+      "instructions": "(6)",
+      "text": [
+        "Strive for typing accuracy.  Speed without accuracy is of little value.",
+        "Rhythm is the secret of typing skill.  Don't write one part of a word",
+        "faster than another.  Slow down so that you can maintain a regular rhythm.",
+        "",
+        "Think of the letters before you strike them.  Strike the keys evenly, so",
+        "that the printing impression does not vary.  At the same time, try to",
+        "develop your stroking speed and make it a habit to release the keys quickly.",
+        "To get up speed, type each exercise three or four times.",
+        "",
+        "To do your best, it is necessary that you be relaxed.  You may be trying so",
+        "hard that you are all tied up in knots.  Relax consciously.  If you have a",
+        "feeling of tenseness and hurry, you are not properly relaxed."
+      ]
+    }
+  }
+}

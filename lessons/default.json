@@ -1,0 +1,215 @@
+{
+  "copyright": [
+    "Typist 3.0 - improved typing tutor program for UNIX systems",
+    "Copyright (C) 1998-2018  Simon Baldwin (simon_baldwin@yahoo.com)",
+    "",
+    "This program is free software; you can redistribute it and/or",
+    "modify it under the terms of the GNU General Public License",
+    "as published by the Free Software Foundation; either version 2",
+    "of the License, or (at your option) any later version.",
+    "",
+    "This program is distributed in the hope that it will be useful,",
+    "but WITHOUT ANY WARRANTY; without even the implied warranty of",
+    "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the",
+    "GNU General Public License for more details.",
+    "",
+    "You should have received a copy of the GNU General Public License",
+    "along with this program; if not, write to the Free Software",
+    "Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA."
+  ],
+  "typist": {
+    "version": 2,
+    "seriesName": "Selector",
+    "seriesDescription": "Lesson series selection",
+    "seriesMenu": {
+      "title": "The following 10 lesson series are available",
+      "entries": [
+        {
+          "title": "Series Q     Quick QWERTY course  (Q1 - Q5)",
+          "lessons": [ "Series_Q" ]
+        },
+        {
+          "title": "Series R     Long QWERTY course   (R1 - R14)",
+          "lessons": [ "Series_R" ]
+        },
+        {
+          "title": "Series T     QWERTY touch typing  (T1 - T16)",
+          "lessons": [ "Series_T" ]
+        },
+        {
+          "title": "Series V     Yet more QWERTY      (V1 - V19)",
+          "lessons": [ "Series_V" ]
+        },
+        {
+          "title": "Series U     QWERTY Review        (U1 - U13)",
+          "lessons": [ "Series_U" ]
+        },
+        {
+          "title": "Series D     Dvorak touch typing  (D1 - D14)",
+          "lessons": [ "Series_D" ]
+        },
+        {
+          "title": "Series C     Colemak touch typing (C1 - C17)",
+          "lessons": [ "Series_C" ]
+        },
+        {
+          "title": "Series M     Typing drills        (M1 - M11)",
+          "lessons": [ "Series_M" ]
+        },
+        {
+          "title": "Series S     Speed drills         (S1 - S4)",
+          "lessons": [ "Series_S" ]
+        },
+        {
+          "title": "Series N     Calculator keypad    (N1 - N3)",
+          "lessons": [ "Series_N" ]
+        },
+        {
+          "title": null,
+        },
+        {
+          "title": "Help         Help on using Typist",
+          "lessons": [ "Help" ]
+        },
+        {
+          "title": "Advanced     Help on using advanced features",
+          "lessons": [ "Advanced_1", "Advanced_2", "Advanced_3" ]
+        },
+        {
+          "title": "Finished     Leave this menu",
+          "lessons": null
+        }
+      ]
+    },
+    "Series_Q": {
+      "type": "Execute",
+      "script": "LessonSeriesQ"
+    },
+    "Series_R": {
+      "type": "Execute",
+      "script": "LessonSeriesR"
+    },
+    "Series_T": {
+      "type": "Execute",
+      "script": "LessonSeriesT"
+    },
+    "Series_V": {
+      "type": "Execute",
+      "script": "LessonSeriesV"
+    },
+    "Series_U": {
+      "type": "Execute",
+      "script": "LessonSeriesU"
+    },
+    "Series_D": {
+      "type": "Execute",
+      "script": "LessonSeriesD"
+    },
+    "Series_C": {
+      "type": "Execute",
+      "script": "LessonSeriesC"
+    },
+    "Series_S": {
+      "type": "Execute",
+      "script": "LessonSeriesS"
+    },
+    "Series_M": {
+      "type": "Execute",
+      "script": "LessonSeriesM"
+    },
+    "Series_N": {
+      "type": "Execute",
+      "script": "LessonSeriesN"
+    },
+    "Help": {
+      "title": "Help on using Typist",
+      "type": "Tutorial",
+      "text": [
+        "",
+        "A few hints on using Typist...",
+        "",
+        "Use the arrow-keys to navigate through the menus, Return or Space to select",
+        "a menu item, and Escape to leave a menu. (Vi users can also move up and down",
+        "with 'K' and 'J', and leave a menu with 'Q'.)",
+        "",
+        "When in a lesson you can press Escape to exit, repeat or skip it. If you are",
+        "part of the way through a drill, pressing Escape will first reset it (so you",
+        "will have to press it twice to exit).",
+        "",
+        "Except when you are in a lesson, pressing F12 will generally take you back to",
+        "the lesson series menu."
+      ]
+    },
+    "Advanced_1": {
+      "title": "Help on using Typist's advanced features (page 1 of 3)",
+      "type": "Tutorial",
+      "text": [
+        "",
+        "Some notes on new or somewhat obscure Typist features...",
+        "",
+        "Typist can emulate keyboard layouts that are different to the one that is on",
+        "your computer. This lets you try out a selection of keyboard layouts without",
+        "the need to change your computer's setting. To enable this, run the program",
+        "with the '-k' or '--mapkeys' command line option. You need to supply both the",
+        "keyboard layout that you have set, and the one that you want to emulate, so",
+        "that Typist can remap keys correctly.",
+        "",
+        "For example, if you have a US keyboard but want to try out typing as if on a",
+        "US Dvorak keyboard, you can add the option '--mapkeys=us,dvorak_us' to the",
+        "command line. The 'keymaps' directory contains the currently supported layouts.",
+        "",
+        "Lessons and keymaps are held as JSON files, and Typist will note any non-fatal",
+        "problems parsing these files onto stderr, but try to continue running anyway.",
+        "Because stderr is often lost under 'curses' output, you can use the '-j' or",
+        "'--log' to redirect error message, for example '--log=/tmp/trace'.",
+      ]
+    },
+    "Advanced_2": {
+      "title": "Help on using Typist's advanced features (page 2 of 3)",
+      "type": "Tutorial",
+      "text": [
+        "",
+        "Some notes on Typist's debugging features...",
+        "",
+        "The '-T' or '--trace' flag produces a trace of Typist's interpreter actions",
+        "on stderr. Use in conjunction with '-j' or '--log' to obtain a file that",
+        "shows how the program interpreted the supplied script and keymaps.",
+        "",
+        "Using '-D' or '--parse-only' will parse the script and run a basic check on",
+        "its format, look for missing labels, and so on, and then exit. Use this to",
+        "confirm that a new script is free of the most egregious errors. The JSON",
+        "format is especially fussy.",
+        "",
+        "The '-P' or '--print-parse' parses the script and print out the program's",
+        "internal representation. Internally, Typist converts JSON scripts into",
+        "equivalent .typ-file representations. This can help to show up where problems",
+        "might be occurring with new Typist scripts."
+      ]
+    },
+    "Advanced_3": {
+      "title": "Help on using Typist's advanced features (page 3 of 3)",
+      "type": "Tutorial",
+      "text": [
+        "",
+        "Finally, a note on executing Typist 'sub-scripts'...",
+        "",
+        "A Typist script can execute another script. Typist will search for this",
+        "sub-script in the same way as it searches for the main script, and",
+        "the path to sub-scripts can be relative or absolute. When this script",
+        "exits, the main script will continue.",
+        "",
+        "The query state from any sub-script is passed back to the main script.",
+        "Sub-scripts can nest, but levels are limited to avoid infinite recursion.",
+        "Use the '-d' or '--depth-limit' options to set the maximum nesting.",
+        "",
+        "If using sub-scripts you will need to ensure that the screen contents are",
+        "rebuilt correct when one returns to the main script. Typist does not try",
+        "to maintain screen contents across sub-script executions.",
+        "",
+        "If a sub-script fails to load, perhaps the file cannot be found, Typist",
+        "prints a message to stderr, but there is no indication of error on the main",
+        "screen."
+      ]
+    }
+  }
+}

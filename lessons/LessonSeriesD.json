@@ -1,0 +1,1192 @@
+{
+  "copyright": [
+    "Typist 3.0 - improved typing tutor program for UNIX systems",
+    "Copyright (C) 1998-2018  Simon Baldwin (simon_baldwin@yahoo.com)",
+    "",
+    "This program is free software; you can redistribute it and/or",
+    "modify it under the terms of the GNU General Public License",
+    "as published by the Free Software Foundation; either version 2",
+    "of the License, or (at your option) any later version.",
+    "",
+    "This program is distributed in the hope that it will be useful,",
+    "but WITHOUT ANY WARRANTY; without even the implied warranty of",
+    "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the",
+    "GNU General Public License for more details.",
+    "",
+    "You should have received a copy of the GNU General Public License",
+    "along with this program; if not, write to the Free Software",
+    "Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA."
+  ],
+  "typist": {
+    "version": 2,
+    "seriesName": "D",
+    "seriesDescription": "Dvorak touch typing (D1 - D14)",
+    "seriesMenu": {
+      "title": "The D series contains the following 14 lessons",
+      "entries": [
+        {
+          "title": "Lesson D1     The home row",
+          "lessons": [
+            "lesson_D1.1",
+            "lesson_D1.2",
+            "lesson_D1.3",
+            "lesson_D1.4",
+            "lesson_D1.5",
+            "lesson_D1.6",
+            "lesson_D1.7",
+            "lesson_D1.8",
+            "lesson_D1.9",
+            "lesson_D1.10"
+          ]
+        },
+        {
+          "title": "Lesson D2     Learning the Shift Key",
+          "lessons": [
+            "lesson_D2.1",
+            "lesson_D2.2",
+            "lesson_D2.3",
+            "lesson_D2.4",
+            "lesson_D2.5",
+            "lesson_D2.6",
+            "lesson_D2.7",
+            "lesson_D2.8"
+          ]
+        },
+        {
+          "title": "Lesson D3     Home Row and the Period",
+          "lessons": [
+            "lesson_D3.1",
+            "lesson_D3.2",
+            "lesson_D3.3",
+            "lesson_D3.4",
+            "lesson_D3.5",
+            "lesson_D3.6",
+            "lesson_D3.7"
+          ]
+        },
+        {
+          "title": "Lesson D4     Upper Row and Essential Punctuation",
+          "lessons": [
+            "lesson_D4.1",
+            "lesson_D4.2",
+            "lesson_D4.3",
+            "lesson_D4.4",
+            "lesson_D4.5",
+            "lesson_D4.6"
+          ]
+        },
+        {
+          "title": "Lesson D5     Review",
+          "lessons": [
+            "lesson_D5.1",
+            "lesson_D5.2",
+            "lesson_D5.3",
+            "lesson_D5.4",
+            "lesson_D5.5"
+          ]
+        },
+        {
+          "title": "Lesson D6     Learning the Lower Row",
+          "lessons": [
+            "lesson_D6.1",
+            "lesson_D6.2",
+            "lesson_D6.3",
+            "lesson_D6.4",
+            "lesson_D6.5",
+            "lesson_D6.6"
+          ]
+        },
+        {
+          "title": "Lesson D7     Practise",
+          "lessons": [
+            "lesson_D7.1",
+            "lesson_D7.2",
+            "lesson_D7.3",
+            "lesson_D7.4",
+            "lesson_D7.5"
+          ]
+        },
+        {
+          "title": "Lesson D8     Practise",
+          "lessons": [
+            "lesson_D8.1",
+            "lesson_D8.2",
+            "lesson_D8.3",
+            "lesson_D8.4"
+          ]
+        },
+        {
+          "title": "Lesson D9     Practise",
+          "lessons": [
+            "lesson_D9.1",
+            "lesson_D9.2",
+            "lesson_D9.3",
+            "lesson_D9.4",
+            "lesson_D9.5",
+            "lesson_D9.6"
+          ]
+        },
+        {
+          "title": "Lesson D10    Practise",
+          "lessons": [
+            "lesson_D10.1",
+            "lesson_D10.2",
+            "lesson_D10.3",
+            "lesson_D10.4",
+            "lesson_D10.5",
+            "lesson_D10.6"
+          ]
+        },
+        {
+          "title": "Lesson D11    Practise",
+          "lessons": [
+            "lesson_D11.1",
+            "lesson_D11.2",
+            "lesson_D11.3",
+            "lesson_D11.4",
+            "lesson_D11.5",
+            "lesson_D11.6",
+            "lesson_D11.7",
+            "lesson_D11.8",
+            "lesson_D11.9"
+          ]
+        },
+        {
+          "title": "Lesson D12    Practise",
+          "lessons": [
+            "lesson_D12.1",
+            "lesson_D12.2",
+            "lesson_D12.3",
+            "lesson_D12.4",
+            "lesson_D12.5",
+            "lesson_D12.6",
+            "lesson_D12.7",
+            "lesson_D12.8",
+            "lesson_D12.9",
+            "lesson_D12.10",
+            "lesson_D12.11",
+            "lesson_D12.12",
+            "lesson_D12.13"
+          ]
+        },
+        {
+          "title": "Lesson D13    Frequent words",
+          "lessons": [
+            "lesson_D13.1",
+            "lesson_D13.2",
+            "lesson_D13.3",
+            "lesson_D13.4",
+            "lesson_D13.5",
+            "lesson_D13.6",
+            "lesson_D13.7"
+          ]
+        },
+        {
+          "title": "Lesson D14    Alphabetic sentences",
+          "lessons": [
+            "lesson_D14.1",
+            "lesson_D14.2",
+            "lesson_D14.3",
+            "lesson_D14.4",
+            "lesson_D14.5",
+            "lesson_D14.6",
+            "lesson_D14.7",
+            "lesson_D14.8",
+            "lesson_D14.9",
+            "lesson_D14.10",
+            "lesson_D14.11",
+            "lesson_D14.12",
+            "lesson_D14.13",
+            "lesson_D14.14",
+            "lesson_D14.15",
+            "lesson_D14.16",
+            "lesson_D14.17",
+            "lesson_D14.18",
+            "lesson_D14.19",
+            "lesson_D14.20",
+            "lesson_D14.21"
+          ]
+        }
+      ]
+    },
+    "lesson_D1.1": {
+      "title": "Lesson D1.1: Tutorial",
+      "type": "Tutorial",
+      "text": [
+        "                Welcome to the Dvorak Course",
+        "",
+        "This course has been planned for beginners as well as experienced typists.",
+        "If you are a beginner learning to type on the American Simplified Keyboard",
+        "(the Dvorak keyboard), you will find this keyboard easier to learn than",
+        "the QWERTY (Sholes) keyboard.",
+        "",
+        "This is because the ASK has been scientifically designed to minimize cumulative",
+        "finger motion while typing English.  The ten letters on the Home Row",
+        "(A, O, E, U, I, D, H, T, N, and S) make up about 70% of all keystrokes.",
+        "These ten letters alone can form over 3000 words.  Needless to say, having",
+        "these keys in the home row facilitates both speed and accuracy.",
+        "",
+        "If you are already an experienced typist on the Sholes keyboard, don't despair:",
+        "you won't have to unlearn everything you know.  Your basic typing dexterity",
+        "remains with you, regardless of the keyboard layout.  Learning the Dvorak",
+        "keyboard is like learning to \"play on a new surface\", as a tennis player must",
+        "learn to adjust to grass court or hard court when she has been accustomed to",
+        "playing on a clay court."
+      ]
+    },
+    "lesson_D1.2": {
+      "title": "Lesson D1.2: Tutorial",
+      "type": "Tutorial",
+      "text": [
+        "                General Instructions",
+        "",
+        "The fingers of the left hand should be placed over the A-key, the O-key,",
+        "the E-key, and the U-key.  Similarly, the fingers of the right hand should be",
+        "placed over the H-key, the T-key, the N-key, and the S-key."
+      ]
+    },
+    "lesson_D1.3": {
+      "title": "Lesson D1.3: Drill",
+      "type": "Drill",
+      "instructions": "(1) Home Row Exercises",
+      "text": [
+        "aoeu ueoa aoeui snth htns snthd uihd uihd",
+        "asonetuhid asonetuhid dihutenosa dihutenosa"
+      ]
+    },
+    "lesson_D1.4": {
+      "title": "Lesson D1.4: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": "a s o n e t u h i d  a s o n e t u h i d"
+    },
+    "lesson_D1.5": {
+      "title": "Lesson D1.5: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": "d i h u t e n o s a  d i h u t e n o s a"
+    },
+    "lesson_D1.6": {
+      "title": "Lesson D1.6: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": [
+        "as an at ah ad aa ao ae au ai os on ot oh od oi ou oe oo oa",
+        "es en et eh ed ea eo ee eu ei us un ut uh ud ui uu ue uo ua"
+      ]
+    },
+    "lesson_D1.7": {
+      "title": "Lesson D1.7: Drill",
+      "type": "Drill",
+      "instructions": "(5)",
+      "text": [
+        "his hat is an aid in the hot sun",
+        "in his sad sod hut he sat on his hen"
+      ]
+    },
+    "lesson_D1.8": {
+      "title": "Lesson D1.8: Drill",
+      "type": "Drill",
+      "instructions": "(6)",
+      "text": [
+        "sue did not use his hoe and tin hat",
+        "dan did not see the dot on his tie as he hid his tan hat"
+      ]
+    },
+    "lesson_D1.9": {
+      "title": "Lesson D1.9: Drill",
+      "type": "Drill",
+      "instructions": "(7)",
+      "text": [
+        "ada add ado aha aid ann dad dan dee den did die din don dot dud",
+        "due dun duo eda end had has hat hen hid his hit hod hoe hot hue",
+        "hut ian ida inn ion its nat ned net nod not nun nut odd ode out",
+        "sat sit sod son sot sun tan tat tee ten tho tit toe ton too tot"
+      ]
+    },
+    "lesson_D1.10": {
+      "title": "Lesson D1.10: Drill",
+      "type": "Drill",
+      "instructions": "(8)",
+      "text": "i do as i do and the end is not as sad as the one sid had"
+    },
+    "lesson_D2.1": {
+      "title": "Lesson D2.1: Tutorial",
+      "type": "Tutorial",
+      "text": [
+        "                Learning the Shift Key",
+        "",
+        "To integrate the shift key rhythmically in your practice, a capital letter",
+        "should take three beats: 1--press the shift key opposite the hand to press",
+        "the letter; 2--press the letter; 3--release the shift key."
+      ]
+    },
+    "lesson_D2.2": {
+      "title": "Lesson D2.2: Drill",
+      "type": "Drill",
+      "instructions": "(1) Review",
+      "text": "een ent est ett hin hou ith ion oth sen tha thi tio tte thu"
+    },
+    "lesson_D2.3": {
+      "title": "Lesson D2.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "Ada An Ana Ann Dad Dan Dee Ed Eta",
+        "Dan Nan Nat Ned Sid Sue Tad Ted Tod"
+      ]
+    },
+    "lesson_D2.4": {
+      "title": "Lesson D2.4: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": [
+        "The sad tots sat on a tan seat in his neat tent and ate ten nuts",
+        "On his date Otis had a thin suit and no tint on his shoes"
+      ]
+    },
+    "lesson_D2.5": {
+      "title": "Lesson D2.5: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": [
+        "Enos eats a thin hash diet in a hued dish as he sits on an odd seat",
+        "Dad does not eat suet   He had seen Sue dent his auto"
+      ]
+    },
+    "lesson_D2.6": {
+      "title": "Lesson D2.6: Drill",
+      "type": "Drill",
+      "instructions": "(5)",
+      "text": [
+        "ad an de di ed en es ie in ne un ate dis ess eat ied ine",
+        "ist ite nee nes non nus ses tes tis usi ante anti ates",
+        "eous eats ines ions ious ists itas itis ness sion tion"
+      ]
+    },
+    "lesson_D2.7": {
+      "title": "Lesson D2.7: Drill",
+      "type": "Drill",
+      "instructions": "(6)",
+      "text": [
+        "Adna Anna Anne Dana Dead Edie Edna Enid Etta Heda",
+        "Nate Nina Neta Nona Odie Ohio Otto Stan Tess Thad Theo"
+      ]
+    },
+    "lesson_D2.8": {
+      "title": "Lesson D2.8: Drill",
+      "type": "Drill",
+      "instructions": "(7)",
+      "text": [
+        "adds aids ante ants aunt dead deed dens died dies dine dins dodo",
+        "heed hens hide hind hint hiss hist hits hods hoed hoes hone hood",
+        "none noon noun nuns oats odds odes ones sane sash sate seas seed",
+        "sees sent sets shad shed shin shot side sine sins sons sued suns",
+        "tide tine tins toad tone toss tote tout tune undo unit used uses"
+      ]
+    },
+    "lesson_D3.1": {
+      "title": "Lesson D3.1: Tutorial",
+      "type": "Tutorial",
+      "text": [
+        "                Home Row and the Period",
+        "",
+        "The period is above the E-finger.  Note that the end of a sentence is",
+        "always followed by two spaces; in abbreviations, it is followed by one",
+        "space."
+      ]
+    },
+    "lesson_D3.2": {
+      "title": "Lesson D3.2: Drill",
+      "type": "Drill",
+      "instructions": "(1)",
+      "text": [
+        "e.  e.  e.  e.  a.  s.  o.  n.  e.  t.  u.  h.  i.  d.  a.  a.",
+        "h.  u.  a.  i.  o.  n.  s.  d.  t.  e.  h.  o.  u.  i.  s.  a."
+      ]
+    },
+    "lesson_D3.3": {
+      "title": "Lesson D3.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "anno athe atio atte ause diti enon esen enti este",
+        "ethe esti ette hese hous hout iate iend ines inst",
+        "ith itio into ndin ness nnot noth ntio onth osed",
+        "thei thes tion tten nest nude unti usin tand tate"
+      ]
+    },
+    "lesson_D3.4": {
+      "title": "Lesson D3.4: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": [
+        "Adana Andie Annie Aonia Audie Denis Diana Dinah",
+        "Donna Duane Edith Ethan India Susan Susie Thane",
+        "Adana.  Andie.  Annie.  Aonia.  Audie.  Denis.  Diana.  Dinah."
+      ]
+    },
+    "lesson_D3.5": {
+      "title": "Lesson D3.5: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": [
+        "In the house Adana dined in haste on toast and dates.",
+        "Sated as she had eaten she noted the sheen on the dunes",
+        "asd the shade in the sheds.  She hates to see an idiot",
+        "stand and shoot his tenth doe in the dense heath."
+      ]
+    },
+    "lesson_D3.6": {
+      "title": "Lesson D3.6: Drill",
+      "type": "Drill",
+      "instructions": "(5)",
+      "text": [
+        "An onion heats and stuns stout noses and sends hands",
+        "to douse teeth and hoist suede hoods onto heads."
+      ]
+    },
+    "lesson_D3.7": {
+      "title": "Lesson D3.7: Drill",
+      "type": "Drill",
+      "instructions": "(6)",
+      "text": [
+        "eates eousness eousnesses esses iates iests iness inesses",
+        "iousness iousnesses iohness iohnesses itions nesses ousness"
+      ]
+    },
+    "lesson_D4.1": {
+      "title": "Lesson D4.1: Tutorial",
+      "type": "Tutorial",
+      "text": "                Upper Row and Essential Punctuation"
+    },
+    "lesson_D4.2": {
+      "title": "Lesson D4.2: Drill",
+      "type": "Drill",
+      "instructions": "(1)",
+      "text": [
+        "tctc upup hghg o,o, nrnr a/a/ slsl a?a? s-s- s--- s---- ----",
+        "tctc upup hghg, hfhf uyuy, nrnr, slsl, s---, s-s-, a/a/-"
+      ]
+    },
+    "lesson_D4.3": {
+      "title": "Lesson D4.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "tctc/ upup/ hghg/ uyuy/ hfhf/ nrnr/ slsl/ tctc/ hfhf/ hghg/",
+        "tctc? upup? hghg? uyuy? nrnr? slsl? hfhf? upup- hghg- tctc-"
+      ]
+    },
+    "lesson_D4.4": {
+      "title": "Lesson D4.4: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": [
+        "Al el if of or up Al el if of or up",
+        "go la lo pa pi ye go la lo pa pi ye"
+      ]
+    },
+    "lesson_D4.5": {
+      "title": "Lesson D4.5: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": [
+        "Can pa go aft and lie on our old cot?",
+        "The shy ape put on a red hat and ran off the lot.",
+        "For a top fee, her act is to hop in, lie on the rug, pat her",
+        "pet cat, fit a fur on her ear, get her fan, and run off."
+      ]
+    },
+    "lesson_D4.6": {
+      "title": "Lesson D4.6: Drill",
+      "type": "Drill",
+      "instructions": "(5)",
+      "text": [
+        "ago ail ale all apt arc are art cur cut dig dip dop",
+        "dry dug eel egg ego fag fig fin fir fly fog for fro",
+        "fry gag gap gas gay gin gip God goo gun hag hay hep"
+      ]
+    },
+    "lesson_D5.1": {
+      "title": "Lesson D5.1: Drill",
+      "type": "Drill",
+      "instructions": "(1) Review",
+      "text": [
+        "The left road can lead the lads and lady to good lots near",
+        "your land.  The sale of pure gold is held at your door."
+      ]
+    },
+    "lesson_D5.2": {
+      "title": "Lesson D5.2: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "You held no fear of loss for a year.  On each trip to your",
+        "shop he paid in cash for the caps, fish, cups, pans, fuel,",
+        "logs, peas, ales, rice and fats you sold."
+      ]
+    },
+    "lesson_D5.3": {
+      "title": "Lesson D5.3: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": [
+        "It is a fact that a slap on the face can hurt.  The poor",
+        "apes feel free to find a sure sort of life in the dale."
+      ]
+    },
+    "lesson_D5.4": {
+      "title": "Lesson D5.4: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": [
+        "aces acts ages ails airs also arcs call caps card cold cops",
+        "else errs eyes face fair fall fare fate feat feel feet fell",
+        "gate gets gift gigs glad goat goes gone gosh gray grey gull",
+        "hole hope hops huff hull ills ires last late lest lets lies"
+      ]
+    },
+    "lesson_D5.5": {
+      "title": "Lesson D5.5: Drill",
+      "type": "Drill",
+      "instructions": "(5)",
+      "text": [
+        "pear pert pest pets pits plop pops post pots puns puts rate real",
+        "ride rids ripe rips rope rote rues ruff runs runt rush rust ruts",
+        "span spat spin spit spot spun step stop tags tall tape taps tars",
+        "ugly upon ruge user yard year yeas yell yelp yips yoga yule your"
+      ]
+    },
+    "lesson_D6.1": {
+      "title": "Lesson D6.1: Tutorial",
+      "type": "Tutorial",
+      "text": "                Learning the Lower Row"
+    },
+    "lesson_D6.2": {
+      "title": "Lesson D6.2: Drill",
+      "type": "Drill",
+      "instructions": "(1)",
+      "text": "a'sz oqnv ukhm uxhb a\"o- oqnv ejtw a'sz uxhb ukkk ukhm a's-"
+    },
+    "lesson_D6.3": {
+      "title": "Lesson D6.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": "uk sz-a' tw nv ej hm uk a\" hb oq uk a' nv hm a\" oq sz tw ej"
+    },
+    "lesson_D6.4": {
+      "title": "Lesson D6.4: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": [
+        "ale any are ary augh aught ave ay aye ec ece eco el er ere ery ex",
+        "exa exe far fer fir for ify igh ight il ile ill ily ire aze ize",
+        "la lly ly my ny ome or ore ough ought ould our re rec sive tive"
+      ]
+    },
+    "lesson_D6.5": {
+      "title": "Lesson D6.5: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": [
+        "I owe him a bun, a ham, ink, a bed and a job.",
+        "Sam was mad at his own new ox in the bin.",
+        "At the zoo, the wee, bad boa in a box bit Tom, Bob and me."
+      ]
+    },
+    "lesson_D6.6": {
+      "title": "Lesson D6.6: Drill",
+      "type": "Drill",
+      "instructions": "(5)",
+      "text": [
+        "am ax be ma me ox oz we adz awe ban but eke eve haw hem",
+        "hub jab jam jaw jet jib job Joe jot jut kid kin kit man",
+        "mat Max nab new nub now own quo saw sox sum van vex vie",
+        "vow wan who win won yen you zax"
+      ]
+    },
+    "lesson_D7.1": {
+      "title": "Lesson D7.1: Drill",
+      "type": "Drill",
+      "instructions": "(1)",
+      "text": "In a daze the band hums the same new tune as they zoom down the exit."
+    },
+    "lesson_D7.2": {
+      "title": "Lesson D7.2: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "Next time, I must have a town home, with a book and a vast tome,",
+        "bees, oxen, hams in the oven, rows of beans, the wind and a view."
+      ]
+    },
+    "lesson_D7.3": {
+      "title": "Lesson D7.3: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": [
+        "I know six men wait to put down their axes.  They want to quit",
+        "their jobs when the job zone size is too wide."
+      ]
+    },
+    "lesson_D7.4": {
+      "title": "Lesson D7.4: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": [
+        "ahem aims ajax akin asks atom axis bans bath beak beck been",
+        "hoax husk inks item jabs jade jamb Java jazz Jean jest jinx",
+        "knot Knox made maid mail mate mean meet mend mess mind mine"
+      ]
+    },
+    "lesson_D7.5": {
+      "title": "Lesson D7.5: Drill",
+      "type": "Drill",
+      "instructions": "(5)",
+      "text": [
+        "miss mist most musk must nabs news next nibs numb owed owes",
+        "quiz save saws seem sews skat skew skid skin some sums take",
+        "vend vent vest veto vise void vote wand weed week wend wins",
+        "whet whit whiz whom wish wont zebu zest zinc Zion zone zulu"
+      ]
+    },
+    "lesson_D8.1": {
+      "title": "Lesson D8.1: Drill",
+      "type": "Drill",
+      "instructions": "(1)",
+      "text": "He asked about those zebra waits in his beans."
+    },
+    "lesson_D8.2": {
+      "title": "Lesson D8.2: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": "It seems that in a month taxes on homes have taken all we saved."
+    },
+    "lesson_D8.3": {
+      "title": "Lesson D8.3: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": [
+        "John Smith makes a quiet visit to the bases in the winds and",
+        "weeds on the mound."
+      ]
+    },
+    "lesson_D8.4": {
+      "title": "Lesson D8.4: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": [
+        "ovals ovoid oxide quake queen quest quite quits quote saves seams",
+        "skein skink skunk sweat takes taken taxed teams teems thank think",
+        "thumb times towns ukase vaunt vests vises visit vista vivid vixen",
+        "waits wands wants wends whine white whose zebus zoned zones zulus"
+      ]
+    },
+    "lesson_D9.1": {
+      "title": "Lesson D9.1: Drill",
+      "type": "Drill",
+      "instructions": "(1)",
+      "text": "hghm hbfb upxp uxyx twcw ej.j nvrv oq,q szlz a'?' a\"/\""
+    },
+    "lesson_D9.2": {
+      "title": "Lesson D9.2: Drill",
+      "type": "Drill",
+      "instructions": "Again...",
+      "text": "hghm hbfb upxp uxyx twcw ej.j nvrv oq,q szlz a'?' a\"/\""
+    },
+    "lesson_D9.3": {
+      "title": "Lesson D9.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": "gm mg fb bf pk kp yx xy cw wc .j j. rv vr ,q q, lz zl"
+    },
+    "lesson_D9.4": {
+      "title": "Lesson D9.4: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": "My big boy may buy a gem at the labs by the bay."
+    },
+    "lesson_D9.5": {
+      "title": "Lesson D9.5: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": [
+        "Mort awes boys with the way he can ward off a blow, kill",
+        "elks and game, row a yawl, or ram awls into bars."
+      ]
+    },
+    "lesson_D9.6": {
+      "title": "Lesson D9.6: Drill",
+      "type": "Drill",
+      "instructions": "(5)",
+      "text": [
+        "ah Al am an as at ax ba be do ed eh el go",
+        "ha he hi ho if in is it Jo la no ma me no",
+        "of oh on or ox pa pi Si so to up us we ye"
+      ]
+    },
+    "lesson_D10.1": {
+      "title": "Lesson D10.1: Drill",
+      "type": "Drill",
+      "instructions": "(1)",
+      "text": [
+        "In barns on farms chicks, boars, veals, bucks and stock might",
+        "enjoy and value an extra quart of water daily."
+      ]
+    },
+    "lesson_D10.2": {
+      "title": "Lesson D10.2: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "Do zebras roam the miles of bleak velds which cover parts of the",
+        "world while packs of brown bears and wart hogs prowl in the woods?"
+      ]
+    },
+    "lesson_D10.3": {
+      "title": "Lesson D10.3: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": [
+        "Some folks claim to favor poems and rhyme, others can wring equal",
+        "cheer and worth from words and quest and seize all books.  Still",
+        "others amply quell their needs with vocal music and seek all",
+        "works on voice."
+      ]
+    },
+    "lesson_D10.4": {
+      "title": "Lesson D10.4: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": [
+        "To begin to use wrong verbs among boors and bores may be",
+        "a severe error even if the whole group seems to think",
+        "that exact terms mean less than is normal for them."
+      ]
+    },
+    "lesson_D10.5": {
+      "title": "Lesson D10.5: Drill",
+      "type": "Drill",
+      "instructions": "(5)",
+      "text": [
+        "allow among avail awful Aztec azure backs balls began being belie",
+        "bells bills black blank bored borne bring can't chalk champ charm",
+        "check cheek chick chink comes Czech every evict exalt excel exert",
+        "exile expel exult Felix folks gable gauze gives glaze gleam globe"
+      ]
+    },
+    "lesson_D10.6": {
+      "title": "Lesson D10.6: Drill",
+      "type": "Drill",
+      "instructions": "(6)",
+      "text": [
+        "verge verse verve vetch vigil vigor viola virus vital vogue voile",
+        "vouch vowel vying walks walls wards warts whack whale wharf wheat",
+        "wheel whelp where which whiff while whirl whole wired wires words",
+        "world worth would write wrong wrote yards yokes yoks zippy zombie"
+      ]
+    },
+    "lesson_D11.1": {
+      "title": "Lesson D11.1: Drill",
+      "type": "Drill",
+      "instructions": "(1)",
+      "text": [
+        "For a meal we lack a room, milk in mugs, warm pork, veal",
+        "in the oven and cake."
+      ]
+    },
+    "lesson_D11.2": {
+      "title": "Lesson D11.2: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "Mike and Milt were grim, not calm, when Mort came to warn them that",
+        "the well worn ramp over to the mill was too wet for our mile walk."
+      ]
+    },
+    "lesson_D11.3": {
+      "title": "Lesson D11.3: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": [
+        "Walt may quip and quote with zeal about too much work, but I",
+        "saw him melt and mourn about his love for his lost wife."
+      ]
+    },
+    "lesson_D11.4": {
+      "title": "Lesson D11.4: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": "The pick of wool from rams can make very soft warm garb."
+    },
+    "lesson_D11.5": {
+      "title": "Lesson D11.5: Drill",
+      "type": "Drill",
+      "instructions": "(5)",
+      "text": [
+        "For his meal the busy bird will use his bill or beak in many",
+        "ways to peck at or ably to pick up a worm."
+      ]
+    },
+    "lesson_D11.6": {
+      "title": "Lesson D11.6: Drill",
+      "type": "Drill",
+      "instructions": "(6)",
+      "text": [
+        "Owls on the wing may move away with limp easy grace or they",
+        "may sit on a wire and look ever so wise."
+      ]
+    },
+    "lesson_D11.7": {
+      "title": "Lesson D11.7: Drill",
+      "type": "Drill",
+      "instructions": "(7)",
+      "text": [
+        "The word or term--prop, mall, king, mark, romp, lock or link--",
+        "can vary in what it may mean."
+      ]
+    },
+    "lesson_D11.8": {
+      "title": "Lesson D11.8: Drill",
+      "type": "Drill",
+      "instructions": "(8)",
+      "text": [
+        "helm herb hock holy jeep jeer jell jerk John jolt jump jury",
+        "kale keel kelp kilt lack laws leak leek levy lick like lime",
+        "limp link live love luck lump lynx mail many mill more much",
+        "okra oval pack peak peck peek phew puck ramp rime skip talk"
+      ]
+    },
+    "lesson_D11.9": {
+      "title": "Lesson D11.9: Drill",
+      "type": "Drill",
+      "instructions": "(9)",
+      "text": [
+        "puck ramp rime skip talk vail vale vary veal veer veld verb vial vice",
+        "volk walk ware warm warp wars wart ways weal wear well will tilt wire",
+        "whey whim whip whir wore work worm worn yawn yolk zany zero zinc zing"
+      ]
+    },
+    "lesson_D12.1": {
+      "title": "Lesson D12.1: Drill",
+      "type": "Drill",
+      "instructions": "(1)",
+      "text": [
+        "In barns on farms chicks, bears, veals, bucks and stock might",
+        "enjoy and value an extra quart of water daily."
+      ]
+    },
+    "lesson_D12.2": {
+      "title": "Lesson D12.2: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "Quick quips, awful quotes and queer talks never quite solve",
+        "the wants of a very small child."
+      ]
+    },
+    "lesson_D12.3": {
+      "title": "Lesson D12.3: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": [
+        "Do zebras roam the miles of bleak velds which cover parts of the",
+        "world while packs of brown bears and wart hogs prowl in the woods?"
+      ]
+    },
+    "lesson_D12.4": {
+      "title": "Lesson D12.4: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": [
+        "Some folks claim to favor poems and rhyme, others can wring equal",
+        "cheer and worth from words and quest and seize all books.  Still",
+        "others amply quell their needs with vocal music and seek all",
+        "works on voice."
+      ]
+    },
+    "lesson_D12.5": {
+      "title": "Lesson D12.5: Drill",
+      "type": "Drill",
+      "instructions": "(5)",
+      "text": [
+        "The queen was given a query for which an ample reply would",
+        "take a quire of paper."
+      ]
+    },
+    "lesson_D12.6": {
+      "title": "Lesson D12.6: Drill",
+      "type": "Drill",
+      "instructions": "(6)",
+      "text": [
+        "Six husky cooks boiled clam broth, shrimp and prawns and broiled",
+        "liver for seven lucky elves, then made their hasty exits."
+      ]
+    },
+    "lesson_D12.7": {
+      "title": "Lesson D12.7: Drill",
+      "type": "Drill",
+      "instructions": "(7)",
+      "text": [
+        "At the games, Mark was so very badly hurt with many broken bones,",
+        "lumps on his jaws, and some glands burst.  Blood oozed from a crack",
+        "in his wart where it had oozed for weeks.  He was lucky to have lived."
+      ]
+    },
+    "lesson_D12.8": {
+      "title": "Lesson D12.8: Drill",
+      "type": "Drill",
+      "instructions": "(8)",
+      "text": [
+        "To check pomp and pride, sever from all overt vices, belay all",
+        "forms of muck raking, and limit all hazards, will bring prime joy."
+      ]
+    },
+    "lesson_D12.9": {
+      "title": "Lesson D12.9: Drill",
+      "type": "Drill",
+      "instructions": "(9)",
+      "text": [
+        "To begin to use wrong verbs among boors and bores may be",
+        "a severe error even if the whole group seems to think",
+        "that exact terms mean less than is normal for them."
+      ]
+    },
+    "lesson_D12.10": {
+      "title": "Lesson D12.10: Drill",
+      "type": "Drill",
+      "instructions": "(10)",
+      "text": [
+        "allow among avail awful Aztec azure backs balls began being belie",
+        "bells bills black blank bored borne bring can't chalk champ charm",
+        "check cheek chick chink comes Czech every evict exalt excel exert",
+        "exile expel exult Felix folks gable gauze gives glaze gleam globe"
+      ]
+    },
+    "lesson_D12.11": {
+      "title": "Lesson D12.11: Drill",
+      "type": "Drill",
+      "instructions": "(11)",
+      "text": [
+        "grams grave graze havoc hazel helix hobby jazzy jelly jerky jewel",
+        "joker jolly jolts jowls judge junco kapok kayak keels keeps kitty",
+        "knack kneel knelt knock knurl kopek kraal Krupp leave liver money",
+        "never Ozark pawns peaks pecks peeks phlox pirks power proms prove"
+      ]
+    },
+    "lesson_D12.12": {
+      "title": "Lesson D12.12: Drill",
+      "type": "Drill",
+      "instructions": "(12)",
+      "text": [
+        "quack quaff quail qualm quays quell quill quilt ramps romps rooms",
+        "rumps salve serve shack shark shawl shirk shock shrew shuck sieve",
+        "seize skiff skill skimp skirt skulk small spank speak spoke stick",
+        "stuck threw throw thyme vague valid value valve vapid vault venal"
+      ]
+    },
+    "lesson_D12.13": {
+      "title": "Lesson D12.13: Drill",
+      "type": "Drill",
+      "instructions": "(13)",
+      "text": [
+        "verge verse verve vetch vigil vigor viola virus vital vogue voile",
+        "vouch vowel vying walks walls wards warts whack whale wharf wheat",
+        "wheel whelp where which whiff while whirl whole wired wires words",
+        "world worth would write wrong wrote yards yokes yolks zippy zombi"
+      ]
+    },
+    "lesson_D13.1": {
+      "title": "Lesson D13.1: Tutorial",
+      "type": "Tutorial",
+      "text": [
+        "The following 135 words are so frequently used that they comprise 50%",
+        "of all words normally typed.  If you can type the next two exercises without",
+        "errors, half of your typed words will be correct!"
+      ]
+    },
+    "lesson_D13.2": {
+      "title": "Lesson D13.2: Drill",
+      "type": "Drill",
+      "text": [
+        "a about after all also an and another any are as at back be because",
+        "been before being between both but by can could day did do down each",
+        "even first for from get good had has have he her here him his how I",
+        "if in into is it its just know last life like little long made make",
+        "many may me men more most Mr.  Ms.  much must my never new no not now"
+      ]
+    },
+    "lesson_D13.3": {
+      "title": "Lesson D13.3: Drill",
+      "type": "Drill",
+      "text": [
+        "of or on one only or other our out over own people said same see she",
+        "should so some state still such than that the their them then there",
+        "these they this those through time to too two under up very was way",
+        "we well were what when where which while who will with work would",
+        "years you your"
+      ]
+    },
+    "lesson_D13.4": {
+      "title": "Lesson D13.4: Tutorial",
+      "type": "Tutorial",
+      "text": "We now concentrate on home row words."
+    },
+    "lesson_D13.5": {
+      "title": "Lesson D13.5: Drill",
+      "type": "Drill",
+      "instructions": "(1)",
+      "text": [
+        "The duteous dietitian hesitated at the intense nauseousness inside",
+        "the dishonest institution."
+      ]
+    },
+    "lesson_D13.6": {
+      "title": "Lesson D13.6: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": [
+        "In addition, the unastute assassin had another unsound idea.  He",
+        "intended to assassinate the dishonest attendant at the institute."
+      ]
+    },
+    "lesson_D13.7": {
+      "title": "Lesson D13.7: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": [
+        "The unintentioned noisiness and untidiness in the hostess house",
+        "astonished, astounded and nauseated Antonietta.  Undaunted and",
+        "unassisted, she did not hesitate to initiate a statute at the state",
+        "house.  The statute stated that no attendant in an untenanted haunted",
+        "hostess house is to attain hostess status."
+      ]
+    },
+    "lesson_D14.1": {
+      "title": "Lesson D14.1: Tutorial",
+      "type": "Tutorial",
+      "text": "In this lesson we practice alphabetic sentences."
+    },
+    "lesson_D14.2": {
+      "title": "Lesson D14.2: Drill",
+      "type": "Drill",
+      "instructions": "(1)",
+      "text": "Sixty-five quizzical sheep kept their jaws dry in a farm bungalow."
+    },
+    "lesson_D14.3": {
+      "title": "Lesson D14.3: Drill",
+      "type": "Drill",
+      "instructions": "(2)",
+      "text": "Balky Zulus find they can hoax weary men with quavery jumping."
+    },
+    "lesson_D14.4": {
+      "title": "Lesson D14.4: Drill",
+      "type": "Drill",
+      "instructions": "(3)",
+      "text": "Jerome quickly began to be vexed by the powerful blizzards."
+    },
+    "lesson_D14.5": {
+      "title": "Lesson D14.5: Drill",
+      "type": "Drill",
+      "instructions": "(4)",
+      "text": "Squawking gorillas could vex the brazen nymphs in a jiffy."
+    },
+    "lesson_D14.6": {
+      "title": "Lesson D14.6: Drill",
+      "type": "Drill",
+      "instructions": "(5)",
+      "text": "Can Jerry's equipment file saws, ax, hoe, knives and grind adz?"
+    },
+    "lesson_D14.7": {
+      "title": "Lesson D14.7: Drill",
+      "type": "Drill",
+      "instructions": "(6)",
+      "text": "Ben works at squeezing very juicy plums with flexed thumbs."
+    },
+    "lesson_D14.8": {
+      "title": "Lesson D14.8: Drill",
+      "type": "Drill",
+      "instructions": "(7)",
+      "text": "The black wizard quipping jovially flexed his muscles."
+    },
+    "lesson_D14.9": {
+      "title": "Lesson D14.9: Drill",
+      "type": "Drill",
+      "instructions": "(8)",
+      "text": "Will you pack my jugs of liquid veneer in five dozen boxes?"
+    },
+    "lesson_D14.10": {
+      "title": "Lesson D14.10: Drill",
+      "type": "Drill",
+      "instructions": "(9)",
+      "text": "Could the wizard jinx quivering folks by magic yelps?"
+    },
+    "lesson_D14.11": {
+      "title": "Lesson D14.11: Drill",
+      "type": "Drill",
+      "instructions": "(10)",
+      "text": "Brazen gazelles quickly examined the forward jeep."
+    },
+    "lesson_D14.12": {
+      "title": "Lesson D14.12: Drill",
+      "type": "Drill",
+      "instructions": "(11)",
+      "text": "The brown dog quickly jumped over the lazy fox."
+    },
+    "lesson_D14.13": {
+      "title": "Lesson D14.13: Drill",
+      "type": "Drill",
+      "instructions": "(12)",
+      "text": "Will the kind judge squelch the five or six brazen nymphs?"
+    },
+    "lesson_D14.14": {
+      "title": "Lesson D14.14: Drill",
+      "type": "Drill",
+      "instructions": "(13)",
+      "text": "Mix zippy Kadota figs with quivering cranberry jelly."
+    },
+    "lesson_D14.15": {
+      "title": "Lesson D14.15: Drill",
+      "type": "Drill",
+      "instructions": "(14)",
+      "text": "The wives quickly jerked extra big pizzas from the stand."
+    },
+    "lesson_D14.16": {
+      "title": "Lesson D14.16: Drill",
+      "type": "Drill",
+      "instructions": "(15)",
+      "text": "Lisa quickly mixed the very big jar of new soap."
+    },
+    "lesson_D14.17": {
+      "title": "Lesson D14.17: Drill",
+      "type": "Drill",
+      "instructions": "(16)",
+      "text": "The major will fix a quiet cozy nook for the vexed, bad Gypsy."
+    },
+    "lesson_D14.18": {
+      "title": "Lesson D14.18: Drill",
+      "type": "Drill",
+      "instructions": "(17)",
+      "text": "Pairs of lazy knowing oxen came by quietly evading the jam."
+    },
+    "lesson_D14.19": {
+      "title": "Lesson D14.19: Drill",
+      "type": "Drill",
+      "instructions": "(18)",
+      "text": "Juvenile zest for excitement whetted interest in parking by the quay."
+    },
+    "lesson_D14.20": {
+      "title": "Lesson D14.20: Drill",
+      "type": "Drill",
+      "instructions": "(19)",
+      "text": "Put your big ax, shovel and quartz where Mike's fence joins ours."
+    },
+    "lesson_D14.21": {
+      "title": "Lesson D14.21: Drill",
+      "type": "Drill",
+      "instructions": "(20)",
+      "text": "The brawny jaguar held fast till the quaking Zouave victim expired."
+    }
+  }
+}
