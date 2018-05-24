@@ -36,6 +36,7 @@ Sorry about that.
 Currently (and significantly) missing from _Typist_ but present in GNU _Gtypist_:
 * Support for non-ASCII languages
 * More flexible colour controls
+* Log of past exercises
 * A heap of help and other documentation
 
 ### What is odd?
@@ -61,9 +62,8 @@ hence the v2 and purely declarative JSON lessons). INI file format, maybe, next 
 
 ### Finally, for GNU _Gtypist_ maintainers...
 
-I emailed you about this effort, but got no response. Nevertheless, if there is anything
-at all you wish to extract from this source base and work into GNU _Gtypist_, you are of
-course more than welcome to do so.
+If there is anything at all you wish to extract from this source base and work into
+GNU _Gtypist_, you are of course more than welcome to do so.
 
 Some parts will probably be hard to port without considerable surgery to _Gtypist_, but
 a few others look like they might be relatively straightforward to fold in. Feel free to
