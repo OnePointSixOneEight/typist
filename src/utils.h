@@ -54,13 +54,19 @@ struct utils_ {
   double (*start_timer) (void);
   double (*timer_interval) (double started);
 
+  void (*set_locale) (const char *locale);
+  int (*is_utf8_locale) (void);
+  void (*bind_text_domain) (const char *package, const char *localedir);
+  void (*set_text_domain) (const char *package);
+
   char *(*locate_file) (const char *search_path,
                         const char *name, const char *suffix);
+  int (*read_in_file) (void *v_stream, char **file_data);
 };
 
-#undef pf1
-#undef pf2
+#undef _pf1
+#undef _pf2
 
-struct utils_ utils_;
+extern struct utils_ utils_;
 
 #endif

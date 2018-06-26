@@ -39,11 +39,13 @@ typedef struct keymapper keymapper_s;
 struct keymapper_ {
   keymapper_s *(*create) (keymap_s *from,
                           keymap_s *to, int attempt_ctrl_keys);
+  int (*requires_utf8) (const keymapper_s *keymapper);
   int (*convert) (const keymapper_s *keymapper, int key);
+  int (*unconvert) (const keymapper_s *keymapper, int key);
   void (*destroy) (keymapper_s *keymapper);
 };
 
-struct keymap_ keymap_;
-struct keymapper_ keymapper_;
+extern struct keymap_ keymap_;
+extern struct keymapper_ keymapper_;
 
 #endif

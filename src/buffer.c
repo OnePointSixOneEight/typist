@@ -20,6 +20,7 @@
 
 #include <string.h>
 
+#include "_gettext.h"
 #include "utils.h"
 #include "buffer.h"
 
@@ -35,7 +36,7 @@ extend (buffer_s *buffer, int extension)
 {
   int new_allocation, required;
   utils_.fatal_if (extension < 0,
-                   "internal error: bad buffer extension size");
+                   _("internal error: bad buffer extension size"));
 
   required = buffer->length + extension;
 
@@ -54,7 +55,7 @@ static buffer_s *
 create (int size)
 {
   buffer_s *buffer;
-  utils_.fatal_if (size < 0, "internal error: bad buffer initial size");
+  utils_.fatal_if (size < 0, _("internal error: bad buffer initial size"));
 
   buffer = utils_.alloc (sizeof (*buffer));
   buffer->allocation = buffer->length = 0;
@@ -112,6 +113,8 @@ append (buffer_s *buffer, const void* const data, int size)
       buffer->length += size;
     }
 }
+
+struct buffer_ buffer_;
 
 __attribute__((constructor))
 void

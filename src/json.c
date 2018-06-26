@@ -21,6 +21,7 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "_gettext.h"
 #include "jsmn.h"
 #include "utils.h"
 #include "json.h"
@@ -57,7 +58,7 @@ stringify_and_unescape (json_s *json, int token_count)
       k = token->start;
       for (j = token->start; j < token->end; j++, k++)
         {
-          if (data[j] == '\\' && data[j + 1])
+          if (data[j] == '\\' && data[j + 1] && data[j + 1] != 'u')
             {
               const char *escapes = "bfnrt\"\\";
               char *e = strchr (escapes, data[++j]);
@@ -77,7 +78,7 @@ indicate_location (int position, const char *json_data)
 
   sscanf (json_data + position, "%31[^\n]", buffer);
   utils_.error_if (strlen (buffer),
-                   "JSON file parse: near '%s ...'", buffer);
+                   _("JSON file parse: near '%s ...'"), buffer);
 }
 
 static json_s *
@@ -89,7 +90,7 @@ parse (const char *file_data, int file_length, int strict_json)
 
   if (!file_length)
     {
-      utils_.error ("JSON file parse error: file contains no data");
+      utils_.error (_("JSON file parse error: file contains no data"));
       utils_.free (json);
       return NULL;
     }
@@ -114,14 +115,15 @@ parse (const char *file_data, int file_length, int strict_json)
     indicate_location (parser.pos, json->data);
 
   utils_.error_if (token_count == JSMN_ERROR_PART,
-                   "JSON file parse error: file data is incomplete");
+                   _("JSON file parse error: file data is incomplete"));
   utils_.error_if (token_count == JSMN_ERROR_INVAL,
-                   "JSON file parse error: file data is not valid JSON");
+                   _("JSON file parse error: file data is not valid JSON"));
 
   if (token_count < 1)
     {
       utils_.error_if (token_count == 0,
-                       "JSON file parse error: file contains no usable data");
+                       _("JSON file parse error:"
+                         " file contains no usable data"));
       utils_.free (json->data);
       utils_.free (json);
       return NULL;
@@ -146,14 +148,14 @@ parse (const char *file_data, int file_length, int strict_json)
     indicate_location (parser.pos, json->data);
 
   utils_.error_if (status == JSMN_ERROR_PART,
-                   "JSON file parse error: file data is incomplete");
+                   _("JSON file parse error: file data is incomplete"));
   utils_.error_if (status == JSMN_ERROR_INVAL,
-                   "JSON file parse error: file data is not valid JSON");
+                   _("JSON file parse error: file data is not valid JSON"));
 
   if (status < 1)
     {
       utils_.fatal_if (status == JSMN_ERROR_NOMEM,
-                       "internal error: not enough parser tokens allocated");
+                       _("internal error: not enough parser tokens allocated"));
       utils_.free (json->data);
       utils_.free (json->tokens);
       utils_.free (json);
@@ -169,8 +171,9 @@ destroy (json_s *json)
 {
   utils_.free (json->data);
   utils_.free (json->tokens);
+
+  memset (json, 0, sizeof (*json));
   utils_.free (json);
-  memset (json, 0, sizeof (json));
 }
 
 static const char *
@@ -213,7 +216,7 @@ extent_of (const json_s *json, int element)
       return j + 1;
     }
 
-  utils_.fatal ("internal error: invalid JSON token encountered");
+  utils_.fatal (_("internal error: invalid JSON token encountered"));
   return 0;
 }
 
@@ -221,12 +224,12 @@ static int
 get_element (const json_s *json, int object, const char *target)
 {
   const jsmntok_t *token = json->tokens + object;
-  int length = strlen (target), i, j;
+  int i, j;
 
   if (token->type != JSMN_OBJECT)
     {
-      utils_.error ("attempt to get an"
-                    " element from a JSON '%s'", type_string (token->type));
+      utils_.error (_("attempt to get an"
+                      " element from a JSON '%s'"), type_string (token->type));
       return 0;
     }
 
@@ -238,14 +241,13 @@ get_element (const json_s *json, int object, const char *target)
 
       if (!(name->type == JSMN_STRING || name->type == JSMN_PRIMITIVE))
         {
-          utils_.error ("JSON object names must be string (or"
-                        " primitive), found '%s'", type_string (name->type));
+          utils_.error (_("JSON object names must be string (or"
+                          " primitive), found '%s'"), type_string (name->type));
 
           return 0;
         }
 
-      if (name->end - name->start == length
-          && memcmp (string, target, length) == 0)
+      if (strcmp (string, target) == 0)
         return j + 2;
 
       j += extent_of (json, j + 1);
@@ -268,8 +270,8 @@ element_string (const json_s *json, int element)
 
   if (!(token->type == JSMN_PRIMITIVE || token->type == JSMN_STRING))
     {
-      utils_.error ("attempt to get a string from a"
-                    " '%s' JSON element", type_string (token->type));
+      utils_.error (_("attempt to get a string from a"
+                      " '%s' JSON element"), type_string (token->type));
       return "<invalid>";
     }
 
@@ -294,8 +296,8 @@ get_element_of_type (const json_s *json,
 
   if (result && token->type != type)
     {
-      utils_.error ("JSON element '%s'"
-                    " is not of type '%s'", target, type_string (type));
+      utils_.error (_("JSON element '%s'"
+                      " is not of type '%s'"), target, type_string (type));
       result = 0;
     }
   return result;
@@ -311,7 +313,7 @@ get_element_of_types (const json_s *json,
 
   if (result && !(token->type == type1 || token->type == type2))
     {
-      utils_.error ("JSON element '%s' is not of type '%s' or type '%s'",
+      utils_.error (_("JSON element '%s' is not of type '%s' or type '%s'"),
                     target, type_string (type1), type_string (type2));
       result = 0;
     }
@@ -325,7 +327,8 @@ get_required_element (const json_s *json,
   int result = get_element (json, object, target);
 
   if (!result)
-    utils_.error ("JSON object '%s' is missing a '%s' element", from, target);
+    utils_.error (_("JSON object '%s'"
+                    " is missing a '%s' element"), from, target);
   return result;
 }
 
@@ -339,8 +342,8 @@ get_required_element_of_type (const json_s *json, int object,
 
   if (result && token->type != type)
     {
-      utils_.error ("JSON element '%s' in '%s' is not"
-                    " of type '%s'", target, from, type_string (type));
+      utils_.error (_("JSON element '%s' in '%s' is not"
+                      " of type '%s'"), target, from, type_string (type));
       result = 0;
     }
   return result;
@@ -357,8 +360,8 @@ get_required_element_of_types (const json_s *json,
 
   if (result && !(token->type == type1 || token->type == type2))
     {
-      utils_.error ("JSON element '%s' in '%s' is not"
-                    " of type '%s' or type '%s'",
+      utils_.error (_("JSON element '%s' in '%s' is not"
+                      " of type '%s' or type '%s'"),
                     target, from, type_string (type1), type_string (type2));
       result = 0;
     }
@@ -366,20 +369,20 @@ get_required_element_of_types (const json_s *json,
 }
 
 static void
-foreach_array_element (const json_s *json, int array,
-                       void (*handler) (const json_s *json,
-                                        int element,
-                                        int index,
-                                        void *opaque1, void *opaque2),
-                       void *opaque1, void *opaque2)
+for_each_array_element (const json_s *json, int array,
+                        void (*handler) (const json_s *json,
+                                         int element,
+                                         int index,
+                                         void *opaque1, void *opaque2),
+                        void *opaque1, void *opaque2)
 {
   const jsmntok_t *token = json->tokens + array;
   int i, j;
 
   if (token->type != JSMN_ARRAY)
     {
-      utils_.error ("attempt to iterate a '%s'"
-                    " JSON element as an array", type_string (token->type));
+      utils_.error (_("attempt to iterate a '%s' JSON"
+                      " element as an array"), type_string (token->type));
       return;
     }
 
@@ -392,18 +395,18 @@ foreach_array_element (const json_s *json, int array,
 }
 
 static void
-foreach_object_element (const json_s *json, int object,
-                        void (*handler) (const json_s *json,
-                                         int name, int value, void *opaque),
-                        void *opaque)
+for_each_object_element (const json_s *json, int object,
+                         void (*handler) (const json_s *json,
+                                          int name, int value, void *opaque),
+                         void *opaque)
 {
   const jsmntok_t *token = json->tokens + object;
   int i, j;
 
   if (token->type != JSMN_OBJECT)
     {
-      utils_.error ("attempt to iterate a '%s'"
-                    " JSON element as an object", type_string (token->type));
+      utils_.error (_("attempt to iterate a '%s' JSON"
+                      "  element as an object"), type_string (token->type));
       return;
     }
 
@@ -415,6 +418,8 @@ foreach_object_element (const json_s *json, int object,
       j += extent_of (json, j + 1);
     }
 }
+
+struct json_ json_;
 
 __attribute__((constructor))
 void
@@ -431,6 +436,6 @@ init_json (void)
   json_.get_required_element = get_required_element;
   json_.get_required_element_of_type = get_required_element_of_type;
   json_.get_required_element_of_types = get_required_element_of_types;
-  json_.foreach_array_element = foreach_array_element;
-  json_.foreach_object_element = foreach_object_element;
+  json_.for_each_array_element = for_each_array_element;
+  json_.for_each_object_element = for_each_object_element;
 }

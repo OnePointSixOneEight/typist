@@ -18,10 +18,16 @@
    Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
+#if !defined(_XOPEN_SOURCE_EXTENDED)
+#define _XOPEN_SOURCE_EXTENDED
+#endif
+
 #include <curses.h>
 #include <stdio.h>
 #include <string.h>
 
+#include "_gettext.h"
+#include "utf8.h"
 #include "screen.h"
 
 /* This is unpleasant. We cannot include utils.h because the curses
@@ -55,7 +61,7 @@ init (void)
   ESCDELAY = 1;
 #endif
   initialized = 1;
-  utils_.info ("screen initialized");
+  utils_.info (_("screen initialized"));
 }
 
 static void
@@ -70,7 +76,7 @@ finalize (void)
   endwin ();
   printf ("\n");
   initialized = 0;
-  utils_.info ("screen finalized");
+  utils_.info (_("screen finalized"));
 }
 
 static void
@@ -98,39 +104,85 @@ static void cursor_off (void) { curs_set (0); }
 static void cursor_on (void) { curs_set (1); }
 static void refresh_ (void) { refresh (); }
 static void break_ (void) { cbreak (); }
-static int get_char (void) { return getch (); }
-static void add_char (char c) { addch (c); }
-static void add_string (const char *s) { addstr (s); }
+
+static int
+get_char (void)
+{
+  int ch, status = get_wch (&ch);
+
+  /* Repaint the full screen on ^L, similar to vim.  */
+  while (status == OK && ch == '\f')
+    {
+      redrawwin (curscr);
+      refresh ();
+      status = get_wch (&ch);
+    }
+
+  /* Make \r and \n equivalent.  */
+  if (status == OK && ch == '\r')
+    ch = '\n';
+
+  /* Convert key codes into negative numbers. This ensures no collision
+     with any valid Unicode characters (these are restricted to 21 bits).
+     As a consequence, we have to negate all the function keys and other
+     special key code constants used by and returned from this module.  */
+  ch = status == KEY_CODE_YES ? -ch : ch;
+  return status == ERR ? ERR : ch;
+}
+
+static void push_back_char (int c) { unget_wch (c); }
 
 static void
-add_char_reverse (char c)
+add_ucs_char (int c)
+{
+  int s[2];
+  cchar_t cc;
+
+  s[0] = c;
+  s[1] = 0;
+  setcchar (&cc, s, 0, 1, NULL);
+  add_wch (&cc);
+}
+
+static void
+add_ucs_char_reverse (int c)
 {
   attron (A_REVERSE);
-  addch (c);
+  add_ucs_char (c);
   attroff (A_REVERSE);
 }
 
 static void
-add_string_reverse (const char *s)
-{
-  attron (A_REVERSE);
-  addstr (s);
-  attroff (A_REVERSE);
-}
-
-static void
-add_char_underline (char c)
+add_ucs_char_underline (int c)
 {
   attron (A_UNDERLINE);
-  addch (c);
+  add_ucs_char (c);
   attroff (A_UNDERLINE);
 }
 
 static void
-add_string_underline (const char *s)
+add_utf8_string (const char *s)
+{
+  int *cursor, *ucs = utf8_.to_ucs (s);
+
+  for (cursor = ucs; *cursor; cursor++)
+    add_ucs_char (*cursor);
+  utf8_.free (ucs);
+}
+
+static void
+add_utf8_string_reverse (const char *s)
+{
+  attron (A_REVERSE);
+  add_utf8_string (s);
+  attroff (A_REVERSE);
+}
+
+static void
+add_utf8_string_underline (const char *s)
 {
   attron (A_UNDERLINE);
-  addstr (s);
+  add_utf8_string (s);
   attroff (A_UNDERLINE);
 }
 
@@ -141,16 +193,20 @@ static void move_top_left (void) { move (LINES - 1, COLS - 1); }
 static void clear_ (void) { clear (); }
 static void clear_to_line_end (void) { clrtoeol (); }
 static void clear_to_screen_bottom (void) { clrtobot (); }
-static int has_colors_ (void) { return has_colors (); }
-static void start_color_ (void) { start_color (); }
+static int has_colours_ (void) { return has_colors (); }
+static void start_colour_ (void) { start_color (); }
 
 static void
-init_pair_ (int pair, int fg, int bg) {
+init_pair_ (int pair, int fg, int bg)
+{
   init_pair (pair, fg, bg);
 }
 
 static void halfdelay_ (int n) { halfdelay (n); }
-static int function_key (int n) { return KEY_F (n); }
+static int function_key (int n) { return -KEY_F (n); }
+static void beep_ (void) { beep (); }
+
+struct screen_ screen_;
 
 __attribute__((constructor))
 void
@@ -165,12 +221,13 @@ init_screen (void)
   screen_.refresh = refresh_;
   screen_.break_ = break_;
   screen_.get_char = get_char;
-  screen_.add_char = add_char;
-  screen_.add_string = add_string;
-  screen_.add_char_reverse = add_char_reverse;
-  screen_.add_string_reverse = add_string_reverse;
-  screen_.add_char_underline = add_char_underline;
-  screen_.add_string_underline = add_string_underline;
+  screen_.push_back_char = push_back_char;
+  screen_.add_ucs_char = add_ucs_char;
+  screen_.add_ucs_char_reverse = add_ucs_char_reverse;
+  screen_.add_ucs_char_underline = add_ucs_char_underline;
+  screen_.add_utf8_string = add_utf8_string;
+  screen_.add_utf8_string_reverse = add_utf8_string_reverse;
+  screen_.add_utf8_string_underline = add_utf8_string_underline;
   screen_.get_lines = get_lines;
   screen_.get_columns = get_columns;
   screen_.move = move_;
@@ -178,11 +235,16 @@ init_screen (void)
   screen_.clear = clear_;
   screen_.clear_to_line_end = clear_to_line_end;
   screen_.clear_to_screen_bottom = clear_to_screen_bottom;
-  screen_.has_colors = has_colors_;
-  screen_.start_color = start_color_;
+  screen_.has_colours = has_colours_;
+  screen_.start_colour = start_colour_;
   screen_.init_pair = init_pair_;
   screen_.halfdelay = halfdelay_;
   screen_.function_key = function_key;
+  screen_.beep = beep_;
+  screen_.ERR_ = ERR;
+  screen_.KEY_BACKSPACE_ = -KEY_BACKSPACE;
+  screen_.KEY_DOWN_ = -KEY_DOWN;
+  screen_.KEY_UP_ = -KEY_UP;
   screen_.num_colours
     = sizeof (screen_.colour_array) / sizeof (*screen_.colour_array);
   screen_.colour_array[0] = COLOR_BLACK;
@@ -193,8 +255,4 @@ init_screen (void)
   screen_.colour_array[5] = COLOR_MAGENTA;
   screen_.colour_array[6] = COLOR_CYAN;
   screen_.colour_array[7] = COLOR_WHITE;
-  screen_.ERR_ = ERR;
-  screen_.KEY_BACKSPACE_ = KEY_BACKSPACE;
-  screen_.KEY_DOWN_ = KEY_DOWN;
-  screen_.KEY_UP_ = KEY_UP;
 }

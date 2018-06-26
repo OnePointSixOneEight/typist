@@ -18,11 +18,12 @@
    Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
-#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
 
+#include "_gettext.h"
 #include "json.h"
+#include "utf8.h"
 #include "utils.h"
 #include "keymap.h"
 
@@ -36,39 +37,44 @@ struct keymap {
   } u;
 };
 
-static int keymap_length = sizeof (keymap_s) / sizeof (int);
+static const int keymap_length = sizeof (keymap_s) / sizeof (int);
 
 static void
 process_iso_to (keymap_s *keymap,
                 const char *iso, const char *to, int shifted)
 {
   char row;
-  int *keys, column, offset;
+  int *ucs_to, ucs, *keys, column, offset;
 
   if (strlen (iso) != 3 || sscanf (iso, "%c%02d", &row, &column) != 2
       || row < 'B' || row > 'E' || column < 0 || column > 15)
     {
-      utils_.error ("invalid ISO key identifier '%s' (entry ignored)", iso);
+      utils_.error (_("invalid ISO key identifier '%s' (entry ignored)"), iso);
       return;
     }
 
-  if (strlen (to) != 1)
+  ucs_to = utf8_.to_ucs (to);
+
+  if (!ucs_to || !ucs_to[0] || ucs_to[1])
     {
-      utils_.error ("invalid ISO 'to' mapping '%s' (entry ignored)", to);
+      utils_.error (_("invalid ISO 'to' mapping '%s' (entry ignored)"), to);
+      utils_.free (ucs_to);
       return;
     }
+
+  ucs = *ucs_to;
+  utf8_.free (ucs_to);
 
   offset = (int) (row - 'B') * 16 + column;
-  keys = shifted ? keymap->u.pair.shifted_keys
-                 : keymap->u.pair.normal_keys;
+  keys = shifted ? keymap->u.pair.shifted_keys : keymap->u.pair.normal_keys;
 
   if (keys[offset])
     {
-      utils_.error ("duplicate ISO mapping '%s' (entry ignored)", iso);
+      utils_.error (_("duplicate ISO mapping '%s' (entry ignored)"), iso);
       return;
     }
 
-  keys[offset] = *to;
+  keys[offset] = ucs;
 }
 
 static void
@@ -81,8 +87,8 @@ process_map (const json_s *json,
 
   if (json_.element_type (json, value) != json_object)
     {
-      utils_.error ("Non-object JSON"
-                    " element found in 'map[]', at index %d", index_);
+      utils_.error (_("Non-object JSON"
+                      " element found in 'map[]', at index %d"), index_);
       return;
     }
 
@@ -121,13 +127,13 @@ validate_keymap_core (const keymap_s *keymap)
         }
       if (cursor == keymap->u.keys + keymap_length)
         {
-          utils_.error ("missing ISO core key map for '%c'", seeking);
+          utils_.error (_("missing ISO core key map for '%c'"), seeking);
           missing++;
         }
     }
 
   if (missing)
-    utils_.error ("missing %d core ISO key map(s)", missing);
+    utils_.error (_("missing %d core ISO key map(s)"), missing);
 
   return missing == 0;
 }
@@ -142,8 +148,8 @@ process_keymap (const json_s *json,
 
   if (json_.element_type (json, value) != json_object)
     {
-      utils_.error ("Non-object JSON"
-                    " element found in 'keyMap[]', at index %d", index_);
+      utils_.error (_("Non-object JSON"
+                      " element found in 'keyMap[]', at index %d"), index_);
       return;
     }
 
@@ -153,8 +159,8 @@ process_keymap (const json_s *json,
     {
       if (strcmp (json_.element_string (json, modifiers), "shift") != 0)
         {
-          utils_.error ("only the 'shift'"
-                        " modifier is supported (modifier ignored)");
+          utils_.error (_("only the 'shift'"
+                          " modifier is supported (modifier ignored)"));
           return;
         }
       shifted = B.True;
@@ -166,8 +172,8 @@ process_keymap (const json_s *json,
   if (!map)
     return;
 
-  json_.foreach_array_element (json, map,
-                               process_map, keymap, (void*)shifted);
+  json_.for_each_array_element (json, map,
+                                process_map, keymap, (void*)shifted);
 }
 
 static keymap_s *
@@ -178,8 +184,8 @@ process_layout (const json_s *json, int keymap_obj, int strict_iso_core)
   keymap = utils_.alloc (sizeof *keymap);
   memset (keymap, 0, sizeof (*keymap));
 
-  json_.foreach_array_element (json, keymap_obj,
-                               process_keymap, keymap, NULL);
+  json_.for_each_array_element (json, keymap_obj,
+                                process_keymap, keymap, NULL);
 
   if (strict_iso_core && !validate_keymap_core (keymap))
     {
@@ -190,19 +196,37 @@ process_layout (const json_s *json, int keymap_obj, int strict_iso_core)
   return keymap;
 }
 
-static char *
-to_ascii (keymap_s *keymap)
+static int
+requires_utf8 (const keymap_s *keymap)
 {
-  char *string = utils_.alloc (keymap_length + 1);
-  int *cursor, i = 0;
+  const int *cursor;
 
   for (cursor = keymap->u.keys;
        cursor < keymap->u.keys + keymap_length; cursor++)
     {
-      if (isprint (*cursor))
-        string[i++] = *cursor;
+      if (*cursor > '~' + 1)
+        return B.True;
+    }
+
+  return B.False;
+}
+
+static char *
+to_ascii (const keymap_s *keymap)
+{
+  char *string = utils_.alloc (keymap_length * 10 + 1);
+  const int *cursor;
+  int i = 0;
+
+  for (cursor = keymap->u.keys;
+       cursor < keymap->u.keys + keymap_length; cursor++)
+    {
+      int c = *cursor ? *cursor : ' ';
+
+      if (c >= ' ' && c <= '~')
+        i += sprintf (string + i, "%c", c);
       else
-        string[i++] = ' ';
+        i += sprintf (string + i, "U+%04X", c);
     }
   string[i] = 0;
 
@@ -211,13 +235,13 @@ to_ascii (keymap_s *keymap)
 
 static keymap_s *
 create (const char *file_data,
-        int file_length, int strict_iso, int strict_iso_core)
+        int file_length, int strict_json, int strict_iso_core)
 {
   json_s *json;
   int keyboard, version, keymap_obj;
   keymap_s *keymap;
 
-  json = json_.parse (file_data, file_length, strict_iso);
+  json = json_.parse (file_data, file_length, strict_json);
   if (!json)
     return NULL;
 
@@ -240,7 +264,7 @@ create (const char *file_data,
     }
   if (strcmp (json_.element_string (json, version), "1") != 0)
     {
-      utils_.error ("'version' is not 1");
+      utils_.error (_("'version' is not 1"));
       json_.destroy (json);
       return NULL;
     }
@@ -258,42 +282,16 @@ create (const char *file_data,
   json_.destroy (json);
 
   if (!keymap)
-    utils_.error ("unable to load JSON keymap");
+    utils_.error (_("unable to load JSON keymap"));
 
   if (keymap)
     {
       char *info = to_ascii (keymap);
-      utils_.info ("loaded JSON keymap: %s", info);
+      utils_.info (_("loaded JSON keymap: %s"), info);
       utils_.free (info);
     }
 
   return keymap;
-}
-
-static int
-read_in_file (FILE *stream, char **file_data)
-{
-  char *data;
-  int bytes, status;
-
-  status = fseek (stream, 0, SEEK_END);
-  utils_.fatal_if (status == -1, "internal error: fseek returned -1");
-  bytes = ftell (stream);
-
-  if (bytes > 0)
-    {
-      data = utils_.alloc (bytes);
-
-      rewind (stream);
-      status = fread (data, bytes, 1, stream);
-      utils_.fatal_if (status != 1, "internal error: fread did not return 1");
-
-      *file_data = data;
-    }
-  else
-    *file_data = NULL;
-
-  return bytes;
 }
 
 static keymap_s *
@@ -304,22 +302,25 @@ open (const char *path, int strict_json, int strict_iso_core)
   int file_length;
   FILE *stream;
 
-  stream = fopen (path, "r");
+  stream = fopen (path, "rb");
   if (!stream)
     return NULL;
-  utils_.info ("opened file '%s' on stream p_%p", path, p_(stream));
+  utils_.info (_("opened file '%s' on stream p_%p"), path, p_(stream));
 
-  file_length = read_in_file (stream, &file_data);
+  file_length = utils_.read_in_file (stream, &file_data);
   fclose (stream);
-  utils_.info ("read %d bytes from stream p_%p", file_length, p_(stream));
+  utils_.info (_("read %d bytes from stream p_%p"), file_length, p_(stream));
 
   if (file_length == 0)
-    return NULL;
+    {
+      utils_.error (_("file '%s' contains no data"), path);
+      return NULL;
+    }
 
   keymap = create (file_data, file_length, strict_json, strict_iso_core);
   utils_.free (file_data);
 
-  utils_.info ("open keymap returned p_%p", p_(keymap));
+  utils_.info (_("open keymap returned p_%p"), p_(keymap));
   return keymap;
 }
 
@@ -344,8 +345,11 @@ load (const char *name,
 static void
 close (keymap_s *keymap)
 {
+  memset (keymap, 0, sizeof (*keymap));
   utils_.free (keymap);
 }
+
+struct keymap_ keymap_;
 
 __attribute__((constructor))
 void
@@ -362,41 +366,52 @@ struct keymapper {
   int attempt_ctrl_keys;
 };
 
-static int*
+static const int *
 from_keys (const keymapper_s *keymapper)
 {
   return keymapper->from->u.keys;
 }
 
-static int*
+static const int *
 to_keys (const keymapper_s *keymapper)
 {
   return keymapper->to->u.keys;
 }
 
 static void
-detect_ambiguity (const keymapper_s *keymapper)
+detect_ambiguity (const keymapper_s *keymapper, int forwards)
 {
+  const int *from = from_keys (keymapper), *to = to_keys (keymapper);
   const int *cursor, *compare;
 
-  for (cursor = from_keys (keymapper);
-       cursor < from_keys (keymapper) + keymap_length + 1; cursor++)
+  if (!forwards)
+    {
+      from = to_keys (keymapper);
+      to = from_keys (keymapper);
+    }
+
+  for (cursor = from; cursor < from + keymap_length; cursor++)
     {
       int conversions = 0;
 
       if (!*cursor)
         continue;
 
-      for (compare = to_keys (keymapper);
-           compare < to_keys (keymapper) + keymap_length + 1; compare++)
+      for (compare = to; compare < to + keymap_length; compare++)
         {
           if (*compare == *cursor)
             conversions++;
         }
 
-      utils_.error_if (conversions > 1,
-                       "ambiguous conversion for '%c' (%d entries)",
-                       *cursor, conversions);
+      if (conversions > 1)
+        {
+          if (forwards)
+            utils_.error (_("ambiguous conversion for U+%04X"
+                            " (%d entries)"), *cursor, conversions);
+          else
+            utils_.error (_("ambiguous back-conversion for U+%04X"
+                            " (%d entries)"), *cursor, conversions);
+        }
     }
 }
 
@@ -409,37 +424,61 @@ create_keymapper (keymap_s *from, keymap_s *to, int attempt_ctrl_keys)
   keymapper->to = to;
   keymapper->attempt_ctrl_keys = attempt_ctrl_keys;
 
-  detect_ambiguity (keymapper);
+  detect_ambiguity (keymapper, B.True);
+  detect_ambiguity (keymapper, B.False);
+
+  utils_.info (_("keymapper p_%p"
+                 " maps from p_%p to p_%p"), p_(keymapper), p_(from), p_(to));
+
   return keymapper;
 }
 
 static int
-map_key (const keymapper_s *keymapper, int key)
+requires_utf8_ (const keymapper_s *keymapper)
+{
+  return requires_utf8 (keymapper->from) || requires_utf8 (keymapper->to);
+}
+
+static int
+map_key (const keymapper_s *keymapper, int key, int forwards)
 {
   const int *cursor;
+  const int *from = from_keys (keymapper), *to = to_keys (keymapper);
   int mapped = 0, represented = B.False;
 
-  for (cursor = from_keys (keymapper);
-       cursor < from_keys (keymapper) + keymap_length + 1; cursor++)
+  if (!forwards)
+    {
+      from = to_keys (keymapper);
+      to = from_keys (keymapper);
+    }
+
+  for (cursor = from; cursor < from + keymap_length; cursor++)
     {
       if (!*cursor)
         continue;
 
       if (*cursor == key)
         {
-          const int *mapping = to_keys (keymapper)
-                               + (cursor - from_keys (keymapper));
+          const int *mapping = to + (cursor - from);
           if (*mapping)
             mapped = *mapping;
           represented = B.True;
         }
     }
 
+  if (represented && mapped != key)
+    {
+      if (forwards)
+        utils_.info (_("mapped key code U+%04X to U+%04X"), key, mapped);
+      else
+        utils_.info (_("mapped key code U+%04X back to U+%04X"), key, mapped);
+    }
+
   return represented ? mapped : key;
 }
 
 static int
-convert (const keymapper_s *keymapper, int key)
+convert_key (const keymapper_s *keymapper, int key, int forwards)
 {
   if (!keymapper->from || !keymapper->to)
     return key;
@@ -451,7 +490,7 @@ convert (const keymapper_s *keymapper, int key)
     {
       if (keymapper->attempt_ctrl_keys)
         {
-          int mapped = map_key (keymapper, key + 'a' - 1) - 'a' + 1;
+          int mapped = map_key (keymapper, key + 'a' - 1, forwards) - 'a' + 1;
           return (mapped > 0 && mapped < 'z' - 'a' + 1) ? mapped : 0;
         }
     }
@@ -459,27 +498,40 @@ convert (const keymapper_s *keymapper, int key)
   if (key < ' ' - 1)
     return key;
 
-  return map_key (keymapper, key);
+  return map_key (keymapper, key, forwards);
+}
+
+static int
+convert (const keymapper_s *keymapper, int key)
+{
+  return convert_key (keymapper, key, B.True);
+}
+
+static int
+unconvert (const keymapper_s *keymapper, int key)
+{
+  return convert_key (keymapper, key, B.False);
 }
 
 static void
 destroy_keymapper (keymapper_s *keymapper)
 {
-  if (keymapper->from)
-    keymap_.close (keymapper->from);
-
-  if (keymapper->to)
-    keymap_.close (keymapper->to);
+  keymap_.close (keymapper->from);
+  keymap_.close (keymapper->to);
 
   memset (keymapper, 0, sizeof (*keymapper));
   utils_.free (keymapper);
 }
+
+struct keymapper_ keymapper_;
 
 __attribute__((constructor))
 void
 init_keymapper (void)
 {
   keymapper_.create = create_keymapper;
+  keymapper_.requires_utf8 = requires_utf8_;
   keymapper_.convert = convert;
+  keymapper_.unconvert = unconvert;
   keymapper_.destroy = destroy_keymapper;
 }

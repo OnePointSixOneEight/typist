@@ -20,6 +20,7 @@
 
 #include <string.h>
 
+#include "_gettext.h"
 #include "utils.h"
 #include "vector.h"
 
@@ -42,7 +43,7 @@ extend (vector_s *vector, int elements)
 {
   int new_allocation;
   utils_.fatal_if (elements < 1,
-                   "internal error: bad vector elements count");
+                   _("internal error: bad vector elements count"));
 
   if (elements <= vector->length)
     return;
@@ -65,7 +66,7 @@ expunge (vector_s *vector, int index_)
 {
   int new_length;
   utils_.fatal_if (index_ > vector->length - 1,
-                   "internal error: bad vector index to expunge");
+                   _("internal error: bad vector index to expunge"));
 
   new_length = vector->length - 1;
 
@@ -83,7 +84,7 @@ static vector_s *
 create (int span)
 {
   vector_s *vector;
-  utils_.fatal_if (span < 1, "internal error: bad vector span");
+  utils_.fatal_if (span < 1, _("internal error: bad vector span"));
 
   vector = utils_.alloc (sizeof (*vector));
   vector->span = span;
@@ -141,6 +142,8 @@ push_back (vector_s *vector, const void *payload)
   set (vector, vector->length, payload);
   return vector->length - 1;
 }
+
+struct vector_ vector_;
 
 __attribute__((constructor))
 void

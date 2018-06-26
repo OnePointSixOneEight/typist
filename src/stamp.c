@@ -18,14 +18,29 @@
    Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
-#define v1 __GNUC__
-#define v2 __GNUC_MINOR__
-#define v3 __GNUC_PATCHLEVEL__
+#define gv1 __GNUC__
+#define gv2 __GNUC_MINOR__
+#define gv3 __GNUC_PATCHLEVEL__
+
+#define cv1 __clang_major__
+#define cv2 __clang_minor__
+#define cv3 __clang_patchlevel__
 
 #define s(x) #x
 #define ss(x) s(x)
-const char *const COMPILER = ss(v1) "." ss(v2) "." ss(v3);
-const char *const BUILD_DATE = __DATE__ " " __TIME__;
+
+#if defined(__GNUC__)
+const char *const COMPILER = "gcc" ss(gv1) "." ss(gv2) "." ss(gv3);
+#elif defined(__clang__)
+const char *const COMPILER = "clang" ss(cv1) "." ss(cv2) "." ss(cv3);
+#else
+const char *const COMPILER = "<unknown>";
+#endif
+
+const char *const BUILD_DATE =
+#include "_timestamp"
+;
+
 const char *const SOURCE_MD5 =
 #include "stamp"
 ;

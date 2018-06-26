@@ -21,6 +21,7 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "_gettext.h"
 #include "buffer.h"
 #include "json.h"
 #include "map.h"
@@ -39,10 +40,10 @@ static struct constants constants;
 static void
 init_constants (void)
 {
-  constants.CONTINUE_MESSAGE    = " Continue to the next lesson? [Y/N] ";
-  constants.FALLTHROUGH_MESSAGE = " No more lessons -"
-                                  " exit this lesson series? [Y/N] ";
-  constants.EXIT_MESSAGE        = " Exit this lesson series? [Y/N] ";
+  constants.CONTINUE_MESSAGE    = _(" Continue to the next lesson? [Y/N] ");
+  constants.FALLTHROUGH_MESSAGE = _(" No more lessons -"
+                                    " exit this lesson series? [Y/N] ");
+  constants.EXIT_MESSAGE        = _(" Exit this lesson series? [Y/N] ");
 }
 
 static void
@@ -67,8 +68,8 @@ build_menu_entry (const json_s *json,
 
   if (json_.element_type (json, entry) != json_object)
     {
-      utils_.error ("JSON non-object 'entries[]'"
-                    " element found, at index %d (ignored)", index_);
+      utils_.error (_("JSON non-object 'entries[]'"
+                      " element found, at index %d (ignored)"), index_);
       return;
     }
 
@@ -99,6 +100,7 @@ build_menu (const json_s *json,
   char *string;
 
   append (C.LABEL, "_menu", buffer);
+  append (C.BIND_FUNCTION_KEY, "11:_confirm_exit", buffer);
   append (C.BIND_FUNCTION_KEY, "12:_menu", buffer);
   append (C.CLEAR_SCREEN, seriesdescription, buffer);
 
@@ -107,8 +109,8 @@ build_menu (const json_s *json,
   append (C.MENU, string, buffer);
   utils_.free (string);
 
-  json_.foreach_array_element (json, entries,
-                               build_menu_entry, buffer, NULL);
+  json_.for_each_array_element (json, entries,
+                                build_menu_entry, buffer, NULL);
 }
 
 static void
@@ -122,13 +124,13 @@ build_instruction_element (const json_s *json,
 
   if (json_.element_type (json, string) != json_string)
     {
-      utils_.error ("JSON non-string 'instructions[]'"
-                    " element found, at index %d (ignored)", index_);
+      utils_.error (_("JSON non-string 'instructions[]'"
+                      " element found, at index %d (ignored)"), index_);
       return;
     }
 
   utils_.error_if (index_ == 2,
-                   "oversized 'instruction' found (truncated)");
+                   _("oversized 'instruction' found (truncated)"));
   if (index_ > 1)
     return;
 
@@ -146,8 +148,8 @@ build_lesson_text_element (const json_s *json,
 
   if (json_.element_type (json, string) != json_string)
     {
-      utils_.error ("JSON non-string 'text[]'"
-                    " element found, at index %d (ignored)", index_);
+      utils_.error (_("JSON non-string 'text[]'"
+                      " element found, at index %d (ignored)"), index_);
       return;
     }
 
@@ -170,20 +172,20 @@ build_lesson_of_type (const json_s *json,
             append (C.INSTRUCTION,
                     json_.element_string (json, instructions), buffer);
           else
-            json_.foreach_array_element (json, instructions,
-                                         build_instruction_element,
-                                         buffer, NULL);
+            json_.for_each_array_element (json, instructions,
+                                          build_instruction_element,
+                                          buffer, NULL);
         }
       else if (action_code == C.TUTORIAL)
-        utils_.error ("'instructions' is invalid on Tutorials (ignored)");
+        utils_.error (_("'instructions' is invalid on Tutorials (ignored)"));
     }
 
   if (json_.element_type (json, text) == json_string)
     append (action_code, json_.element_string (json, text), buffer);
   else
-    json_.foreach_array_element (json, text,
-                                 build_lesson_text_element,
-                                 buffer, (void*)action_code);
+    json_.for_each_array_element (json, text,
+                                  build_lesson_text_element,
+                                  buffer, (void*)action_code);
 }
 
 static void
@@ -240,8 +242,8 @@ build_lesson (const json_s *json,
                           title_string, instructions, text, buffer);
 
   else
-    utils_.error ("invalid lesson type"
-                  " '%s' found in '%s' (ignored)", type_string, name);
+    utils_.error (_("invalid lesson type"
+                    " '%s' found in '%s' (ignored)"), type_string, name);
 }
 
 static void
@@ -256,22 +258,22 @@ build_lesson_entry (const json_s *json,
   if (!(json_.element_type (json, lesson_name) == json_string
         || json_.element_type (json, lesson_name) == json_primitive))
     {
-      utils_.error ("JSON non-string (and non-primitive) 'lessons[]'"
-                    " element found, at index %d (ignored)", index_);
+      utils_.error (_("JSON non-string (and non-primitive) 'lessons[]'"
+                      " element found, at index %d (ignored)"), index_);
       return;
     }
 
   if (!map_.get (typist_map,
                  json_.element_string (json, lesson_name), &lesson))
     {
-      utils_.error ("JSON object 'typist' is missing a '%s'"
-                    " element", json_.element_string (json, lesson_name));
+      utils_.error (_("JSON object 'typist' is missing a '%s'"
+                      " element"), json_.element_string (json, lesson_name));
       return;
     }
   if (json_.element_type (json, lesson) != json_object)
     {
-      utils_.error ("JSON element '%s' is not of type"
-                    " 'object'", json_.element_string (json, lesson_name));
+      utils_.error (_("JSON element '%s' is not of type"
+                      " 'object'"), json_.element_string (json, lesson_name));
       return;
     }
 
@@ -290,8 +292,8 @@ build_lesson_group (const json_s *json,
 
   if (json_.element_type (json, entry) != json_object)
     {
-      utils_.error ("JSON non-object 'entries[]'"
-                    " element found, at index %d (ignored)", index_);
+      utils_.error (_("JSON non-object 'entries[]'"
+                      " element found, at index %d (ignored)"), index_);
       return;
     }
 
@@ -324,8 +326,8 @@ build_lesson_group (const json_s *json,
   append (C.LABEL, string, buffer);
 
   if (json_.element_type (json, lessons) == json_array)
-    json_.foreach_array_element (json, lessons,
-                                 build_lesson_entry, buffer, v_typist_map);
+    json_.for_each_array_element (json, lessons,
+                                  build_lesson_entry, buffer, v_typist_map);
 
   else if (json_.element_type (json, lessons) == json_primitive)
     build_lesson_entry (json, lessons, 0, buffer, v_typist_map);
@@ -348,7 +350,7 @@ map_typist_object (const json_s *json,
     return;
 
   utils_.error_if (map_.contains (typist_map, name),
-                   "lesson '%s' re-defined (shadowed prior)", name);
+                   _("lesson '%s' re-defined (shadowed prior)"), name);
   map_.set (typist_map, name, &value);
 }
 
@@ -357,10 +359,10 @@ build_body (const json_s *json, int typist, int entries, buffer_s *buffer)
 {
   map_s *typist_map = map_.create (sizeof (int), 0, 127);
 
-  json_.foreach_object_element (json, typist,
-                                map_typist_object, typist_map);
-  json_.foreach_array_element (json, entries,
-                               build_lesson_group, buffer, typist_map);
+  json_.for_each_object_element (json, typist,
+                                 map_typist_object, typist_map);
+  json_.for_each_array_element (json, entries,
+                                build_lesson_group, buffer, typist_map);
   map_.destroy (typist_map);
 }
 
@@ -375,13 +377,16 @@ json_to_legacy (const json_s *json, int typist, buffer_s *buffer)
   seriesmenu =
     json_.get_required_element_of_type (json, typist, "typist",
                                         "seriesMenu", json_object);
+  if (!seriesdescription || !seriesmenu)
+    return;
+
   title =
     json_.get_required_element_of_type (json, seriesmenu, "seriesMenu",
                                         "title", json_string);
   entries =
     json_.get_required_element_of_type (json, seriesmenu, "seriesMenu",
                                         "entries", json_array);
-  if (!seriesdescription || !seriesmenu || !entries || !title)
+  if (!entries || !title)
     return;
 
   append (C.LABEL, "_entry", buffer);

@@ -28,6 +28,7 @@
 #define SCREEN_H
 
 struct screen_ {
+  void (*_test_mode) (void *v_stream, int columns, int rows);
   void (*init) (void);
   void (*finalize) (void);
   void (*setup_colour) (int fg, int bg);
@@ -37,12 +38,13 @@ struct screen_ {
   void (*refresh) (void);
   void (*break_) (void);
   int (*get_char) (void);
-  void (*add_char) (char c);
-  void (*add_string) (const char *s);
-  void (*add_char_reverse) (char c);
-  void (*add_string_reverse) (const char *s);
-  void (*add_char_underline) (char c);
-  void (*add_string_underline) (const char *s);
+  void (*push_back_char) (int c);
+  void (*add_ucs_char) (int c);
+  void (*add_ucs_char_reverse) (int c);
+  void (*add_ucs_char_underline) (int c);
+  void (*add_utf8_string) (const char *s);
+  void (*add_utf8_string_reverse) (const char *s);
+  void (*add_utf8_string_underline) (const char *s);
   int (*get_lines) (void);
   int (*get_columns) (void);
   void (*move) (int y, int x);
@@ -50,11 +52,12 @@ struct screen_ {
   void (*clear) (void);
   void (*clear_to_line_end) (void);
   void (*clear_to_screen_bottom) (void);
-  int (*has_colors) (void);
-  void (*start_color) (void);
+  int (*has_colours) (void);
+  void (*start_colour) (void);
   void (*init_pair) (int pair, int fg, int bg);
   void (*halfdelay) (int n);
   int (*function_key) (int n);
+  void (*beep) (void);
   int ERR_;
   int KEY_BACKSPACE_;
   int KEY_DOWN_;
@@ -63,6 +66,6 @@ struct screen_ {
   int colour_array[8];
 };
 
-struct screen_ screen_;
+extern struct screen_ screen_;
 
 #endif

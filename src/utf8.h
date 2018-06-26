@@ -18,29 +18,15 @@
    Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
-/* Converts a JSON representation into a legacy format.  */
+#ifndef UTF8_H
+#define UTF8_H
 
-#ifndef CONVERT_H
-#define CONVERT_H
-
-#include "buffer.h"
-#include "json.h"
-
-struct conversion {
-  int version;
-  char *locale;
-  int length;
-  char *data;
-};
-typedef struct conversion conversion_s;
-
-struct convert_ {
-  conversion_s *(*json_to_legacy) (const char *file_data,
-                                   int file_length, int strict_json);
-  void (*v1_json_to_legacy) (const json_s *json, int typist, buffer_s *buffer);
-  void (*v2_json_to_legacy) (const json_s *json, int typist, buffer_s *buffer);
+struct utf8_ {
+  int *(*to_ucs) (const char *string);
+  int (*strlen) (const char *string);
+  void (*free) (void *pointer);
 };
 
-extern struct convert_ convert_;
+extern struct utf8_ utf8_;
 
 #endif

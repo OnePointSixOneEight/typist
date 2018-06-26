@@ -21,6 +21,7 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "_gettext.h"
 #include "buffer.h"
 #include "json.h"
 #include "utils.h"
@@ -31,7 +32,7 @@ json_to_legacy (const char *file_data, int file_length, int strict_json)
 {
   json_s *json;
   double timer;
-  int typist, version, version_;
+  int typist, version, version_, locale;
   buffer_s *buffer;
   conversion_s *conversion;
 
@@ -41,7 +42,7 @@ json_to_legacy (const char *file_data, int file_length, int strict_json)
   if (!json)
     return NULL;
 
-  utils_.info ("JSON parse: %f ms", utils_.timer_interval (timer) * 1.0e3);
+  utils_.info (_("JSON parse: %f ms"), utils_.timer_interval (timer) * 1.0e3);
 
   typist =
     json_.get_required_element_of_type (json, 0, "top-level",
@@ -63,12 +64,16 @@ json_to_legacy (const char *file_data, int file_length, int strict_json)
   if (!(strcmp (json_.element_string (json, version), "1") == 0
         || strcmp (json_.element_string (json, version), "2") == 0))
     {
-      utils_.error ("'version' is not 1 or 2");
+      utils_.error (_("'version' is not 1 or 2"));
       json_.destroy (json);
       return NULL;
     }
 
   sscanf (json_.element_string (json, version), "%d", &version_);
+
+  locale =
+    json_.get_element_of_types (json, typist,
+                                "locale", json_string, json_primitive);
 
   buffer = buffer_.create (0);
   timer = utils_.start_timer ();
@@ -80,23 +85,29 @@ json_to_legacy (const char *file_data, int file_length, int strict_json)
     convert_.v2_json_to_legacy (json, typist, buffer);
 
   else
-    utils_.fatal ("internal error: unexpected 'version' encountered");
+    utils_.fatal (_("internal error: unexpected 'version' encountered"));
 
-  json_.destroy (json);
-
-  utils_.info ("JSON convert: %f ms", utils_.timer_interval (timer) * 1.0e3);
+  utils_.info (_("JSON convert: %f ms"), utils_.timer_interval (timer) * 1.0e3);
 
   conversion = utils_.alloc (sizeof (*conversion));
   conversion->version = version_;
+  if (locale)
+    conversion->locale = utils_.strdup (json_.element_string (json, locale));
+  else
+    conversion->locale = NULL;
   conversion->length = buffer_.get_length (buffer);
   conversion->data = buffer_.export (buffer);
-  buffer_.destroy (buffer);
 
-  utils_.info ("JSON converter generated %d bytes of"
-               " data, version %d", conversion->length, conversion->version);
+  buffer_.destroy (buffer);
+  json_.destroy (json);
+
+  utils_.info (_("JSON converter generated %d bytes of"
+                 " data, version %d"), conversion->length, conversion->version);
 
   return conversion;
 }
+
+struct convert_ convert_;
 
 __attribute__((constructor))
 void

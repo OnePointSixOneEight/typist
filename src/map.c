@@ -20,6 +20,7 @@
 
 #include <string.h>
 
+#include "_gettext.h"
 #include "utils.h"
 #include "map.h"
 
@@ -60,7 +61,7 @@ find (const map_s *map,
 {
   mapelement_s *element, *prev = NULL;
   utils_.fatal_if (bucket < 0 || bucket >= map->buckets,
-                   "internal error: invalid hash bucket");
+                   _("internal error: invalid hash bucket"));
 
   for (element = map->list[bucket];
        element && keycmp (map, element->key, key) != 0;
@@ -173,7 +174,7 @@ create (int span, int key_length, int buckets)
   map_s *map;
   int bytes;
   utils_.fatal_if (span < 1 || key_length < 0 || buckets < 1,
-                   "internal error: bad span, key length, or hash buckets");
+                   _("internal error: bad span, key length, or hash buckets"));
 
   map = utils_.alloc (sizeof (*map));
   map->span = span;
@@ -241,6 +242,8 @@ clear (map_s *map)
 {
   empty (map);
 }
+
+struct map_ map_;
 
 __attribute__((constructor))
 void

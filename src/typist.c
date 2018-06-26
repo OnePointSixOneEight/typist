@@ -18,7 +18,6 @@
    Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
-#include <ctype.h>
 #include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -26,15 +25,18 @@
 #include <time.h>
 #include <unistd.h>
 #include <sys/utsname.h>
+#include <wctype.h>
 #if defined(LONG_OPTIONS)
 #include <getopt.h>
 #endif
 
+#include "_gettext.h"
 #include "buffer.h"
 #include "map.h"
 #include "keymap.h"
 #include "screen.h"
 #include "script.h"
+#include "utf8.h"
 #include "utils.h"
 #include "vector.h"
 
@@ -47,14 +49,14 @@ struct constants {
   const char *MODE_MENU;
   const char *MODE_EXIT;
 
-  char QUERY_YES;
-  char QUERY_NO;
-  char DRILL_CHARACTER_ERROR;
-  char DRILL_NEWLINE_ERROR;
-  char ESCAPE;
-  char CTRL_D;
-  char BELL;
-  char DELETE;
+  const int *QUERY_YES;
+  const int *QUERY_NO;
+
+  int DRILL_CHARACTER_ERROR;
+  int DRILL_NEWLINE_ERROR;
+  int ESCAPE;
+  int CTRL_D;
+  int DELETE;
 
   const char *EXERCISE_MESSAGE;
   const char *WAIT_MESSAGE;
@@ -64,6 +66,10 @@ struct constants {
   const char *FAILED_MESSAGE;
   const char *MENU_MESSAGE;
   const char *CONFIRM_MESSAGE;
+  const int *WAIT_RESPONSE;
+  const int *REPEAT_RESPONSE;
+  const int *FAILED_RESPONSE;
+  const int *CONFIRM_RESPONSE;
   const char *SPEED_RAW;
   const char *SPEED_ADJUSTED;
   const char *SPEED_PERCENT_ERROR;
@@ -77,41 +83,46 @@ static struct constants constants;
 static void
 init_constants (void)
 {
-  constants.MODE_TUTORIAL   = " Tutorial ";
-  constants.MODE_QUERY      = "  Query   ";
-  constants.MODE_DRILL      = "  Drill   ";
-  constants.MODE_SPEED_TEST = "Speed test";
-  constants.MODE_MENU       = "   Menu   ";
-  constants.MODE_EXIT       = "   Exit   ";
+  constants.MODE_TUTORIAL   = _(" Tutorial ");
+  constants.MODE_QUERY      = _("  Query   ");
+  constants.MODE_DRILL      = _("  Drill   ");
+  constants.MODE_SPEED_TEST = _("Speed test");
+  constants.MODE_MENU       = _("   Menu   ");
+  constants.MODE_EXIT       = _("   Exit   ");
 
-  constants.QUERY_YES = 'Y';
-  constants.QUERY_NO  = 'N';
+  constants.QUERY_YES = utf8_.to_ucs (_("Yy"));
+  constants.QUERY_NO  = utf8_.to_ucs (_("Nn"));
+
   constants.DRILL_CHARACTER_ERROR = '^';
   constants.DRILL_NEWLINE_ERROR   = '<';
   constants.ESCAPE = 27;
   constants.CTRL_D = 4;
-  constants.BELL   = 7;
   constants.DELETE = 127;
 
-  constants.EXERCISE_MESSAGE = " (Pressing Escape will restart or terminate"
-                               " this exercise) ";
-  constants.WAIT_MESSAGE     = " Press Return or Space to continue... ";
-  constants.EXIT_MESSAGE     = " Finished -"
-                               " press Return or Space to exit... ";
-  constants.REPEAT_MESSAGE   = " Press 'R' to repeat, Return or Space"
-                               " to continue... ";
-  constants.REGRESS_MESSAGE  = " Too many errors -"
-                               " regressing to an earlier exercise... ";
-  constants.FAILED_MESSAGE   = " Error rate of %1.0f%% is too high;"
-                               " repeat (or press 'E' to leave)...";
-  constants.MENU_MESSAGE     = " Up and Down to move, Return or Space"
-                               " to select, or Escape ";
-  constants.CONFIRM_MESSAGE  = " Leaving this menu exits the program -"
-                               " press 'Q' to confirm ";
+  constants.EXERCISE_MESSAGE = _(" (Pressing Escape will restart or terminate"
+                                 " this exercise) ");
+  constants.WAIT_MESSAGE     = _(" Press Return or Space to continue... ");
+  constants.EXIT_MESSAGE     = _(" Finished -"
+                                 " press Return or Space to exit... ");
+  constants.REPEAT_MESSAGE   = _(" Press 'R' to repeat, Return or Space"
+                                 " to continue... ");
+  constants.REGRESS_MESSAGE  = _(" Too many errors -"
+                                 " regressing to an earlier exercise... ");
+  constants.FAILED_MESSAGE   = _(" Error rate of %1.0f%% is too high;"
+                                 " repeat (or press 'E' to leave)...");
+  constants.MENU_MESSAGE     = _(" Up and Down to move, Return or Space"
+                                 " to select, or Escape ");
+  constants.CONFIRM_MESSAGE  = _(" Leaving this menu exits the program -"
+                                 " press 'Q' to confirm ");
 
-  constants.SPEED_RAW           = " Raw speed       %6.2f wpm ";
-  constants.SPEED_ADJUSTED      = " Adjusted speed  %6.2f wpm ";
-  constants.SPEED_PERCENT_ERROR = "           with %3.0f%% errors ";
+  constants.WAIT_RESPONSE    = utf8_.to_ucs (" \n");
+  constants.REPEAT_RESPONSE  = utf8_.to_ucs (_("Rr \n"));
+  constants.FAILED_RESPONSE  = utf8_.to_ucs (_("Ee \n"));
+  constants.CONFIRM_RESPONSE = utf8_.to_ucs (_("Qq \n"));
+
+  constants.SPEED_RAW           = _(" Raw speed       %6.2f wpm ");
+  constants.SPEED_ADJUSTED      = _(" Adjusted speed  %6.2f wpm ");
+  constants.SPEED_PERCENT_ERROR = _("           with %3.0f%% errors ");
 
   constants.DEFAULT_SCRIPT = "default.json";
   constants.PSEUDO_FUNCTION_KEYS = "qwertyuiopas";
@@ -134,6 +145,7 @@ init_pseudo_function_keys (void)
 struct options {
   const char *version;        /* Version */
   const char *copyright;      /* GPL copyright */
+  int test_mode;              /* Run in test mode and bypassing curses */
   int no_timer;               /* No timings in drills */
   keymapper_s *keymapper;     /* Maps keyboard layouts if set */
   int terminal_cursor;        /* Don't do software cursor */
@@ -150,8 +162,10 @@ struct options {
   int loop_limit;             /* Action count limit for unbreakable loop */
   int depth_limit;            /* Nested execution depth limit */
   int strict_json;            /* Use a strict JSON parser */
+  int strict_keymaps;         /* Check ISO keymaps for core key coverage */
+  int use_script_locale;      /* Use script-supplied locale, if any */
   int parse_only;             /* Debug aid, parse script and then exit */
-  int print_parse;            /* Debug aid, print script's interal repr */
+  int print_parse;            /* Debug aid, print script's internal repr */
 };
 
 static struct options options;
@@ -211,9 +225,13 @@ init_context (context_s *context,
 static void
 destroy_context (context_s *context)
 {
+  int fkey;
   script_.close (context->script);
   map_.destroy (context->labels);
+  for (fkey = 0; fkey < context->num_function_keys; fkey++)
+    utils_.free (context->function_key_binding[fkey]);
   map_.destroy (context->menu_memos);
+  utils_.free (context->on_failure_label);
   memset (context, 0, sizeof (*context));
 }
 
@@ -224,13 +242,13 @@ static int informational_top_line (void) { return banner_top_line () + 1; }
 static int instruction_top_line (void) { return informational_top_line (); }
 static int exercise_top_line (void) { return instruction_top_line () + 2; }
 static int speed_line (void) { return screen_.get_lines () - 5; }
+static int menu_viewport_size (void) { return screen_.get_lines () - 6; }
 
 /* Get a typed character with invisible cursor.  */
 static int
 get_char_with_no_cursor (void)
 {
-  int y, x;
-  int return_char;
+  int y, x, return_char;
 
   screen_.getyx (&y, &x);
 
@@ -254,10 +272,9 @@ get_char_with_no_cursor (void)
    even more, some xterms seem not make the cursor invisible either. Offers
    ^D as a non-delaying alternative to Escape.  */
 static int
-get_char_with_flashing_cursor (char cursor_char)
+get_char_with_flashing_cursor (int cursor_char)
 {
-  int y, x;
-  int return_char;
+  int y, x, return_char;
 
   screen_.getyx (&y, &x);
 
@@ -275,10 +292,10 @@ get_char_with_flashing_cursor (char cursor_char)
       if (return_char == constants.CTRL_D)
         return constants.ESCAPE;
       return return_char;
-  }
+    }
 
   /* Produce a flashing cursor; a block where cursor_char is ' '.  */
-  screen_.add_char_reverse (cursor_char);
+  screen_.add_ucs_char_reverse (cursor_char);
   screen_.cursor_off ();
   screen_.refresh ();
   screen_.move_top_left ();
@@ -290,9 +307,9 @@ get_char_with_flashing_cursor (char cursor_char)
         {
           screen_.move (y, x);
           if (alternate)
-            screen_.add_char_reverse (cursor_char);
+            screen_.add_ucs_char_reverse (cursor_char);
           else
-            screen_.add_char (cursor_char);
+            screen_.add_ucs_char (cursor_char);
           screen_.move_top_left ();
           alternate = !alternate;
         }
@@ -305,7 +322,7 @@ get_char_with_flashing_cursor (char cursor_char)
   if (options.keymapper)
     return_char = keymapper_.convert (options.keymapper, return_char);
   screen_.move (y, x);
-  screen_.add_char (cursor_char);
+  screen_.add_ucs_char (cursor_char);
   screen_.move (y, x);
   if (return_char == constants.CTRL_D)
     return constants.ESCAPE;
@@ -321,8 +338,13 @@ map_script_labels (context_s *context)
 
   script_.rewind (script);
 
+  /* Calling get_next_statement() moves the script position to the statement
+     following the one buffered for us by the script, so we need to note the
+     position before we call get_next_statement() and then check to see if it
+     is a label.  Using get_position() afterwards is too late.  */
   position = script_.get_position (script);
   script_.get_next_statement (script);
+
   while (script_.has_more_data (script))
     {
       const char *data = script_.get_data (script);
@@ -341,7 +363,8 @@ map_script_labels (context_s *context)
 
       if (scanned != 1 || label[strlen (label) - 1] == '*')
         {
-          utils_.error ("bad or invalid label (action ignored): '%s'", data);
+          utils_.error (_("bad or invalid"
+                          " label (action ignored): '%s'"), data);
 
           utils_.free (label);
           position = script_.get_position (script);
@@ -350,13 +373,8 @@ map_script_labels (context_s *context)
         }
 
       if (map_.contains (context->labels, label))
-        utils_.warning ("label re-defined (shadowed prior): '%s'", data);
+        utils_.warning (_("label re-defined (shadowed prior): '%s'"), data);
 
-      /* Subtle -- position points to the line BEFORE the label, rather than
-         the statement that follows on from it. Client code that transfers
-         to a label needs to ensure that there is a call to get_next_statement
-         afterwards. The 'normal' case may be that there is one on the
-         statement handler exit anyway...  */
       map_.set (context->labels, label, &position);
       utils_.free (label);
 
@@ -373,15 +391,15 @@ reposition_to_label (context_s *context, const char *target)
   char *label, trail;
   int scanned, position;
 
-  utils_.info ("request for transfer to label '%s'", target);
+  utils_.info (_("request for transfer to label '%s'"), target);
 
   label = utils_.strdup (target);
   scanned = sscanf (target, " %s %c ", label, &trail);
 
   if (scanned != 1 || !map_.get (context->labels, label, &position))
     {
-      utils_.error ("bad or invalid target label (action ignored): '%s'",
-                    target);
+      utils_.error (_("bad or invalid"
+                      " target label (action ignored): '%s'"), target);
       scanned = 0;
     }
 
@@ -428,11 +446,11 @@ display_status (const char *message, const char *mode)
   screen_.clear_to_line_end ();
 
   screen_.move (message_line (), 0);
-  screen_.add_string_reverse (message);
+  screen_.add_utf8_string_reverse (message);
 
   screen_.move (message_line (),
-                screen_.get_columns () - strlen (mode) - 2);
-  screen_.add_string_reverse (mode);
+                screen_.get_columns () - utf8_.strlen (mode) - 2);
+  screen_.add_utf8_string_reverse (mode);
 }
 
 static void
@@ -446,35 +464,39 @@ clear_status (void)
 void
 display_banner (const char *message)
 {
-  int i;
+  int i, columns = screen_.get_columns ();
 
   screen_.move (banner_top_line (), 0);
   screen_.clear_to_line_end ();
 
-  for (i = 0; i < screen_.get_columns (); i++)
-    screen_.add_char_reverse (' ');
+  for (i = 0; i < columns; i++)
+    screen_.add_ucs_char_reverse (' ');
 
   screen_.move (banner_top_line (), 0);
-  screen_.add_string_reverse (message);
+  screen_.add_utf8_string_reverse (message);
 
   screen_.move (banner_top_line (),
                 screen_.get_columns () - strlen (options.version) - 1);
-  screen_.add_string_reverse (options.version);
+  screen_.add_utf8_string_reverse (options.version);
 }
 
 /* Wait for a keypress from the user before continuing. Returns the key
-   pressed, or -1 if repositioned due to function key.  */
+   pressed, potentially unmapped if this was required to match to the
+   valid characters, or -1 if repositioned due to function key.  */
 static int
 wait_for_keypress (context_s *context,
                    const char *message, const char *mode,
-                   const char *valid_characters)
+                   const int *valid_characters)
 {
-  int response;
+  int return_code = 0;
 
   display_status (message, mode);
-  do
+  while (B.True)
     {
+      int response, unmapped;
       const char *label;
+      const int *cursor;
+
       response = get_char_with_no_cursor ();
 
       label = get_bound_label (context, response);
@@ -482,13 +504,27 @@ wait_for_keypress (context_s *context,
         {
           reposition_to_label (context, label);
           script_.get_next_statement (context->script);
-          response = -1;
+          return_code = -1;
         }
+      if (return_code)
+        break;
+
+      if (options.keymapper)
+        unmapped = keymapper_.unconvert (options.keymapper, response);
+      else
+        unmapped = response;
+
+      for (cursor = valid_characters; *cursor; cursor++)
+        {
+          if (*cursor == response || *cursor == unmapped)
+            return_code = *cursor;
+        }
+      if (return_code)
+        break;
      }
-  while (response != -1 && !strchr (valid_characters, response));
   clear_status ();
 
-  return response;
+  return return_code;
 }
 
 /* Display speed and accuracy of a drill or speed test.  */
@@ -522,17 +558,18 @@ display_speed (int keystrokes, int errors, double elapsed_time)
 
   /* Display the results -- no negative numbers allowed.  */
   sprintf (message, constants.SPEED_RAW, speed);
-  screen_.move (speed_line (), screen_.get_columns () - strlen (message) - 1);
-  screen_.add_string_reverse (message);
+  screen_.move (speed_line (),
+                screen_.get_columns () - utf8_.strlen (message) - 1);
+  screen_.add_utf8_string_reverse (message);
   sprintf (message, constants.SPEED_ADJUSTED,
            adjusted_speed >= 0.01 ? adjusted_speed : 0.0);
   screen_.move (speed_line () + 1,
-                screen_.get_columns () - strlen (message) - 1);
-  screen_.add_string_reverse (message);
+                screen_.get_columns () - utf8_.strlen (message) - 1);
+  screen_.add_utf8_string_reverse (message);
   sprintf (message, constants.SPEED_PERCENT_ERROR, percent_error);
   screen_.move (speed_line () + 2,
-                screen_.get_columns () - strlen (message) - 1);
-  screen_.add_string_reverse (message);
+                screen_.get_columns () - utf8_.strlen (message) - 1);
+  screen_.add_utf8_string_reverse (message);
 }
 
 /* Convenience tracer for handler functions.  */
@@ -541,7 +578,7 @@ trace_handler_entry (context_s *context, const char *function_name)
 {
   script_s *script = context->script;
 
-  utils_.info ("call to %s, script p_%p, position %d",
+  utils_.info (_("call to %s, script p_%p, position %d"),
                function_name, p_(script), script_.get_position (script));
 }
 
@@ -559,15 +596,15 @@ handle_tutorial (context_s *context)
   do
     {
       screen_.move (line++, 0);
-      screen_.add_string (script_.get_data (script));
+      screen_.add_utf8_string (script_.get_data (script));
       script_.get_next_statement (script);
     }
   while (script_.has_more_data (script)
          && script_.get_action (script) == C.CONTINUATION);
 
   if (script_.get_action (script) != C.QUERY)
-     wait_for_keypress (context,
-                        constants.WAIT_MESSAGE, constants.MODE_TUTORIAL, " \n");
+     wait_for_keypress (context, constants.WAIT_MESSAGE,
+                        constants.MODE_TUTORIAL, constants.WAIT_RESPONSE);
 }
 
 /* Print one or two lines, usually followed by a drill or a speed test.  */
@@ -579,21 +616,21 @@ handle_instruction (context_s *context)
 
   screen_.move (instruction_top_line (), 0);
   screen_.clear_to_screen_bottom ();
-  screen_.add_string (script_.get_data (script));
+  screen_.add_utf8_string (script_.get_data (script));
   script_.get_next_statement (script);
 
   if (script_.has_more_data (script)
       && script_.get_action (script) == C.CONTINUATION)
     {
       screen_.move (instruction_top_line () + 1, 0);
-      screen_.add_string (script_.get_data (script));
+      screen_.add_utf8_string (script_.get_data (script));
       script_.get_next_statement (script);
     }
 
   if (script_.has_more_data (script)
       && script_.get_action (script) == C.CONTINUATION)
     {
-      utils_.error ("instruction longer than two lines (truncated)");
+      utils_.error (_("instruction longer than two lines (truncated)"));
       do
         {
           script_.get_next_statement (script);
@@ -605,11 +642,11 @@ handle_instruction (context_s *context)
 
 /* Execute a typing drill. Returns TRUE if the user exited early.  */
 static int
-handle_drill (context_s *context, const char *data,
+handle_drill (context_s *context, const int *data,
               int *return_keystrokes, int *return_errors)
 {
   int errors, line, keystrokes;
-  const char *cursor;
+  const int *cursor;
   int key = 0;
   double timer = 0.0;
   trace_handler_entry (context, "handle_drill");
@@ -630,7 +667,7 @@ handle_drill (context_s *context, const char *data,
   for (cursor = data; *cursor; cursor++)
     {
       if (*cursor != '\n')
-        screen_.add_char (*cursor);
+        screen_.add_ucs_char (*cursor);
       else
         {
           line += 2;  /* Alternate lines */
@@ -645,8 +682,14 @@ handle_drill (context_s *context, const char *data,
 
   /* Execute the exercise.  */
   screen_.move (line, 0);
-  for (cursor = data; *cursor == ' '; cursor++)
-    screen_.add_char (' ');
+  if (!options.no_wordprocessor_mode)
+    {
+      /* Skip leading spaces at the start of the exercise.  */
+      for (cursor = data; *cursor == ' '; cursor++)
+        screen_.add_ucs_char (' ');
+    }
+  else
+    cursor = data;
   for (; *cursor; cursor++)
     {
       const char screen_cursor = *cursor == '\t' ? '\t' : ' ';
@@ -657,14 +700,14 @@ handle_drill (context_s *context, const char *data,
         break;
 
       /* Ignore delete or backspace in drills.  */
-      if (key == screen_.KEY_BACKSPACE_
-          || key == '\b' || key == constants.DELETE)
+      if (key == '\b'
+          || key == screen_.KEY_BACKSPACE_ || key == constants.DELETE)
         {
           cursor--;  /* Defeat cursor++ at loop head */
           continue;
         }
 
-      /* Start the timer on the first keystroke.  */
+      /* Start the timer on the first real keystroke.  */
       if (!keystrokes)
         timer = utils_.start_timer ();
       keystrokes++;
@@ -673,23 +716,20 @@ handle_drill (context_s *context, const char *data,
       correct = key == *cursor || (!options.no_wordprocessor_mode
                                    && key == ' ' && *cursor == '\n');
       if (correct)
-        screen_.add_char_underline (*cursor);
+        screen_.add_ucs_char_underline (*cursor);
       else
         {
-          char error_indicator;
+          int error_indicator;
           if (*cursor == '\t')
             error_indicator = '\t';
           else if (*cursor == '\n')
             error_indicator = constants.DRILL_NEWLINE_ERROR;
           else
-            error_indicator = isprint (key) ? key
+            error_indicator = iswprint (key) ? key
                               : constants.DRILL_CHARACTER_ERROR;
-          screen_.add_char_reverse (error_indicator);
+          screen_.add_ucs_char_reverse (error_indicator);
           if (!options.no_sound)
-            {
-              putchar (constants.BELL);
-              fflush (stdout);
-            }
+            screen_.beep ();
           errors++;
         }
 
@@ -700,15 +740,22 @@ handle_drill (context_s *context, const char *data,
           screen_.move (line, 0);
         }
 
+      /* If wordprocessor-like, on error try to sync ahead one character.  */
+      if (!options.no_wordprocessor_mode && !correct)
+        {
+          if (key == cursor[1])
+            screen_.push_back_char (key);
+        }
+
       /* Perform any other wordprocessor-like adjustments.  */
-      if (correct && !options.no_wordprocessor_mode)
+      if (!options.no_wordprocessor_mode && correct)
         {
           if (key == ' ')
             {
               while (cursor[1] == ' ')
                 {
                   cursor++;
-                  screen_.add_char_underline (*cursor);
+                  screen_.add_ucs_char_underline (*cursor);
                 }
             }
           else if (key == '\n')
@@ -716,7 +763,7 @@ handle_drill (context_s *context, const char *data,
               while (cursor[1] == ' ' || cursor[1] == '\n')
                 {
                   cursor++;
-                  screen_.add_char_underline (*cursor);
+                  screen_.add_ucs_char_underline (*cursor);
                   if (*cursor == '\n')
                     {
                       line += 2;
@@ -728,7 +775,7 @@ handle_drill (context_s *context, const char *data,
                    && cursor[1] == '-' && cursor[2] == '\n')
             {
               cursor += 2;
-              screen_.add_string_underline ("-\n");
+              screen_.add_utf8_string_underline ("-\n");
               line += 2;
               screen_.move (line, 0);
             }
@@ -741,8 +788,8 @@ handle_drill (context_s *context, const char *data,
   *return_keystrokes = keystrokes;
   *return_errors = errors;
 
-  utils_.info ("handle_drill"
-               " recorded %d keystrokes, %d errors, early exit is b_%d",
+  utils_.info (_("drill"
+                 " recorded %d keystrokes, %d errors, early exit is b_%d"),
                keystrokes, errors, key == constants.ESCAPE);
 
   return key == constants.ESCAPE;
@@ -750,11 +797,11 @@ handle_drill (context_s *context, const char *data,
 
 /* Execute a timed speed test. Returns TRUE if the user exited early.  */
 static int
-handle_speed_test (context_s *context, const char *data,
+handle_speed_test (context_s *context, const int *data,
                    int *return_keystrokes, int *return_errors)
 {
   int errors, line, keystrokes;
-  const char *cursor;
+  const int *cursor;
   int key = 0;
   double timer = 0.0;
   trace_handler_entry (context, "handle_speed_test");
@@ -775,7 +822,7 @@ handle_speed_test (context_s *context, const char *data,
   for (cursor = data; *cursor; cursor++)
     {
       if (*cursor != '\n')
-        screen_.add_char (*cursor);
+        screen_.add_ucs_char (*cursor);
       else
         {
           line++;
@@ -790,55 +837,58 @@ handle_speed_test (context_s *context, const char *data,
 
   /* Execute the exercise.  */
   screen_.move (line, 0);
-  for (cursor = data; *cursor == ' '; cursor++)
-    screen_.add_char (' ');
+  if (!options.no_wordprocessor_mode)
+    {
+      /* Skip leading spaces at the start of the exercise.  */
+      for (cursor = data; *cursor == ' '; cursor++)
+        screen_.add_ucs_char (' ');
+    }
+  else
+    cursor = data;
   for (; *cursor; cursor++)
     {
-      const char screen_cursor = *cursor == '\n' ? ' ' : *cursor;
+      const int screen_cursor = *cursor == '\n' ? ' ' : *cursor;
       int correct;
 
       key = get_char_with_flashing_cursor (screen_cursor);
       if (key == constants.ESCAPE)
         break;
 
-      /* Start timer on the first keystroke.  */
-      if (!keystrokes)
-        timer = utils_.start_timer ();
-      keystrokes++;
-
       /* Check for delete keys if not at line start or speed test start.  */
-      if (key == screen_.KEY_BACKSPACE_
-          || key == '\b' || key == constants.DELETE)
+      if (key == '\b'
+          || key == screen_.KEY_BACKSPACE_ || key == constants.DELETE)
         {
           /* Just ignore deletes where handling is hard or impossible.  */
           if (cursor > data && !(cursor[-1] == '\n' || cursor[-1] == '\t'))
             {
               /* Back up one character.  */
-              screen_.add_char ('\b');
+              screen_.add_ucs_char ('\b');
               cursor--;
             }
           cursor--;  /* Defeat cursor++ at loop head */
           continue;
         }
 
+      /* Start timer on the first real keystroke.  */
+      if (!keystrokes)
+        timer = utils_.start_timer ();
+      keystrokes++;
+
       /* Check that the character was correct.  */
       correct = key == *cursor || (!options.no_wordprocessor_mode
                                    && key == ' ' && *cursor == '\n');
       if (correct)
-        screen_.add_char_underline (*cursor);
+        screen_.add_ucs_char_underline (*cursor);
       else
         {
-          char error_indicator;
+          int error_indicator;
           if (*cursor == '\n')
             error_indicator = constants.DRILL_NEWLINE_ERROR;
           else
             error_indicator = *cursor;
-          screen_.add_char_reverse (error_indicator);
+          screen_.add_ucs_char_reverse (error_indicator);
           if (!options.no_sound)
-            {
-              putchar (constants.BELL);
-              fflush (stdout);
-            }
+            screen_.beep ();
           errors++;
         }
 
@@ -849,15 +899,22 @@ handle_speed_test (context_s *context, const char *data,
           screen_.move (line, 0);
         }
 
+      /* If wordprocessor-like, on error try to sync ahead one character.  */
+      if (!options.no_wordprocessor_mode && !correct)
+        {
+          if (key == cursor[1])
+            screen_.push_back_char (key);
+        }
+
       /* Perform any other wordprocessor-like adjustments.  */
-      if (correct && !options.no_wordprocessor_mode)
+      if (!options.no_wordprocessor_mode && correct)
         {
           if (key == ' ')
             {
               while (cursor[1] == ' ')
                 {
                   cursor++;
-                  screen_.add_char_underline (*cursor);
+                  screen_.add_ucs_char_underline (*cursor);
                 }
             }
           else if (key == '\n')
@@ -865,7 +922,7 @@ handle_speed_test (context_s *context, const char *data,
               while (cursor[1] == ' ' || cursor[1] == '\n')
                 {
                   cursor++;
-                  screen_.add_char_underline (*cursor);
+                  screen_.add_ucs_char_underline (*cursor);
                   if (*cursor == '\n')
                     screen_.move (++line, 0);
                 }
@@ -874,7 +931,7 @@ handle_speed_test (context_s *context, const char *data,
                    && cursor[1] == '-' && cursor[2] == '\n')
             {
               cursor += 2;
-              screen_.add_string_underline ("-\n");
+              screen_.add_utf8_string_underline ("-\n");
               screen_.move (++line, 0);
             }
         }
@@ -886,17 +943,19 @@ handle_speed_test (context_s *context, const char *data,
   *return_keystrokes = keystrokes;
   *return_errors = errors;
 
-  utils_.info ("handle_speed_test"
-               " recorded %d keystrokes, %d errors, early exit is b_%d",
+  utils_.info (_("speed test"
+                 " recorded %d keystrokes, %d errors, early exit is b_%d"),
                keystrokes, errors, key == constants.ESCAPE);
 
   return key == constants.ESCAPE;
 }
 
 /* Buffer the complete data for a script element that has continuations. */
-static void
-get_full_element_data (script_s *script, buffer_s *buffer)
+static buffer_s *
+get_full_element_data (script_s *script)
 {
+  buffer_s *buffer = buffer_.create (0);
+
   do
     {
       const char *data = script_.get_data (script);
@@ -909,18 +968,21 @@ get_full_element_data (script_s *script, buffer_s *buffer)
   while (script_.has_more_data (script)
          && script_.get_action (script) == C.CONTINUATION);
   buffer_.append (buffer, "\0", 1);
+
+  return buffer;
 }
 
 /* Handle repeated invocations of a practice drill or speed test. */
 static void
 handle_practice_exercise (context_s *context, int action)
 {
-  buffer_s *buffer = buffer_.create (0);
-  const char *data;
+  buffer_s *buffer;
+  int *data;
   trace_handler_entry (context, "handle_practice_exercises");
 
-  get_full_element_data (context->script, buffer);
-  data = buffer_.get (buffer);
+  buffer = get_full_element_data (context->script);
+  data = utf8_.to_ucs (buffer_.get (buffer));
+  buffer_.destroy (buffer);
 
   /* Run a practice while the user requests repeat, ignore typing errors.  */
   while (B.True)
@@ -939,34 +1001,37 @@ handle_practice_exercise (context_s *context, int action)
           terminated = handle_speed_test (context, data, &keystrokes, &errors);
         }
       else
-        utils_.fatal ("internal error: bad call to handle_practice_exercise");
+        utils_.fatal (_("internal error: bad call"
+                        " to function '%s'"), "handle_practice_exercise");
 
       /* If terminated in mid-exercise, restart it. */
       if (terminated && keystrokes > 0)
         continue;
 
       /* 'R' to repeat, Return to continue.  */
-      response = wait_for_keypress (context,
-                                    constants.REPEAT_MESSAGE, mode, "Rr \n");
-      if (toupper (response) == 'R')
+      response = wait_for_keypress (context, constants.REPEAT_MESSAGE,
+                                    mode, constants.REPEAT_RESPONSE);
+      if (response == constants.REPEAT_RESPONSE[0]
+          || response == constants.REPEAT_RESPONSE[1])
         continue;
       else
         break;
     }
 
-  buffer_.destroy (buffer);
+  utf8_.free (data);
 }
 
 /* Handle repeated invocations of a drill or speed test. */
 static void
 handle_exercise (context_s *context, int action)
 {
-  buffer_s *buffer = buffer_.create (0);
-  const char *data;
+  buffer_s *buffer;
+  int *data;
   trace_handler_entry (context, "handle_exercise");
 
-  get_full_element_data (context->script, buffer);
-  data = buffer_.get (buffer);
+  buffer = get_full_element_data (context->script);
+  data = utf8_.to_ucs (buffer_.get (buffer));
+  buffer_.destroy (buffer);
 
   /* Run an exercise until the user achieves an acceptably low error rate.  */
   while (B.True)
@@ -986,7 +1051,8 @@ handle_exercise (context_s *context, int action)
           terminated = handle_speed_test (context, data, &keystrokes, &errors);
         }
       else
-        utils_.fatal ("internal error: bad call to handle_exercise");
+        utils_.fatal (_("internal error: bad call"
+                        " to function '%s'"), "handle_exercise");
 
       /* If terminated in mid-exercise, restart it. */
       if (terminated && keystrokes > 0)
@@ -995,10 +1061,10 @@ handle_exercise (context_s *context, int action)
       if (terminated)
         {
           /* 'R' to repeat, Return to continue.  */
-          response = wait_for_keypress (context,
-                                        constants.REPEAT_MESSAGE,
-                                        mode, "Rr \n");
-          if (toupper (response) == 'R')
+          response = wait_for_keypress (context, constants.REPEAT_MESSAGE,
+                                        mode, constants.REPEAT_RESPONSE);
+          if (response == constants.REPEAT_RESPONSE[0]
+              || response == constants.REPEAT_RESPONSE[1])
             continue;
           else
             break;
@@ -1016,8 +1082,8 @@ handle_exercise (context_s *context, int action)
       if (failed && context->on_failure_label)
         {
           /* Return to regress and leave the loop.  */
-           wait_for_keypress (context,
-                              constants.REGRESS_MESSAGE, mode, " \n");
+           wait_for_keypress (context, constants.REGRESS_MESSAGE,
+                              mode, constants.WAIT_RESPONSE);
            reposition_to_label (context, context->on_failure_label);
            script_.get_next_statement (context->script);
 
@@ -1035,8 +1101,10 @@ handle_exercise (context_s *context, int action)
           sprintf (message, constants.FAILED_MESSAGE, error_rate);
 
           /* 'E' to leave the loop, Return or Space to repeat.  */
-          response = wait_for_keypress (context, message, mode, "Ee \n");
-          if (toupper (response) == 'E')
+          response = wait_for_keypress (context, message,
+                                        mode, constants.FAILED_RESPONSE);
+          if (response == constants.FAILED_RESPONSE[0]
+              || response == constants.FAILED_RESPONSE[1])
             break;
           else
             continue;
@@ -1044,7 +1112,8 @@ handle_exercise (context_s *context, int action)
       else
         {
           /* Return or Space to leave the loop.  */
-          wait_for_keypress (context, constants.WAIT_MESSAGE, mode, " \n");
+          wait_for_keypress (context, constants.WAIT_MESSAGE,
+                             mode, constants.WAIT_RESPONSE);
           break;
         }
     }
@@ -1052,7 +1121,7 @@ handle_exercise (context_s *context, int action)
   if (!context->error_limit_persistent)
     context->error_limit = -1.0;
 
-  buffer_.destroy (buffer);
+  utf8_.free (data);
 }
 
 /* Implement a simple selection menu.  */
@@ -1065,7 +1134,7 @@ handle_menu (context_s *context)
   int position, scanned, extent = -1;
   struct { char *label; char *descr; } pair;
   vector_s *menu_pairs;
-  int menu_entries, item, pad_to, selected;
+  int menu_entries, item, pad_to, viewport, selected;
   trace_handler_entry (context, "handle_menu");
 
   /* Find the memo for this menu, or create one if not yet visited.  */
@@ -1085,14 +1154,16 @@ handle_menu (context_s *context)
   if (extent < 0)
     sscanf (data, " %n", &extent);
 
-  /* If the UP=... is not valid, store "" in the up_label. This ensures
-     that it is not NULL, and so will terminate the later selection loop.  */
+  /* If the UP=... is not valid, store "" in the up_label. This distinguishes
+     it from NULL.  */
   if (scanned == 2 && strcasecmp (up, "up") == 0)
     {
       if (strcasecmp (up_label, "_exit") != 0
           && !map_.contains (context->labels, up_label))
         {
-          utils_.error ("invalid menu up target (UP=... ignored): '%s'", data);
+
+          utils_.error (_("invalid menu"
+                          " up target (UP=... ignored): '%s'"), data);
           strcpy (up_label, "");
         }
     }
@@ -1124,8 +1195,8 @@ handle_menu (context_s *context)
 
       if (scanned != 1 || !map_.contains (context->labels, pair.label))
         {
-          utils_.error ("bad or invalid menu entry (entry ignored): '%s'",
-                        item_data);
+          utils_.error (_("bad or invalid"
+                          " menu entry (entry ignored): '%s'"), item_data);
 
           script_.get_next_statement (script);
           continue;
@@ -1137,7 +1208,7 @@ handle_menu (context_s *context)
         pair.descr[strlen (pair.descr) - 1] = 0;
 
       /* Find the longest item description, for later display padding.  */
-      descr_length = strlen (pair.descr);
+      descr_length = utf8_.strlen (pair.descr);
       if (descr_length > pad_to)
         pad_to = descr_length;
 
@@ -1151,13 +1222,17 @@ handle_menu (context_s *context)
 
   /* Write the menu title, centred, and free it.  */
   screen_.move (informational_top_line (),
-                (screen_.get_columns () - strlen (title)) / 2);
-  screen_.add_string (title);
+                (screen_.get_columns () - utf8_.strlen (title)) / 2);
+  screen_.add_utf8_string (title);
   utils_.free (title);
 
   /* Repeat menu display until user selection. Starting selection is
      anything previously selected for this menu, or 0 if first visit.  */
   menu_entries = vector_.get_length (menu_pairs);
+  if (selected > menu_viewport_size () - 1)
+    viewport = selected - menu_viewport_size () + 1;
+  else
+    viewport = 0;
   target = NULL;
   while (!target && menu_entries)
     {
@@ -1167,19 +1242,21 @@ handle_menu (context_s *context)
       line = informational_top_line () + 2;
       screen_.move (line, 1);
       screen_.clear_to_screen_bottom ();
-      for (item = 0; item < menu_entries; item++)
+      for (item = viewport;
+           item < menu_entries && item < viewport + menu_viewport_size ();
+           item++)
         {
           vector_.get (menu_pairs, item, &pair);
           if (item == selected)
             {
               int padding;
-              screen_.add_string_reverse (pair.descr);
-              for (padding = strlen (pair.descr);
+              screen_.add_utf8_string_reverse (pair.descr);
+              for (padding = utf8_.strlen (pair.descr);
                    padding < pad_to; padding++)
-                screen_.add_char_reverse (' ');
+                screen_.add_ucs_char_reverse (' ');
             }
           else
-            screen_.add_string (pair.descr);
+            screen_.add_utf8_string (pair.descr);
           line++;
           screen_.move (line, 1);
         }
@@ -1187,7 +1264,7 @@ handle_menu (context_s *context)
       display_status (constants.MENU_MESSAGE, constants.MODE_MENU);
 
       control = get_char_with_no_cursor ();
-      if (control == constants.ESCAPE || toupper (control) == 'Q')
+      if (control == constants.ESCAPE || control == 'q' || control == 'Q')
         target = up_label;
 
       else if (control == ' ' || control == '\n')
@@ -1196,60 +1273,58 @@ handle_menu (context_s *context)
           target = pair.label;
         }
 
-      else if (control == screen_.KEY_DOWN_ || toupper (control) == 'J')
+      else if (control == screen_.KEY_DOWN_
+               || control == 'j' || control == 'J')
         {
           if (++selected > menu_entries - 1)
             selected = menu_entries - 1;
+          if (selected > viewport + menu_viewport_size () - 1)
+            viewport++;
         }
-      else if (control == screen_.KEY_UP_ || toupper (control) == 'K')
+
+      else if (control == screen_.KEY_UP_
+               || control == 'k' || control == 'K')
         {
           if (--selected < 0)
             selected = 0;
+          if (selected < viewport)
+            viewport--;
         }
 
       /* If target would trigger program exit, confirm first.  */
-      if (target == up_label)
+      if (target == up_label
+          && (strcmp (target, "") == 0 || strcasecmp (target, "_exit") == 0))
         {
-          if (strcasecmp (target, "_exit") == 0
-              && !map_.contains (context->labels, target))
-            {
-              int response;
-              response = wait_for_keypress (context,
-                                            constants.CONFIRM_MESSAGE,
-                                            constants.MODE_MENU, "Qq \n");
-              if (toupper (response) != 'Q')
-                target = NULL;
-            }
+          int response, confirmed;
+          response = wait_for_keypress (context,
+                                        constants.CONFIRM_MESSAGE,
+                                        constants.MODE_MENU,
+                                        constants.CONFIRM_RESPONSE);
+          confirmed = response == constants.CONFIRM_RESPONSE[0]
+                   || response == constants.CONFIRM_RESPONSE[1];
+          if (!confirmed)
+            target = NULL;
         }
     }
 
   /* Retain this selection in the memo for this menu.  */
   map_.set (context->menu_memos, &position, &selected);
 
-  /* If no UP=... and escape pressed, target will be "". In this case we
-     drop through the menu to the next action (if any).  */
-  if (target && strlen (target) > 0)
+  /* In gtypist, "" means up a menu level, or exit from the top level, and
+     _EXIT means always exit. For now, we treat both as _EXIT.  In our
+     defence, no current gytpist script appears to use this "" feature.  */
+  if (target == up_label
+      && (strcmp (target, "") == 0 || strcasecmp (target, "_exit") == 0))
     {
-      if (strcasecmp (target, "_exit") == 0
-          && !map_.contains (context->labels, target))
-        {
-          /* _EXIT is a special case. If not defined as a label, treat as
-             program exit. Effect by reading forwards to the script end.  */
-          while (script_.has_more_data (script))
-            script_.get_next_statement (script);
-        }
-      else
-        {
-          reposition_to_label (context, target);
-          script_.get_next_statement (script);
-        }
+      /* Effect script exit by reading forwards to the script end.  */
+      while (script_.has_more_data (script))
+        script_.get_next_statement (script);
     }
   else
-    /* Note: dropping through does not match gtypist. It treats lack of
-       an UP=... as go back to the prior menu. We can't readily do this
-       here as maps are not ordered.  */
-    wait_for_keypress (context,
-                       constants.WAIT_MESSAGE, constants.MODE_MENU, " \n");
+    {
+      reposition_to_label (context, target);
+      script_.get_next_statement (script);
+    }
 
   utils_.free (up_label);
   for (item = 0; item < vector_.get_length (menu_pairs); item++)
@@ -1302,8 +1377,8 @@ handle_exit (context_s *context)
     }
   else if (context->execution_depth == 0)
     /* No user message unless this is the outer-level script.  */
-    wait_for_keypress (context,
-                       constants.EXIT_MESSAGE, constants.MODE_EXIT, " \n");
+    wait_for_keypress (context, constants.EXIT_MESSAGE,
+                       constants.MODE_EXIT, constants.WAIT_RESPONSE);
 }
 
 /* Obtain a Y/N response from the user.  */
@@ -1316,7 +1391,8 @@ handle_query (context_s *context)
   while (B.True)
     {
       const char *label;
-      int response;
+      int response, unmapped;
+
       response = get_char_with_no_cursor ();
 
       label = get_bound_label (context, response);
@@ -1326,12 +1402,23 @@ handle_query (context_s *context)
           break;
         }
 
-      if (toupper (response) == constants.QUERY_YES)
+      if (options.keymapper)
+        unmapped = keymapper_.unconvert (options.keymapper, response);
+      else
+        unmapped = response;
+
+      if (response == constants.QUERY_YES[0]
+          || response == constants.QUERY_YES[1]
+          || unmapped == constants.QUERY_YES[0]
+          || unmapped == constants.QUERY_YES[1])
         {
           context->query_flag = B.True;
           break;
         }
-      if (toupper (response) == constants.QUERY_NO)
+      if (response == constants.QUERY_NO[0]
+          || response == constants.QUERY_NO[1]
+          || unmapped == constants.QUERY_NO[0]
+          || unmapped == constants.QUERY_NO[1])
         {
           context->query_flag = B.False;
           break;
@@ -1358,19 +1445,21 @@ handle_bind_function_key (context_s *context)
 
   if (scanned != 2)
     {
-      utils_.error ("invalid key binding (want <number>:<label>): '%s'", data);
+      utils_.error (_("invalid key binding"
+                      " (want <number>:<label>): '%s'"), data);
       scanned = 0;
     }
   else if (fkey < 1 || fkey > context->num_function_keys)
     {
-      utils_.error ("invalid function key number (range is 1 to %d): '%s'",
+      utils_.error (_("invalid function"
+                      " key number (range is 1 to %d): '%s'"),
                     context->num_function_keys, data);
       scanned = 0;
     }
 
   if (scanned)
     {
-      utils_.info ("binding fkey %d to label '%s'", fkey, label);
+      utils_.info (_("binding fkey %d to label '%s'"), fkey, label);
 
       /* Free any previous binding and allocated data.  */
       fkey--;
@@ -1410,7 +1499,7 @@ handle_set_error_limit (context_s *context, int force_persistent)
 
   if (default_)
     {
-      utils_.info ("setting error limit to <default>");
+      utils_.info (_("setting error limit to <default>"));
       context->error_limit = -1.0;
       context->error_limit_persistent = B.False;
 
@@ -1423,21 +1512,21 @@ handle_set_error_limit (context_s *context, int force_persistent)
 
   if (!(scanned == 1 || (scanned == 2 && persistent == '*')))
     {
-      utils_.error ("bad error limit,"
-                    " not <float>%%[*] (action ignored): '%s'", data);
+      utils_.error (_("bad error limit,"
+                      " not <float>%%[*] (action ignored): '%s'"), data);
       scanned = 0;
     }
   else if (error_limit < 0.0 || error_limit > 100.00)
     {
-      utils_.error ("bad error limit,"
-                    " outside 0-100%% (action ignored): '%s'", data);
+      utils_.error (_("bad error limit,"
+                      " outside 0-100%% (action ignored): '%s'"), data);
       scanned = 0;
     }
 
   if (scanned)
     {
-      utils_.info ("setting error limit to f_%.6f, persistent is b_%d",
-                   error_limit, persistent == '*');
+      utils_.info (_("setting error limit to f_%.6f, persistent is b_%d"),
+                     error_limit, persistent == '*');
       context->error_limit = error_limit;
       context->error_limit_persistent = persistent == '*';
       context->error_limit_persistent |= force_persistent;
@@ -1467,7 +1556,7 @@ handle_on_failure_goto (context_s *context, int force_persistent)
 
   if (null_)
     {
-      utils_.info ("setting error limit to <null>");
+      utils_.info (_("setting error limit to <null>"));
       utils_.free (context->on_failure_label);
       context->on_failure_label = NULL;
       context->on_failure_persistent = B.False;
@@ -1489,21 +1578,21 @@ handle_on_failure_goto (context_s *context, int force_persistent)
 
   if (!(scanned == 1 || (scanned == 2 && persistent == '*')))
     {
-      utils_.error ("bad failure label,"
-                    " not <label>[*] (action ignored): '%s'", data);
+      utils_.error (_("bad failure label,"
+                      " not <label>[*] (action ignored): '%s'"), data);
       scanned = 0;
     }
   else if (!map_.contains (context->labels, label))
     {
-      utils_.error ("bad failure label,"
-                    " does not exist (action ignored): '%s'", data);
+      utils_.error (_("bad failure label,"
+                      " does not exist (action ignored): '%s'"), data);
       scanned = 0;
     }
 
   if (scanned)
     {
-      utils_.info ("setting on_failure label to '%s', persistent is b_%d",
-                   label, persistent == '*');
+      utils_.info (_("setting on_failure label to '%s', persistent is b_%d"),
+                     label, persistent == '*');
       utils_.free (context->on_failure_label);
       context->on_failure_label = label;
       context->on_failure_persistent = persistent == '*';
@@ -1529,8 +1618,8 @@ handle_execute (context_s *context)
   trace_handler_entry (context, "handle_execute");
 
   if (context->execution_depth > options.depth_limit - 1)
-    utils_.fatal ("execution nesting"
-                  " depth limit %d exceeded", options.depth_limit);
+    utils_.fatal (_("execution nesting"
+                    " depth limit %d exceeded"), options.depth_limit);
 
   path = utils_.strdup (script_.get_data (context->script));
   name = path + strspn (path, " \t");
@@ -1540,18 +1629,26 @@ handle_execute (context_s *context)
 
   if (!script)
     {
-      utils_.error ("failed to load '%s' for execution", name);
+      utils_.error (_("failed to load '%s' for execution"), name);
       script_.get_next_statement (context->script);
       return;
     }
 
+  if (script_.requires_utf8 (script))
+    utils_.error (_("script file requires a UTF-8 locale (trying anyway)"));
+
   /* Preserves a couple of items of state from the executed script.  */
   init_context (&other, script, context->execution_depth + 1);
+  if (options.use_script_locale)
+    utils_.set_locale (script_.get_locale (script));
   execute_script (&other);
+
   context->query_flag = other.query_flag;
   context->previous_action = other.previous_action;
   destroy_context (&other);
 
+  if (options.use_script_locale)
+    utils_.set_locale (script_.get_locale (context->script));
   script_.get_next_statement (context->script);
 
   /* Ensure a clean screen repaint on return from execution in a version 2
@@ -1624,7 +1721,7 @@ interpret_action (context_s *context, int action)
 
   else
     {
-      utils_.error ("unknown action '%c' (discarded): '%s'",
+      utils_.error (_("unknown action '%c' (discarded): '%s'"),
                     action,
                     script_.get_statement_buffer (context->script));
       script_.get_next_statement (context->script);
@@ -1637,7 +1734,7 @@ interpret_script (context_s *context, char *label)
 {
   int action_count = 0, loop_detect = 0;
   int deprecation_warning = 0;
-  utils_.info ("interpreter entry, depth %d, context p_%p, script p_%p",
+  utils_.info (_("interpreter entry, depth %d, context p_%p, script p_%p"),
                context->execution_depth, p_(context), p_(context->script));
 
   if (label)
@@ -1667,8 +1764,8 @@ interpret_script (context_s *context, char *label)
           || action == C.QUERY || action == C.MENU)
         loop_detect = 0;
       else if (options.loop_limit && ++loop_detect > options.loop_limit)
-        utils_.fatal ("unbreakable script loop detected after %d actions",
-                      loop_detect);
+        utils_.fatal (_("unbreakable script"
+                        " loop detected after %d actions"), loop_detect);
 
       /* Warn once if we find a deprecated function key binding and this
          is not a JSON version 2 conversion.  */
@@ -1676,11 +1773,11 @@ interpret_script (context_s *context, char *label)
         {
           if (action == C.BIND_FUNCTION_KEY)
             utils_.warning_if (!deprecation_warning++,
-                               "function key binding is now deprecated");
+                               _("function key binding is now deprecated"));
         }
     }
-  utils_.info ("interpreter exit,"
-               " context p_%p, script p_%p, %d actions handled",
+  utils_.info (_("interpreter exit,"
+                 " context p_%p, script p_%p, %d actions handled"),
                p_(context), p_(context->script), action_count);
 }
 
@@ -1688,6 +1785,8 @@ interpret_script (context_s *context, char *label)
 void
 execute_script (context_s *context)
 {
+  utils_.info (_("execute, context p_%p"), p_(context));
+
   screen_.clear ();
   display_banner ("");
 
@@ -1697,71 +1796,92 @@ execute_script (context_s *context)
   handle_exit (context);
 }
 
+/* Generate a vector of data for print_help.  */
+static vector_s *
+help_vector (void)
+{
+  vector_s *help = vector_.create (sizeof (char*));
+
+#define P(S) { const char *s = (S); vector_.push_back (help, &s); }
+  P (_("Usage: typist [ options... ] [ script_file ]\n"));
+  /* Format: "|short_option|long_option|description", '_' is continuation.  */
+  P (_("|n|notimer|turn off timer in drills"));
+  P (_("|t|term-cursor|use the terminal's hardware cursor"));
+  P (_("|f|cursor-flash=P|cursor flash period P*.1 sec (default 10)"));
+  P (_("|_|_|valid values are between 0 and 512,"));
+  P (_("|_|_|ignored if -t"));
+  P (_("|c|colours=F,B|set initial display colours where available"));
+  P (_("|k|mapkeys=F,T|map between keyboard layouts"));
+  P (_("|s|no-sound|do not beep on errors"));
+  P (_("|l|start-label=L|start the lesson at label 'L'"));
+  P (_("|w|no-wordprocessor|do not try to mimic word processors"));
+  P (_("|e|failure-percent=E|general exercise fail percent (default 3%)"));
+  P (_("|q|quiet|do not print errors and warnings to stderr"));
+  P (_("|j|log=J|send errors and warnings to file J"));
+  P (_("|m|loop-limit=M|consider more than M actions without user"));
+  P (_("|_|_|input as an unbreakable loop (default 4096)"));
+  P (_("|d|depth-limit=D|limit execute depth to D levels (default 32)"));
+  P (_("|S|strict-json|use a strict JSON parser (normally relaxed)"));
+  P (_("|K|strict-keymaps|check that keymaps handle the ISO core keys"));
+  P (_("|L|use-script-locale|try to use locales supplied by scripts"));
+  P (_("|T|trace|debug aid, trace interpreter on stderr"));
+  P (_("|D|parse-only|debug aid, stop after parsing the script"));
+  P (_("|P|print-parse|debug aid, print the result of parsing"));
+  P (_("|B|print-build-id|debug aid, print build id and source checksum"));
+  P (_("|h|help|print this message"));
+  P (_("|v|version|output version information and exit"));
+  /* End of formatted section.  */
+  P (_("\nIf not supplied, script_file defaults to 'default.json'."));
+  P (_("The path $TYPIST_PATH is searched for script files."));
+  P (_("The path $TYPIST_KEYMAPS_PATH is searched for keymap files.\n"));
+#undef P
+  return help;
+}
+
 /* Print help information.  */
 static void
 print_help (void)
 {
-  const char *help[] =
 #if defined(LONG_OPTIONS)
-{"Usage: typist [ options... ] [ script_file ]\n",
- "       -n, --notimer           turn off timer in drills",
- "       -t, --term-cursor       use the terminal's hardware cursor",
- "       -f, --curs-flash=P      s/w cursor flash period P*.1 sec (default 10)",
- "                               valid values are between 0 and 512,",
- "                               ignored if -t, --term_cursor",
- "       -c, --colours=F,B       set initial display colours where available",
- "       -k, --mapkeys=F,T       map between keyboard layouts",
- "       -s, --no-sound          do not beep on errors",
- "       -l, --start-label=L     start the lesson at label 'L'",
- "       -w, --no-wordprocessor  do not try to mimic word processors",
- "       -e, --failure-percent=E general exercise fail percent (default 3%)",
- "       -q, --quiet             do not print errors and warnings to stderr",
- "       -j, --log=J             send errors and warnings to file J",
- "       -m, --loop-limit=M      consider more than M actions without user",
- "                               input as an unbreakable loop (default 4096)",
- "       -d, --depth-limit=D     limit execute depth to D levels (default 32)",
- "       -S, --strict-json       use a strict JSON parser (normally relaxed)",
- "       -T, --trace             debug aid, trace interpreter on stderr",
- "       -D, --parse-only        debug aid, stop after parsing the script",
- "       -P, --print-parse       debug aid, print the result of parsing",
- "       -B, --print-build-id    debug aid, print build id and source checksum",
- "       -h, --help              print this message",
- "       -v, --version           output version information and exit\n",
- "If not supplied, script_file defaults to 'default.json'.",
- "The path $TYPIST_PATH is searched for script files.",
- "The path $TYPIST_KEYMAPS_PATH is searched for keymap files.\n", NULL};
+  const int long_options = B.True;
 #else
-{"Usage: typist [ options... ] [ script_file ]\n",
- "       -n      turn off timer in drills",
- "       -t      use the terminal's hardware cursor",
- "       -f P    s/w cursor flash period P*.1 sec (default 10)",
- "               valid values are between 0 and 512, ignored if -t",
- "       -c F,B  set initial display colours where available",
- "       -k F,T  map between keyboard layouts",
- "       -s      don't beep on errors",
- "       -l L    start the lesson at label 'L'",
- "       -w      don't try to mimic word processors",
- "       -e      general exercise fail percent (default 3%)",
- "       -q      do not print errors and warnings to stderr",
- "       -j J    send errors and warnings to file J",
- "       -m M    consider more than M actions without user",
- "               input as an unbreakable loop (default 4096)",
- "       -d D    limit execute depth to D levels (default 32)",
- "       -S      use a strict JSON parser (normally relaxed)",
- "       -T      debug aid, trace interpreter on stderr",
- "       -D      debug aid, stop after parsing the script",
- "       -P      debug aid, print the result of parsing",
- "       -B      debug aid, print build id and source checksum",
- "       -h      print this message",
- "       -v      output version information and exit\n",
- "If not supplied, script_file defaults to 'default.json'.",
- "The path $TYPIST_PATH is searched for script files.",
- "The path $TYPIST_KEYMAPS_PATH is searched for keymap files.\n", NULL};
+  const int long_options = B.False;
 #endif
+  vector_s *help = help_vector ();
+  int i;
 
-  const char **string;
-  for (string = help; *string; string++)
-    printf ("%s\n", *string);
+  for (i = 0; i < vector_.get_length (help); i++)
+    {
+      const char *string, *arg;
+      char short_opt, long_opt[128], descr[128];
+      int scanned;
+
+      vector_.get (help, i, &string);
+      if (string[0] != '|')
+        {
+          printf ("%s\n", string);
+          continue;
+        }
+
+      scanned = sscanf (string,
+                        "|%1[^|]|%[^|]|%[^|]", &short_opt, long_opt, descr);
+      utils_.fatal_if (scanned != 3,
+                       _("internal error: badly formatted help string"));
+      arg = strchr (long_opt, '=');
+
+      if (short_opt == '_')
+        printf (long_options ? "%30s %s\n" : "%14s %s\n", "", descr);
+      else if (long_options)
+        printf ("%6s-%c, --%-18s %s\n", "", short_opt, long_opt, descr);
+      else
+        printf ("%6s-%c %-5s %s\n", "", short_opt, arg ? arg + 1 : "", descr);
+    }
+
+  vector_.destroy (help);
+
+  printf (_("Current path settings:\n"));
+  printf ("    %s=%s\n", "TYPIST_PATH", getenv ("TYPIST_PATH"));
+  printf ("    %s=%s\n", "TYPIST_KEYMAPS_PATH", getenv ("TYPIST_KEYMAPS_PATH"));
 }
 
 /* From stamp.c.  */
@@ -1777,35 +1897,37 @@ parse_command_line (int argc, char *argv[])
   int c;
 #if defined(LONG_OPTIONS)
   static const struct option long_options[] = {
-    { "notimer",          no_argument,       0, 'n' },
-    { "term-cursor",      no_argument,       0, 't' },
-    { "curs-flash",       required_argument, 0, 'f' },
-    { "colours",          required_argument, 0, 'c' },
-    { "colors",           required_argument, 0, 'c' },
-    { "mapkeys",          required_argument, 0, 'k' },
-    { "no-sound",         no_argument,       0, 's' },
-    { "start-label",      required_argument, 0, 'l' },
-    { "no-wordprocessor", no_argument,       0, 'w' },
-    { "failure-percent",  required_argument, 0, 'e' },
-    { "quiet",            no_argument,       0, 'q' },
-    { "log",              required_argument, 0, 'j' },
-    { "loop-limit",       required_argument, 0, 'm' },
-    { "depth-limit",      required_argument, 0, 'd' },
-    { "strict-json",      no_argument,       0, 'S' },
-    { "trace",            no_argument,       0, 'T' },
-    { "parse-only",       no_argument,       0, 'D' },
-    { "print-parse",      no_argument,       0, 'P' },
-    { "print-build-id",   no_argument,       0, 'B' },
-    { "help",             no_argument,       0, 'h' },
-    { "version",          no_argument,       0, 'v' },
-    { NULL,               no_argument,       0, 0 }
+    { "notimer",           no_argument,       0, 'n' },
+    { "term-cursor",       no_argument,       0, 't' },
+    { "cursor-flash",      required_argument, 0, 'f' },
+    { "colours",           required_argument, 0, 'c' },
+    { "colors",            required_argument, 0, 'c' },
+    { "mapkeys",           required_argument, 0, 'k' },
+    { "no-sound",          no_argument,       0, 's' },
+    { "start-label",       required_argument, 0, 'l' },
+    { "no-wordprocessor",  no_argument,       0, 'w' },
+    { "failure-percent",   required_argument, 0, 'e' },
+    { "quiet",             no_argument,       0, 'q' },
+    { "log",               required_argument, 0, 'j' },
+    { "loop-limit",        required_argument, 0, 'm' },
+    { "depth-limit",       required_argument, 0, 'd' },
+    { "strict-json",       no_argument,       0, 'S' },
+    { "strict-keymaps",    no_argument,       0, 'K' },
+    { "use-script-locale", no_argument,       0, 'L' },
+    { "trace",             no_argument,       0, 'T' },
+    { "parse-only",        no_argument,       0, 'D' },
+    { "print-parse",       no_argument,       0, 'P' },
+    { "print-build-id",    no_argument,       0, 'B' },
+    { "help",              no_argument,       0, 'h' },
+    { "version",           no_argument,       0, 'v' },
+    { NULL,                no_argument,       0, 0 }
   };
   int option_index;
-  static const char *help = "Try 'typist --help' for more information.\n";
+  const char *help = _("Try 'typist --help' for more information.");
 #else
-  static const char *help = "Try 'typist -h' for more information.\n";
+  const char *help = _("Try 'typist -h' for more information.");
 #endif
-  static const char *optstring = "ntf:c:k:sl:we:qj:m:d:STDPBhv";
+  static const char *optstring = "#ntf:c:k:sl:we:qj:m:d:SKLTDPBhv";
   char *map_keyboard_from = NULL, *map_keyboard_to = NULL;
 
 #if defined(LONG_OPTIONS)
@@ -1815,7 +1937,10 @@ parse_command_line (int argc, char *argv[])
   while ((c = getopt (argc, argv, optstring)) != -1)
 #endif
     {
-      if (c == 'n')
+      if (c == '#')
+        options.test_mode = B.True;
+
+      else if (c == 'n')
         options.no_timer = B.True;
 
       else if (c == 't')
@@ -1826,10 +1951,7 @@ parse_command_line (int argc, char *argv[])
           if (sscanf (optarg, "%d", &options.cursor_flash_period) != 1
               || options.cursor_flash_period < 0
               || options.cursor_flash_period > 512)
-            {
-              utils_.error ("invalid curs_flash value (range is 0 to 512)");
-              exit (1);
-            }
+            utils_.fatal (_("invalid cursor-flash value (range is 0 to 512)"));
         }
 
       else if (c == 'c')
@@ -1842,10 +1964,7 @@ parse_command_line (int argc, char *argv[])
               || options.background_colour < 0
               || options.background_colour >= screen_.num_colours
               || options.foreground_colour == options.background_colour)
-            {
-              utils_.error ("invalid colours value (range is 0 to 7)");
-              exit (1);
-            }
+            utils_.fatal (_("invalid colours value (range is 0 to 7)"));
           options.colour = B.True;
       }
 
@@ -1856,10 +1975,7 @@ parse_command_line (int argc, char *argv[])
 
           if (sscanf (optarg, "%[^,],%[^,]",
                       map_keyboard_from, map_keyboard_to) != 2)
-            {
-              utils_.error ("invalid mapkeys value (want <string>,<string>)");
-              exit (1);
-            }
+            utils_.fatal (_("invalid mapkeys value (want <string>,<string>)"));
         }
 
       else if (c == 's')
@@ -1876,11 +1992,8 @@ parse_command_line (int argc, char *argv[])
           if (sscanf (optarg, "%lf", &options.failure_percent) != 1
               || options.failure_percent < 0.0
               || options.failure_percent > 100.0)
-            {
-              utils_.error ("invalid failure_percent value"
-                            " (range is 0 to 100)");
-              exit (1);
-            }
+            utils_.fatal (_("invalid"
+                            " failure-percent value (range is 0 to 100)"));
         }
 
       else if (c == 'q')
@@ -1890,10 +2003,7 @@ parse_command_line (int argc, char *argv[])
         {
           options.message_stream = fopen (optarg, "w");
           if (!options.message_stream)
-            {
-              utils_.error ("error opening log file '%s'", optarg);
-              exit (1);
-            }
+            utils_.fatal (_("error opening log file '%s'"), optarg);
           if (utils_.info_stream)
             utils_.info_stream = options.message_stream;
         }
@@ -1903,24 +2013,24 @@ parse_command_line (int argc, char *argv[])
           if (sscanf (optarg, "%d", &options.loop_limit) != 1
               || options.loop_limit < 0
               || (options.loop_limit > 0 && options.loop_limit < 256))
-            {
-              utils_.error ("invalid loop_limit value (range is 0 or >255)");
-              exit (1);
-            }
+            utils_.fatal (_("invalid loop-limit value (range is 0 or >255)"));
         }
 
       else if (c == 'd')
         {
           if (sscanf (optarg, "%d", &options.depth_limit) != 1
               || options.depth_limit < 0)
-            {
-              utils_.error ("invalid depth_limit value (range is 0 or >0)");
-              exit (1);
-            }
+            utils_.fatal (_("invalid depth-limit value (range is 0 or >0)"));
         }
+
+      else if (c == 'L')
+        options.use_script_locale = B.True;
 
       else if (c == 'S')
         options.strict_json = B.True;
+
+      else if (c == 'K')
+        options.strict_keymaps = B.True;
 
       else if (c == 'T')
         utils_.info_stream = options.message_stream
@@ -1934,16 +2044,12 @@ parse_command_line (int argc, char *argv[])
 
       else if (c == 'B')
         {
-          struct tm tm;
           struct utsname ut;
-          char timestamp[128];
 
-          strptime (BUILD_DATE, "%b %d %Y %H:%M:%S", &tm);
-          strftime (timestamp, sizeof (timestamp), "%Y%m%d%H%M%S", &tm);
           uname (&ut);
           printf ("%s\n", options.version);
-          printf ("Build id : %s/gcc%s/%s\n", ut.machine, COMPILER, timestamp);
-          printf ("Source id: md5/%s\n\n", SOURCE_MD5);
+          printf (_("Build id : %s/%s/%s\n"), ut.machine, COMPILER, BUILD_DATE);
+          printf (_("Source id: md5/%s\n\n"), SOURCE_MD5);
           exit (0);
         }
 
@@ -1961,38 +2067,37 @@ parse_command_line (int argc, char *argv[])
 
       else if (c == '?')
         {
-          fprintf (stderr, help);
+          fprintf (stderr, "%s\n", help);
           exit (1);
         }
 
       else
-        {
-          utils_.error ("getopt returned unknown '%c' value", c);
-          exit (1);
-        }
+        utils_.fatal (_("internal error:"
+                        " getopt returned unknown '%c' value"), c);
     }
   if (argc - optind > 1)
     {
-      fprintf (stderr, help);
+      fprintf (stderr, "%s\n", help);
       exit (1);
     }
 
   if (map_keyboard_from && map_keyboard_to)
     {
       const char *search_path = getenv("TYPIST_KEYMAPS_PATH");
-      keymap_s *from = keymap_.load (map_keyboard_from,
-                                     search_path, options.strict_json, B.True);
-      keymap_s *to = keymap_.load (map_keyboard_to,
-                                   search_path, options.strict_json, B.True);
+      keymap_s *from = keymap_.load (map_keyboard_from, search_path,
+                                     options.strict_json,
+                                     options.strict_keymaps);
+      keymap_s *to = keymap_.load (map_keyboard_to, search_path,
+                                   options.strict_json,
+                                   options.strict_keymaps);
 
       utils_.error_if (!from,
-                       "unable to load the requested keymap '%s'",
+                       _("unable to load the requested keymap '%s'"),
                        map_keyboard_from);
       utils_.error_if (!to,
-                       "unable to load the requested keymap '%s'",
+                       _("unable to load the requested keymap '%s'"),
                        map_keyboard_to);
-      if (!from || !to)
-        exit (1);
+      utils_.fatal_if (!from || !to, _("failed to create a key mapping"));
 
       options.keymapper = keymapper_.create (from, to, B.False);
     }
@@ -2005,7 +2110,7 @@ parse_command_line (int argc, char *argv[])
 static void
 finalize_and_exit (int sig)
 {
-  utils_.info ("interrupted by signal %d, exiting", sig);
+  utils_.info (_("interrupted by signal %d, exiting"), sig);
   screen_.finalize ();
   exit (1);
 }
@@ -2014,25 +2119,41 @@ finalize_and_exit (int sig)
 int
 main (int argc, char *argv[])
 {
-  static const char *version = "Typist 3.0";
-  static const char *copyright =
-      "Copyright (C) 1998-2018  Simon Baldwin\n\n"
-      "This program comes with ABSOLUTELY NO WARRANTY; for details please "
-      "see the\nfile 'COPYING' supplied with the source code. This is free "
-      "software, and\nyou are welcome to redistribute it under certain "
-      "conditions; again, see\n'COPYING' for details. This program is "
-      "released under the GNU General Public\nLicense.\n\n"
-      "JSON parser:\nCopyright (C) 2012-2017 Serge Zaitsev."
-      "  All rights reserved.\nhttps://github.com/zserge/jsmn";
-  const char *search_path = getenv ("TYPIST_PATH");
-  char *file;
+  const char *version = "Typist 3.0";
+  const char *copyright = _(
+    "Copyright (C) 1998-2018  Simon Baldwin\n\n"
+    "This program comes with ABSOLUTELY NO WARRANTY; for details please "
+    "see the\nfile 'COPYING' supplied with the source code. This is free "
+    "software, and\nyou are welcome to redistribute it under certain "
+    "conditions; again, see\n'COPYING' for details. This program is "
+    "released under the GNU General Public\nLicense.\n\n"
+    "JSON parser:\nCopyright (C) 2012-2017 Serge Zaitsev."
+    "  All rights reserved.\nhttps://github.com/zserge/jsmn");
+  const char *search_path;
+  char *typist_path, *typist_keymaps_path, *file;
   script_s *script = NULL;
   context_s context;
+
+  utils_.set_locale ("");
+  utils_.bind_text_domain (PACKAGE, LOCALEDIR);
+  utils_.set_text_domain (PACKAGE);
 
   /* Run static initializers. These must run first, and in this order.  */
   init_constants ();
   init_options (version, copyright);
   init_pseudo_function_keys ();
+
+  /* Default path environment variables if not already set.  */
+  typist_path = utils_.strdup ("/usr/local/lib/typist");
+  setenv ("TYPIST_PATH", typist_path, B.False);
+  if (!strchr (getenv ("TYPIST_PATH"), ':'))
+    {
+      typist_keymaps_path = utils_.alloc (strlen (getenv ("TYPIST_PATH")) + 9);
+      sprintf (typist_keymaps_path, "%s/keymaps", getenv ("TYPIST_PATH"));
+    }
+  else
+    typist_keymaps_path = utils_.strdup ("/usr/local/lib/typist/keymaps");
+  setenv ("TYPIST_KEYMAPS_PATH", typist_keymaps_path, B.False);
 
   /* Check usage, parsed command line options, and open input file.  */
   parse_command_line (argc, argv);
@@ -2041,12 +2162,16 @@ main (int argc, char *argv[])
   else
     file = utils_.strdup (constants.DEFAULT_SCRIPT);
 
+  if (options.message_stream)
+    utils_.error_stream = options.message_stream;
+  if (options.quiet)
+    utils_.error_stream = NULL;
+
+  search_path = getenv ("TYPIST_PATH");
+
   script = script_.load (file, search_path, options.strict_json);
   if (!script)
-    {
-      utils_.error ("unable to open script file '%s'", file);
-      exit (1);
-    }
+    utils_.fatal (_("unable to open script file '%s'"), file);
 
   utils_.free (file);
 
@@ -2054,6 +2179,8 @@ main (int argc, char *argv[])
   if (options.parse_only || options.print_parse)
     {
       init_context (&context, script, 0);
+      if (options.use_script_locale)
+        utils_.set_locale (script_.get_locale (script));
 
       script_.validate_parsed_data (script);
       map_script_labels (&context);
@@ -2064,10 +2191,15 @@ main (int argc, char *argv[])
       exit (0);
     }
 
-  if (options.message_stream)
-    utils_.error_stream = options.message_stream;
-  if (options.quiet)
-    utils_.error_stream = NULL;
+  /* Check default locale capability against requirements.  */
+  if (!utils_.is_utf8_locale ())
+    {
+      if (script_.requires_utf8 (script))
+        utils_.fatal (_("this script file requires a UTF-8 locale"));
+
+      if (options.keymapper && keymapper_.requires_utf8 (options.keymapper))
+        utils_.fatal (_("this keymap pair requires a UTF-8 locale"));
+    }
 
   /* Register signal handlers to clean up curses on interrupt.  */
   signal (SIGHUP, finalize_and_exit);
@@ -2077,14 +2209,19 @@ main (int argc, char *argv[])
   signal (SIGPIPE, finalize_and_exit);
   signal (SIGTERM, finalize_and_exit);
 
+  /* If testing, switch from curses to test output.  */
+  if (options.test_mode)
+    screen_._test_mode (stdout, 80, 25);
+
   /* Initialize curses, and add colour if possible.  */
+  if (options.use_script_locale)
+    utils_.set_locale (script_.get_locale (script));
   screen_.init ();
-  if (options.colour && screen_.has_colors ())
-    screen_.setup_colour (options.foreground_colour,
-                          options.background_colour);
-  utils_.error_if (screen_.get_columns () < 80
-                   || screen_.get_lines () < 25,
-                   "minimum practical screen size is 80x25 (trying anyway)");
+  if (options.colour && screen_.has_colours ())
+    screen_.setup_colour (options.foreground_colour, options.background_colour);
+
+  if (screen_.get_columns () < 80 || screen_.get_lines () < 25)
+    utils_.error (_("minimum practical screen size is 80x25 (trying anyway)"));
 
   /* Execute the script, then clean up and exit.  */
   init_context (&context, script, 0);
@@ -2096,6 +2233,9 @@ main (int argc, char *argv[])
   if (options.message_stream)
     fclose (options.message_stream);
   screen_.finalize ();
+
+  utils_.free (typist_path);
+  utils_.free (typist_keymaps_path);
 
   return 0;
 }

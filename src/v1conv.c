@@ -21,6 +21,7 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "_gettext.h"
 #include "buffer.h"
 #include "json.h"
 #include "script.h"
@@ -94,15 +95,15 @@ process_data_array_element (const json_s *json,
 
   if (json_.element_type (json, string) != json_string)
     {
-      utils_.error ("JSON non-string 'data[]'"
-                    " element found, at index %d (ignored)", index_);
+      utils_.error (_("JSON non-string 'data[]'"
+                      " element found, at index %d (ignored)"), index_);
       return;
     }
 
   if (action_code == C.INSTRUCTION)
     {
       utils_.error_if (index_ == 2,
-                       "oversized 'Instruction' found (truncated)");
+                       _("oversized 'Instruction' found (truncated)"));
       if (index_ > 1)
         return;
     }
@@ -136,8 +137,8 @@ process_statement (const json_s *json,
 
   if (json_.element_type (json, statement) != json_object)
     {
-      utils_.error ("JSON non-object 'statements[]'"
-                    " element found, at index %d (ignored)", index_);
+      utils_.error (_("JSON non-object 'statements[]'"
+                      " element found, at index %d (ignored)"), index_);
       return;
     }
 
@@ -151,7 +152,7 @@ process_statement (const json_s *json,
     convert_action_to_code (json_.element_string (json, action));
   if (!action_code)
     {
-      utils_.error ("action '%s' is invalid, at index %d (object ignored)",
+      utils_.error (_("action '%s' is invalid, at index %d (object ignored)"),
                     json_.element_string (json, action), index_);
       return;
     }
@@ -166,9 +167,9 @@ process_statement (const json_s *json,
     append (action_code, json_.element_string (json, data), buffer);
 
   else if (json_.element_type (json, data) == json_array)
-    json_.foreach_array_element (json, data,
-                                 process_data_array_element,
-                                 buffer, (void*)action_code);
+    json_.for_each_array_element (json, data,
+                                  process_data_array_element,
+                                  buffer, (void*)action_code);
 
   *count += 1;
 }
@@ -184,13 +185,13 @@ json_to_legacy (const json_s *json, int typist, buffer_s *buffer)
   if (!statements)
     return;
 
-  json_.foreach_array_element (json, statements,
-                               process_statement, buffer, &count);
+  json_.for_each_array_element (json, statements,
+                                process_statement, buffer, &count);
 
-  utils_.info ("JSON processed %d 'statements[]' objects", count);
+  utils_.info (_("JSON processed %d 'statements[]' objects"), count);
 
   if (!count)
-    utils_.error ("no usable JSON 'action' objects found in 'statements[]'");
+    utils_.error (_("no usable JSON 'action' objects found in 'statements[]'"));
 }
 
 __attribute__((constructor))

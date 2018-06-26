@@ -52,9 +52,13 @@ static const struct {
      on data. The trailing '*' will still work, though.  */
   const char PERSISTENT_SET_ERROR_LIMIT;
   const char PERSISTENT_ON_FAILURE_GOTO;
+  /* Very old Typist releases used 'O' and 'P' for single run drills and
+     speed tests. Implemented here for (very) backwards compatibility.  */
+  const char COMPAT_DRILL_PRACTICE;
+  const char COMPAT_SPEED_TEST;
 } C = { ' ', '*', 'T', 'I', 'B', 'G', 'X',
         'Q', 'Y', 'N', 'D', 'd', 'S', 's', 'K', 'E', 'F', 'M', '+',
-        'e', 'f' };
+        'e', 'f', 'O', 'P' };
 
 struct script;
 typedef struct script script_s;
@@ -64,19 +68,21 @@ struct script_ {
   script_s *(*load) (const char *name,
                      const char *search_path, int strict_json);
   void (*close) (script_s *script);
-  int (*get_version) (script_s *script);
-  int (*get_action) (script_s *script);
-  const char *(*get_data) (script_s *script);
-  const char *(*get_statement_buffer) (script_s *script);
+  int (*requires_utf8) (const script_s *script);
+  int (*get_version) (const script_s *script);
+  const char *(*get_locale) (const script_s *script);
+  int (*get_action) (const script_s *script);
+  const char *(*get_data) (const script_s *script);
+  const char *(*get_statement_buffer) (const script_s *script);
   void (*rewind) (script_s *script);
-  int (*get_position) (script_s *script);
+  int (*get_position) (const script_s *script);
   void (*set_position) (script_s *script, int position);
-  int (*has_more_data) (script_s *script);
+  int (*has_more_data) (const script_s *script);
   void (*get_next_statement) (script_s *script);
-  void (*validate_parsed_data) (script_s *script);
-  void (*print_parsed_data) (script_s *script);
+  void (*validate_parsed_data) (const script_s *script);
+  void (*print_parsed_data) (const script_s *script);
 };
 
-struct script_ script_;
+extern struct script_ script_;
 
 #endif

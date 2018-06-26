@@ -36,6 +36,6 @@ struct buffer_ {
   void (*append) (buffer_s *buffer, const void *data, int size);
 };
 
-struct buffer_ buffer_;
+extern struct buffer_ buffer_;
 
 #endif

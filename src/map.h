@@ -37,6 +37,6 @@ struct map_ {
   void (*clear) (map_s *map);
 };
 
-struct map_ map_;
+extern struct map_ map_;
 
 #endif

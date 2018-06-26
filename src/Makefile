@@ -24,7 +24,11 @@ WARNINGS = -Wall -Wextra -Wshadow -pedantic
 
 CURSES_FLAGS = -DNCURSES -I/usr/include/ncurses
 OPTIONS_FLAGS = -DLONG_OPTIONS
-CFLAGS = -ansi -O2 $(OPTIONS_FLAGS) $(CURSES_FLAGS) $(WARNINGS) $(DEBUG)
+JSMN_FLAGS = -DJSMN_PARENT_LINKS
+GETTEXT_FLAGS = -DGETTEXT_STUBS
+CFLAGS = -ansi -O2
+CFLAGS += $(OPTIONS_FLAGS) $(CURSES_FLAGS) $(JSMN_FLAGS) $(GETTEXT_FLAGS)
+CFLAGS += $(WARNINGS) $(DEBUG)
 LDFLAGS = $(DEBUG)
 LIBS = -lncurses -lm
 
@@ -32,37 +36,48 @@ JSMN_STRICT_WRAP = -Djsmn_init=strict_jsmn_init -Djsmn_parse=strict_jsmn_parse
 JSMN_STRICT = -DJSMN_STRICT $(JSMN_STRICT_WRAP)
 
 OBJECTS = stamp.o buffer.o convert.o v1conv.o v2conv.o jsmn.o jsmn_s.o \
-          json.o keymap.o map.o screen.o script.o typist.o utils.o vector.o
+          json.o keymap.o map.o screen.o script.o typist.o uncurse.o utils.o \
+          utf8.o vector.o
 
 default: all
-all: Makefile typist_bin
+all: Makefile typist
 
 stamp: *.h *.c Makefile
-	test -f stamp || echo "<unknown>" > stamp
-	echo "s($$(cat *.h *.c Makefile | md5sum))" > /tmp/stamp
+	test -f stamp || echo "<unknown>" >| stamp
+	echo "s($$(cat *.h *.c Makefile | md5sum))" >| /tmp/stamp
 	cmp -s /tmp/stamp stamp || cp /tmp/stamp stamp
 	rm -f /tmp/stamp
 
-typist_bin: $(OBJECTS)
-	$(CC) $(LDFLAGS) -o typist_bin $(OBJECTS) $(LIBS)
+typist: $(OBJECTS)
+	$(CC) $(LDFLAGS) -o typist $(OBJECTS) $(LIBS)
+
+stamp.o: stamp.c stamp
+	@echo "s($$(date '+%Y%m%d%H%M%S'))" >| _timestamp
+	$(CC) $(CFLAGS) -c stamp.c -o stamp.o
+	@rm -f _timestamp
 
 jsmn_s.o: jsmn.c jsmn.h
 	$(CC) $(CFLAGS) $(JSMN_STRICT) -c jsmn.c -o jsmn_s.o
 
-buffer.o: buffer.c utils.h buffer.h
-convert.o: convert.c buffer.h json.h jsmn.h utils.h convert.h
+buffer.o: buffer.c _gettext.h utils.h buffer.h
+convert.o: convert.c _gettext.h buffer.h json.h jsmn.h utils.h convert.h
 jsmn.o: jsmn.c jsmn.h
-json.o: json.c jsmn.h utils.h json.h
-keymap.o: keymap.c json.h jsmn.h utils.h keymap.h
-map.o: map.c utils.h map.h
-screen.o: screen.c screen.h
-script.o: script.c convert.h buffer.h json.h jsmn.h utils.h script.h
-stamp.o: stamp.c stamp
-typist.o: typist.c buffer.h map.h keymap.h screen.h script.h utils.h vector.h
-utils.o: utils.c screen.h utils.h
-v1conv.o: v1conv.c buffer.h json.h jsmn.h script.h utils.h convert.h
-v2conv.o: v2conv.c buffer.h json.h jsmn.h map.h script.h utils.h convert.h
-vector.o: vector.c utils.h vector.h
+json.o: json.c _gettext.h jsmn.h utils.h json.h
+keymap.o: keymap.c _gettext.h json.h jsmn.h utf8.h utils.h keymap.h
+map.o: map.c _gettext.h utils.h map.h
+screen.o: screen.c _gettext.h utf8.h screen.h
+script.o: script.c _gettext.h convert.h buffer.h json.h jsmn.h utf8.h \
+          utils.h script.h
+typist.o: typist.c _gettext.h buffer.h map.h keymap.h screen.h script.h \
+          utf8.h utils.h vector.h
+uncurse.o: uncurse.c _gettext.h utf8.h utils.h screen.h
+utf8.o: utf8.c utils.h utf8.h
+utils.o: utils.c _gettext.h screen.h utils.h
+v1conv.o: v1conv.c _gettext.h buffer.h json.h jsmn.h script.h utils.h \
+          convert.h
+v2conv.o: v2conv.c _gettext.h buffer.h json.h jsmn.h map.h script.h \
+          utils.h convert.h
+vector.o: vector.c _gettext.h utils.h vector.h
 
 dist:
 clobber: clean
@@ -71,4 +86,4 @@ distclean: clobber
 maintainer-clean: clobber
 	rm -f stamp
 clean:	Makefile
-	rm -f *.o typist_bin
+	rm -f *.o typist

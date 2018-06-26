@@ -37,6 +37,6 @@ struct vector_ {
   int (*push_back) (vector_s *vector, const void *payload);
 };
 
-struct vector_ vector_;
+extern struct vector_ vector_;
 
 #endif

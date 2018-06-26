@@ -23,11 +23,12 @@
    null, boolean, and number 'primitives, and single-word 'primitives'
    can be used as strings and/or object element names.
 
-   In addition, this module's unescaping is lazy (it omits unicode escapes).
+   This module's unescaping is lazy (it omits unicode escapes).  That
+   happens later, on conversion from UTF-8 to UCS.
 
-   The result of both of these is that a lot of invalid JSON will parse,
-   and while the hope is that it will produce usable results in Typist,
-   the reality is that it may well sometimes produce odd behaviours.  */
+   As a result, a lot of invalid JSON may parse, and while the hope is
+   that it will produce usable results in Typist, the reality is that
+   it may well sometimes produce odd behaviours.  */
 
 #ifndef JSON_H
 #define JSON_H
@@ -62,16 +63,16 @@ struct json_ {
   int (*get_required_element_of_types) (const json_s *json, int object,
                                         const char *from, const char *target,
                                         jsmntype_t type1, jsmntype_t type2);
-  void (*foreach_array_element) (const json_s *json, int array,
+  void (*for_each_array_element) (const json_s *json, int array,
       void (*handler) (const json_s *json,
                        int element, int index_, void *opaque1, void *opaque2),
                                  void *opaque1, void *opaque2);
-  void (*foreach_object_element) (const json_s *json, int object,
+  void (*for_each_object_element) (const json_s *json, int object,
       void (*handler) (const json_s *json,
                        int name, int value, void *opaque),
                                   void *opaque);
 };
 
-struct json_ json_;
+extern struct json_ json_;
 
 #endif
