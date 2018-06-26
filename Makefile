@@ -33,8 +33,10 @@ LESSON_FILES = default.json \
                LessonSeriesN.json LessonSeriesQ.json LessonSeriesR.json \
                LessonSeriesS.json LessonSeriesT.json LessonSeriesU.json \
                LessonSeriesV.json
-KEYMAP_FILES = colemak.json dvorak_single_lh.json dvorak_single_rh.json \
-               dvorak_uk.json dvorak_us.json uk.json us.json workman.json
+KEYMAP_FILES = colemak.json de.json \
+               dvorak_single_lh.json dvorak_single_rh.json \
+               dvorak_uk.json dvorak_us.json es.json fr.json jcuken.json \
+               uk.json us.json workman.json
 
 SUBDIRS = src keymaps lessons lessons_v1
 DO = /bin/bash -e -c
@@ -58,15 +60,12 @@ maintainer-clean: clean
 	$(DO) "for dir in $(SUBDIRS); do $(MAKE) -C \$$dir maintainer-clean; done"
 
 install: all
-	test -x src/typist_bin
+	test -x src/typist
 	-mkdir -p $(BINDIR)
 	-mkdir -p $(LIBDIR)
-	cp typist $(BINDIR)
+	cp src/typist $(BINDIR)
 	-chown $(OWNER) $(BINDIR)/typist
 	chmod $(MODE) $(BINDIR)/typist
-	cp src/typist_bin $(BINDIR)
-	-chown $(OWNER) $(BINDIR)/typist_bin
-	chmod $(MODE) $(BINDIR)/typist_bin
 	( cd lessons; cp $(LESSON_FILES) $(LIBDIR) )
 	-chown $(OWNER) $(LIBDIR)/*
 	chmod $(DMODE) $(LIBDIR)/*
@@ -77,7 +76,6 @@ install: all
 
 uninstall:
 	-rm $(BINDIR)/typist
-	-rm $(BINDIR)/typist_bin
 	-rmdir $(BINDIR)
 	-rm $(LIBDIR)/keymaps/*
 	-rmdir $(LIBDIR)/keymaps
