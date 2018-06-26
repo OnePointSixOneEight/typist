@@ -11,7 +11,8 @@ quality of code I initially delivered.
 This finally got the better of me, and so I rewrote it as this. Because I do not actually
 have Linux, autoconf and so on to hand, I could not start with the current _Gtypist_ source
 base, so instead I began with the original and forward-ported as much of _Gtypist_ into
-it as I could in the time available, albeit with a couple of _major_ remaining omissions.
+it as I could in the time available, albeit with a couple of reasonably large remaining
+omissions.
 
 ### What is in?
 
@@ -26,18 +27,14 @@ average initial efforts two decades ago include:
 * Full error recovery on non-internal (that is, non-coding) errors
 * Improved modularity, and better debugging for both lesson scripts and the program itself
 * Some bug fixes
-* Backwards compatibility with GNU _Gtypist_ lesson files(*)
-
-(*) Except for any that are non-ASCII. Which is actually most of them, to be fair.
-Sorry about that.
+* Backwards compatibility with GNU _Gtypist_ lesson files
 
 ### What is missing?
 
-Currently (and significantly) missing from _Typist_ but present in GNU _Gtypist_:
-* Support for non-ASCII languages
+Currently missing from _Typist_ but present in GNU _Gtypist_:
 * More flexible colour controls
 * Log of past exercises
-* A heap of help and other documentation
+* A lot of help and other documentation
 
 ### What is odd?
 
@@ -45,11 +42,9 @@ I also used this program as a test-bed for a few ideas that I wanted to see how 
 might work. Some work better than others.
 
 The attempts at C namespaces are... interesting but could also be seen as more trouble
-than they are worth, particularly since they make it possible to successfully link an
-incomplete program, so that the missing module only shows up as an attempt to
-deference a null pointer when you try to call one of its member functions. Although
-part of the aim here was to create the code as it _should have been_ two decades ago,
-I should probably have just gone to full C++ for a much easier life.
+than they are worth. Although part of the aim here was to create the code as it
+_should have been_ two decades ago, I ought probably have just gone to full C++ for
+a much easier life.
 
 Also, using JSON as a data file format has both pluses and minuses. _Strict_ JSON is
 particularly fiddly and annoying to write with a text editor, although I am not sure
