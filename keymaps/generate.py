@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: UTF-8 -*-
 
 # Generate JSON keymaps from dense data.
 
@@ -12,8 +13,7 @@ import sys
 # [(filename, name,
 #   unshifted-E00..E15,D00..D15,C00..C15,B00..B15, shifted-...), ...]
 # A space character indicates a key that is either absent or unmapped. Space
-# itself is never remapped, nor is Return. Pound is currently not implemented
-# on UK keyboard variants.
+# itself is never remapped, nor is Return.
 KEYMAPS = [
 [ 'us', 'US',
     r"`1234567890-=    qwertyuiop[]\   asdfghjkl;'      zxcvbnm,./    ",
@@ -21,7 +21,7 @@ KEYMAPS = [
 #     |Row E          |Row D          |Row C          |Row B          |
 [ 'uk', 'UK',
     r"`1234567890-=    qwertyuiop[]    asdfghjkl;'#    \zxcvbnm,./    ",
-    r' !" $%^&*()_+    QWERTYUIOP{}    ASDFGHJKL:@~    |ZXCVBNM<>?    '],
+    r'¬!"£$%^&*()_+    QWERTYUIOP{}    ASDFGHJKL:@~    |ZXCVBNM<>?    '],
 #     |Row E          |Row D          |Row C          |Row B          |
 [ 'dvorak_us', 'US Dvorak',
     r"`1234567890[]    ',.pyfgcrl/=\   aoeuidhtns-      ;qjkxbmwvz    ",
@@ -29,7 +29,7 @@ KEYMAPS = [
 #     |Row E          |Row D          |Row C          |Row B          |
 [ 'dvorak_uk', 'UK Dvorak',
     r"`1234567890[]    ',.pyfgcrl/=    aoeuidhtns-#    \;qjkxbmwvz    ",
-    r' !" $%^&*(){}    @<>PYFGCRL?+    AOEUIDHTNS_~    |:QJKXBMWVZ    '],
+    r'¬!"£$%^&*(){}    @<>PYFGCRL?+    AOEUIDHTNS_~    |:QJKXBMWVZ    '],
 #     |Row E          |Row D          |Row C          |Row B          |
 [ 'colemak', 'Colemak',
     r"`1234567890-=    qwfpgjluy;[]\   arstdhneio'      zxcvbkm,./    ",
@@ -46,6 +46,22 @@ KEYMAPS = [
 [ 'workman', 'Workman',
     r"`1234567890-=    qdrwbjfup;[]\   ashtgyneoi'      zxmcvkl,./    ",
     r'~!@#$%^&*()_+    QDRWBJFUP:{}|   ASHTGYNEOI"      ZXMCVKL<>?    '],
+#     |Row E          |Row D          |Row C          |Row B          |
+[ 'fr', 'French',
+    "²&é\"'(-è_çá)=    azertyuiop $    qsdfghjklmù*    <wxcvbn,;:!    ",
+    r' 1234567890 +    AZERTYUIOP £    QSDFGHJKLM%µ    >WXCVBN?./§    '],
+#     |Row E          |Row D          |Row C          |Row B          |
+[ 'de', 'German',
+    r" 1234567890ß     qwertzuiopü+    asdfghjklöä#    <yxcvbnm,.-    ",
+    "°!\"§$%&/()=?     QWERTZUIOPÜ*    ASDFGHJKLÖÄ'    >YXCVBNM;:_    "],
+#     |Row E          |Row D          |Row C          |Row B          |
+[ 'es', 'Spanish',
+    r"º1234567890'¡    qwertyuiop`+    asdfghjklñ ç    <zxcvbnm,.-    ",
+    r'ª!"#$%&/()=?¿    QWERTYUIOP^*    ASDFGHJKLÑ Ç    >ZXCVBNM;:_    '],
+#     |Row E          |Row D          |Row C          |Row B          |
+[ 'jcuken', 'Russian',
+    r"ё1234567890-=\   йцукенгшщзхъ    фывапролджэ      ячсмитьбю.    ",
+    r'Ё!"№;%:?*()_+/   ЙЦУКЕНГШЩЗХЪ    ФЫВАПРОЛДЖЭ      ЯЧСМИТЬБЮ,    '],
 #     |Row E          |Row D          |Row C          |Row B          |
 ]
 
@@ -159,11 +175,13 @@ def validate (name, unshifted, shifted):
 def main (argv):
   for entry in KEYMAPS:
     filename, name, unshifted, shifted = entry
+    unshifted = unicode (unshifted, 'utf8')
+    shifted = unicode (shifted, 'utf8')
     validate (name, unshifted, shifted)
     json = generate (name, unshifted, shifted)
 
     stream = open (filename + '.json', 'w')
-    stream.write (json)
+    stream.write (json.encode ('utf8'))
     stream.close ()
 
     sys.stdout.write ('Wrote %s ("%s")\n' % (filename, name))

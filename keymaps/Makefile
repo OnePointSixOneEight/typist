@@ -17,8 +17,10 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
-KEYMAP_FILES = colemak.json dvorak_single_lh.json dvorak_single_rh.json \
-               dvorak_uk.json dvorak_us.json uk.json us.json workman.json
+KEYMAP_FILES = colemak.json de.json \
+               dvorak_single_lh.json dvorak_single_rh.json \
+               dvorak_uk.json dvorak_us.json es.json fr.json jcuken.json \
+               uk.json us.json workman.json
 
 default: all
 

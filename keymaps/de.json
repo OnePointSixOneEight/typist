@@ -1,0 +1,82 @@
+{
+  "copyright": [
+    "Typist 3.0 - improved typing tutor program for UNIX systems",
+    "Copyright (C) 1998-2018  Simon Baldwin (simon_baldwin@yahoo.com)",
+    "",
+    "This program is free software; you can redistribute it and/or",
+    "modify it under the terms of the GNU General Public License",
+    "as published by the Free Software Foundation; either version 2",
+    "of the License, or (at your option) any later version.",
+    "",
+    "This program is distributed in the hope that it will be useful,",
+    "but WITHOUT ANY WARRANTY; without even the implied warranty of",
+    "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the",
+    "GNU General Public License for more details.",
+    "",
+    "You should have received a copy of the GNU General Public License",
+    "along with this program; if not, write to the Free Software",
+    "Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA."
+  ],
+  "keyboard": {
+    "version": 1,
+    "name": "German",
+    "keyMap": [
+      {
+        "map": [
+          { "iso": "E01", "to": "1" }, { "iso": "E02", "to": "2" },
+          { "iso": "E03", "to": "3" }, { "iso": "E04", "to": "4" },
+          { "iso": "E05", "to": "5" }, { "iso": "E06", "to": "6" },
+          { "iso": "E07", "to": "7" }, { "iso": "E08", "to": "8" },
+          { "iso": "E09", "to": "9" }, { "iso": "E10", "to": "0" },
+          { "iso": "E11", "to": "ß" }, { "iso": "D01", "to": "q" },
+          { "iso": "D02", "to": "w" }, { "iso": "D03", "to": "e" },
+          { "iso": "D04", "to": "r" }, { "iso": "D05", "to": "t" },
+          { "iso": "D06", "to": "z" }, { "iso": "D07", "to": "u" },
+          { "iso": "D08", "to": "i" }, { "iso": "D09", "to": "o" },
+          { "iso": "D10", "to": "p" }, { "iso": "D11", "to": "ü" },
+          { "iso": "D12", "to": "+" }, { "iso": "C01", "to": "a" },
+          { "iso": "C02", "to": "s" }, { "iso": "C03", "to": "d" },
+          { "iso": "C04", "to": "f" }, { "iso": "C05", "to": "g" },
+          { "iso": "C06", "to": "h" }, { "iso": "C07", "to": "j" },
+          { "iso": "C08", "to": "k" }, { "iso": "C09", "to": "l" },
+          { "iso": "C10", "to": "ö" }, { "iso": "C11", "to": "ä" },
+          { "iso": "C12", "to": "#" }, { "iso": "B01", "to": "<" },
+          { "iso": "B02", "to": "y" }, { "iso": "B03", "to": "x" },
+          { "iso": "B04", "to": "c" }, { "iso": "B05", "to": "v" },
+          { "iso": "B06", "to": "b" }, { "iso": "B07", "to": "n" },
+          { "iso": "B08", "to": "m" }, { "iso": "B09", "to": "," },
+          { "iso": "B10", "to": "." }, { "iso": "B11", "to": "-" }
+        ]
+      },
+      {
+        "modifiers": "shift",
+        "map": [
+          { "iso": "E00", "to": "°" }, { "iso": "E01", "to": "!" },
+          { "iso": "E02", "to": "\"" }, { "iso": "E03", "to": "§" },
+          { "iso": "E04", "to": "$" }, { "iso": "E05", "to": "%" },
+          { "iso": "E06", "to": "&" }, { "iso": "E07", "to": "/" },
+          { "iso": "E08", "to": "(" }, { "iso": "E09", "to": ")" },
+          { "iso": "E10", "to": "=" }, { "iso": "E11", "to": "?" },
+          { "iso": "D01", "to": "Q" }, { "iso": "D02", "to": "W" },
+          { "iso": "D03", "to": "E" }, { "iso": "D04", "to": "R" },
+          { "iso": "D05", "to": "T" }, { "iso": "D06", "to": "Z" },
+          { "iso": "D07", "to": "U" }, { "iso": "D08", "to": "I" },
+          { "iso": "D09", "to": "O" }, { "iso": "D10", "to": "P" },
+          { "iso": "D11", "to": "Ü" }, { "iso": "D12", "to": "*" },
+          { "iso": "C01", "to": "A" }, { "iso": "C02", "to": "S" },
+          { "iso": "C03", "to": "D" }, { "iso": "C04", "to": "F" },
+          { "iso": "C05", "to": "G" }, { "iso": "C06", "to": "H" },
+          { "iso": "C07", "to": "J" }, { "iso": "C08", "to": "K" },
+          { "iso": "C09", "to": "L" }, { "iso": "C10", "to": "Ö" },
+          { "iso": "C11", "to": "Ä" }, { "iso": "C12", "to": "'" },
+          { "iso": "B01", "to": ">" }, { "iso": "B02", "to": "Y" },
+          { "iso": "B03", "to": "X" }, { "iso": "B04", "to": "C" },
+          { "iso": "B05", "to": "V" }, { "iso": "B06", "to": "B" },
+          { "iso": "B07", "to": "N" }, { "iso": "B08", "to": "M" },
+          { "iso": "B09", "to": ";" }, { "iso": "B10", "to": ":" },
+          { "iso": "B11", "to": "_" }
+        ]
+      }
+    ]
+  }
+}

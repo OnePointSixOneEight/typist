@@ -1,0 +1,83 @@
+{
+  "copyright": [
+    "Typist 3.0 - improved typing tutor program for UNIX systems",
+    "Copyright (C) 1998-2018  Simon Baldwin (simon_baldwin@yahoo.com)",
+    "",
+    "This program is free software; you can redistribute it and/or",
+    "modify it under the terms of the GNU General Public License",
+    "as published by the Free Software Foundation; either version 2",
+    "of the License, or (at your option) any later version.",
+    "",
+    "This program is distributed in the hope that it will be useful,",
+    "but WITHOUT ANY WARRANTY; without even the implied warranty of",
+    "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the",
+    "GNU General Public License for more details.",
+    "",
+    "You should have received a copy of the GNU General Public License",
+    "along with this program; if not, write to the Free Software",
+    "Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA."
+  ],
+  "keyboard": {
+    "version": 1,
+    "name": "Russian",
+    "keyMap": [
+      {
+        "map": [
+          { "iso": "E00", "to": "ё" }, { "iso": "E01", "to": "1" },
+          { "iso": "E02", "to": "2" }, { "iso": "E03", "to": "3" },
+          { "iso": "E04", "to": "4" }, { "iso": "E05", "to": "5" },
+          { "iso": "E06", "to": "6" }, { "iso": "E07", "to": "7" },
+          { "iso": "E08", "to": "8" }, { "iso": "E09", "to": "9" },
+          { "iso": "E10", "to": "0" }, { "iso": "E11", "to": "-" },
+          { "iso": "E12", "to": "=" }, { "iso": "E13", "to": "\\" },
+          { "iso": "D01", "to": "й" }, { "iso": "D02", "to": "ц" },
+          { "iso": "D03", "to": "у" }, { "iso": "D04", "to": "к" },
+          { "iso": "D05", "to": "е" }, { "iso": "D06", "to": "н" },
+          { "iso": "D07", "to": "г" }, { "iso": "D08", "to": "ш" },
+          { "iso": "D09", "to": "щ" }, { "iso": "D10", "to": "з" },
+          { "iso": "D11", "to": "х" }, { "iso": "D12", "to": "ъ" },
+          { "iso": "C01", "to": "ф" }, { "iso": "C02", "to": "ы" },
+          { "iso": "C03", "to": "в" }, { "iso": "C04", "to": "а" },
+          { "iso": "C05", "to": "п" }, { "iso": "C06", "to": "р" },
+          { "iso": "C07", "to": "о" }, { "iso": "C08", "to": "л" },
+          { "iso": "C09", "to": "д" }, { "iso": "C10", "to": "ж" },
+          { "iso": "C11", "to": "э" }, { "iso": "B02", "to": "я" },
+          { "iso": "B03", "to": "ч" }, { "iso": "B04", "to": "с" },
+          { "iso": "B05", "to": "м" }, { "iso": "B06", "to": "и" },
+          { "iso": "B07", "to": "т" }, { "iso": "B08", "to": "ь" },
+          { "iso": "B09", "to": "б" }, { "iso": "B10", "to": "ю" },
+          { "iso": "B11", "to": "." }
+        ]
+      },
+      {
+        "modifiers": "shift",
+        "map": [
+          { "iso": "E00", "to": "Ё" }, { "iso": "E01", "to": "!" },
+          { "iso": "E02", "to": "\"" }, { "iso": "E03", "to": "№" },
+          { "iso": "E04", "to": ";" }, { "iso": "E05", "to": "%" },
+          { "iso": "E06", "to": ":" }, { "iso": "E07", "to": "?" },
+          { "iso": "E08", "to": "*" }, { "iso": "E09", "to": "(" },
+          { "iso": "E10", "to": ")" }, { "iso": "E11", "to": "_" },
+          { "iso": "E12", "to": "+" }, { "iso": "E13", "to": "/" },
+          { "iso": "D01", "to": "Й" }, { "iso": "D02", "to": "Ц" },
+          { "iso": "D03", "to": "У" }, { "iso": "D04", "to": "К" },
+          { "iso": "D05", "to": "Е" }, { "iso": "D06", "to": "Н" },
+          { "iso": "D07", "to": "Г" }, { "iso": "D08", "to": "Ш" },
+          { "iso": "D09", "to": "Щ" }, { "iso": "D10", "to": "З" },
+          { "iso": "D11", "to": "Х" }, { "iso": "D12", "to": "Ъ" },
+          { "iso": "C01", "to": "Ф" }, { "iso": "C02", "to": "Ы" },
+          { "iso": "C03", "to": "В" }, { "iso": "C04", "to": "А" },
+          { "iso": "C05", "to": "П" }, { "iso": "C06", "to": "Р" },
+          { "iso": "C07", "to": "О" }, { "iso": "C08", "to": "Л" },
+          { "iso": "C09", "to": "Д" }, { "iso": "C10", "to": "Ж" },
+          { "iso": "C11", "to": "Э" }, { "iso": "B02", "to": "Я" },
+          { "iso": "B03", "to": "Ч" }, { "iso": "B04", "to": "С" },
+          { "iso": "B05", "to": "М" }, { "iso": "B06", "to": "И" },
+          { "iso": "B07", "to": "Т" }, { "iso": "B08", "to": "Ь" },
+          { "iso": "B09", "to": "Б" }, { "iso": "B10", "to": "Ю" },
+          { "iso": "B11", "to": "," }
+        ]
+      }
+    ]
+  }
+}
