@@ -296,6 +296,7 @@ def format_elements (meta, elements):
 
   j.add ('"typist": {', 1)
   j.add ('"version": 2,')
+  j.add ('"locale": "en_US.UTF-8",')
   j.add ('"seriesName": "%s",' % meta['series_id'])
   j.add ('"seriesDescription": "%s",' % meta['description'])
 

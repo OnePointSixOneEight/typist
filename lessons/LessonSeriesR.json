@@ -19,6 +19,7 @@
   ],
   "typist": {
     "version": 2,
+    "locale": "en_US.UTF-8",
     "seriesName": "R",
     "seriesDescription": "Long QWERTY course (R1 - R14)",
     "seriesMenu": {

@@ -19,6 +19,7 @@
   ],
   "typist": {
     "version": 2,
+    "locale": "en_US.UTF-8",
     "seriesName": "D",
     "seriesDescription": "Dvorak touch typing (D1 - D14)",
     "seriesMenu": {

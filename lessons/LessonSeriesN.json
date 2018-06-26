@@ -19,6 +19,7 @@
   ],
   "typist": {
     "version": 2,
+    "locale": "en_US.UTF-8",
     "seriesName": "N",
     "seriesDescription": "Calculator keypad (N1 - N3)",
     "seriesMenu": {

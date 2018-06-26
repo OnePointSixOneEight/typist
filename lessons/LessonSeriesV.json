@@ -19,6 +19,7 @@
   ],
   "typist": {
     "version": 2,
+    "locale": "en_US.UTF-8",
     "seriesName": "V",
     "seriesDescription": "Yet Another QWERTY (V1 - V19)",
     "seriesMenu": {

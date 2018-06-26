@@ -19,6 +19,7 @@
   ],
   "typist": {
     "version": 2,
+    "locale": "en_US.UTF-8",
     "seriesName": "S",
     "seriesDescription": "Speed drills (S1 - S4)",
     "seriesMenu": {

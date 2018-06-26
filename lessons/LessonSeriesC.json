@@ -19,6 +19,7 @@
   ],
   "typist": {
     "version": 2,
+    "locale": "en_US.UTF-8",
     "seriesName": "C",
     "seriesDescription": "Colemak touch typing (C1 - C17)",
     "seriesMenu": {

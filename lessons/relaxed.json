@@ -19,6 +19,7 @@
   ],
   typist: {
     version: 2,
+    locale: en_US.UTF-8,
     seriesName: Selector,
     seriesDescription: "Lesson series selection",
     seriesMenu: {
@@ -161,7 +162,7 @@
         "Lessons and keymaps are held as JSON files, and Typist will note any non-fatal",
         "problems parsing these files onto stderr, but try to continue running anyway.",
         "Because stderr is often lost under 'curses' output, you can use the '-j' or",
-        "'--log' to redirect error message, for example '--log=/tmp/trace'.",
+        "'--log' to redirect error messages, for example '--log=/tmp/trace'.",
       ]
     },
     Advanced_2: {
@@ -203,7 +204,7 @@
         "Use the '-d' or '--depth-limit' options to set the maximum nesting.",
         "",
         "If using sub-scripts you will need to ensure that the screen contents are",
-        "rebuilt correct when one returns to the main script. Typist does not try",
+        "rebuilt correctly when one returns to the main script. Typist does not try",
         "to maintain screen contents across sub-script executions.",
         "",
         "If a sub-script fails to load, perhaps the file cannot be found, Typist",

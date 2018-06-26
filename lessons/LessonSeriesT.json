@@ -19,6 +19,7 @@
   ],
   "typist": {
     "version": 2,
+    "locale": "en_US.UTF-8",
     "seriesName": "T",
     "seriesDescription": "QWERTY touch typing (T1 - T16)",
     "seriesMenu": {

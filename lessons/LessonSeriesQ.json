@@ -19,6 +19,7 @@
   ],
   "typist": {
     "version": 2,
+    "locale": "en_US.UTF-8",
     "seriesName": "Q",
     "seriesDescription": "Quick QWERTY course (Q1 - Q5)",
     "seriesMenu": {
