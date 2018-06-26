@@ -19,6 +19,7 @@
   ],
   "typist": {
     "version": 1,
+    "locale": "en_US.UTF-8",
     "name": "Series M",
     "statements": [
       { "action": "Goto", "data": "_M_MENU" },

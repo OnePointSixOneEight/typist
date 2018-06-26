@@ -148,6 +148,7 @@ def convert (stream, name):
 
   j.add ('"typist": {', 1)
   j.add ('"version": 1,')
+  j.add ('"locale": "en_US.UTF-8",')
   j.add ('"name": "%s",' % name)
   j.add ('"statements": [', 1)
 
@@ -229,9 +230,10 @@ def main (argv):
     conversion = convert (stream, name)
     stream.close ()
 
-    if len (entry) == 5:
-      entry = 'series_' + entry
-    stream = open (argv[1].replace ('.typ', '.json'), 'w')
+    base = argv[1]
+    if len (base) == 5:
+      base = 'series_' + base
+    stream = open (base.replace ('.typ', '.json'), 'w')
     stream.write (conversion)
     stream.close ()
 
