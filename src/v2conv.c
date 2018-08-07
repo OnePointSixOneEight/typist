@@ -40,6 +40,11 @@ static struct constants constants;
 static void
 init_constants (void)
 {
+  static int initialized = 0;
+
+  if (initialized++)
+    return;
+
   constants.CONTINUE_MESSAGE    = _(" Continue to the next lesson? [Y/N] ");
   constants.FALLTHROUGH_MESSAGE = _(" No more lessons -"
                                     " exit this lesson series? [Y/N] ");
@@ -371,6 +376,8 @@ json_to_legacy (const json_s *json, int typist, buffer_s *buffer)
 {
   int seriesdescription, seriesmenu, title, entries;
 
+  init_constants ();
+
   seriesdescription =
     json_.get_required_element_of_type (json, typist, "typist",
                                         "seriesDescription", json_string);
@@ -415,5 +422,4 @@ void
 init_v2_convert (void)
 {
   convert_.v2_json_to_legacy = json_to_legacy;
-  init_constants ();
 }
