@@ -2,4 +2,4 @@
 
 .PHONY: configure
 configure:
-	./configure
+	/bin/sh ./configure
