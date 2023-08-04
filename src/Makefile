@@ -17,27 +17,24 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
-# For gcc 4 on MacOS, should also work for Linux.
-CC = gcc
-DEBUG = # set to '-g -O0' for a debug build
-WARNINGS = -Wall -Wextra -Wshadow -pedantic
+include ../Makefile.inc
 
-CURSES_FLAGS = -DNCURSES -I/usr/include/ncurses
-OPTIONS_FLAGS = -DLONG_OPTIONS
-JSMN_FLAGS = -DJSMN_PARENT_LINKS
-GETTEXT_FLAGS = -DGETTEXT_STUBS
-CFLAGS = -ansi -O2
-CFLAGS += $(OPTIONS_FLAGS) $(CURSES_FLAGS) $(JSMN_FLAGS) $(GETTEXT_FLAGS)
-CFLAGS += $(WARNINGS) $(DEBUG)
-LDFLAGS = $(DEBUG)
-LIBS = -lncurses -lm
+DO	= /bin/bash -e -c
+
+LDFLAGS	= $(LDEXTRA) $(DEBUG)
+CFLAGS	= -ansi -D_POSIX_C_SOURCE=200112L
+CFLAGS += -DNCURSES -DLONG_OPTIONS -DJSMN_PARENT_LINKS -DGETTEXT_STUBS \
+	  -Wall -Wextra -Wshadow -pedantic \
+	  $(CEXTRA) $(DEBUG)
 
 JSMN_STRICT_WRAP = -Djsmn_init=strict_jsmn_init -Djsmn_parse=strict_jsmn_parse
 JSMN_STRICT = -DJSMN_STRICT $(JSMN_STRICT_WRAP)
 
 OBJECTS = stamp.o buffer.o convert.o v1conv.o v2conv.o jsmn.o jsmn_s.o \
-          json.o keymap.o map.o screen.o script.o typist.o uncurse.o utils.o \
-          utf8.o vector.o
+	  json.o keymap.o map.o screen.o script.o typist.o uncurse.o utils.o \
+	  utf8.o vector.o
+
+TYPIST = $(CURDIR)/typist
 
 default: all
 all: Makefile typist
@@ -79,11 +76,25 @@ v2conv.o: v2conv.c _gettext.h buffer.h json.h jsmn.h map.h script.h \
           utils.h convert.h
 vector.o: vector.c _gettext.h utils.h vector.h
 
+install: all
+	$(INSTALL) -d $(bindir)
+	$(INSTALL_PROGRAM) typist $(bindir)/typist
+
+install-strip: all
+	$(MAKE) INSTALL_PROGRAM='$(INSTALL_PROGRAM) -s' install
+
+uninstall:
+	rm -rf $(bindir)/typist
+
+clean:
+	rm -rf *.o typist
+	rm -rf core gmon.out
+
+check: all
+	$(DO) "$(TYPIST) -v; $(TYPIST) -B"
+
 dist:
 clobber: clean
-	rm -f .gdb_history
-distclean: clobber
-maintainer-clean: clobber
+distclean: clean
+maintainer-clean: clean
 	rm -f stamp
-clean:	Makefile
-	rm -f *.o typist

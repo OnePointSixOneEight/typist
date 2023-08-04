@@ -62,6 +62,8 @@ struct screen_ {
   int KEY_BACKSPACE_;
   int KEY_DOWN_;
   int KEY_UP_;
+  int KEY_LEFT_;
+  int KEY_RIGHT_;
   int num_colours;
   int colour_array[8];
 };

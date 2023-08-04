@@ -108,14 +108,14 @@ static void break_ (void) { cbreak (); }
 static int
 get_char (void)
 {
-  int ch, status = get_wch (&ch);
+  int ch, status = get_wch ((wint_t*)&ch);
 
   /* Repaint the full screen on ^L, similar to vim.  */
   while (status == OK && ch == '\f')
     {
       redrawwin (curscr);
       refresh ();
-      status = get_wch (&ch);
+      status = get_wch ((wint_t*)&ch);
     }
 
   /* Make \r and \n equivalent.  */
@@ -135,7 +135,7 @@ static void push_back_char (int c) { unget_wch (c); }
 static void
 add_ucs_char (int c)
 {
-  int s[2];
+  wint_t s[2];
   cchar_t cc;
 
   s[0] = c;
@@ -245,6 +245,8 @@ init_screen (void)
   screen_.KEY_BACKSPACE_ = -KEY_BACKSPACE;
   screen_.KEY_DOWN_ = -KEY_DOWN;
   screen_.KEY_UP_ = -KEY_UP;
+  screen_.KEY_LEFT_ = -KEY_LEFT;
+  screen_.KEY_RIGHT_ = -KEY_RIGHT;
   screen_.num_colours
     = sizeof (screen_.colour_array) / sizeof (*screen_.colour_array);
   screen_.colour_array[0] = COLOR_BLACK;

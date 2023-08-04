@@ -20,6 +20,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <strings.h>
 
 #include "_gettext.h"
 #include "jsmn.h"

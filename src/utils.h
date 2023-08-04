@@ -45,6 +45,8 @@ struct utils_ {
   void (*error_if) (int test, const char *format, ...)_pf2;
   void (*fatal) (const char *format, ...)_pf1;
   void (*fatal_if) (int test, const char *format, ...)_pf2;
+  void (*exit) (const char *format, ...)_pf1;
+  void (*exit_if) (int test, const char *format, ...)_pf2;
 
   void *(*alloc) (int bytes);
   void *(*realloc) (void *pointer, int bytes);

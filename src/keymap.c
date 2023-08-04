@@ -69,10 +69,7 @@ process_iso_to (keymap_s *keymap,
   keys = shifted ? keymap->u.pair.shifted_keys : keymap->u.pair.normal_keys;
 
   if (keys[offset])
-    {
-      utils_.error (_("duplicate ISO mapping '%s' (entry ignored)"), iso);
-      return;
-    }
+    utils_.warning (_("duplicate ISO mapping '%s' (shadows prior)"), iso);
 
   keys[offset] = ucs;
 }
@@ -308,8 +305,8 @@ open (const char *path, int strict_json, int strict_iso_core)
   utils_.info (_("opened file '%s' on stream p_%p"), path, p_(stream));
 
   file_length = utils_.read_in_file (stream, &file_data);
-  fclose (stream);
   utils_.info (_("read %d bytes from stream p_%p"), file_length, p_(stream));
+  fclose (stream);
 
   if (file_length == 0)
     {

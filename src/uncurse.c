@@ -47,7 +47,7 @@ struct display {
 };
 
 static struct display display;
-static FILE *stream = stdout;
+static FILE *stream;
 
 static const int reverse = 1 << 24;
 static const int underline = 1 << 25;
@@ -510,6 +510,7 @@ __attribute__((constructor))
 void
 init_uncurse (void)
 {
+  stream = stdout;
   screen_._test_mode = _test_mode;
   uncurse_._test_mode = _test_mode;
   uncurse_.init = init;

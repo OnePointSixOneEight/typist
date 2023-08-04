@@ -21,6 +21,7 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
+#include <strings.h>
 
 #include "_gettext.h"
 #include "convert.h"
@@ -116,7 +117,7 @@ prepare_legacy_data (script_s *script, const char *file_data, int file_length)
     {
       /* Allow for possible DOS-format input.  */
       if (script->data[i] == '\r' && script->data[i + 1] == '\n')
-        script->data[i] = script->data[i + 1]  = 0;
+        script->data[i] = script->data[i + 1] = 0;
       else if (script->data[i] == '\n')
         script->data[i] = 0;
     }
@@ -145,8 +146,8 @@ open (const char *path, int strict_json)
   utils_.info ("opened file '%s' on stream p_%p", path, p_(stream));
 
   file_length = utils_.read_in_file (stream, &file_data);
-  fclose (stream);
   utils_.info ("read %d bytes from stream p_%p", file_length, p_(stream));
+  fclose (stream);
 
   if (file_length == 0)
     {

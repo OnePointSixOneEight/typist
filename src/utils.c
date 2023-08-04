@@ -27,6 +27,8 @@
 #include <sys/time.h>
 #include <unistd.h>
 #include <sys/types.h>
+#include <signal.h>
+#include <strings.h>
 
 #include "_gettext.h"
 #include "screen.h"
@@ -132,6 +134,29 @@ fatal_if (int test, const char *format, ...)
   va_end (ap);
 }
 
+static void
+exit_ (const char *format, ...)
+{
+  va_list ap; va_start (ap, format);
+  if (screen_.finalize)
+    screen_.finalize ();
+  emit (_("Exit"), format, ap);
+  exit (EXIT_FAILURE);
+}
+
+static void
+exit_if (int test, const char *format, ...)
+{
+  va_list ap; va_start (ap, format);
+  if (test)
+    {
+      if (screen_.finalize)
+        screen_.finalize ();
+      emit (_("Exit"), format, ap);
+      exit (EXIT_FAILURE);
+    }
+}
+
 /* Memory allocation (wrappers around malloc and friends).  */
 static void *
 alloc_ (int bytes)
@@ -212,10 +237,10 @@ set_locale (const char *locale)
 static int
 is_utf8_locale (void)
 {
-  const char *codeset = nl_langinfo(CODESET);
+  const char *codeset = nl_langinfo (CODESET);
 
-  return strcasecmp(codeset, "UTF-8") == 0
-         || strcasecmp(codeset, "UTF8") == 0;
+  return strcasecmp (codeset, "UTF-8") == 0
+         || strcasecmp (codeset, "UTF8") == 0;
 }
 
 static void
@@ -382,6 +407,8 @@ init_utils (void)
   utils_.error_if = error_if;
   utils_.fatal = fatal;
   utils_.fatal_if = fatal_if;
+  utils_.exit = exit_;
+  utils_.exit_if = exit_if;
 
   utils_.alloc = alloc_;
   utils_.realloc = realloc_;

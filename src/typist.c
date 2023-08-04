@@ -18,10 +18,12 @@
    Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
+#include <ctype.h>
 #include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <strings.h>
 #include <time.h>
 #include <unistd.h>
 #include <sys/utsname.h>
@@ -51,6 +53,10 @@ struct constants {
 
   const int *QUERY_YES;
   const int *QUERY_NO;
+
+  const int *MENU_QUIT;
+  const int *MENU_UP;
+  const int *MENU_DOWN;
 
   int DRILL_CHARACTER_ERROR;
   int DRILL_NEWLINE_ERROR;
@@ -92,6 +98,10 @@ init_constants (void)
 
   constants.QUERY_YES = utf8_.to_ucs (_("Yy"));
   constants.QUERY_NO  = utf8_.to_ucs (_("Nn"));
+
+  constants.MENU_QUIT = utf8_.to_ucs (_("Qq"));
+  constants.MENU_UP   = utf8_.to_ucs (_("Kk"));
+  constants.MENU_DOWN = utf8_.to_ucs (_("Jj"));
 
   constants.DRILL_CHARACTER_ERROR = '^';
   constants.DRILL_NEWLINE_ERROR   = '<';
@@ -137,6 +147,7 @@ init_pseudo_function_keys (void)
 {
   int i;
   const char *surrogates = constants.PSEUDO_FUNCTION_KEYS;
+
   for (i = 0; surrogates[i]; i++)
     pseudo_function_keys[i] = toupper (surrogates[i]) - ('A' - 1);
 }
@@ -214,9 +225,8 @@ init_context (context_s *context,
   context->labels = map_.create (sizeof (int), 0, 127);
   context->menu_memos = map_.create (sizeof (int), sizeof (int), 31);
 
-  context->num_function_keys
-    = sizeof (context->function_key_binding)
-      / sizeof (*context->function_key_binding);
+  context->num_function_keys = sizeof (context->function_key_binding)
+                               / sizeof (*context->function_key_binding);
 
   context->error_limit = -1.0;
   context->execution_depth = execution_depth;
@@ -226,6 +236,7 @@ static void
 destroy_context (context_s *context)
 {
   int fkey;
+
   script_.close (context->script);
   map_.destroy (context->labels);
   for (fkey = 0; fkey < context->num_function_keys; fkey++)
@@ -260,9 +271,7 @@ get_char_with_no_cursor (void)
   if (options.keymapper)
     return_char = keymapper_.convert (options.keymapper, return_char);
   screen_.move (y, x);
-  if (return_char == constants.CTRL_D)
-    return constants.ESCAPE;
-  return return_char;
+  return return_char == constants.CTRL_D ? constants.ESCAPE : return_char;
 }
 
 /* Here we want a way to get a character that always uses a flashing cursor,
@@ -289,9 +298,7 @@ get_char_with_flashing_cursor (int cursor_char)
         return_char = keymapper_.convert (options.keymapper, return_char);
       screen_.cursor_off ();
       screen_.refresh ();
-      if (return_char == constants.CTRL_D)
-        return constants.ESCAPE;
-      return return_char;
+      return return_char == constants.CTRL_D ? constants.ESCAPE : return_char;
     }
 
   /* Produce a flashing cursor; a block where cursor_char is ' '.  */
@@ -324,9 +331,7 @@ get_char_with_flashing_cursor (int cursor_char)
   screen_.move (y, x);
   screen_.add_ucs_char (cursor_char);
   screen_.move (y, x);
-  if (return_char == constants.CTRL_D)
-    return constants.ESCAPE;
-  return return_char;
+  return return_char == constants.CTRL_D ? constants.ESCAPE : return_char;
 }
 
 /* Iterate script lines and add all the labels to the label map.  */
@@ -373,7 +378,7 @@ map_script_labels (context_s *context)
         }
 
       if (map_.contains (context->labels, label))
-        utils_.warning (_("label re-defined (shadowed prior): '%s'"), data);
+        utils_.warning (_("label re-defined (shadows prior): '%s'"), data);
 
       map_.set (context->labels, label, &position);
       utils_.free (label);
@@ -415,6 +420,18 @@ get_bound_label (context_s *context, int keypress)
 {
   const char *label = NULL;
   int fkey;
+
+  /* If in a version 2 JSON conversion, make left and right arrow keys
+     synonyms for F12 and F11 respectively, for slightly smoother menu
+     navigation.  */
+  if (script_.get_version (context->script) == 2)
+    {
+      if (keypress == screen_.KEY_LEFT_)
+        keypress = screen_.function_key (12);
+
+      else if (keypress == screen_.KEY_RIGHT_)
+        keypress = screen_.function_key (11);
+    }
 
   for (fkey = 0; fkey < context->num_function_keys; fkey++)
     {
@@ -950,7 +967,7 @@ handle_speed_test (context_s *context, const int *data,
   return key == constants.ESCAPE;
 }
 
-/* Buffer the complete data for a script element that has continuations. */
+/* Buffer the complete data for a script element that has continuations.  */
 static buffer_s *
 get_full_element_data (script_s *script)
 {
@@ -972,7 +989,7 @@ get_full_element_data (script_s *script)
   return buffer;
 }
 
-/* Handle repeated invocations of a practice drill or speed test. */
+/* Handle repeated invocations of a practice drill or speed test.  */
 static void
 handle_practice_exercise (context_s *context, int action)
 {
@@ -1004,7 +1021,7 @@ handle_practice_exercise (context_s *context, int action)
         utils_.fatal (_("internal error: bad call"
                         " to function '%s'"), "handle_practice_exercise");
 
-      /* If terminated in mid-exercise, restart it. */
+      /* If terminated in mid-exercise, restart it.  */
       if (terminated && keystrokes > 0)
         continue;
 
@@ -1021,7 +1038,7 @@ handle_practice_exercise (context_s *context, int action)
   utf8_.free (data);
 }
 
-/* Handle repeated invocations of a drill or speed test. */
+/* Handle repeated invocations of a drill or speed test.  */
 static void
 handle_exercise (context_s *context, int action)
 {
@@ -1054,7 +1071,7 @@ handle_exercise (context_s *context, int action)
         utils_.fatal (_("internal error: bad call"
                         " to function '%s'"), "handle_exercise");
 
-      /* If terminated in mid-exercise, restart it. */
+      /* If terminated in mid-exercise, restart it.  */
       if (terminated && keystrokes > 0)
         continue;
 
@@ -1147,7 +1164,7 @@ handle_menu (context_s *context)
 
   data = script_.get_data (script);
 
-  /* Extract the any UP=... setting and the menu title from the first line.  */
+  /* Extract any UP=... setting and the menu title from the first line.  */
   up = utils_.strdup (data);
   up_label = utils_.strdup (data);
   scanned = sscanf (data, " %[^=\"]=%s %n", up, up_label, &extent);
@@ -1161,7 +1178,6 @@ handle_menu (context_s *context)
       if (strcasecmp (up_label, "_exit") != 0
           && !map_.contains (context->labels, up_label))
         {
-
           utils_.error (_("invalid menu"
                           " up target (UP=... ignored): '%s'"), data);
           strcpy (up_label, "");
@@ -1236,7 +1252,7 @@ handle_menu (context_s *context)
   target = NULL;
   while (!target && menu_entries)
     {
-      int control, line;
+      int control, unmapped, line;
 
       /* Menu items display two lines below the menu title.  */
       line = informational_top_line () + 2;
@@ -1264,17 +1280,31 @@ handle_menu (context_s *context)
       display_status (constants.MENU_MESSAGE, constants.MODE_MENU);
 
       control = get_char_with_no_cursor ();
-      if (control == constants.ESCAPE || control == 'q' || control == 'Q')
+      if (options.keymapper)
+        unmapped = keymapper_.unconvert (options.keymapper, control);
+      else
+        unmapped = control;
+
+      if (control == screen_.KEY_LEFT_
+          || control == constants.ESCAPE
+          || control == constants.MENU_QUIT[0]
+          || control == constants.MENU_QUIT[1]
+          || unmapped == constants.MENU_QUIT[0]
+          || unmapped == constants.MENU_QUIT[1])
         target = up_label;
 
-      else if (control == ' ' || control == '\n')
+      else if (control == screen_.KEY_RIGHT_
+          || control == ' ' || control == '\n')
         {
           vector_.get (menu_pairs, selected, &pair);
           target = pair.label;
         }
 
       else if (control == screen_.KEY_DOWN_
-               || control == 'j' || control == 'J')
+          || control == constants.MENU_DOWN[0]
+          || control == constants.MENU_DOWN[1]
+          || unmapped == constants.MENU_DOWN[0]
+          || unmapped == constants.MENU_DOWN[1])
         {
           if (++selected > menu_entries - 1)
             selected = menu_entries - 1;
@@ -1283,7 +1313,10 @@ handle_menu (context_s *context)
         }
 
       else if (control == screen_.KEY_UP_
-               || control == 'k' || control == 'K')
+          || control == constants.MENU_UP[0]
+          || control == constants.MENU_UP[1]
+          || unmapped == constants.MENU_UP[0]
+          || unmapped == constants.MENU_UP[1])
         {
           if (--selected < 0)
             selected = 0;
@@ -1634,7 +1667,7 @@ handle_execute (context_s *context)
       return;
     }
 
-  if (script_.requires_utf8 (script))
+  if (!utils_.is_utf8_locale () && script_.requires_utf8 (script))
     utils_.error (_("script file requires a UTF-8 locale (trying anyway)"));
 
   /* Preserves a couple of items of state from the executed script.  */
@@ -1951,7 +1984,7 @@ parse_command_line (int argc, char *argv[])
           if (sscanf (optarg, "%d", &options.cursor_flash_period) != 1
               || options.cursor_flash_period < 0
               || options.cursor_flash_period > 512)
-            utils_.fatal (_("invalid cursor-flash value (range is 0 to 512)"));
+            utils_.exit (_("invalid cursor-flash value (range is 0 to 512)"));
         }
 
       else if (c == 'c')
@@ -1964,7 +1997,7 @@ parse_command_line (int argc, char *argv[])
               || options.background_colour < 0
               || options.background_colour >= screen_.num_colours
               || options.foreground_colour == options.background_colour)
-            utils_.fatal (_("invalid colours value (range is 0 to 7)"));
+            utils_.exit (_("invalid colours value (range is 0 to 7)"));
           options.colour = B.True;
       }
 
@@ -1975,7 +2008,7 @@ parse_command_line (int argc, char *argv[])
 
           if (sscanf (optarg, "%[^,],%[^,]",
                       map_keyboard_from, map_keyboard_to) != 2)
-            utils_.fatal (_("invalid mapkeys value (want <string>,<string>)"));
+            utils_.exit (_("invalid mapkeys value (want <string>,<string>)"));
         }
 
       else if (c == 's')
@@ -1992,8 +2025,8 @@ parse_command_line (int argc, char *argv[])
           if (sscanf (optarg, "%lf", &options.failure_percent) != 1
               || options.failure_percent < 0.0
               || options.failure_percent > 100.0)
-            utils_.fatal (_("invalid"
-                            " failure-percent value (range is 0 to 100)"));
+            utils_.exit (_("invalid"
+                           " failure-percent value (range is 0 to 100)"));
         }
 
       else if (c == 'q')
@@ -2003,7 +2036,7 @@ parse_command_line (int argc, char *argv[])
         {
           options.message_stream = fopen (optarg, "w");
           if (!options.message_stream)
-            utils_.fatal (_("error opening log file '%s'"), optarg);
+            utils_.exit (_("error opening log file '%s'"), optarg);
           if (utils_.info_stream)
             utils_.info_stream = options.message_stream;
         }
@@ -2013,14 +2046,14 @@ parse_command_line (int argc, char *argv[])
           if (sscanf (optarg, "%d", &options.loop_limit) != 1
               || options.loop_limit < 0
               || (options.loop_limit > 0 && options.loop_limit < 256))
-            utils_.fatal (_("invalid loop-limit value (range is 0 or >255)"));
+            utils_.exit (_("invalid loop-limit value (range is 0 or >255)"));
         }
 
       else if (c == 'd')
         {
           if (sscanf (optarg, "%d", &options.depth_limit) != 1
               || options.depth_limit < 0)
-            utils_.fatal (_("invalid depth-limit value (range is 0 or >0)"));
+            utils_.exit (_("invalid depth-limit value (range is 0 or >0)"));
         }
 
       else if (c == 'L')
@@ -2050,36 +2083,30 @@ parse_command_line (int argc, char *argv[])
           printf ("%s\n", options.version);
           printf (_("Build id : %s/%s/%s\n"), ut.machine, COMPILER, BUILD_DATE);
           printf (_("Source id: md5/%s\n\n"), SOURCE_MD5);
-          exit (0);
+          exit (EXIT_SUCCESS);
         }
 
       else if (c == 'h')
         {
           print_help ();
-          exit (0);
+          exit (EXIT_SUCCESS);
         }
 
       else if (c == 'v')
         {
           printf ("%s, %s\n\n", options.version, options.copyright);
-          exit (0);
+          exit (EXIT_SUCCESS);
         }
 
       else if (c == '?')
-        {
-          fprintf (stderr, "%s\n", help);
-          exit (1);
-        }
+        utils_.exit("%s", help);
 
       else
         utils_.fatal (_("internal error:"
                         " getopt returned unknown '%c' value"), c);
     }
   if (argc - optind > 1)
-    {
-      fprintf (stderr, "%s\n", help);
-      exit (1);
-    }
+    utils_.exit("%s", help);
 
   if (map_keyboard_from && map_keyboard_to)
     {
@@ -2097,7 +2124,7 @@ parse_command_line (int argc, char *argv[])
       utils_.error_if (!to,
                        _("unable to load the requested keymap '%s'"),
                        map_keyboard_to);
-      utils_.fatal_if (!from || !to, _("failed to create a key mapping"));
+      utils_.exit_if (!from || !to, _("failed to create a key mapping"));
 
       options.keymapper = keymapper_.create (from, to, B.False);
     }
@@ -2112,7 +2139,7 @@ finalize_and_exit (int sig)
 {
   utils_.info (_("interrupted by signal %d, exiting"), sig);
   screen_.finalize ();
-  exit (1);
+  utils_.exit (_("terminated by signal %d"), sig);
 }
 
 /* Main routine.  */
@@ -2170,8 +2197,7 @@ main (int argc, char *argv[])
   search_path = getenv ("TYPIST_PATH");
 
   script = script_.load (file, search_path, options.strict_json);
-  if (!script)
-    utils_.fatal (_("unable to open script file '%s'"), file);
+  utils_.exit_if (!script, _("unable to open script file '%s'"), file);
 
   utils_.free (file);
 
@@ -2188,17 +2214,17 @@ main (int argc, char *argv[])
         script_.print_parsed_data (script);
 
       destroy_context (&context);
-      exit (0);
+      return EXIT_SUCCESS;
     }
 
   /* Check default locale capability against requirements.  */
   if (!utils_.is_utf8_locale ())
     {
       if (script_.requires_utf8 (script))
-        utils_.fatal (_("this script file requires a UTF-8 locale"));
+        utils_.error (_("script file requires a UTF-8 locale (trying anyway)"));
 
       if (options.keymapper && keymapper_.requires_utf8 (options.keymapper))
-        utils_.fatal (_("this keymap pair requires a UTF-8 locale"));
+        utils_.error (_("keymap pair requires a UTF-8 locale (trying anyway)"));
     }
 
   /* Register signal handlers to clean up curses on interrupt.  */
@@ -2237,5 +2263,5 @@ main (int argc, char *argv[])
   utils_.free (typist_path);
   utils_.free (typist_keymaps_path);
 
-  return 0;
+  return EXIT_SUCCESS;
 }
