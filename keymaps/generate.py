@@ -70,107 +70,71 @@ ISO_POSITIONS = (
     ['E%02d' % i for i in ISO_RANGE] + ['D%02d' % i for i in ISO_RANGE]
   + ['C%02d' % i for i in ISO_RANGE] + ['B%02d' % i for i in ISO_RANGE])
 
-class json:
-  def __init__ (self):
-    self.__buf = []
-    self.__indent = 0
-
-  def esc (s):
-    return (s.replace('\\', '\\\\')
-            .replace('"', '\\"').replace('\t', '\\t'))
-  esc = staticmethod (esc)
-
-  def iter (l):
-    return [(l[i], i < len (l) - 1) for i in xrange (0, len (l))]
-  iter = staticmethod (iter)
-
-  def add (self, s, indent=0, more=False):
-    if indent < 0:
-      self.__indent += indent
-    e = '  ' * self.__indent + s
-    if more:
-      e += ','
-    self.__buf += [e]
-    if indent > 0:
-      self.__indent += indent
-
-  def get (self):
-    return '\n'.join (self.__buf) + '\n'
-
-def copyright (j):
-  copyright = [
-    'Typist 3.0 - improved typing tutor program for UNIX systems',
-    'Copyright (C) 1998-2018  Simon Baldwin (simon_baldwin@yahoo.com)',
-    '',
-    'This program is free software; you can redistribute it and/or',
-    'modify it under the terms of the GNU General Public License',
-    'as published by the Free Software Foundation; either version 2',
-    'of the License, or (at your option) any later version.',
-    '',
-    'This program is distributed in the hope that it will be useful,',
-    'but WITHOUT ANY WARRANTY; without even the implied warranty of',
-    'MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the',
-    'GNU General Public License for more details.',
-    '',
-    'You should have received a copy of the GNU General Public License',
-    'along with this program; if not, write to the Free Software',
-    'Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.'
-  ]
-  j.add ('"copyright": [', 1)
-  for l, m in j.iter (copyright):
-    j.add ('"%s"' % j.esc (l), more=m)
-  j.add ('],', -1)
+def json_escape (string):
+  escaped = string.replace ('\\', '\\\\')
+  return escaped.replace ('"', '\\"')
 
 def generate (name, unshifted, shifted):
-  j = json ()
-  j.add ('{', 1)
-  copyright (j)
-
-  j.add ('"keyboard": {', 1)
-  j.add ('"version": 1,')
-  j.add ('"name": "%s",' % name)
-  j.add ('"keyMap": [', 1)
+  lines = [
+    '{',
+    '  "_comment_1" : [',
+    '    "# Typist 3.0 - improved typing tutor program for UNIX systems",',
+    '    "# Copyright (C) 1998-2018  Simon Baldwin (simon_baldwin@yahoo.com)"',
+    '  ],',
+    '  "keyboard": {',
+    '    "version": 1,',
+    '    "name": "%s",' % name,
+    '    "keyMap": ['
+    ]
 
   for keymap in [unshifted, shifted]:
-    j.add ('{', 1)
+    lines.append ('      {')
     if keymap == shifted:
-      j.add ('"modifiers": "shift",')
-    j.add ('"map": [', 1)
+      lines.append ('        "modifiers": "shift",')
+    lines.append ('        "map": [')
     maps = []
     for i in xrange (0, len (keymap)):
       if keymap[i] != ' ':
         iso = ISO_POSITIONS[i]
-        to = j.esc (keymap[i])
-        maps += ['{ "iso": "%s", "to": "%s" }' % (iso, to)]
+        to = json_escape (keymap[i])
+        maps.append ('{ "iso": "%s", "to": "%s" }' % (iso, to))
     if len (maps) % 2:
-      maps += [None]
+      maps.append (None)
     paired = [[maps[i], maps[i + 1]] for i in xrange (0, len (maps), 2)]
-    for pair, m in j.iter (paired):
-      if pair[1]:
-        j.add ('%s, %s' % (pair[0], pair[1]), more=m)
-      else:
-        j.add ('%s' % pair[0])
-    j.add (']', -1)
-    j.add ('}', -1, more=(keymap==unshifted))
+    for pair in paired[:-1]:
+      lines.append ('          %s, %s,' % (pair[0], pair[1]))
+    pair = paired[-1]
+    if pair[1]:
+      lines.append ('          %s, %s' % (pair[0], pair[1]))
+    else:
+      lines.append ('          %s' % pair[0])
+    lines.append ('        ]')
+    if keymap == unshifted:
+      lines.append ('      },')
+    else:
+      lines.append ('      }')
 
-  j.add (']', -1)
-  j.add ('}', -1)
-  j.add ('}', -1)
+  lines += [
+    '    ]',
+    '  }',
+    '}'
+  ]
 
-  return j.get ()
+  return '\n'.join (lines) + '\n'
 
 def validate (name, unshifted, shifted):
   expected = len (ISO_POSITIONS)
-  lu, ls = len (unshifted), len (shifted)
-  assert lu == expected, (
-    '%s: unshifted error (want %d, got %d)' % (name, expected, lu))
-  assert ls == expected, (
-    '%s: shifted error (want %d, got %d)' % (name, expected, ls))
 
-  glyphs = sorted ((unshifted + shifted).replace (' ', ''))
-  for i in xrange (0, len (glyphs) - 1):
-    assert glyphs[i] != glyphs[i + 1], (
-      '%s: duplicate entry for "%s"' % (name, glyphs[i]))
+  for keymap in [unshifted, shifted]:
+    count = len (keymap)
+    assert count == expected, (
+        '%s: keymap error (want %d, got %d)' % (name, expected, count))
+
+  found = {}
+  for glyph in (unshifted + shifted).replace (' ', ''):
+    assert glyph not in found, (
+        '%s: duplicate entry for "%s"' % (name, glyph))
+    found[glyph] = True
 
 def main (argv):
   for entry in KEYMAPS:
