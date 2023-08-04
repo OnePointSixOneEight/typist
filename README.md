@@ -8,7 +8,7 @@ some excellent changes, additions, and extensions to _Gtypist_ -- and frankly, t
 rather humbling -- yet for two decades I have also felt somewhat embarrassed about the
 quality of code I initially delivered.
 
-This finally got the better of me, and so I rewrote it as this. Because I do not actually
+This finally got the better of me, and so I rewrote it as this. Because I did not actually
 have Linux, autoconf and so on to hand, I could not start with the current _Gtypist_ source
 base, so instead I began with the original and forward-ported as much of _Gtypist_ into
 it as I could in the time available, albeit with a couple of reasonably large remaining
