@@ -1,352 +1,103 @@
 {
-  "copyright": [
-    "Typist 3.0 - improved typing tutor program for UNIX systems",
-    "Copyright (C) 1998-2018  Simon Baldwin (simon_baldwin@yahoo.com)",
-    "",
-    "This program is free software; you can redistribute it and/or",
-    "modify it under the terms of the GNU General Public License",
-    "as published by the Free Software Foundation; either version 2",
-    "of the License, or (at your option) any later version.",
-    "",
-    "This program is distributed in the hope that it will be useful,",
-    "but WITHOUT ANY WARRANTY; without even the implied warranty of",
-    "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the",
-    "GNU General Public License for more details.",
-    "",
-    "You should have received a copy of the GNU General Public License",
-    "along with this program; if not, write to the Free Software",
-    "Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA."
+  "_comment_1": [
+    "# Typist 3.0 - improved typing tutor program for UNIX systems",
+    "# Copyright (C) 1998-2018  Simon Baldwin (simon_baldwin@yahoo.com)"
   ],
   "typist": {
     "version": 2,
     "locale": "en_US.UTF-8",
-    "seriesName": "T",
+
+    "seriesName": "Lesson series T",
     "seriesDescription": "QWERTY touch typing (T1 - T16)",
+
+    "_comment_2": "# BEGIN MENU DEFINITIONS SECTION",
+
     "seriesMenu": {
-      "title": "The T series contains the following 16 lessons",
+      "title": "This series contains the following lessons",
       "entries": [
         {
           "title": "Lesson T1     a s d f g h j k l ;",
-          "lessons": [
-            "lesson_T1.1",
-            "lesson_T1.2",
-            "lesson_T1.3",
-            "lesson_T1.4",
-            "lesson_T1.5",
-            "lesson_T1.6",
-            "lesson_T1.7",
-            "lesson_T1.8",
-            "lesson_T1.9",
-            "lesson_T1.10",
-            "lesson_T1.11",
-            "lesson_T1.12",
-            "lesson_T1.13",
-            "lesson_T1.14",
-            "lesson_T1.15",
-            "lesson_T1.16",
-            "lesson_T1.17",
-            "lesson_T1.18",
-            "lesson_T1.19",
-            "lesson_T1.20"
-          ]
+          "lessons": ["T1.1", "T1.2", "T1.3", "T1.4", "T1.5", "T1.6", "T1.7", "T1.8", "T1.9", "T1.10", "T1.11", "T1.12", "T1.13", "T1.14", "T1.15", "T1.16", "T1.17", "T1.18", "T1.19", "T1.20"]
         },
         {
           "title": "Lesson T2     e g h ,",
-          "lessons": [
-            "lesson_T2.1",
-            "lesson_T2.2",
-            "lesson_T2.3",
-            "lesson_T2.4",
-            "lesson_T2.5",
-            "lesson_T2.6",
-            "lesson_T2.7",
-            "lesson_T2.8",
-            "lesson_T2.9",
-            "lesson_T2.10",
-            "lesson_T2.11",
-            "lesson_T2.12",
-            "lesson_T2.13"
-          ]
+          "lessons": ["T2.1", "T2.2", "T2.3", "T2.4", "T2.5", "T2.6", "T2.7", "T2.8", "T2.9", "T2.10", "T2.11", "T2.12", "T2.13"]
         },
         {
           "title": "Lesson T3     i r . shift",
-          "lessons": [
-            "lesson_T3.1",
-            "lesson_T3.2",
-            "lesson_T3.3",
-            "lesson_T3.4",
-            "lesson_T3.5",
-            "lesson_T3.6",
-            "lesson_T3.7",
-            "lesson_T3.8",
-            "lesson_T3.9",
-            "lesson_T3.10",
-            "lesson_T3.11",
-            "lesson_T3.12",
-            "lesson_T3.13",
-            "lesson_T3.14",
-            "lesson_T3.15",
-            "lesson_T3.16",
-            "lesson_T3.17",
-            "lesson_T3.18",
-            "lesson_T3.19"
-          ]
+          "lessons": ["T3.1", "T3.2", "T3.3", "T3.4", "T3.5", "T3.6", "T3.7", "T3.8", "T3.9", "T3.10", "T3.11", "T3.12", "T3.13", "T3.14", "T3.15", "T3.16", "T3.17", "T3.18", "T3.19"]
         },
         {
           "title": "Lesson T4     o p shift ?",
-          "lessons": [
-            "lesson_T4.1",
-            "lesson_T4.2",
-            "lesson_T4.3",
-            "lesson_T4.4",
-            "lesson_T4.5",
-            "lesson_T4.6",
-            "lesson_T4.7",
-            "lesson_T4.8",
-            "lesson_T4.9",
-            "lesson_T4.10",
-            "lesson_T4.11",
-            "lesson_T4.12",
-            "lesson_T4.13",
-            "lesson_T4.14"
-          ]
+          "lessons": ["T4.1", "T4.2", "T4.3", "T4.4", "T4.5", "T4.6", "T4.7", "T4.8", "T4.9", "T4.10", "T4.11", "T4.12", "T4.13", "T4.14"]
         },
         {
           "title": "Lesson T5     t n :",
-          "lessons": [
-            "lesson_T5.1",
-            "lesson_T5.2",
-            "lesson_T5.3",
-            "lesson_T5.4",
-            "lesson_T5.5",
-            "lesson_T5.6",
-            "lesson_T5.7",
-            "lesson_T5.8",
-            "lesson_T5.9",
-            "lesson_T5.10",
-            "lesson_T5.11",
-            "lesson_T5.12",
-            "lesson_T5.13",
-            "lesson_T5.14",
-            "lesson_T5.15",
-            "lesson_T5.16"
-          ]
+          "lessons": ["T5.1", "T5.2", "T5.3", "T5.4", "T5.5", "T5.6", "T5.7", "T5.8", "T5.9", "T5.10", "T5.11", "T5.12", "T5.13", "T5.14", "T5.15", "T5.16"]
         },
         {
           "title": "Lesson T6     b u /",
-          "lessons": [
-            "lesson_T6.1",
-            "lesson_T6.2",
-            "lesson_T6.3",
-            "lesson_T6.4",
-            "lesson_T6.5",
-            "lesson_T6.6",
-            "lesson_T6.7",
-            "lesson_T6.8",
-            "lesson_T6.9",
-            "lesson_T6.10",
-            "lesson_T6.11"
-          ]
+          "lessons": ["T6.1", "T6.2", "T6.3", "T6.4", "T6.5", "T6.6", "T6.7", "T6.8", "T6.9", "T6.10", "T6.11"]
         },
         {
           "title": "Lesson T7     c m -",
-          "lessons": [
-            "lesson_T7.1",
-            "lesson_T7.2",
-            "lesson_T7.3",
-            "lesson_T7.4",
-            "lesson_T7.5",
-            "lesson_T7.6",
-            "lesson_T7.7",
-            "lesson_T7.8",
-            "lesson_T7.9",
-            "lesson_T7.10",
-            "lesson_T7.11",
-            "lesson_T7.12",
-            "lesson_T7.13",
-            "lesson_T7.14",
-            "lesson_T7.15",
-            "lesson_T7.16",
-            "lesson_T7.17"
-          ]
+          "lessons": ["T7.1", "T7.2", "T7.3", "T7.4", "T7.5", "T7.6", "T7.7", "T7.8", "T7.9", "T7.10", "T7.11", "T7.12", "T7.13", "T7.14", "T7.15", "T7.16", "T7.17"]
         },
         {
           "title": "Lesson T8     w y v backspace",
-          "lessons": [
-            "lesson_T8.1",
-            "lesson_T8.2",
-            "lesson_T8.3",
-            "lesson_T8.4",
-            "lesson_T8.5",
-            "lesson_T8.6",
-            "lesson_T8.7",
-            "lesson_T8.8",
-            "lesson_T8.9",
-            "lesson_T8.10",
-            "lesson_T8.11",
-            "lesson_T8.12",
-            "lesson_T8.13",
-            "lesson_T8.14",
-            "lesson_T8.15",
-            "lesson_T8.16",
-            "lesson_T8.17",
-            "lesson_T8.18"
-          ]
+          "lessons": ["T8.1", "T8.2", "T8.3", "T8.4", "T8.5", "T8.6", "T8.7", "T8.8", "T8.9", "T8.10", "T8.11", "T8.12", "T8.13", "T8.14", "T8.15", "T8.16", "T8.17", "T8.18"]
         },
         {
           "title": "Lesson T9     q x z",
-          "lessons": [
-            "lesson_T9.1",
-            "lesson_T9.2",
-            "lesson_T9.3",
-            "lesson_T9.4",
-            "lesson_T9.5",
-            "lesson_T9.6",
-            "lesson_T9.7",
-            "lesson_T9.8",
-            "lesson_T9.9",
-            "lesson_T9.10",
-            "lesson_T9.11",
-            "lesson_T9.12",
-            "lesson_T9.13",
-            "lesson_T9.14",
-            "lesson_T9.15",
-            "lesson_T9.16",
-            "lesson_T9.17",
-            "lesson_T9.18"
-          ]
+          "lessons": ["T9.1", "T9.2", "T9.3", "T9.4", "T9.5", "T9.6", "T9.7", "T9.8", "T9.9", "T9.10", "T9.11", "T9.12", "T9.13", "T9.14", "T9.15", "T9.16", "T9.17", "T9.18"]
         },
         {
           "title": "Lesson T10    1 2 3 4",
-          "lessons": [
-            "lesson_T10.1",
-            "lesson_T10.2",
-            "lesson_T10.3",
-            "lesson_T10.4",
-            "lesson_T10.5",
-            "lesson_T10.6",
-            "lesson_T10.7",
-            "lesson_T10.8",
-            "lesson_T10.9",
-            "lesson_T10.10",
-            "lesson_T10.11",
-            "lesson_T10.12",
-            "lesson_T10.13",
-            "lesson_T10.14",
-            "lesson_T10.15",
-            "lesson_T10.16"
-          ]
+          "lessons": ["T10.1", "T10.2", "T10.3", "T10.4", "T10.5", "T10.6", "T10.7", "T10.8", "T10.9", "T10.10", "T10.11", "T10.12", "T10.13", "T10.14", "T10.15", "T10.16"]
         },
         {
           "title": "Lesson T11    7 8 9 0",
-          "lessons": [
-            "lesson_T11.1",
-            "lesson_T11.2",
-            "lesson_T11.3",
-            "lesson_T11.4",
-            "lesson_T11.5",
-            "lesson_T11.6",
-            "lesson_T11.7",
-            "lesson_T11.8",
-            "lesson_T11.9",
-            "lesson_T11.10",
-            "lesson_T11.11",
-            "lesson_T11.12"
-          ]
+          "lessons": ["T11.1", "T11.2", "T11.3", "T11.4", "T11.5", "T11.6", "T11.7", "T11.8", "T11.9", "T11.10", "T11.11", "T11.12"]
         },
         {
           "title": "Lesson T12    5 6 ( )",
-          "lessons": [
-            "lesson_T12.1",
-            "lesson_T12.2",
-            "lesson_T12.3",
-            "lesson_T12.4",
-            "lesson_T12.5",
-            "lesson_T12.6",
-            "lesson_T12.7",
-            "lesson_T12.8",
-            "lesson_T12.9",
-            "lesson_T12.10",
-            "lesson_T12.11",
-            "lesson_T12.12",
-            "lesson_T12.13",
-            "lesson_T12.14",
-            "lesson_T12.15",
-            "lesson_T12.16",
-            "lesson_T12.17",
-            "lesson_T12.18",
-            "lesson_T12.19",
-            "lesson_T12.20",
-            "lesson_T12.21",
-            "lesson_T12.22"
-          ]
+          "lessons": ["T12.1", "T12.2", "T12.3", "T12.4", "T12.5", "T12.6", "T12.7", "T12.8", "T12.9", "T12.10", "T12.11", "T12.12", "T12.13", "T12.14", "T12.15", "T12.16", "T12.17", "T12.18", "T12.19", "T12.20", "T12.21", "T12.22"]
         },
         {
           "title": "Lesson T13",
-          "lessons": [
-            "lesson_T13.1"
-          ]
+          "lessons": ["T13.1"]
         },
         {
           "title": "Lesson T14    ' \" !",
-          "lessons": [
-            "lesson_T14.1",
-            "lesson_T14.2",
-            "lesson_T14.3",
-            "lesson_T14.4",
-            "lesson_T14.5",
-            "lesson_T14.6",
-            "lesson_T14.7",
-            "lesson_T14.8",
-            "lesson_T14.9"
-          ]
+          "lessons": ["T14.1", "T14.2", "T14.3", "T14.4", "T14.5", "T14.6", "T14.7", "T14.8", "T14.9"]
         },
         {
           "title": "Lesson T15    = * + > < ^",
-          "lessons": [
-            "lesson_T15.1",
-            "lesson_T15.2",
-            "lesson_T15.3",
-            "lesson_T15.4",
-            "lesson_T15.5",
-            "lesson_T15.6",
-            "lesson_T15.7",
-            "lesson_T15.8",
-            "lesson_T15.9",
-            "lesson_T15.10",
-            "lesson_T15.11",
-            "lesson_T15.12",
-            "lesson_T15.13",
-            "lesson_T15.14",
-            "lesson_T15.15",
-            "lesson_T15.16"
-          ]
+          "lessons": ["T15.1", "T15.2", "T15.3", "T15.4", "T15.5", "T15.6", "T15.7", "T15.8", "T15.9", "T15.10", "T15.11", "T15.12", "T15.13", "T15.14", "T15.15", "T15.16"]
         },
         {
           "title": "Lesson T16    @ # $ % &",
-          "lessons": [
-            "lesson_T16.1",
-            "lesson_T16.2",
-            "lesson_T16.3",
-            "lesson_T16.4",
-            "lesson_T16.5",
-            "lesson_T16.6",
-            "lesson_T16.7",
-            "lesson_T16.8",
-            "lesson_T16.9",
-            "lesson_T16.10",
-            "lesson_T16.11",
-            "lesson_T16.12",
-            "lesson_T16.13"
-          ]
+          "lessons": ["T16.1", "T16.2", "T16.3", "T16.4", "T16.5", "T16.6", "T16.7", "T16.8", "T16.9", "T16.10", "T16.11", "T16.12", "T16.13"]
+        },
+        {
+          "title": null
+        },
+        {
+          "title": "Finished      Leave this series",
+          "lessons": null
         }
       ]
     },
-    "lesson_T1.1": {
+
+    "_comment_3": "# END MENU DEFINITIONS SECTION",
+
+    "_comment_4": "# BEGIN LESSONS DATA SECTION",
+
+    "T1.1": {
       "title": "Lesson T1.1: Tutorial",
       "type": "Tutorial",
       "text": [
-        "                Welcome to Lesson T1",
+        "                        Welcome to Lesson T1",
         "",
         "In the T series of lessons, we will be learning to touch-type on the standard",
         "keyboard.  I will introduce you to each letter on the keyboard, one at a time.",
@@ -367,11 +118,12 @@
         "fairly quickly.  Or, you may want to go directly to the S series."
       ]
     },
-    "lesson_T1.2": {
+
+    "T1.2": {
       "title": "Lesson T1.2: Tutorial",
       "type": "Tutorial",
       "text": [
-        "                The Home Keys",
+        "                        The Home Keys",
         "",
         "In order to hit the correct keys by touch alone, you must always know where your",
         "fingers are.  The way to do this is to have a special place for each finger.",
@@ -393,11 +145,12 @@
         "again."
       ]
     },
-    "lesson_T1.3": {
+
+    "T1.3": {
       "title": "Lesson T1.3: Tutorial",
       "type": "Tutorial",
       "text": [
-        "                Drill Patterns",
+        "                        Drill Patterns",
         "",
         "For the rest of this lesson, I will display some text in an exercise, usually",
         "with some brief instructions above it.",
@@ -417,19 +170,22 @@
         "ideally none at all.  Don't forget to use your right thumb for the SPACE bar."
       ]
     },
-    "lesson_T1.4": {
+
+    "T1.4": {
       "title": "Lesson T1.4: Drill",
       "type": "Drill",
       "instructions": "Hit the F-key four times with the first finger of your left hand.",
       "text": "ffff"
     },
-    "lesson_T1.5": {
+
+    "T1.5": {
       "title": "Lesson T1.5: Drill",
       "type": "Drill",
       "instructions": "Alternately, hit the F-key and the SPACE bar.",
       "text": "fff fff fff ff ff ff f f f"
     },
-    "lesson_T1.6": {
+
+    "T1.6": {
       "title": "Lesson T1.6: Drill",
       "type": "Drill",
       "instructions": [
@@ -438,91 +194,106 @@
       ],
       "text": "jjj jjj jjj jj jj jj j j j"
     },
-    "lesson_T1.7": {
+
+    "T1.7": {
       "title": "Lesson T1.7: Drill",
       "type": "Drill",
       "instructions": "Use the left hand for the F and the right hand for the J.",
       "text": "fff jjj fff jj ff jj f j f j"
     },
-    "lesson_T1.8": {
+
+    "T1.8": {
       "title": "Lesson T1.8: Drill",
       "type": "Drill",
       "instructions": "Now intermix them.",
       "text": "ffjj jjff fjf fjf jfj jfj"
     },
-    "lesson_T1.9": {
+
+    "T1.9": {
       "title": "Lesson T1.9: Drill",
       "type": "Drill",
       "instructions": "Use the second finger of the left hand for the D-key.",
       "text": "ddd ddd ddd dd dd dd d d d"
     },
-    "lesson_T1.10": {
+
+    "T1.10": {
       "title": "Lesson T1.10: Drill",
       "type": "Drill",
       "instructions": "Use the second finger of the right hand for the K-key.",
       "text": "kkk kkk kkk kk kk kk k k k"
     },
-    "lesson_T1.11": {
+
+    "T1.11": {
       "title": "Lesson T1.11: Drill",
       "type": "Drill",
       "instructions": "Now both.",
       "text": "ddd kkk dd kk dkd kdk ddd kkk"
     },
-    "lesson_T1.12": {
+
+    "T1.12": {
       "title": "Lesson T1.12: Drill",
       "type": "Drill",
       "instructions": "Use the third fingers of the each hand for the S and L-keys.",
       "text": "sss lll sss lll sss ss ll ss ll s l"
     },
-    "lesson_T1.13": {
+
+    "T1.13": {
       "title": "Lesson T1.13: Drill",
       "type": "Drill",
       "instructions": "Use the fourth fingers for the A and ;-keys.",
       "text": "aaa ;;; aaa ;;; aa ;; aa ;; a ;"
     },
-    "lesson_T1.14": {
+
+    "T1.14": {
       "title": "Lesson T1.14: Drill",
       "type": "Drill",
       "instructions": "That's enough keys for today.  Let's review them.",
       "text": "fff jjj ddd kkk sss lll aaa ;;;"
     },
-    "lesson_T1.15": {
+
+    "T1.15": {
       "title": "Lesson T1.15: Drill",
       "type": "Drill",
       "instructions": "Again.",
       "text": "fff jjj ddd kkk sss lll aaa ;;;"
     },
-    "lesson_T1.16": {
+
+    "T1.16": {
       "title": "Lesson T1.16: Drill",
       "type": "Drill",
       "instructions": "Try mixing them together.",
       "text": "asdf jkl; asdf jkl; asdf jkl;"
     },
-    "lesson_T1.17": {
+
+    "T1.17": {
       "title": "Lesson T1.17: Drill",
       "type": "Drill",
       "instructions": "And still more.",
       "text": "fjf kdk sls ;a;"
     },
-    "lesson_T1.18": {
+
+    "T1.18": {
       "title": "Lesson T1.18: Drill",
       "type": "Drill",
       "instructions": "Before, we finish, let's try some words.",
       "text": "sad add all; alas flask fad"
     },
-    "lesson_T1.19": {
+
+    "T1.19": {
       "title": "Lesson T1.19: Drill",
       "type": "Drill",
       "instructions": "How about a sentence.",
       "text": "ask a sad lad"
     },
-    "lesson_T1.20": {
+
+    "T1.20": {
       "title": "Lesson T1.20: Drill",
       "type": "Drill",
       "instructions": "Sentences are kind of limited with only one vowel!",
       "text": "dad asks a lad; a lass falls"
     },
-    "lesson_T2.1": {
+
+    "T2.1": {
       "title": "Lesson T2.1: Tutorial",
       "type": "Tutorial",
       "text": [
@@ -537,13 +308,15 @@
         "If you lose track of where your fingers are, guess.  Don't look!"
       ]
     },
-    "lesson_T2.2": {
+
+    "T2.2": {
       "title": "Lesson T2.2: Drill",
       "type": "Drill",
       "instructions": "First let's review",
       "text": "fff jjj ddd kkk sss lll aaa ;;;"
     },
-    "lesson_T2.3": {
+
+    "T2.3": {
       "title": "Lesson T2.3: Drill",
       "type": "Drill",
       "text": [
@@ -553,13 +326,15 @@
         "a sad lass; ask dad;"
       ]
     },
-    "lesson_T2.4": {
+
+    "T2.4": {
       "title": "Lesson T2.4: Drill",
       "type": "Drill",
       "instructions": "Use your J-finger for the H key.",
       "text": "jjj jhj jjj jhj jjj jhj"
     },
-    "lesson_T2.5": {
+
+    "T2.5": {
       "title": "Lesson T2.5: Drill",
       "type": "Drill",
       "text": [
@@ -568,13 +343,15 @@
         "jjj sash jjj hash jjj hall jjj"
       ]
     },
-    "lesson_T2.6": {
+
+    "T2.6": {
       "title": "Lesson T2.6: Drill",
       "type": "Drill",
       "instructions": "Use your F-finger for the G-key.",
       "text": "fff fgf fff fgf fff fgf"
     },
-    "lesson_T2.7": {
+
+    "T2.7": {
       "title": "Lesson T2.7: Drill",
       "type": "Drill",
       "text": [
@@ -583,13 +360,15 @@
         "fff sag fff slag fff hag fff"
       ]
     },
-    "lesson_T2.8": {
+
+    "T2.8": {
       "title": "Lesson T2.8: Drill",
       "type": "Drill",
       "instructions": "Use your D-finger for the E-key",
       "text": "ddd ded ddd ded ddd ded ddd"
     },
-    "lesson_T2.9": {
+
+    "T2.9": {
       "title": "Lesson T2.9: Drill",
       "type": "Drill",
       "text": [
@@ -598,46 +377,54 @@
         "lake asked fake gale egg"
       ]
     },
-    "lesson_T2.10": {
+
+    "T2.10": {
       "title": "Lesson T2.10: Drill",
       "type": "Drill",
       "instructions": "Use your K-finger for the comma.",
       "text": "kkk k,k kkk k,k kkk k,k"
     },
-    "lesson_T2.11": {
+
+    "T2.11": {
       "title": "Lesson T2.11: Drill",
       "type": "Drill",
       "text": "kkk ,,, kkk ,,, kkk ,,, kkk"
     },
-    "lesson_T2.12": {
+
+    "T2.12": {
       "title": "Lesson T2.12: Drill",
       "type": "Drill",
       "instructions": "Let's finish with some sentences.",
       "text": "a lad had a flask, dad had a keg"
     },
-    "lesson_T2.13": {
+
+    "T2.13": {
       "title": "Lesson T2.13: Drill",
       "type": "Drill",
       "text": "she had a fake egg, he had a salad"
     },
-    "lesson_T3.1": {
+
+    "T3.1": {
       "title": "Lesson T3.1: Drill",
       "type": "Drill",
       "instructions": "Let's review first.",
       "text": "fff jjj ddd kkk sss lll aaa ;;;"
     },
-    "lesson_T3.2": {
+
+    "T3.2": {
       "title": "Lesson T3.2: Drill",
       "type": "Drill",
       "text": "fgf jhj ded k,k fgf jhj ded k,k"
     },
-    "lesson_T3.3": {
+
+    "T3.3": {
       "title": "Lesson T3.3: Drill",
       "type": "Drill",
       "instructions": "Use your K-finger for the I key.",
       "text": "kkk kik kkk kik kkk iii kkk"
     },
-    "lesson_T3.4": {
+
+    "T3.4": {
       "title": "Lesson T3.4: Drill",
       "type": "Drill",
       "text": [
@@ -647,13 +434,15 @@
         "kkk kiss kkk hide kkk fill kkk"
       ]
     },
-    "lesson_T3.5": {
+
+    "T3.5": {
       "title": "Lesson T3.5: Drill",
       "type": "Drill",
       "instructions": "Use your F-finger for the R key.",
       "text": "fff frf fff frf fff frf"
     },
-    "lesson_T3.6": {
+
+    "T3.6": {
       "title": "Lesson T3.6: Drill",
       "type": "Drill",
       "text": [
@@ -663,23 +452,27 @@
         "fff far fff red fff jar fff"
       ]
     },
-    "lesson_T3.7": {
+
+    "T3.7": {
       "title": "Lesson T3.7: Drill",
       "type": "Drill",
       "text": "fff fare fff rare fff rake fff"
     },
-    "lesson_T3.8": {
+
+    "T3.8": {
       "title": "Lesson T3.8: Drill",
       "type": "Drill",
       "text": "fff rid fff ire fff fair fff"
     },
-    "lesson_T3.9": {
+
+    "T3.9": {
       "title": "Lesson T3.9: Drill",
       "type": "Drill",
       "instructions": "Use your L-finger for the period.",
       "text": "lll l.l lll l.l lll l.l lll"
     },
-    "lesson_T3.10": {
+
+    "T3.10": {
       "title": "Lesson T3.10: Drill",
       "type": "Drill",
       "text": [
@@ -688,7 +481,8 @@
         "lll eg. lll i.e. lll"
       ]
     },
-    "lesson_T3.11": {
+
+    "T3.11": {
       "title": "Lesson T3.11: Tutorial",
       "type": "Tutorial",
       "text": [
@@ -697,32 +491,36 @@
         "Whenever you want to capitalize a key on the left side, you must use the",
         "right shift-key.  To do so, follow these steps:",
         "",
-        "a.)  Without moving your first finger from the J-key, swing the",
-        "     fourth finger of your right hand over to the SHIFT-key and",
-        "     hold it down.",
+        "        a.)  Without moving your first finger from the J-key, swing the",
+        "             fourth finger of your right hand over to the SHIFT-key and",
+        "             hold it down.",
         "",
-        "b.)  Strike the key that you want to type with your left hand.",
+        "        b.)  Strike the key that you want to type with your left hand.",
         "",
-        "c.)  Immediately bring your fourth finger back to the ;-key."
+        "        c.)  Immediately bring your fourth finger back to the ;-key."
       ]
     },
-    "lesson_T3.12": {
+
+    "T3.12": {
       "title": "Lesson T3.12: Drill",
       "type": "Drill",
       "instructions": "Don't look at your fingers!",
       "text": ";;; ;A; ;;; ;F; ;;; ;D; ;;; ;S;"
     },
-    "lesson_T3.13": {
+
+    "T3.13": {
       "title": "Lesson T3.13: Drill",
       "type": "Drill",
       "text": ";;; Dear ;;; Sir ;;;"
     },
-    "lesson_T3.14": {
+
+    "T3.14": {
       "title": "Lesson T3.14: Drill",
       "type": "Drill",
       "text": ";;; Fred ;;; Gail ;;; Alf ;;; Dale ;;;"
     },
-    "lesson_T3.15": {
+
+    "T3.15": {
       "title": "Lesson T3.15: Drill",
       "type": "Drill",
       "text": [
@@ -730,13 +528,15 @@
         "jjj Dr. jjj Sr. jjj Fr. jjj"
       ]
     },
-    "lesson_T3.16": {
+
+    "T3.16": {
       "title": "Lesson T3.16: Drill",
       "type": "Drill",
       "instructions": "Let's try some (strange) sentences.",
       "text": "Sir, idle disks seek flags."
     },
-    "lesson_T3.17": {
+
+    "T3.17": {
       "title": "Lesson T3.17: Drill",
       "type": "Drill",
       "text": [
@@ -746,13 +546,15 @@
         "Red hair is like a fire."
       ]
     },
-    "lesson_T3.18": {
+
+    "T3.18": {
       "title": "Lesson T3.18: Drill",
       "type": "Drill",
       "instructions": "Always double space after a period.",
       "text": "A free red jade is fake.  Girls like silk."
     },
-    "lesson_T3.19": {
+
+    "T3.19": {
       "title": "Lesson T3.19: Drill",
       "type": "Drill",
       "text": [
@@ -760,19 +562,22 @@
         "Alf fed her egg salad.  Gail likes hash."
       ]
     },
-    "lesson_T4.1": {
+
+    "T4.1": {
       "title": "Lesson T4.1: Drill",
       "type": "Drill",
       "instructions": "First a quick review:",
       "text": "jkl; fdsa ded fgf jhj k,k kik frf l.l"
     },
-    "lesson_T4.2": {
+
+    "T4.2": {
       "title": "Lesson T4.2: Drill",
       "type": "Drill",
       "instructions": "Use your L-finger for the O-key.",
       "text": "lll lol lll ooo lll lol"
     },
-    "lesson_T4.3": {
+
+    "T4.3": {
       "title": "Lesson T4.3: Drill",
       "type": "Drill",
       "text": [
@@ -780,13 +585,15 @@
         "lll load lll roll lll oleo lll"
       ]
     },
-    "lesson_T4.4": {
+
+    "T4.4": {
       "title": "Lesson T4.4: Drill",
       "type": "Drill",
       "instructions": "Use your ;-finger for the P-key.",
       "text": ";;; ;p; ;;; ppp ;;; ;p; ;;;"
     },
-    "lesson_T4.5": {
+
+    "T4.5": {
       "title": "Lesson T4.5: Drill",
       "type": "Drill",
       "text": [
@@ -795,62 +602,71 @@
         ";;; opera ;;; hope ;;; drape ;;;"
       ]
     },
-    "lesson_T4.6": {
+
+    "T4.6": {
       "title": "Lesson T4.6: Tutorial",
       "type": "Tutorial",
       "text": [
-        "                The Left-Shift key",
+        "                        The Left-Shift key",
         "",
         "To capitalize letters on the right-side of the keyboard:",
         "",
-        "1.)  Move your A-finger to the LEFT-shift key and hold it down.",
+        "        1.)  Move your A-finger to the LEFT-shift key and hold it down.",
         "",
-        "2.)  Strike the key that you want to capitalize with your right hand.",
+        "        2.)  Strike the key that you want to capitalize with your right hand.",
         "",
-        "3.)  Immediately swing your A-finger back to its home position."
+        "        3.)  Immediately swing your A-finger back to its home position."
       ]
     },
-    "lesson_T4.7": {
+
+    "T4.7": {
       "title": "Lesson T4.7: Drill",
       "type": "Drill",
       "text": "aaa Pi aaa Lord aaa Jill aaa"
     },
-    "lesson_T4.8": {
+
+    "T4.8": {
       "title": "Lesson T4.8: Drill",
       "type": "Drill",
       "instructions": "Try capitalizing each of the keys on the right-side:",
       "text": "Joe Kip Leif Peg Olaf Ira Heidi"
     },
-    "lesson_T4.9": {
+
+    "T4.9": {
       "title": "Lesson T4.9: Drill",
       "type": "Drill",
       "instructions": "Don't forget to use your right-shift key for letters on the left side:",
       "text": "a;a P.S. a;a I.R.S. a;a"
     },
-    "lesson_T4.10": {
+
+    "T4.10": {
       "title": "Lesson T4.10: Drill",
       "type": "Drill",
       "instructions": "Use your ;-finger for the ?-key.",
       "text": ";;; ;?; ;;; ??? ;;; ;?; ;;;"
     },
-    "lesson_T4.11": {
+
+    "T4.11": {
       "title": "Lesson T4.11: Drill",
       "type": "Drill",
       "text": ";;; He? ;;; She? ;;; I? ;;;"
     },
-    "lesson_T4.12": {
+
+    "T4.12": {
       "title": "Lesson T4.12: Drill",
       "type": "Drill",
       "instructions": "Let's try some sentences.",
       "text": "Dad fell off a ladder.  Is he safe?"
     },
-    "lesson_T4.13": {
+
+    "T4.13": {
       "title": "Lesson T4.13: Drill",
       "type": "Drill",
       "instructions": "Always double space after a question mark.",
       "text": "Is he here?  Sal said he fell hard."
     },
-    "lesson_T4.14": {
+
+    "T4.14": {
       "title": "Lesson T4.14: Drill",
       "type": "Drill",
       "text": [
@@ -858,46 +674,54 @@
         "I hope people keep off high ladders."
       ]
     },
-    "lesson_T5.1": {
+
+    "T5.1": {
       "title": "Lesson T5.1: Drill",
       "type": "Drill",
       "instructions": "As always, let's start with a review:",
       "text": "ade fgh ijk lop rs; ?.,"
     },
-    "lesson_T5.2": {
+
+    "T5.2": {
       "title": "Lesson T5.2: Drill",
       "type": "Drill",
       "instructions": "Again.",
       "text": "ade fgh ijk lop rs; ?.,"
     },
-    "lesson_T5.3": {
+
+    "T5.3": {
       "title": "Lesson T5.3: Drill",
       "type": "Drill",
       "instructions": "Use your F-finger for the T-key.",
       "text": "fff ftf fff ttt fff ftf fff"
     },
-    "lesson_T5.4": {
+
+    "T5.4": {
       "title": "Lesson T5.4: Drill",
       "type": "Drill",
       "text": "ftf the ftf top ftf ate ftf"
     },
-    "lesson_T5.5": {
+
+    "T5.5": {
       "title": "Lesson T5.5: Drill",
       "type": "Drill",
       "text": "ftf three ftf often ftf there"
     },
-    "lesson_T5.6": {
+
+    "T5.6": {
       "title": "Lesson T5.6: Drill",
       "type": "Drill",
       "text": "The talk is that those three are threatening her."
     },
-    "lesson_T5.7": {
+
+    "T5.7": {
       "title": "Lesson T5.7: Drill",
       "type": "Drill",
       "instructions": "Use your J-finger for the N-key.",
       "text": "jjj jnj jjj nnn jjj jnj jjj"
     },
-    "lesson_T5.8": {
+
+    "T5.8": {
       "title": "Lesson T5.8: Drill",
       "type": "Drill",
       "text": [
@@ -906,28 +730,32 @@
         "No one has an interest in it."
       ]
     },
-    "lesson_T5.9": {
+
+    "T5.9": {
       "title": "Lesson T5.9: Drill",
       "type": "Drill",
       "instructions": "Use your ;-finger for the :-key.",
       "text": ";;; ;:; ;;; ::: ;;; ;:; ;;;"
     },
-    "lesson_T5.10": {
+
+    "T5.10": {
       "title": "Lesson T5.10: Drill",
       "type": "Drill",
       "instructions": "Always double space after a colon.",
       "text": "Dear Sirs:  Dear John:  Dear Alfred:"
     },
-    "lesson_T5.11": {
+
+    "T5.11": {
       "title": "Lesson T5.11: Drill",
       "type": "Drill",
       "text": "Dear Dr. Stone:  To Heathkit:"
     },
-    "lesson_T5.12": {
+
+    "T5.12": {
       "title": "Lesson T5.12: Tutorial",
       "type": "Tutorial",
       "text": [
-        "                Speed Exercises",
+        "                        Speed Exercises",
         "",
         "From now on, I will be mixing speed exercises in with the lessons.",
         "",
@@ -941,19 +769,22 @@
         "errors as possible."
       ]
     },
-    "lesson_T5.13": {
+
+    "T5.13": {
       "title": "Lesson T5.13: Speed Test",
       "type": "Paragraph",
       "instructions": "Try this sentence:",
       "text": "Sarah has liked knitting all her life."
     },
-    "lesson_T5.14": {
+
+    "T5.14": {
       "title": "Lesson T5.14: Speed Test",
       "type": "Paragraph",
       "instructions": "Try a little longer sentence.",
       "text": "She looked past her garden to the fields and longed to see the other side."
     },
-    "lesson_T5.15": {
+
+    "T5.15": {
       "title": "Lesson T5.15: Speed Test",
       "type": "Paragraph",
       "instructions": "Hit RETURN at the end of each line in a paragraph.",
@@ -963,7 +794,8 @@
         "gold and later it paid off."
       ]
     },
-    "lesson_T5.16": {
+
+    "T5.16": {
       "title": "Lesson T5.16: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -974,13 +806,15 @@
         "All the people left hoping to do it again."
       ]
     },
-    "lesson_T6.1": {
+
+    "T6.1": {
       "title": "Lesson T6.1: Drill",
       "type": "Drill",
       "instructions": "Let's review the letters we've already learned.",
       "text": "jkj fdf jlj fsf j;j faf kik ded frf"
     },
-    "lesson_T6.2": {
+
+    "T6.2": {
       "title": "Lesson T6.2: Drill",
       "type": "Drill",
       "text": [
@@ -989,19 +823,22 @@
         "jug ton knot poison the neither often"
       ]
     },
-    "lesson_T6.3": {
+
+    "T6.3": {
       "title": "Lesson T6.3: Drill",
       "type": "Drill",
       "instructions": "Use your F-finger for the B-key.",
       "text": "fff fbf fff bbb fff fbf fff"
     },
-    "lesson_T6.4": {
+
+    "T6.4": {
       "title": "Lesson T6.4: Drill",
       "type": "Drill",
       "instructions": "The B-key is the longest reach we've seen so far.  Let's try it again.",
       "text": "fff fbf fff bbb fff fbf fff"
     },
-    "lesson_T6.5": {
+
+    "T6.5": {
       "title": "Lesson T6.5: Drill",
       "type": "Drill",
       "text": [
@@ -1009,13 +846,15 @@
         "frf bring frf abort frf brother frf"
       ]
     },
-    "lesson_T6.6": {
+
+    "T6.6": {
       "title": "Lesson T6.6: Drill",
       "type": "Drill",
       "instructions": "Use your J-finger for the U-key.",
       "text": "jjj juj jjj uuu jjj juj jjj"
     },
-    "lesson_T6.7": {
+
+    "T6.7": {
       "title": "Lesson T6.7: Drill",
       "type": "Drill",
       "text": [
@@ -1024,13 +863,15 @@
         "Please pass the butter and salt, but not the pepper."
       ]
     },
-    "lesson_T6.8": {
+
+    "T6.8": {
       "title": "Lesson T6.8: Drill",
       "type": "Drill",
       "instructions": "Use your ;-finger for the /-key.",
       "text": ";;; ;/; ;;; /// ;;; ;/; ;;;"
     },
-    "lesson_T6.9": {
+
+    "T6.9": {
       "title": "Lesson T6.9: Drill",
       "type": "Drill",
       "text": [
@@ -1040,7 +881,8 @@
         "Should I be here alone?  Is Bernie and/or Julie going to be here, too?"
       ]
     },
-    "lesson_T6.10": {
+
+    "T6.10": {
       "title": "Lesson T6.10: Speed Test",
       "type": "Paragraph",
       "instructions": "Try your speed on some paragraphs:",
@@ -1050,7 +892,8 @@
         "bill and put n/a in the total due part."
       ]
     },
-    "lesson_T6.11": {
+
+    "T6.11": {
       "title": "Lesson T6.11: Speed Test",
       "type": "Paragraph",
       "instructions": "You should be aiming for 15 WPM.  If you do better, work on accuracy.",
@@ -1060,24 +903,28 @@
         "flags.  English sure is a strange language."
       ]
     },
-    "lesson_T7.1": {
+
+    "T7.1": {
       "title": "Lesson T7.1: Drill",
       "type": "Drill",
       "instructions": "First a review of the letters we've learned before:",
       "text": "juj ded kik frf lol fgf ;p; jhj"
     },
-    "lesson_T7.2": {
+
+    "T7.2": {
       "title": "Lesson T7.2: Drill",
       "type": "Drill",
       "text": "ftf jnj ftf jnj fbf juj ;?; l.l k,k"
     },
-    "lesson_T7.3": {
+
+    "T7.3": {
       "title": "Lesson T7.3: Drill",
       "type": "Drill",
       "instructions": "Use your D-finger for the C-key.",
       "text": "ddd dcd ddd ccc ddd dcd"
     },
-    "lesson_T7.4": {
+
+    "T7.4": {
       "title": "Lesson T7.4: Drill",
       "type": "Drill",
       "text": [
@@ -1086,13 +933,15 @@
         "dcd crate dcd scrap dcd trick dcd"
       ]
     },
-    "lesson_T7.5": {
+
+    "T7.5": {
       "title": "Lesson T7.5: Drill",
       "type": "Drill",
       "instructions": "Use your J-finger for the M-key",
       "text": "jjj jmj jjj mmm jjj jmj jjj"
     },
-    "lesson_T7.6": {
+
+    "T7.6": {
       "title": "Lesson T7.6: Drill",
       "type": "Drill",
       "text": [
@@ -1102,13 +951,15 @@
         "jmj number jmj stream jmj mankind jmj"
       ]
     },
-    "lesson_T7.7": {
+
+    "T7.7": {
       "title": "Lesson T7.7: Drill",
       "type": "Drill",
       "instructions": "Use your ;-finger for the hyphen.",
       "text": ";;; ;-; ;;; --- ;;; ;-; ;;; ;-;"
     },
-    "lesson_T7.8": {
+
+    "T7.8": {
       "title": "Lesson T7.8: Drill",
       "type": "Drill",
       "text": [
@@ -1116,29 +967,34 @@
         ";;; part-time ;;; self-made ;;; all-American ;;;"
       ]
     },
-    "lesson_T7.9": {
+
+    "T7.9": {
       "title": "Lesson T7.9: Drill",
       "type": "Drill",
       "instructions": "Let's try some sentences:",
       "text": "Peter Piper picked a peck of pickled peppers."
     },
-    "lesson_T7.10": {
+
+    "T7.10": {
       "title": "Lesson T7.10: Drill",
       "type": "Drill",
       "text": "Motion pictures often depict macabre scenes."
     },
-    "lesson_T7.11": {
+
+    "T7.11": {
       "title": "Lesson T7.11: Drill",
       "type": "Drill",
       "text": "Once upon a time, marriages lasted longer than mortgages."
     },
-    "lesson_T7.12": {
+
+    "T7.12": {
       "title": "Lesson T7.12: Drill",
       "type": "Drill",
       "instructions": "There are three uses of the hyphen.  It can be used to combine two words:",
       "text": "She had on a bluish-green dress.  But, no one noticed."
     },
-    "lesson_T7.13": {
+
+    "T7.13": {
       "title": "Lesson T7.13: Drill",
       "type": "Drill",
       "instructions": "To divide a word:",
@@ -1147,13 +1003,15 @@
         "dendron in our dining room."
       ]
     },
-    "lesson_T7.14": {
+
+    "T7.14": {
       "title": "Lesson T7.14: Drill",
       "type": "Drill",
       "instructions": "Or, to form a dash:",
       "text": "Fifteen dollars a month--measured in current dollars--is a good rate."
     },
-    "lesson_T7.15": {
+
+    "T7.15": {
       "title": "Lesson T7.15: Speed Test",
       "type": "Paragraph",
       "instructions": "Let's try a speed drill on these sentences:",
@@ -1162,7 +1020,8 @@
         "the second-half.  The game had been lost."
       ]
     },
-    "lesson_T7.16": {
+
+    "T7.16": {
       "title": "Lesson T7.16: Speed Test",
       "type": "Paragraph",
       "instructions": "Another speed drill:",
@@ -1178,7 +1037,8 @@
         "on oil spills at sea."
       ]
     },
-    "lesson_T7.17": {
+
+    "T7.17": {
       "title": "Lesson T7.17: Speed Test",
       "type": "Paragraph",
       "instructions": "A speed drill with blank lines:",
@@ -1194,30 +1054,35 @@
         "Mrs. Carmichael"
       ]
     },
-    "lesson_T8.1": {
+
+    "T8.1": {
       "title": "Lesson T8.1: Drill",
       "type": "Drill",
       "instructions": "As always, we will start with a quick review",
       "text": "jfj dkd lsl a;a dcd jmj ;-; fbf juj"
     },
-    "lesson_T8.2": {
+
+    "T8.2": {
       "title": "Lesson T8.2: Drill",
       "type": "Drill",
       "instructions": "Let's try some long words.",
       "text": "meteorology camera bituminous chimera phosphates"
     },
-    "lesson_T8.3": {
+
+    "T8.3": {
       "title": "Lesson T8.3: Drill",
       "type": "Drill",
       "instructions": "Use your S-finger for the W-key.",
       "text": "sss sws sss www sss sws sss"
     },
-    "lesson_T8.4": {
+
+    "T8.4": {
       "title": "Lesson T8.4: Drill",
       "type": "Drill",
       "text": "sss wet sss who sss was sss"
     },
-    "lesson_T8.5": {
+
+    "T8.5": {
       "title": "Lesson T8.5: Drill",
       "type": "Drill",
       "text": [
@@ -1225,7 +1090,8 @@
         "knowledge whatever Wimbledon know-it-all"
       ]
     },
-    "lesson_T8.6": {
+
+    "T8.6": {
       "title": "Lesson T8.6: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -1235,13 +1101,15 @@
         "could chuck, if a woodchuck could chuck wood."
       ]
     },
-    "lesson_T8.7": {
+
+    "T8.7": {
       "title": "Lesson T8.7: Drill",
       "type": "Drill",
       "instructions": "Use your J-finger for the Y-key.",
       "text": "jjj jyj jjj yyy jjj jyj jjj"
     },
-    "lesson_T8.8": {
+
+    "T8.8": {
       "title": "Lesson T8.8: Drill",
       "type": "Drill",
       "text": [
@@ -1250,29 +1118,34 @@
         "Were your yard sales much better last year?"
       ]
     },
-    "lesson_T8.9": {
+
+    "T8.9": {
       "title": "Lesson T8.9: Speed Test",
       "type": "Paragraph",
       "instructions": "Try your speed on this sentence:",
       "text": "Why are you typing so slowly?"
     },
-    "lesson_T8.10": {
+
+    "T8.10": {
       "title": "Lesson T8.10: Drill",
       "type": "Drill",
       "instructions": "Use your F-finger for the V-key.",
       "text": "fff fvf fff vvv fff fvf fff"
     },
-    "lesson_T8.11": {
+
+    "T8.11": {
       "title": "Lesson T8.11: Drill",
       "type": "Drill",
       "text": "fff vat fff eve fff vow fff"
     },
-    "lesson_T8.12": {
+
+    "T8.12": {
       "title": "Lesson T8.12: Drill",
       "type": "Drill",
       "text": "fvf vine fvf dove fvf ever fvf very fvf"
     },
-    "lesson_T8.13": {
+
+    "T8.13": {
       "title": "Lesson T8.13: Drill",
       "type": "Drill",
       "text": [
@@ -1281,11 +1154,12 @@
         "Do you intend to play adventure every night?"
       ]
     },
-    "lesson_T8.14": {
+
+    "T8.14": {
       "title": "Lesson T8.14: Tutorial",
       "type": "Tutorial",
       "text": [
-        "                The Backspace",
+        "                        The Backspace",
         "",
         "Most of the programs that you use will allow you to correct your mistakes by",
         "using the BACKSPACE and/or DELETE keys.  These keys will generally delete the",
@@ -1301,7 +1175,8 @@
         ";-finger and immediately return your fingers to the home position."
       ]
     },
-    "lesson_T8.15": {
+
+    "T8.15": {
       "title": "Lesson T8.15: Speed Test",
       "type": "Paragraph",
       "instructions": "Let's try our speed on some nursery rhymes!",
@@ -1312,7 +1187,8 @@
         "The lamb was sure to go."
       ]
     },
-    "lesson_T8.16": {
+
+    "T8.16": {
       "title": "Lesson T8.16: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -1320,7 +1196,8 @@
         "Jack fell down and broke his crown and Jill came tumbling after."
       ]
     },
-    "lesson_T8.17": {
+
+    "T8.17": {
       "title": "Lesson T8.17: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -1331,7 +1208,8 @@
         "And frightened Miss Muffet away."
       ]
     },
-    "lesson_T8.18": {
+
+    "T8.18": {
       "title": "Lesson T8.18: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -1342,25 +1220,29 @@
         "And the dish ran away with the spoon."
       ]
     },
-    "lesson_T9.1": {
+
+    "T9.1": {
       "title": "Lesson T9.1: Drill",
       "type": "Drill",
       "instructions": "First, a review.",
       "text": "a;a sls dkd fjf sws jyj fvf dcd jmj ;-;"
     },
-    "lesson_T9.2": {
+
+    "T9.2": {
       "title": "Lesson T9.2: Drill",
       "type": "Drill",
       "instructions": "Notice that the only letters left to go are the Q, X, and Z!",
       "text": "abcdefghijklmnoprstuvwy"
     },
-    "lesson_T9.3": {
+
+    "T9.3": {
       "title": "Lesson T9.3: Drill",
       "type": "Drill",
       "instructions": "Use your A-finger for the Q-key.",
       "text": "aaa aqa aaa qqq aaa aqa aaa"
     },
-    "lesson_T9.4": {
+
+    "T9.4": {
       "title": "Lesson T9.4: Drill",
       "type": "Drill",
       "text": [
@@ -1369,13 +1251,15 @@
         "quail quiver inquest marquis"
       ]
     },
-    "lesson_T9.5": {
+
+    "T9.5": {
       "title": "Lesson T9.5: Drill",
       "type": "Drill",
       "instructions": "Use your S-finger for the X-key.",
       "text": "sss sxs sss xxx sss sxs sss"
     },
-    "lesson_T9.6": {
+
+    "T9.6": {
       "title": "Lesson T9.6: Drill",
       "type": "Drill",
       "text": [
@@ -1384,13 +1268,15 @@
         "exactly sphinx oxygen except thorax"
       ]
     },
-    "lesson_T9.7": {
+
+    "T9.7": {
       "title": "Lesson T9.7: Drill",
       "type": "Drill",
       "instructions": "Use your A-finger for the Z-key.",
       "text": "aaa aza aaa zzz aaa aza aaa"
     },
-    "lesson_T9.8": {
+
+    "T9.8": {
       "title": "Lesson T9.8: Drill",
       "type": "Drill",
       "text": [
@@ -1399,7 +1285,8 @@
         "oxidize squeeze azimuth zoology"
       ]
     },
-    "lesson_T9.9": {
+
+    "T9.9": {
       "title": "Lesson T9.9: Drill",
       "type": "Drill",
       "instructions": "The big event!!!!!!!!!!!!!!!!!!",
@@ -1408,28 +1295,33 @@
         "zyxwvutsrqponmlkjihgfedcba"
       ]
     },
-    "lesson_T9.10": {
+
+    "T9.10": {
       "title": "Lesson T9.10: Drill",
       "type": "Drill",
       "instructions": "Let's try some sentences:",
       "text": "A dozen zebras were grazing quietly nearby."
     },
-    "lesson_T9.11": {
+
+    "T9.11": {
       "title": "Lesson T9.11: Drill",
       "type": "Drill",
       "text": "The zeppelin zigzagged quickly from the horizon up to the zenith."
     },
-    "lesson_T9.12": {
+
+    "T9.12": {
       "title": "Lesson T9.12: Drill",
       "type": "Drill",
       "text": "Never trust a quack doctor who cannot distinguish oxygen from nitrogen."
     },
-    "lesson_T9.13": {
+
+    "T9.13": {
       "title": "Lesson T9.13: Drill",
       "type": "Drill",
       "text": "Imagine having a sextet of sexagenarian sextons?"
     },
-    "lesson_T9.14": {
+
+    "T9.14": {
       "title": "Lesson T9.14: Drill",
       "type": "Drill",
       "text": [
@@ -1437,59 +1329,68 @@
         "Quartz crystal watches were at one time extremely expensive."
       ]
     },
-    "lesson_T9.15": {
+
+    "T9.15": {
       "title": "Lesson T9.15: Drill",
       "type": "Drill",
       "instructions": "Let's try a sentence that contains every letter of the alphabet.",
       "text": "A quick brown fox jumped over the lazy dogs."
     },
-    "lesson_T9.16": {
+
+    "T9.16": {
       "title": "Lesson T9.16: Drill",
       "type": "Drill",
       "instructions": "Again,",
       "text": "A quick brown fox jumped over the lazy dogs."
     },
-    "lesson_T9.17": {
+
+    "T9.17": {
       "title": "Lesson T9.17: Speed Test",
       "type": "Paragraph",
       "instructions": "See how fast you can type it this time:",
       "text": "A quick brown fox jumped over the lazy dogs."
     },
-    "lesson_T9.18": {
+
+    "T9.18": {
       "title": "Lesson T9.18: Speed Test",
       "type": "Paragraph",
       "instructions": "Again,",
       "text": "A quick brown fox jumped over the lazy dogs."
     },
-    "lesson_T10.1": {
+
+    "T10.1": {
       "title": "Lesson T10.1: Drill",
       "type": "Drill",
       "instructions": "Let's review the entire alphabet before starting the number keys.",
       "text": "abcd efg hijk lmnop qrs tuv wx yz"
     },
-    "lesson_T10.2": {
+
+    "T10.2": {
       "title": "Lesson T10.2: Drill",
       "type": "Drill",
       "instructions": "Once more",
       "text": "abcdefghijklmnopqrstuvwxyz"
     },
-    "lesson_T10.3": {
+
+    "T10.3": {
       "title": "Lesson T10.3: Drill",
       "type": "Drill",
       "instructions": "Use the shift key for each letter (Do not use the CAPS LOCK key)",
       "text": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     },
-    "lesson_T10.4": {
+
+    "T10.4": {
       "title": "Lesson T10.4: Drill",
       "type": "Drill",
       "instructions": "Now, review the punctuations that you've had.",
       "text": "l;l l:l k,k l.l ;/; ;?; :?: ;-;"
     },
-    "lesson_T10.5": {
+
+    "T10.5": {
       "title": "Lesson T10.5: Tutorial",
       "type": "Tutorial",
       "text": [
-        "                Numeric Keys",
+        "                        Numeric Keys",
         "",
         "The computer has two sets of numeric keys.  One set--directly above the",
         "alphabetic keys--conforms to the standard for typewriter keyboards.  The other",
@@ -1508,13 +1409,15 @@
         "probably skip these exercises."
       ]
     },
-    "lesson_T10.6": {
+
+    "T10.6": {
       "title": "Lesson T10.6: Drill",
       "type": "Drill",
       "instructions": "Let's start by using the 1-key, since we have one.  Use your A-finger.",
       "text": "aaa a1a aaa 111 aaa a1a"
     },
-    "lesson_T10.7": {
+
+    "T10.7": {
       "title": "Lesson T10.7: Drill",
       "type": "Drill",
       "text": [
@@ -1523,13 +1426,15 @@
         "If 11 men each catch 11 fish in 11 days, how many fish were caught?"
       ]
     },
-    "lesson_T10.8": {
+
+    "T10.8": {
       "title": "Lesson T10.8: Drill",
       "type": "Drill",
       "instructions": "Use your S-finger for the 2-key.",
       "text": "sss s2s sss s2s sss s2s"
     },
-    "lesson_T10.9": {
+
+    "T10.9": {
       "title": "Lesson T10.9: Drill",
       "type": "Drill",
       "text": [
@@ -1538,13 +1443,15 @@
         "The 2 men were 2 late 2 catch the 2 PM train."
       ]
     },
-    "lesson_T10.10": {
+
+    "T10.10": {
       "title": "Lesson T10.10: Drill",
       "type": "Drill",
       "instructions": "Use your D-finger for the 3-key.",
       "text": "ddd d3d ddd d3d ddd d3d ddd"
     },
-    "lesson_T10.11": {
+
+    "T10.11": {
       "title": "Lesson T10.11: Drill",
       "type": "Drill",
       "text": [
@@ -1553,13 +1460,15 @@
         "1 plus 2 is 3.  11 plus 22 is 33.  111 plus 222 is 333."
       ]
     },
-    "lesson_T10.12": {
+
+    "T10.12": {
       "title": "Lesson T10.12: Drill",
       "type": "Drill",
       "instructions": "The last number we will practice today is the 4-key.  (Use your F-finger.)",
       "text": "fff f4f fff f4f fff f4f"
     },
-    "lesson_T10.13": {
+
+    "T10.13": {
       "title": "Lesson T10.13: Drill",
       "type": "Drill",
       "text": [
@@ -1570,19 +1479,22 @@
         "If 1/4 plus 2/3 is 11/12, what is 1/2 plus 1/3?"
       ]
     },
-    "lesson_T10.14": {
+
+    "T10.14": {
       "title": "Lesson T10.14: Speed Test",
       "type": "Paragraph",
       "instructions": "Try your speed on this line:",
       "text": "Our team won 1st, 2nd, and 3rd place at the 12th annual outing."
     },
-    "lesson_T10.15": {
+
+    "T10.15": {
       "title": "Lesson T10.15: Drill",
       "type": "Drill",
       "instructions": "Old typewriters may not have a 1 key; here we use the L-key as a 1.",
       "text": "One dozen is l2.  A gross is l2 dozen or l44."
     },
-    "lesson_T10.16": {
+
+    "T10.16": {
       "title": "Lesson T10.16: Drill",
       "type": "Drill",
       "instructions": "Again, using the L-key as a 1.  You may want to skip this exercise.",
@@ -1591,24 +1503,28 @@
         "But in octal, l2 is not divisible by 3."
       ]
     },
-    "lesson_T11.1": {
+
+    "T11.1": {
       "title": "Lesson T11.1: Drill",
       "type": "Drill",
       "instructions": "Let's review the numbers that you have already learned.",
       "text": "a1a s2s d3d f4f 234 413"
     },
-    "lesson_T11.2": {
+
+    "T11.2": {
       "title": "Lesson T11.2: Drill",
       "type": "Drill",
       "text": "f4r d3e s2w a1q az1 sx2 dc3 fv4"
     },
-    "lesson_T11.3": {
+
+    "T11.3": {
       "title": "Lesson T11.3: Drill",
       "type": "Drill",
       "instructions": "Use your J-finger for the 7-key",
       "text": "jjj j7j jjj j7j jjj j7j jjj"
     },
-    "lesson_T11.4": {
+
+    "T11.4": {
       "title": "Lesson T11.4: Drill",
       "type": "Drill",
       "text": [
@@ -1618,13 +1534,15 @@
         "It is a 727 with 4 stops.  With all those stops it takes almost 7 hours."
       ]
     },
-    "lesson_T11.5": {
+
+    "T11.5": {
       "title": "Lesson T11.5: Drill",
       "type": "Drill",
       "instructions": "Use your K-finger for the 8-key.",
       "text": "kkk k8k kkk k8k kkk k8k kkk"
     },
-    "lesson_T11.6": {
+
+    "T11.6": {
       "title": "Lesson T11.6: Drill",
       "type": "Drill",
       "text": [
@@ -1634,13 +1552,15 @@
         "Her team was assigned to zone 8 of quadrant 828.  Send 8 more agents."
       ]
     },
-    "lesson_T11.7": {
+
+    "T11.7": {
       "title": "Lesson T11.7: Drill",
       "type": "Drill",
       "instructions": "Use your L-finger for the 9-key.",
       "text": "lll l9l lll l9l lll l9l lll"
     },
-    "lesson_T11.8": {
+
+    "T11.8": {
       "title": "Lesson T11.8: Drill",
       "type": "Drill",
       "text": [
@@ -1650,13 +1570,15 @@
         "If 9 of us take 9 each, there will still be 18 left for the song."
       ]
     },
-    "lesson_T11.9": {
+
+    "T11.9": {
       "title": "Lesson T11.9: Drill",
       "type": "Drill",
       "instructions": "Use your ;-finger for the 0-key.",
       "text": ";;; ;0; ;;; ;0; ;;; ;0; ;;;"
     },
-    "lesson_T11.10": {
+
+    "T11.10": {
       "title": "Lesson T11.10: Drill",
       "type": "Drill",
       "text": [
@@ -1667,7 +1589,8 @@
         "But, Room 302 can only hold 10 people.  We will need Conference Room 10."
       ]
     },
-    "lesson_T11.11": {
+
+    "T11.11": {
       "title": "Lesson T11.11: Speed Test",
       "type": "Paragraph",
       "instructions": "Let's try some paragraphs.",
@@ -1683,7 +1606,8 @@
         "Florida, but their Zip Codes start with 00."
       ]
     },
-    "lesson_T11.12": {
+
+    "T11.12": {
       "title": "Lesson T11.12: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -1696,24 +1620,28 @@
         "will be very difficult to change."
       ]
     },
-    "lesson_T12.1": {
+
+    "T12.1": {
       "title": "Lesson T12.1: Drill",
       "type": "Drill",
       "instructions": "Let's review the numbers that you have learned so far.",
       "text": "j7j f4f k8k d3d l9l s2s ;0; a1a"
     },
-    "lesson_T12.2": {
+
+    "T12.2": {
       "title": "Lesson T12.2: Drill",
       "type": "Drill",
       "text": "4f4 7j7 3d3 8k8 2s2 9l9 1a1 0;0"
     },
-    "lesson_T12.3": {
+
+    "T12.3": {
       "title": "Lesson T12.3: Drill",
       "type": "Drill",
       "instructions": "Use your F-finger for the 5-key.",
       "text": "fff f5f fff 555 fff f5f fff"
     },
-    "lesson_T12.4": {
+
+    "T12.4": {
       "title": "Lesson T12.4: Drill",
       "type": "Drill",
       "text": [
@@ -1722,18 +1650,21 @@
         "f5f 453 f5f 585 f5f 475 f5f"
       ]
     },
-    "lesson_T12.5": {
+
+    "T12.5": {
       "title": "Lesson T12.5: Speed Test",
       "type": "Paragraph",
       "text": "The 5 of us each carried 50 pound packs all 45 miles of the trip."
     },
-    "lesson_T12.6": {
+
+    "T12.6": {
       "title": "Lesson T12.6: Drill",
       "type": "Drill",
       "instructions": "And now, the longest reach of all!  Use your J-finger for the 6-key.",
       "text": "jjj j6j jjj 666 jjj j6j jjj"
     },
-    "lesson_T12.7": {
+
+    "T12.7": {
       "title": "Lesson T12.7: Drill",
       "type": "Drill",
       "text": [
@@ -1742,29 +1673,34 @@
         "j6j 4567 j6j 7654 j6j 6754 j6j"
       ]
     },
-    "lesson_T12.8": {
+
+    "T12.8": {
       "title": "Lesson T12.8: Drill",
       "type": "Drill",
       "instructions": "The open parenthesis is the shift of the 9-key.  Use your L-finger.",
       "text": "lll l(l lll ((( lll l(l lll"
     },
-    "lesson_T12.9": {
+
+    "T12.9": {
       "title": "Lesson T12.9: Drill",
       "type": "Drill",
       "text": "l(l (.l l(l 9(9 l(l"
     },
-    "lesson_T12.10": {
+
+    "T12.10": {
       "title": "Lesson T12.10: Drill",
       "type": "Drill",
       "text": "l(l loop l(l oil l(l only l(l"
     },
-    "lesson_T12.11": {
+
+    "T12.11": {
       "title": "Lesson T12.11: Drill",
       "type": "Drill",
       "instructions": "The close parenthesis is the shift of the 0-key.  Use your ;-finger.",
       "text": ";;; ;); ;;; ;); ;;; ;);"
     },
-    "lesson_T12.12": {
+
+    "T12.12": {
       "title": "Lesson T12.12: Drill",
       "type": "Drill",
       "text": [
@@ -1772,22 +1708,26 @@
         ";); pole ;); loop ;); pile ;);"
       ]
     },
-    "lesson_T12.13": {
+
+    "T12.13": {
       "title": "Lesson T12.13: Drill",
       "type": "Drill",
       "text": "You (the buyer) should ask him (the seller) for the price (of the goods)."
     },
-    "lesson_T12.14": {
+
+    "T12.14": {
       "title": "Lesson T12.14: Drill",
       "type": "Drill",
       "text": "If (X-5) / (X-6) is 56, then what is (X/5) - (X/6)?"
     },
-    "lesson_T12.15": {
+
+    "T12.15": {
       "title": "Lesson T12.15: Drill",
       "type": "Drill",
       "text": "1 2 3 4 5 6 7 8 9 10"
     },
-    "lesson_T12.16": {
+
+    "T12.16": {
       "title": "Lesson T12.16: Speed Test",
       "type": "Paragraph",
       "instructions": "Try your speed on this song.",
@@ -1798,7 +1738,8 @@
         "10 little Indian boys."
       ]
     },
-    "lesson_T12.17": {
+
+    "T12.17": {
       "title": "Lesson T12.17: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -1808,29 +1749,34 @@
         "the 6:45 flight (which makes 5 stops)."
       ]
     },
-    "lesson_T12.18": {
+
+    "T12.18": {
       "title": "Lesson T12.18: Drill",
       "type": "Drill",
       "instructions": "Use the main keyboard keys.  Try entering straight numbers:",
       "text": "423 475 925 235 295 175 650"
     },
-    "lesson_T12.19": {
+
+    "T12.19": {
       "title": "Lesson T12.19: Drill",
       "type": "Drill",
       "text": "598 693 602 672 315 604 587 307"
     },
-    "lesson_T12.20": {
+
+    "T12.20": {
       "title": "Lesson T12.20: Drill",
       "type": "Drill",
       "text": "12.00 67.50 99.95 38.75 19.99"
     },
-    "lesson_T12.21": {
+
+    "T12.21": {
       "title": "Lesson T12.21: Speed Test",
       "type": "Paragraph",
       "instructions": "Now let's try for some speed.",
       "text": "353 648 604 592 468 501 296"
     },
-    "lesson_T12.22": {
+
+    "T12.22": {
       "title": "Lesson T12.22: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -1844,7 +1790,8 @@
         "6745"
       ]
     },
-    "lesson_T13.1": {
+
+    "T13.1": {
       "title": "Lesson T13.1: Tutorial",
       "type": "Tutorial",
       "text": [
@@ -1862,18 +1809,21 @@
         "lessons."
       ]
     },
-    "lesson_T14.1": {
+
+    "T14.1": {
       "title": "Lesson T14.1: Drill",
       "type": "Drill",
       "instructions": "Use your ;-finger for the apostrophe.",
       "text": ";;; ;'; ;;; ''' ;;; ;'; ;;;"
     },
-    "lesson_T14.2": {
+
+    "T14.2": {
       "title": "Lesson T14.2: Drill",
       "type": "Drill",
       "text": ";'; it's ;'; 'till ;'; won't ;';"
     },
-    "lesson_T14.3": {
+
+    "T14.3": {
       "title": "Lesson T14.3: Drill",
       "type": "Drill",
       "text": [
@@ -1882,13 +1832,15 @@
         "Can't you find anything?  It's right next to Dad's chair."
       ]
     },
-    "lesson_T14.4": {
+
+    "T14.4": {
       "title": "Lesson T14.4: Drill",
       "type": "Drill",
       "instructions": "Shift the apostrophe for the quote key.",
       "text": ";;; ;\"; ;;; \"\"\" ;;; ;\"; ;;;"
     },
-    "lesson_T14.5": {
+
+    "T14.5": {
       "title": "Lesson T14.5: Drill",
       "type": "Drill",
       "text": [
@@ -1898,29 +1850,34 @@
         "\"If you promise not to tell,\" she continued, \"I'll give you a copy.\""
       ]
     },
-    "lesson_T14.6": {
+
+    "T14.6": {
       "title": "Lesson T14.6: Drill",
       "type": "Drill",
       "instructions": "Use your A-finger for the exclamation point.",
       "text": "aaa a!a aaa !!! aaa a!a aaa"
     },
-    "lesson_T14.7": {
+
+    "T14.7": {
       "title": "Lesson T14.7: Drill",
       "type": "Drill",
       "text": "a!a Ah! a!a What! a!a Oh! a!a"
     },
-    "lesson_T14.8": {
+
+    "T14.8": {
       "title": "Lesson T14.8: Drill",
       "type": "Drill",
       "instructions": "Always double space after an exclamation point.",
       "text": "Tomorrow's quiz!  What if we get caught?  We'll be expelled!"
     },
-    "lesson_T14.9": {
+
+    "T14.9": {
       "title": "Lesson T14.9: Drill",
       "type": "Drill",
       "text": "He'll never suspect a thing!  We'll get some answers wrong to fool him."
     },
-    "lesson_T15.1": {
+
+    "T15.1": {
       "title": "Lesson T15.1: Tutorial",
       "type": "Tutorial",
       "text": [
@@ -1930,13 +1887,15 @@
         "simply typing in programs."
       ]
     },
-    "lesson_T15.2": {
+
+    "T15.2": {
       "title": "Lesson T15.2: Drill",
       "type": "Drill",
       "instructions": "Use your ;-finger for the equals key.",
       "text": ";;; ;=; ;;; ;=; ;;; ;=; ;;;"
     },
-    "lesson_T15.3": {
+
+    "T15.3": {
       "title": "Lesson T15.3: Drill",
       "type": "Drill",
       "text": [
@@ -1944,13 +1903,15 @@
         ";=; X=2 ;=; Y=3 ;=; Z=0 ;=;"
       ]
     },
-    "lesson_T15.4": {
+
+    "T15.4": {
       "title": "Lesson T15.4: Drill",
       "type": "Drill",
       "instructions": "Use your K-finger for the asterisk key.",
       "text": "kkk k*k kkk k*k kkk k*k kkk"
     },
-    "lesson_T15.5": {
+
+    "T15.5": {
       "title": "Lesson T15.5: Drill",
       "type": "Drill",
       "text": [
@@ -1958,13 +1919,15 @@
         "k*k i*i k*k *,* k*k 8*8 k*k"
       ]
     },
-    "lesson_T15.6": {
+
+    "T15.6": {
       "title": "Lesson T15.6: Drill",
       "type": "Drill",
       "instructions": "Use your ;-finger for the plus sign.",
       "text": ";;; ;+; ;;; ;+; ;;; ;+; ;;;"
     },
-    "lesson_T15.7": {
+
+    "T15.7": {
       "title": "Lesson T15.7: Drill",
       "type": "Drill",
       "text": [
@@ -1972,13 +1935,15 @@
         ";+; +=+ ;+; -+- ;+; /+/ ;+;"
       ]
     },
-    "lesson_T15.8": {
+
+    "T15.8": {
       "title": "Lesson T15.8: Drill",
       "type": "Drill",
       "instructions": "Use your L-finger for the greater-than key.",
       "text": "lll l>l lll l>l lll l>l lll"
     },
-    "lesson_T15.9": {
+
+    "T15.9": {
       "title": "Lesson T15.9: Drill",
       "type": "Drill",
       "text": [
@@ -1986,13 +1951,15 @@
         "l>l >>> l>l 9>9 l>l .>. l>l"
       ]
     },
-    "lesson_T15.10": {
+
+    "T15.10": {
       "title": "Lesson T15.10: Drill",
       "type": "Drill",
       "instructions": "Use your K-finger for the less-than key.",
       "text": "kkk k<k kkk k<k kkk k<k kkk"
     },
-    "lesson_T15.11": {
+
+    "T15.11": {
       "title": "Lesson T15.11: Drill",
       "type": "Drill",
       "text": [
@@ -2000,13 +1967,15 @@
         "k<k <.> k<k >.< k<k <<< k<k"
       ]
     },
-    "lesson_T15.12": {
+
+    "T15.12": {
       "title": "Lesson T15.12: Drill",
       "type": "Drill",
       "instructions": "Use your J-finger for the up-arrow key.",
       "text": "jjj j^j jjj ^^^ jjj j^j jjj"
     },
-    "lesson_T15.13": {
+
+    "T15.13": {
       "title": "Lesson T15.13: Drill",
       "type": "Drill",
       "text": [
@@ -2014,7 +1983,8 @@
         "j^j <^> j^j .^. j^j \"^\" j^j"
       ]
     },
-    "lesson_T15.14": {
+
+    "T15.14": {
       "title": "Lesson T15.14: Speed Test",
       "type": "Paragraph",
       "instructions": "Try entering this BASIC program:",
@@ -2026,7 +1996,8 @@
         "50 STOP"
       ]
     },
-    "lesson_T15.15": {
+
+    "T15.15": {
       "title": "Lesson T15.15: Speed Test",
       "type": "Paragraph",
       "instructions": "And another:",
@@ -2041,7 +2012,8 @@
         "80 STOP"
       ]
     },
-    "lesson_T15.16": {
+
+    "T15.16": {
       "title": "Lesson T15.16: Speed Test",
       "type": "Paragraph",
       "instructions": "Press down the CAPS LOCK key to simplify typing in this BASIC program:",
@@ -2063,7 +2035,8 @@
         "525 GOTO 125"
       ]
     },
-    "lesson_T16.1": {
+
+    "T16.1": {
       "title": "Lesson T16.1: Tutorial",
       "type": "Tutorial",
       "text": [
@@ -2080,13 +2053,15 @@
         "speed is not important."
       ]
     },
-    "lesson_T16.2": {
+
+    "T16.2": {
       "title": "Lesson T16.2: Drill",
       "type": "Drill",
       "instructions": "Use your S-finger for the at-sign.",
       "text": "sss s@s sss s@s sss s@s sss"
     },
-    "lesson_T16.3": {
+
+    "T16.3": {
       "title": "Lesson T16.3: Drill",
       "type": "Drill",
       "text": [
@@ -2094,13 +2069,15 @@
         "s@s wax s@s mix s@s @we s@s"
       ]
     },
-    "lesson_T16.4": {
+
+    "T16.4": {
       "title": "Lesson T16.4: Drill",
       "type": "Drill",
       "instructions": "Use your D-finger for the pound-sign (also called the number-sign).",
       "text": "ddd d#d ddd d#d ddd d#d ddd"
     },
-    "lesson_T16.5": {
+
+    "T16.5": {
       "title": "Lesson T16.5: Drill",
       "type": "Drill",
       "text": [
@@ -2108,13 +2085,15 @@
         "d#d cat d#d dog d#d eat d#d"
       ]
     },
-    "lesson_T16.6": {
+
+    "T16.6": {
       "title": "Lesson T16.6: Drill",
       "type": "Drill",
       "instructions": "Use your F-finger for the dollar-sign.",
       "text": "fff f$f fff f$f fff f$f fff"
     },
-    "lesson_T16.7": {
+
+    "T16.7": {
       "title": "Lesson T16.7: Drill",
       "type": "Drill",
       "text": [
@@ -2123,13 +2102,15 @@
         "Joe keeps cryptic inventory bills like:  4# @ $5.00/# or 6# @ $4.50/#."
       ]
     },
-    "lesson_T16.8": {
+
+    "T16.8": {
       "title": "Lesson T16.8: Drill",
       "type": "Drill",
       "instructions": "Use your F-finger for the percent sign as well.",
       "text": "fff f%f fff f%f fff f%f fff"
     },
-    "lesson_T16.9": {
+
+    "T16.9": {
       "title": "Lesson T16.9: Drill",
       "type": "Drill",
       "text": [
@@ -2139,27 +2120,31 @@
         "But, a 10% markup on a item selling for $22.50 is only $24.75!  How come?"
       ]
     },
-    "lesson_T16.10": {
+
+    "T16.10": {
       "title": "Lesson T16.10: Drill",
       "type": "Drill",
       "instructions": "Use your J-finger for the ampersand.",
       "text": "jjj j&j jjj j&j jjj j&j jjj"
     },
-    "lesson_T16.11": {
+
+    "T16.11": {
       "title": "Lesson T16.11: Drill",
       "type": "Drill",
       "text": "j&j 2&4 j&j 9&5 j&j 7&7 j&j"
     },
-    "lesson_T16.12": {
+
+    "T16.12": {
       "title": "Lesson T16.12: Drill",
       "type": "Drill",
       "text": "j&j you&me j&j he&she j&j M&M j&j"
     },
-    "lesson_T16.13": {
+
+    "T16.13": {
       "title": "Lesson T16.13: Tutorial",
       "type": "Tutorial",
       "text": [
-        "                The End",
+        "                        The End",
         "",
         "You have now completed the T-series of these lessons.  If you have not already",
         "done so, you should now start the N-series or S-series.",
@@ -2177,6 +2162,8 @@
         "the CONTROL-key down with their A-finger and then hit the other key with what-",
         "ever finger is convenient (usually the F-finger in this case)."
       ]
-    }
+    },
+
+    "_comment_5": "# END LESSONS DATA SECTION"
   }
 }

@@ -1,112 +1,55 @@
 {
-  "copyright": [
-    "Typist 3.0 - improved typing tutor program for UNIX systems",
-    "Copyright (C) 1998-2018  Simon Baldwin (simon_baldwin@yahoo.com)",
-    "",
-    "This program is free software; you can redistribute it and/or",
-    "modify it under the terms of the GNU General Public License",
-    "as published by the Free Software Foundation; either version 2",
-    "of the License, or (at your option) any later version.",
-    "",
-    "This program is distributed in the hope that it will be useful,",
-    "but WITHOUT ANY WARRANTY; without even the implied warranty of",
-    "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the",
-    "GNU General Public License for more details.",
-    "",
-    "You should have received a copy of the GNU General Public License",
-    "along with this program; if not, write to the Free Software",
-    "Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA."
+  "_comment_1": [
+    "# Typist 3.0 - improved typing tutor program for UNIX systems",
+    "# Copyright (C) 1998-2018  Simon Baldwin (simon_baldwin@yahoo.com)"
   ],
   "typist": {
     "version": 2,
     "locale": "en_US.UTF-8",
-    "seriesName": "N",
+
+    "seriesName": "Lesson series N",
     "seriesDescription": "Calculator keypad (N1 - N3)",
+
+    "_comment_2": "# BEGIN MENU DEFINITIONS SECTION",
+
     "seriesMenu": {
-      "title": "The N series contains the following 4 lessons",
+      "title": "This series contains the following lessons",
       "entries": [
         {
           "title": "Lesson N1     4 5 . 6 1",
-          "lessons": [
-            "lesson_N1.1",
-            "lesson_N1.2",
-            "lesson_N1.3",
-            "lesson_N1.4",
-            "lesson_N1.5",
-            "lesson_N1.6",
-            "lesson_N1.7",
-            "lesson_N1.8",
-            "lesson_N1.9",
-            "lesson_N1.10",
-            "lesson_N1.11",
-            "lesson_N1.12"
-          ]
+          "lessons": ["N1.1", "N1.2", "N1.3", "N1.4", "N1.5", "N1.6", "N1.7", "N1.8", "N1.9", "N1.10", "N1.11", "N1.12"]
         },
         {
           "title": "Lesson N2     2 3 0 8 9 7",
-          "lessons": [
-            "lesson_N2.1",
-            "lesson_N2.2",
-            "lesson_N2.3",
-            "lesson_N2.4",
-            "lesson_N2.5",
-            "lesson_N2.6",
-            "lesson_N2.7",
-            "lesson_N2.8",
-            "lesson_N2.9",
-            "lesson_N2.10",
-            "lesson_N2.11",
-            "lesson_N2.12",
-            "lesson_N2.13",
-            "lesson_N2.14",
-            "lesson_N2.15",
-            "lesson_N2.16",
-            "lesson_N2.17",
-            "lesson_N2.18",
-            "lesson_N2.19",
-            "lesson_N2.20"
-          ]
+          "lessons": ["N2.1", "N2.2", "N2.3", "N2.4", "N2.5", "N2.6", "N2.7", "N2.8", "N2.9", "N2.10", "N2.11", "N2.12", "N2.13", "N2.14", "N2.15", "N2.16", "N2.17", "N2.18", "N2.19", "N2.20"]
         },
         {
           "title": "Lesson N3     Practise",
-          "lessons": [
-            "lesson_N3.1",
-            "lesson_N3.2",
-            "lesson_N3.3",
-            "lesson_N3.4",
-            "lesson_N3.5",
-            "lesson_N3.6",
-            "lesson_N3.7",
-            "lesson_N3.8",
-            "lesson_N3.9",
-            "lesson_N3.10"
-          ]
+          "lessons": ["N3.1", "N3.2", "N3.3", "N3.4", "N3.5", "N3.6", "N3.7", "N3.8", "N3.9", "N3.10"]
         },
         {
           "title": "Lesson N4     Other numeric keypad keys",
-          "lessons": [
-            "lesson_N4.1",
-            "lesson_N4.2",
-            "lesson_N4.3",
-            "lesson_N4.4",
-            "lesson_N4.5",
-            "lesson_N4.6",
-            "lesson_N4.7",
-            "lesson_N4.8",
-            "lesson_N4.9",
-            "lesson_N4.10",
-            "lesson_N4.11",
-            "lesson_N4.12",
-            "lesson_N4.13"
-          ]
+          "lessons": ["N4.1", "N4.2", "N4.3", "N4.4", "N4.5", "N4.6", "N4.7", "N4.8", "N4.9", "N4.10", "N4.11", "N4.12", "N4.13"]
+        },
+        {
+          "title": null
+        },
+        {
+          "title": "Finished      Leave this series",
+          "lessons": null
         }
       ]
     },
-    "lesson_N1.1": {
+
+    "_comment_3": "# END MENU DEFINITIONS SECTION",
+
+    "_comment_4": "# BEGIN LESSONS DATA SECTION",
+
+    "N1.1": {
       "title": "Lesson N1.1: Tutorial",
       "type": "Tutorial",
       "text": [
-        "                Numeric Keypad Lessons",
+        "                        Numeric Keypad Lessons",
         "",
         "The N series lessons are provided for practice with the numeric keys available",
         "on the standard PC keyboard.  You do not need to know how to touch type on the",
@@ -128,25 +71,29 @@
         "suit your exact keyboard."
       ]
     },
-    "lesson_N1.2": {
+
+    "N1.2": {
       "title": "Lesson N1.2: Drill",
       "type": "Drill",
       "instructions": "Use your third finger only.",
       "text": "666666"
     },
-    "lesson_N1.3": {
+
+    "N1.3": {
       "title": "Lesson N1.3: Drill",
       "type": "Drill",
       "instructions": "Use your second finger for the 5.",
       "text": "6565656"
     },
-    "lesson_N1.4": {
+
+    "N1.4": {
       "title": "Lesson N1.4: Drill",
       "type": "Drill",
       "instructions": "Use your first finger for the 4.",
       "text": "666444555444666"
     },
-    "lesson_N1.5": {
+
+    "N1.5": {
       "title": "Lesson N1.5: Speed Test",
       "type": "Paragraph",
       "instructions": "Now let's try several lines.",
@@ -161,13 +108,15 @@
         "456456456"
       ]
     },
-    "lesson_N1.6": {
+
+    "N1.6": {
       "title": "Lesson N1.6: Drill",
       "type": "Drill",
       "instructions": "Use your third finger (6-finger) for the period.",
       "text": "555...555"
     },
-    "lesson_N1.7": {
+
+    "N1.7": {
       "title": "Lesson N1.7: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -178,7 +127,8 @@
         "54.65.4"
       ]
     },
-    "lesson_N1.8": {
+
+    "N1.8": {
       "title": "Lesson N1.8: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -189,13 +139,15 @@
         "555444.666"
       ]
     },
-    "lesson_N1.9": {
+
+    "N1.9": {
       "title": "Lesson N1.9: Drill",
       "type": "Drill",
       "instructions": "Use your first finger for the 1-key.",
       "text": "444111444.444111444"
     },
-    "lesson_N1.10": {
+
+    "N1.10": {
       "title": "Lesson N1.10: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -206,13 +158,15 @@
         "541.146"
       ]
     },
-    "lesson_N1.11": {
+
+    "N1.11": {
       "title": "Lesson N1.11: Drill",
       "type": "Drill",
       "instructions": "Now, let's review the keys we've learned.",
       "text": "444555666111...555444666111"
     },
-    "lesson_N1.12": {
+
+    "N1.12": {
       "title": "Lesson N1.12: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -227,19 +181,22 @@
         "514.651"
       ]
     },
-    "lesson_N2.1": {
+
+    "N2.1": {
       "title": "Lesson N2.1: Drill",
       "type": "Drill",
       "instructions": "First, let's review the keys from lesson 1.",
       "text": "444.555.666.111.6541.6541"
     },
-    "lesson_N2.2": {
+
+    "N2.2": {
       "title": "Lesson N2.2: Drill",
       "type": "Drill",
       "instructions": "Use your 5-finger for the 2 key.",
       "text": "555222555.525.525.525"
     },
-    "lesson_N2.3": {
+
+    "N2.3": {
       "title": "Lesson N2.3: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -252,13 +209,15 @@
         "24.42"
       ]
     },
-    "lesson_N2.4": {
+
+    "N2.4": {
       "title": "Lesson N2.4: Drill",
       "type": "Drill",
       "instructions": "Use your 6-finger for the 3 key.",
       "text": "666333666.636.636"
     },
-    "lesson_N2.5": {
+
+    "N2.5": {
       "title": "Lesson N2.5: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -271,7 +230,8 @@
         "313.434"
       ]
     },
-    "lesson_N2.6": {
+
+    "N2.6": {
       "title": "Lesson N2.6: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -286,18 +246,21 @@
         "34.31"
       ]
     },
-    "lesson_N2.7": {
+
+    "N2.7": {
       "title": "Lesson N2.7: Drill",
       "type": "Drill",
       "instructions": "Use your 4-finger for the zero.",
       "text": "444000444.401.410"
     },
-    "lesson_N2.8": {
+
+    "N2.8": {
       "title": "Lesson N2.8: Drill",
       "type": "Drill",
       "text": "410.020.030.040.060.104"
     },
-    "lesson_N2.9": {
+
+    "N2.9": {
       "title": "Lesson N2.9: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -309,18 +272,21 @@
         "13.14"
       ]
     },
-    "lesson_N2.10": {
+
+    "N2.10": {
       "title": "Lesson N2.10: Drill",
       "type": "Drill",
       "instructions": "Use your 5-finger for the 8-key.",
       "text": "555888555.852.258"
     },
-    "lesson_N2.11": {
+
+    "N2.11": {
       "title": "Lesson N2.11: Drill",
       "type": "Drill",
       "text": "585.080.808.818.282"
     },
-    "lesson_N2.12": {
+
+    "N2.12": {
       "title": "Lesson N2.12: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -332,18 +298,21 @@
         "28.38"
       ]
     },
-    "lesson_N2.13": {
+
+    "N2.13": {
       "title": "Lesson N2.13: Drill",
       "type": "Drill",
       "instructions": "Use your 6-finger for the 9-key.",
       "text": "666999666.393.696"
     },
-    "lesson_N2.14": {
+
+    "N2.14": {
       "title": "Lesson N2.14: Drill",
       "type": "Drill",
       "text": "595.989.696.393.295"
     },
-    "lesson_N2.15": {
+
+    "N2.15": {
       "title": "Lesson N2.15: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -357,23 +326,27 @@
         ".95"
       ]
     },
-    "lesson_N2.16": {
+
+    "N2.16": {
       "title": "Lesson N2.16: Drill",
       "type": "Drill",
       "instructions": "And, the last number is 7.  Use your 4-finger for it.",
       "text": "444777444.0147.7410"
     },
-    "lesson_N2.17": {
+
+    "N2.17": {
       "title": "Lesson N2.17: Drill",
       "type": "Drill",
       "text": "767.737.797.727.707.717"
     },
-    "lesson_N2.18": {
+
+    "N2.18": {
       "title": "Lesson N2.18: Drill",
       "type": "Drill",
       "text": "1234567890.1234567890"
     },
-    "lesson_N2.19": {
+
+    "N2.19": {
       "title": "Lesson N2.19: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -389,7 +362,8 @@
         "70.07"
       ]
     },
-    "lesson_N2.20": {
+
+    "N2.20": {
       "title": "Lesson N2.20: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -404,18 +378,21 @@
         "35827"
       ]
     },
-    "lesson_N3.1": {
+
+    "N3.1": {
       "title": "Lesson N3.1: Drill",
       "type": "Drill",
       "instructions": "First, let's review all the numbers.",
       "text": "1234567890.0987654321"
     },
-    "lesson_N3.2": {
+
+    "N3.2": {
       "title": "Lesson N3.2: Drill",
       "type": "Drill",
       "text": "12.34.56.78.90.10.29.38.47.57"
     },
-    "lesson_N3.3": {
+
+    "N3.3": {
       "title": "Lesson N3.3: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -432,7 +409,8 @@
         "321.840"
       ]
     },
-    "lesson_N3.4": {
+
+    "N3.4": {
       "title": "Lesson N3.4: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -451,7 +429,8 @@
         "28469"
       ]
     },
-    "lesson_N3.5": {
+
+    "N3.5": {
       "title": "Lesson N3.5: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -466,7 +445,8 @@
         "9.50"
       ]
     },
-    "lesson_N3.6": {
+
+    "N3.6": {
       "title": "Lesson N3.6: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -480,7 +460,8 @@
         "231.879"
       ]
     },
-    "lesson_N3.7": {
+
+    "N3.7": {
       "title": "Lesson N3.7: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -494,13 +475,15 @@
         "372.973"
       ]
     },
-    "lesson_N3.8": {
+
+    "N3.8": {
       "title": "Lesson N3.8: Drill",
       "type": "Drill",
       "instructions": "Use any finger of your left hand for the SPACE bar.",
       "text": "111 222 333 444 555 666 777 888 999 000"
     },
-    "lesson_N3.9": {
+
+    "N3.9": {
       "title": "Lesson N3.9: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -512,7 +495,8 @@
         "320 487 364 197"
       ]
     },
-    "lesson_N3.10": {
+
+    "N3.10": {
       "title": "Lesson N3.10: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -527,7 +511,8 @@
         "64.50 99"
       ]
     },
-    "lesson_N4.1": {
+
+    "N4.1": {
       "title": "Lesson N4.1: Tutorial",
       "type": "Tutorial",
       "text": [
@@ -536,13 +521,15 @@
         "systems, so beware of this when practicing."
       ]
     },
-    "lesson_N4.2": {
+
+    "N4.2": {
       "title": "Lesson N4.2: Drill",
       "type": "Drill",
       "instructions": "Use your 5-finger for the / key.",
       "text": "555///555.852/.258/"
     },
-    "lesson_N4.3": {
+
+    "N4.3": {
       "title": "Lesson N4.3: Drill",
       "type": "Drill",
       "text": [
@@ -550,7 +537,8 @@
         "5/82.2/58.8/52./285"
       ]
     },
-    "lesson_N4.4": {
+
+    "N4.4": {
       "title": "Lesson N4.4: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -562,13 +550,15 @@
         "05/10/1963"
       ]
     },
-    "lesson_N4.5": {
+
+    "N4.5": {
       "title": "Lesson N4.5: Drill",
       "type": "Drill",
       "instructions": "Use your 6-finger for the * key.",
       "text": "666***666.963*.369*"
     },
-    "lesson_N4.6": {
+
+    "N4.6": {
       "title": "Lesson N4.6: Drill",
       "type": "Drill",
       "text": [
@@ -576,7 +566,8 @@
         "6*93.3*69.9*63.*396"
       ]
     },
-    "lesson_N4.7": {
+
+    "N4.7": {
       "title": "Lesson N4.7: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -588,13 +579,15 @@
         "558*448*301/340"
       ]
     },
-    "lesson_N4.8": {
+
+    "N4.8": {
       "title": "Lesson N4.8: Drill",
       "type": "Drill",
       "instructions": "Use your Enter-finger for the + key.",
       "text": "789+++123.147+.258+"
     },
-    "lesson_N4.9": {
+
+    "N4.9": {
       "title": "Lesson N4.9: Drill",
       "type": "Drill",
       "text": [
@@ -602,7 +595,8 @@
         "6+93.3+69.9+63.+396"
       ]
     },
-    "lesson_N4.10": {
+
+    "N4.10": {
       "title": "Lesson N4.10: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -614,13 +608,15 @@
         "795+257+107*363"
       ]
     },
-    "lesson_N4.11": {
+
+    "N4.11": {
       "title": "Lesson N4.11: Drill",
       "type": "Drill",
       "instructions": "Use your Enter-finger for the - key too.",
       "text": "789---123.147-.258-"
     },
-    "lesson_N4.12": {
+
+    "N4.12": {
       "title": "Lesson N4.12: Drill",
       "type": "Drill",
       "text": [
@@ -628,7 +624,8 @@
         "6-93.3-69.9-63.-396"
       ]
     },
-    "lesson_N4.13": {
+
+    "N4.13": {
       "title": "Lesson N4.13: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -639,6 +636,8 @@
         "637-189*277-789",
         "369+891-410*881"
       ]
-    }
+    },
+
+    "_comment_5": "# END LESSONS DATA SECTION"
   }
 }

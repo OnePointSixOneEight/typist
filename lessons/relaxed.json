@@ -1,127 +1,87 @@
 {
-  copyright: [
-    "Typist 3.0 - improved typing tutor program for UNIX systems",
-    "Copyright (C) 1998-2018  Simon Baldwin (simon_baldwin@yahoo.com)",
-    "",
-    "This program is free software; you can redistribute it and/or",
-    "modify it under the terms of the GNU General Public License",
-    "as published by the Free Software Foundation; either version 2",
-    "of the License, or (at your option) any later version.",
-    "",
-    "This program is distributed in the hope that it will be useful,",
-    "but WITHOUT ANY WARRANTY; without even the implied warranty of",
-    "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the",
-    "GNU General Public License for more details.",
-    "",
-    "You should have received a copy of the GNU General Public License",
-    "along with this program; if not, write to the Free Software",
-    "Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA."
+  _comment_1: [
+    "# Typist 3.0 - improved typing tutor program for UNIX systems",
+    "# Copyright (C) 1998-2018  Simon Baldwin (simon_baldwin@yahoo.com)"
   ],
   typist: {
     version: 2,
     locale: en_US.UTF-8,
+
     seriesName: Selector,
     seriesDescription: "Lesson series selection",
+
     seriesMenu: {
-      title: "The following 10 lesson series are available",
+      title: "The following lesson series are available",
       entries: [
         {
-          title: "Series Q     Quick QWERTY course  (Q1 - Q5)",
-          lessons: Series_Q
+          title: "Series Q      Quick QWERTY course  (Q1 - Q5)",
+          lessons: [Series_Q]
         },
         {
-          title: "Series R     Long QWERTY course   (R1 - R14)",
-          lessons: Series_R
+          title: "Series R      Long QWERTY course   (R1 - R14)",
+          lessons: [Series_R]
         },
         {
-          title: "Series T     QWERTY touch typing  (T1 - T16)",
-          lessons: Series_T
+          title: "Series T      QWERTY touch typing  (T1 - T16)",
+          lessons: [Series_T]
         },
         {
-          title: "Series V     Yet more QWERTY      (V1 - V19)",
-          lessons: Series_V
+          title: "Series V      Yet more QWERTY      (V1 - V19)",
+          lessons: [Series_V]
         },
         {
-          title: "Series U     QWERTY Review        (U1 - U13)",
-          lessons: Series_U
+          title: "Series U      QWERTY Review        (U1 - U13)",
+          lessons: [Series_U]
         },
         {
-          title: "Series D     Dvorak touch typing  (D1 - D14)",
-          lessons: Series_D
+          title: "Series D      Dvorak touch typing  (D1 - D14)",
+          lessons: [Series_D]
         },
         {
-          title: "Series C     Colemak touch typing (C1 - C17)",
-          lessons: Series_C
+          title: "Series C      Colemak touch typing (C1 - C17)",
+          lessons: [Series_C]
         },
         {
-          title: "Series M     Typing drills        (M1 - M11)",
-          lessons: Series_M
+          title: "Series M      Typing drills        (M1 - M11)",
+          lessons: [Series_M]
         },
         {
-          title: "Series S     Speed drills         (S1 - S4)",
-          lessons: Series_S
+          title: "Series S      Speed drills         (S1 - S4)",
+          lessons: [Series_S]
         },
         {
-          title: "Series N     Calculator keypad    (N1 - N3)",
-          lessons: Series_N
+          title: "Series N      Calculator keypad    (N1 - N3)",
+          lessons: [Series_N]
         },
         {
-          title: null,
+          title: null
         },
         {
-          title: "Help         Help on using Typist",
-          lessons: Help
+          title: "Help          Help on using Typist",
+          lessons: [Help]
         },
         {
-          title: "Advanced     Help on using advanced features",
-          lessons: [ Advanced_1, Advanced_2, Advanced_3 ]
+          title: "Advanced      Help on using advanced features",
+          lessons: [Advanced_1, Advanced_2, Advanced_3]
         },
         {
-          title: "Finished     Leave this menu",
+          title: "Finished      Leave this menu",
           lessons: null
         }
-      ]
+     ]
     },
-    Series_Q: {
-      type: Execute,
-      script: LessonSeriesQ
-    },
-    Series_R: {
-      type: Execute,
-      script: LessonSeriesR
-    },
-    Series_T: {
-      type: Execute,
-      script: LessonSeriesT
-    },
-    Series_V: {
-      type: Execute,
-      script: LessonSeriesV
-    },
-    Series_U: {
-      type: Execute,
-      script: LessonSeriesU
-    },
-    Series_D: {
-      type: Execute,
-      script: LessonSeriesD
-    },
-    Series_C: {
-      type: Execute,
-      script: LessonSeriesC
-    },
-    Series_S: {
-      type: Execute,
-      script: LessonSeriesS
-    },
-    Series_M: {
-      type: Execute,
-      script: LessonSeriesM
-    },
-    Series_N: {
-      type: Execute,
-      script: LessonSeriesN
-    },
+
+    Series_Q: {type: Execute, script: LessonSeriesQ},
+    Series_R: {type: Execute, script: LessonSeriesR},
+    Series_T: {type: Execute, script: LessonSeriesT},
+    Series_V: {type: Execute, script: LessonSeriesV},
+    Series_U: {type: Execute, script: LessonSeriesU},
+    Series_D: {type: Execute, script: LessonSeriesD},
+    Series_C: {type: Execute, script: LessonSeriesC},
+    Series_S: {type: Execute, script: LessonSeriesS},
+    Series_M: {type: Execute, script: LessonSeriesM},
+    Series_N: {type: Execute, script: LessonSeriesN},
+
     Help: {
       title: "Help on using Typist",
       type: Tutorial,
@@ -141,6 +101,7 @@
         "the lesson series menu."
       ]
     },
+
     Advanced_1: {
       title: "Help on using Typist's advanced features (page 1 of 3)",
       type: Tutorial,
@@ -162,9 +123,10 @@
         "Lessons and keymaps are held as JSON files, and Typist will note any non-fatal",
         "problems parsing these files onto stderr, but try to continue running anyway.",
         "Because stderr is often lost under 'curses' output, you can use the '-j' or",
-        "'--log' to redirect error messages, for example '--log=/tmp/trace'.",
+        "'--log' flag to redirect error messages, for example '--log=/tmp/trace'."
       ]
     },
+
     Advanced_2: {
       title: "Help on using Typist's advanced features (page 2 of 3)",
       type: Tutorial,
@@ -187,6 +149,7 @@
         "might be occurring with new Typist scripts."
       ]
     },
+
     Advanced_3: {
       title: "Help on using Typist's advanced features (page 3 of 3)",
       type: Tutorial,

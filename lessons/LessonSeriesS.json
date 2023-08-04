@@ -1,97 +1,55 @@
 {
-  "copyright": [
-    "Typist 3.0 - improved typing tutor program for UNIX systems",
-    "Copyright (C) 1998-2018  Simon Baldwin (simon_baldwin@yahoo.com)",
-    "",
-    "This program is free software; you can redistribute it and/or",
-    "modify it under the terms of the GNU General Public License",
-    "as published by the Free Software Foundation; either version 2",
-    "of the License, or (at your option) any later version.",
-    "",
-    "This program is distributed in the hope that it will be useful,",
-    "but WITHOUT ANY WARRANTY; without even the implied warranty of",
-    "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the",
-    "GNU General Public License for more details.",
-    "",
-    "You should have received a copy of the GNU General Public License",
-    "along with this program; if not, write to the Free Software",
-    "Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA."
+  "_comment_1": [
+    "# Typist 3.0 - improved typing tutor program for UNIX systems",
+    "# Copyright (C) 1998-2018  Simon Baldwin (simon_baldwin@yahoo.com)"
   ],
   "typist": {
     "version": 2,
     "locale": "en_US.UTF-8",
-    "seriesName": "S",
+
+    "seriesName": "Lesson series S",
     "seriesDescription": "Speed drills (S1 - S4)",
+
+    "_comment_2": "# BEGIN MENU DEFINITIONS SECTION",
+
     "seriesMenu": {
-      "title": "The S series contains the following 4 lessons",
+      "title": "This series contains the following lessons",
       "entries": [
         {
           "title": "Lesson S1     Speed tests",
-          "lessons": [
-            "lesson_S1.1",
-            "lesson_S1.2",
-            "lesson_S1.3",
-            "lesson_S1.4",
-            "lesson_S1.5",
-            "lesson_S1.6",
-            "lesson_S1.7"
-          ]
+          "lessons": ["S1.1", "S1.2", "S1.3", "S1.4", "S1.5", "S1.6", "S1.7"]
         },
         {
           "title": "Lesson S2     Speed tests",
-          "lessons": [
-            "lesson_S2.1",
-            "lesson_S2.2",
-            "lesson_S2.3",
-            "lesson_S2.4",
-            "lesson_S2.5",
-            "lesson_S2.6",
-            "lesson_S2.7",
-            "lesson_S2.8",
-            "lesson_S2.9",
-            "lesson_S2.10",
-            "lesson_S2.11",
-            "lesson_S2.12",
-            "lesson_S2.13",
-            "lesson_S2.14",
-            "lesson_S2.15",
-            "lesson_S2.16",
-            "lesson_S2.17",
-            "lesson_S2.18",
-            "lesson_S2.19",
-            "lesson_S2.20"
-          ]
+          "lessons": ["S2.1", "S2.2", "S2.3", "S2.4", "S2.5", "S2.6", "S2.7", "S2.8", "S2.9", "S2.10", "S2.11", "S2.12", "S2.13", "S2.14", "S2.15", "S2.16", "S2.17", "S2.18", "S2.19", "S2.20"]
         },
         {
           "title": "Lesson S3     Speed tests",
-          "lessons": [
-            "lesson_S3.1",
-            "lesson_S3.2",
-            "lesson_S3.3",
-            "lesson_S3.4",
-            "lesson_S3.5"
-          ]
+          "lessons": ["S3.1", "S3.2", "S3.3", "S3.4", "S3.5"]
         },
         {
           "title": "Lesson S4     Speed tests",
-          "lessons": [
-            "lesson_S4.1",
-            "lesson_S4.2",
-            "lesson_S4.3",
-            "lesson_S4.4",
-            "lesson_S4.5",
-            "lesson_S4.6",
-            "lesson_S4.7",
-            "lesson_S4.8"
-          ]
+          "lessons": ["S4.1", "S4.2", "S4.3", "S4.4", "S4.5", "S4.6", "S4.7", "S4.8"]
+        },
+        {
+          "title": null
+        },
+        {
+          "title": "Finished      Leave this series",
+          "lessons": null
         }
       ]
     },
-    "lesson_S1.1": {
+
+    "_comment_3": "# END MENU DEFINITIONS SECTION",
+
+    "_comment_4": "# BEGIN LESSONS DATA SECTION",
+
+    "S1.1": {
       "title": "Lesson S1.1: Tutorial",
       "type": "Tutorial",
       "text": [
-        "                Speed Practice Series",
+        "                        Speed Practice Series",
         "",
         "The S series of lessons is designed to help you improve your typing speed",
         "and accuracy.  It is assumed that you have already learned how to touch",
@@ -106,11 +64,12 @@
         "down for unusual keys, like the dollar sign.)"
       ]
     },
-    "lesson_S1.2": {
+
+    "S1.2": {
       "title": "Lesson S1.2: Tutorial",
       "type": "Tutorial",
       "text": [
-        "                Rules of the Game",
+        "                        Rules of the Game",
         "",
         "I will display a paragraph on the screen.  You should then type the entire",
         "paragraph as quickly and as accurately as possible.   As you type each",
@@ -128,19 +87,22 @@
         "mistakes or only one or two, try the next one faster."
       ]
     },
-    "lesson_S1.3": {
+
+    "S1.3": {
       "title": "Lesson S1.3: Speed Test",
       "type": "Paragraph",
       "instructions": "First, a quick warm-up.",
       "text": "The quick brown fox jumped over the lazy dogs."
     },
-    "lesson_S1.4": {
+
+    "S1.4": {
       "title": "Lesson S1.4: Speed Test",
       "type": "Paragraph",
       "instructions": "Once more:",
       "text": "The quick brown fox jumped over the lazy dogs."
     },
-    "lesson_S1.5": {
+
+    "S1.5": {
       "title": "Lesson S1.5: Speed Test",
       "type": "Paragraph",
       "instructions": "Watch out for the blank lines.",
@@ -160,7 +122,8 @@
         "Mr. Smith"
       ]
     },
-    "lesson_S1.6": {
+
+    "S1.6": {
       "title": "Lesson S1.6: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -179,7 +142,8 @@
         "Mr. Smith"
       ]
     },
-    "lesson_S1.7": {
+
+    "S1.7": {
       "title": "Lesson S1.7: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -200,7 +164,8 @@
         "times."
       ]
     },
-    "lesson_S2.1": {
+
+    "S2.1": {
       "title": "Lesson S2.1: Tutorial",
       "type": "Tutorial",
       "text": [
@@ -208,19 +173,22 @@
         "famous) people."
       ]
     },
-    "lesson_S2.2": {
+
+    "S2.2": {
       "title": "Lesson S2.2: Speed Test",
       "type": "Paragraph",
       "instructions": "Marcus Aurelius",
       "text": "A man can live well even in a palace."
     },
-    "lesson_S2.3": {
+
+    "S2.3": {
       "title": "Lesson S2.3: Speed Test",
       "type": "Paragraph",
       "instructions": "Ralph Waldo Emerson",
       "text": "My chief want in life is someone who shall make me do what I can."
     },
-    "lesson_S2.4": {
+
+    "S2.4": {
       "title": "Lesson S2.4: Speed Test",
       "type": "Paragraph",
       "instructions": "Elizabeth Barrett Browning",
@@ -229,31 +197,36 @@
         "companionship of good books."
       ]
     },
-    "lesson_S2.5": {
+
+    "S2.5": {
       "title": "Lesson S2.5: Speed Test",
       "type": "Paragraph",
       "instructions": "Ralph Waldo Emerson",
       "text": "I like the silent church before the service begins better than any preaching."
     },
-    "lesson_S2.6": {
+
+    "S2.6": {
       "title": "Lesson S2.6: Speed Test",
       "type": "Paragraph",
       "instructions": "George Washington",
       "text": "True friendship is a plant of slow growth."
     },
-    "lesson_S2.7": {
+
+    "S2.7": {
       "title": "Lesson S2.7: Speed Test",
       "type": "Paragraph",
       "instructions": "Aristotle",
       "text": "There is a foolish corner in the brain of the wisest men."
     },
-    "lesson_S2.8": {
+
+    "S2.8": {
       "title": "Lesson S2.8: Speed Test",
       "type": "Paragraph",
       "instructions": "Goethe",
       "text": "Tell me what you are busy about, and I will tell you what you are."
     },
-    "lesson_S2.9": {
+
+    "S2.9": {
       "title": "Lesson S2.9: Speed Test",
       "type": "Paragraph",
       "instructions": "Gelett Burgess",
@@ -262,7 +235,8 @@
         "acquired a new one, check your pulse.  You may be dead."
       ]
     },
-    "lesson_S2.10": {
+
+    "S2.10": {
       "title": "Lesson S2.10: Speed Test",
       "type": "Paragraph",
       "instructions": "James B. Conant",
@@ -271,13 +245,15 @@
         "by a rich variety of individual differences."
       ]
     },
-    "lesson_S2.11": {
+
+    "S2.11": {
       "title": "Lesson S2.11: Speed Test",
       "type": "Paragraph",
       "instructions": "Albert Einstein",
       "text": "I never think of the future.  It comes soon enough."
     },
-    "lesson_S2.12": {
+
+    "S2.12": {
       "title": "Lesson S2.12: Speed Test",
       "type": "Paragraph",
       "instructions": "Harry S. Truman",
@@ -286,7 +262,8 @@
         "remarked for their vices than not be noticed at all."
       ]
     },
-    "lesson_S2.13": {
+
+    "S2.13": {
       "title": "Lesson S2.13: Speed Test",
       "type": "Paragraph",
       "instructions": "Will Rogers",
@@ -295,25 +272,29 @@
         "of funny things they can think of in one session of Congress."
       ]
     },
-    "lesson_S2.14": {
+
+    "S2.14": {
       "title": "Lesson S2.14: Speed Test",
       "type": "Paragraph",
       "instructions": "Ralph Waldo Emerson",
       "text": "Hospitality consists in a little fire, a little food and an immense quiet."
     },
-    "lesson_S2.15": {
+
+    "S2.15": {
       "title": "Lesson S2.15: Speed Test",
       "type": "Paragraph",
       "instructions": "H. L. Mencken",
       "text": "Puritanism is the haunting fear that someone, somewhere, may be happy."
     },
-    "lesson_S2.16": {
+
+    "S2.16": {
       "title": "Lesson S2.16: Speed Test",
       "type": "Paragraph",
       "instructions": "William James",
       "text": "When you have to make a choice and don't make it, that is in itself a choice."
     },
-    "lesson_S2.17": {
+
+    "S2.17": {
       "title": "Lesson S2.17: Speed Test",
       "type": "Paragraph",
       "instructions": "James Holt McGravran",
@@ -322,19 +303,22 @@
         "than electronic banking.  It is called marriage."
       ]
     },
-    "lesson_S2.18": {
+
+    "S2.18": {
       "title": "Lesson S2.18: Speed Test",
       "type": "Paragraph",
       "instructions": "Woody Allen",
       "text": "Showing up is 80 percent of life."
     },
-    "lesson_S2.19": {
+
+    "S2.19": {
       "title": "Lesson S2.19: Speed Test",
       "type": "Paragraph",
       "instructions": "Robert Frost",
       "text": "A poem begins in delight and ends in wisdom."
     },
-    "lesson_S2.20": {
+
+    "S2.20": {
       "title": "Lesson S2.20: Speed Test",
       "type": "Paragraph",
       "instructions": "Louis Pasteur",
@@ -343,7 +327,8 @@
         "for what he is, and respect for what he may become."
       ]
     },
-    "lesson_S3.1": {
+
+    "S3.1": {
       "title": "Lesson S3.1: Tutorial",
       "type": "Tutorial",
       "text": [
@@ -351,7 +336,8 @@
         "Take your time and type them carefully."
       ]
     },
-    "lesson_S3.2": {
+
+    "S3.2": {
       "title": "Lesson S3.2: Speed Test",
       "type": "Paragraph",
       "instructions": "A Christmas Carol, Stave One, Marley's Ghost",
@@ -374,7 +360,8 @@
         "ley's face."
       ]
     },
-    "lesson_S3.3": {
+
+    "S3.3": {
       "title": "Lesson S3.3: Speed Test",
       "type": "Paragraph",
       "instructions": "Gulliver's Travels, Chapter One, A Voyage to Lilliput",
@@ -396,7 +383,8 @@
         "conjectured) following the first."
       ]
     },
-    "lesson_S3.4": {
+
+    "S3.4": {
       "title": "Lesson S3.4: Speed Test",
       "type": "Paragraph",
       "instructions": "Treasure Island, Chapter IV, \"The Sea Chest\", by Stevenson.",
@@ -417,7 +405,8 @@
         "ticking of the clock, filled us with alarms."
       ]
     },
-    "lesson_S3.5": {
+
+    "S3.5": {
       "title": "Lesson S3.5: Speed Test",
       "type": "Paragraph",
       "instructions": "Treasure Island, Chapter IV, \"The Sea Chest\", by Stevenson.",
@@ -435,7 +424,8 @@
         "the frosty fog."
       ]
     },
-    "lesson_S4.1": {
+
+    "S4.1": {
       "title": "Lesson S4.1: Tutorial",
       "type": "Tutorial",
       "text": [
@@ -444,7 +434,8 @@
         "carefully."
       ]
     },
-    "lesson_S4.2": {
+
+    "S4.2": {
       "title": "Lesson S4.2: Speed Test",
       "type": "Paragraph",
       "instructions": "Romeo and Juliet, Act II, Scene II (Capulet's Garden).",
@@ -464,7 +455,8 @@
         "I am too bold, 'tis not to me she speaks:"
       ]
     },
-    "lesson_S4.3": {
+
+    "S4.3": {
       "title": "Lesson S4.3: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -481,7 +473,8 @@
         "That I might touch that cheek!"
       ]
     },
-    "lesson_S4.4": {
+
+    "S4.4": {
       "title": "Lesson S4.4: Speed Test",
       "type": "Paragraph",
       "instructions": "Julius Caesar, Act III, Scene II (The Forum).",
@@ -503,7 +496,8 @@
         "And Brutus is an honourable man."
       ]
     },
-    "lesson_S4.5": {
+
+    "S4.5": {
       "title": "Lesson S4.5: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -521,7 +515,8 @@
         "And, sure, he is an honourable man."
       ]
     },
-    "lesson_S4.6": {
+
+    "S4.6": {
       "title": "Lesson S4.6: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -535,7 +530,8 @@
         "And I must pause till it come back to me."
       ]
     },
-    "lesson_S4.7": {
+
+    "S4.7": {
       "title": "Lesson S4.7: Speed Test",
       "type": "Paragraph",
       "instructions": "The Merchant of Venice, Act IV, Scene I (A Court of Justice).",
@@ -551,7 +547,8 @@
         "Wherein doth sit the dread and fear of kings;"
       ]
     },
-    "lesson_S4.8": {
+
+    "S4.8": {
       "title": "Lesson S4.8: Speed Test",
       "type": "Paragraph",
       "text": [
@@ -569,6 +566,8 @@
         "Which if thou follow, this strict court of Venice",
         "Must needs give sentence 'gainst the merchant there."
       ]
-    }
+    },
+
+    "_comment_5": "# END LESSONS DATA SECTION"
   }
 }

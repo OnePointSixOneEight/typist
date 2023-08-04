@@ -7,7 +7,8 @@ import zipfile
 import StringIO
 
 class options:
-  tabstop = 8  # untab to 8-space tabs
+  tabstop = 8     # untab to 8-space tabs
+  condense = True # somewhat reduce the size of the generated JSON
 
 MENU_ITEM_TITLES = {
   'Lesson Q1':  r'Lesson Q1     a s d f j k l ; e i',
@@ -50,40 +51,39 @@ MENU_ITEM_TITLES = {
   'Lesson V3':  r'Lesson V3     T Y G H',
   'Lesson V4':  r'Lesson V4     S L W O',
   'Lesson V5':  r'Lesson V5     A ; Q P',
-  'Lesson V6':  r'Lesson V6     Shift Keys for Capitalization',
-  'Lesson V7':  r'Lesson V7     Shift Lock and :',
-  'Lesson V8':  r'Lesson V8     Introducing the Period',
+  'Lesson V6':  r'Lesson V6     Shift keys for capitalization',
+  'Lesson V7':  r'Lesson V7     Shift lock and :',
+  'Lesson V8':  r'Lesson V8     Introducing the period',
   'Lesson V9':  r'Lesson V9     V and M',
   'Lesson V10': r'Lesson V10    B and N',
-  'Lesson V11': r'Lesson V11    C and Comma',
+  'Lesson V11': r'Lesson V11    C and comma',
   'Lesson V12': r'Lesson V12    X and .',
   'Lesson V13': r'Lesson V13    Z and /',
-  'Lesson V14': r'Lesson V14    The Question Mark',
+  'Lesson V14': r'Lesson V14    The question mark',
   'Lesson V15': r'Lesson V15    1, 4, 5, 6, 7',
   'Lesson V16': r'Lesson V16    3 and 8',
   'Lesson V17': r'Lesson V17    2 and 9',
-  'Lesson V18': r'Lesson V18    0 and the Hyphen',
+  'Lesson V18': r'Lesson V18    0 and the hyphen',
   'Lesson V19': r'Lesson V19    Practise',
   'Lesson U1':  r'Lesson U1     Home row',
   'Lesson U2':  r'Lesson U2     Other letters',
   'Lesson U3':  r'Lesson U3     Shift numerals figs',
   'Lesson U4':  r'Lesson U4     Practise',
-  'Lesson U5':  r'Lesson U5     Drill on S Combinations',
-  'Lesson U6':  r'Lesson U6     Drill on R Combinations',
-  'Lesson U7':  r'Lesson U7     Drill on L Combinations',
-  'Lesson U8':  r'Lesson U8     Drill on D-T Combinations',
-  'Lesson U9':  r'Lesson U9     Drill on M-N Combinations',
-  'Lesson U10': r'Lesson U10    Drill on com-con Combinations',
-  'Lesson U11': r'Lesson U11    Drill on sion-tion Combinations',
+  'Lesson U5':  r'Lesson U5     Drill on S combinations',
+  'Lesson U6':  r'Lesson U6     Drill on R combinations',
+  'Lesson U7':  r'Lesson U7     Drill on L combinations',
+  'Lesson U8':  r'Lesson U8     Drill on D-T combinations',
+  'Lesson U9':  r'Lesson U9     Drill on M-N combinations',
+  'Lesson U10': r'Lesson U10    Drill on com-con combinations',
+  'Lesson U11': r'Lesson U11    Drill on sion-tion combinations',
   'Lesson U12': r'Lesson U12    Drill on ter, ther, tor, ture, ster, der',
-  'Lesson U13': r'Lesson U13    Drill on qu, ch, wh, dw, sw, tw, de, des, dis, ex,',
-  'Lesson U13': r'Lesson U13    self, tran, cial, cious, ology, ship, tive',
+  'Lesson U13': r'Lesson U13    Drill on qu, ch, wh, dw, sw, tw, de, ...',
   'Lesson D1':  r'Lesson D1     The home row',
-  'Lesson D2':  r'Lesson D2     Learning the Shift Key',
-  'Lesson D3':  r'Lesson D3     Home Row and the Period',
-  'Lesson D4':  r'Lesson D4     Upper Row and Essential Punctuation',
+  'Lesson D2':  r'Lesson D2     Learning the shift key',
+  'Lesson D3':  r'Lesson D3     Home row and the period',
+  'Lesson D4':  r'Lesson D4     Upper row and essential punctuation',
   'Lesson D5':  r'Lesson D5     Review',
-  'Lesson D6':  r'Lesson D6     Learning the Lower Row',
+  'Lesson D6':  r'Lesson D6     Learning the lower row',
   'Lesson D7':  r'Lesson D7     Practise',
   'Lesson D8':  r'Lesson D8     Practise',
   'Lesson D9':  r'Lesson D9     Practise',
@@ -94,21 +94,21 @@ MENU_ITEM_TITLES = {
   'Lesson D14': r'Lesson D14    Alphabetic sentences',
   'Lesson C1':  r'Lesson C1     S, T, N and E',
   'Lesson C2':  r'Lesson C2     R and I',
-  'Lesson C3':  r'Lesson C2     A and O',
-  'Lesson C4':  r'Lesson C2     D and H',
-  'Lesson C5':  r'Lesson C2     HOME row exercises',
-  'Lesson C6':  r'Lesson C2     P and L',
-  'Lesson C7':  r'Lesson C2     F and U',
-  'Lesson C8':  r'Lesson C2     W and Y',
-  'Lesson C9':  r'Lesson C2     G and J',
-  'Lesson C10': r'Lesson C2     M and V',
-  'Lesson C11': r'Lesson C2     B and K',
-  'Lesson C12': r'Lesson C2     Q and C',
-  'Lesson C13': r'Lesson C2     Z and X',
-  'Lesson C14': r'Lesson C2     Learning the SHIFT key',
-  'Lesson C15': r'Lesson C2     Learning punctuation',
-  'Lesson C16': r'Lesson C2     Frequent words',
-  'Lesson C17': r'Lesson C2     Alphabetic sentences',
+  'Lesson C3':  r'Lesson C3     A and O',
+  'Lesson C4':  r'Lesson C4     D and H',
+  'Lesson C5':  r'Lesson C5     Home row exercises',
+  'Lesson C6':  r'Lesson C6     P and L',
+  'Lesson C7':  r'Lesson C7     F and U',
+  'Lesson C8':  r'Lesson C8     W and Y',
+  'Lesson C9':  r'Lesson C9     G and J',
+  'Lesson C10': r'Lesson C10    M and V',
+  'Lesson C11': r'Lesson C11    B and K',
+  'Lesson C12': r'Lesson C12    Q and C',
+  'Lesson C13': r'Lesson C13    Z and X',
+  'Lesson C14': r'Lesson C14    Learning the shift key',
+  'Lesson C15': r'Lesson C15    Learning punctuation',
+  'Lesson C16': r'Lesson C16    Frequent words',
+  'Lesson C17': r'Lesson C17    Alphabetic sentences',
   'Lesson M1':  r'Lesson M1     Practise',
   'Lesson M2':  r'Lesson M2     Practise',
   'Lesson M3':  r'Lesson M3     Practise',
@@ -130,212 +130,211 @@ MENU_ITEM_TITLES = {
   'Lesson N4':  r'Lesson N4     Other numeric keypad keys',
 }
 
-class json:
-  def __init__ (self):
-    self.__buf = []
-    self.__indent = 0
+def json_escape (string):
+  untabbed = string.expandtabs (options.tabstop)
+  return untabbed.replace('"', '\\"')
 
-  def esc (s):
-    def untab (s):
-      r = ''
-      for c in s:
-        if c == '\t':
-          if len (r) % options.tabstop == 0: r += ' '
-          while (len (r) % options.tabstop): r += ' '
-        else:
-          r += c
-      return r
-    return (untab (s).replace('\\', '\\\\')
-            .replace('"', '\\"').replace('\t', '\\t'))
-  esc = staticmethod (esc)
+def parse_properties (stream):
+  definition, continues, properties = None, False, []
 
-  def iter (l):
-    return [(l[i], i < len (l) - 1) for i in xrange (0, len (l))]
-  iter = staticmethod (iter)
-
-  def add (self, s, indent=0, more=False):
-    if indent < 0:
-      self.__indent += indent
-    e = '  ' * self.__indent + s
-    if more:
-      e += ','
-    self.__buf += [e]
-    if indent > 0:
-      self.__indent += indent
-
-  def get (self):
-    return '\n'.join (self.__buf) + '\n'
-
-def copyright (j):
-  copyright = [
-    'Typist 3.0 - improved typing tutor program for UNIX systems',
-    'Copyright (C) 1998-2018  Simon Baldwin (simon_baldwin@yahoo.com)',
-    '',
-    'This program is free software; you can redistribute it and/or',
-    'modify it under the terms of the GNU General Public License',
-    'as published by the Free Software Foundation; either version 2',
-    'of the License, or (at your option) any later version.',
-    '',
-    'This program is distributed in the hope that it will be useful,',
-    'but WITHOUT ANY WARRANTY; without even the implied warranty of',
-    'MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the',
-    'GNU General Public License for more details.',
-    '',
-    'You should have received a copy of the GNU General Public License',
-    'along with this program; if not, write to the Free Software',
-    'Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.'
-  ]
-  j.add ('"copyright": [', 1)
-  for l, m in j.iter (copyright):
-    j.add ('"%s"' % j.esc (l), more=m)
-  j.add ('],', -1)
-
-def extract_properties (stream):
-  property, properties = None, []
-  lines = [line[:-1].strip () for line in stream]
-  line_number, continues = 0, False
-  for line in lines:
-    line_number += 1
+  for line in stream:
+    line = line.strip ()
     if not line or (line[0] == '#' and not continues):
       continue
-    if not property:
+
+    if line.startswith ('\\ ') or line.startswith ('\\\t'):
+      line = line.lstrip ('\\')
+
+    if definition:
+      definition += line.rstrip ('\\')
+    else:
       if '=' in line:
-        property = line.rstrip ('\\')
+        definition = line.rstrip ('\\')
       else:
-        assert False, 'Line %d: non-definition data' % line_number
-    else:
-      property += line.rstrip ('\\')
-    if not line.endswith ('\\'):
-      name, value = property.split ('=', 1)
-      # Handle lines that begin with \+whitespace>.
-      value = value.replace ('\\ ', '').replace ('\\\t', '')
-      properties += [[name, value]]
-      property = None
-      continues = False
-    else:
+        assert False, '%s: not a definition: ' % line
+
+    if line.endswith ('\\'):
       continues = True
+    else:
+      name, value = definition.split ('=', 1)
+      properties.append ([name, value])
+      definition, continues = None, False
 
   return properties
 
-def extract_elements (properties):
+def filter_properties (properties):
   valid = ['title', 'type', 'instructions', 'text']
 
-  stats = {}
+  counters, context = {}, {}
   lesson_index, series_id, description = None, None, None
-  elements = {}
   for name, value in properties:
     if name == 'series_id':
-      series_id = value
-      continue
-    if name == 'description':
-      description = value
-      continue
-    if name == 'lesson_index':
-      lesson_index = value.split ()
-      continue
+      context['series_id'] = value
 
-    # Property names look like "Lesson_N4.2.type". Make use of this.
-    lesson, attr = name.rsplit ('.', 1)
-    assert attr in valid, '%s: invalid attribute' % attr
+    elif name == 'description':
+      context['description'] = value
 
-    # Nest elements as needed for numbers extracted above.
-    if lesson not in elements:
-      elements[lesson] = {}
-    if attr == 'type':
-      value = value[0].upper () + value[1:].lower ()
-      stats[value] = stats.get (value, 0) + 1
-    elements[lesson][attr] = value
+    elif name == 'lesson_index':
+      context['lesson_index'] = value.split ()
 
-  assert lesson_index and series_id and description and elements
-  sys.stdout.write ('%s ("%s"): %r\n' % (series_id, description, stats))
+    else:
+      # Property names look like "Lesson_N4.2.type". Make use of this.
+      lesson, attribute = name.rsplit ('.', 1)
+      assert attribute in valid, '%s: invalid attribute' % attribute
 
-  meta = {'lesson_index': lesson_index,
-          'series_id': series_id, 'description': description}
-  return (meta, elements)
+      if attribute == 'type':
+        value = value[0].upper () + value[1:].lower ()
+        counters[value] = counters.get (value, 0) + 1
 
-def format_menu (meta, j):
+      context[lesson] = context.get (lesson, {})
+      context[lesson][attribute] = value
+
+  assert 'series_id' in context, 'Missing "series_id" property'
+  assert 'description' in context, 'Missing "description" property'
+  assert 'lesson_index' in context, 'Missing "lesson_index" property'
+
+  sys.stdout.write ('%s ("%s"): %r\n'
+                    % (context['series_id'], context['description'], counters))
+
+  return context
+
+def format_menu (context):
   groups = []
-  for lesson in meta['lesson_index']:
+  for lesson in context['lesson_index']:
     # Indexed lessons look like "Lesson_N4.2"; we want "Lesson_N4".
     group = lesson.split ('.')[0]
     if group not in groups:
       groups += [group]
 
-  title = 'The %s series contains the following ' % meta['series_id']
+  title = 'This series contains the following '
   if len (groups) == 1:
-    title += '1 lesson'
+    title += 'lesson'
   else:
-    title += '%d lessons' % len (groups)
+    title += 'lessons'
 
-  j.add ('"seriesMenu": {', 1)
-  j.add ('"title": "%s",' % title)
-  j.add ('"entries": [', 1)
+  lines = [
+    '    "seriesMenu": {',
+    '      "title": "%s",' % title,
+    '      "entries": ['
+    ]
 
-  for group, m1 in j.iter (groups):
+  for group in groups:
+    lines.append ('        {')
     item = group[0].upper () + group[1:].replace ('_', ' ')
-    item = j.esc (MENU_ITEM_TITLES.get (item, item))
-    j.add ('{', 1)
-    j.add ('"title": "%s",' % item)
-    j.add ('"lessons": [', 1)
+    title = json_escape (MENU_ITEM_TITLES.get (item, item))
+    lines.append ('          "title": "%s",' % title)
 
-    members = [l for l in meta['lesson_index'] if l.startswith (group + '.')]
-    for lesson, m2 in j.iter (members):
-      j.add ('"%s"' % lesson, more=m2)
-    j.add (']', -1)
-    j.add ('}', -1, more=m1)
+    members = [lesson for lesson in context['lesson_index']
+               if lesson.startswith (group + '.')]
+    if options.condense:
+      lines.append ('          "lessons": ["%s"]' % '", "'.join (members))
+    else:
+      lines.append ('          "lessons": [')
+      for member in members[:-1]:
+        lines.append ('            "%s",' % member)
+      lines.append ('            "%s"' % members[-1])
+      lines.append ('          ]')
+    lines.append ('        },')
 
-  j.add (']', -1)
-  j.add ('},', -1)
+  lines += [
+    '        {',
+    '          "title": null',
+    '        },',
+    '        {',
+    '          "title": "Finished      Leave this series",',
+    '          "lessons": null',
+    '        }',
+    '      ]',
+    '    },',
+    ''
+    ]
 
-def format_elements (meta, elements):
+  return lines
+
+def format_lessons (context):
   valid = ['title', 'type', 'instructions', 'text']
+  lines = []
 
-  j = json ()
-  j.add ('{', 1)
-  copyright (j)
+  for lesson in context['lesson_index']:
+    element = context[lesson]
+    assert 'text' in element, '%r: missing "text"' % element
 
-  j.add ('"typist": {', 1)
-  j.add ('"version": 2,')
-  j.add ('"locale": "en_US.UTF-8",')
-  j.add ('"seriesName": "%s",' % meta['series_id'])
-  j.add ('"seriesDescription": "%s",' % meta['description'])
-
-  format_menu (meta, j)
-
-  for lesson, m1 in j.iter (meta['lesson_index']):
-    element = elements[lesson]
-    assert 'text' in element, 'Missing "text": %r' % element
-    j.add ('"%s": {' % lesson, 1)
+    lines.append ('    "%s": {' % lesson)
 
     # Order attributes explicitly.
-    attrs = [a for a in valid if a in element.keys ()]
-    for attribute, m2 in j.iter (attrs):
+    attributes = [attribute for attribute in valid
+                  if attribute in element.keys ()]
+    for attribute in attributes:
       value = element[attribute]
       # Split on '\\n', as value contains the literal '\n' for newline
-      payload = [j.esc (v) for v in (value.split (r'\n'))]
+      payload = [json_escape (line) for line in (value.split (r'\n'))]
       if payload[-1] == '':
         payload = payload[:-1]
-      assert payload, 'Empty payload: %r' % element
+      assert payload, '%r: empty payload' % element
 
       if len (payload) == 1:
-        j.add ('"%s": "%s"' % (attribute, payload[0]), more=m2)
+        if attribute == attributes[-1]:
+          lines.append ('      "%s": "%s"' % (attribute, payload[0]))
+        else:
+          lines.append ('      "%s": "%s",' % (attribute, payload[0]))
       else:
-        j.add ('"%s": [' % attribute, 1)
-        for value, m3 in j.iter (payload):
-          j.add ('"%s"' % value, more=m3)
-        j.add (']', -1, more=m2)
-    j.add ('}', -1, more=m1)
+        lines.append ('      "%s": [' % attribute)
+        for value in payload[:-1]:
+          lines.append ('        "%s",' % value)
+        lines.append ('        "%s"' % payload[-1])
+        if attribute == attributes[-1]:
+          lines.append ('      ]')
+        else:
+          lines.append ('      ],')
 
-  j.add ('}', -1)
-  j.add ('}', -1)
+    lines.append ('    },')
+    lines.append ('')
 
-  return j.get ()
+  return lines
+
+def format_json (context):
+  lines = [
+    '{',
+    '  "_comment_1": [',
+    '    "# Typist 3.0 - improved typing tutor program for UNIX systems",',
+    '    "# Copyright (C) 1998-2018  Simon Baldwin (simon_baldwin@yahoo.com)"',
+    '  ],',
+    '  "typist": {',
+    '    "version": 2,',
+    '    "locale": "en_US.UTF-8",',
+    '',
+    '    "seriesName": "Lesson series %s",' % context['series_id'],
+    '    "seriesDescription": "%s",' % context['description'],
+    '']
+
+  lines += [
+    '    "_comment_2": "# BEGIN MENU DEFINITIONS SECTION",',
+    '']
+  lines += format_menu (context)
+  lines += [
+    '    "_comment_3": "# END MENU DEFINITIONS SECTION",',
+    '',
+    '    "_comment_4": "# BEGIN LESSONS DATA SECTION",',
+    '']
+  lines += format_lessons (context)
+  lines += [
+    '    "_comment_5": "# END LESSONS DATA SECTION"'
+    ]
+
+  lines += [
+    '  }',
+    '}']
+  return lines
 
 def convert (stream):
-  properties = extract_properties (stream)
-  meta, elements = extract_elements (properties)
-  conversion = format_elements (meta, elements)
-  return conversion
+  context = filter_properties (parse_properties (stream))
+  conversion = format_json (context)
+  joined = '\n'.join (conversion) + '\n'
+
+  if options.condense:
+    return joined.replace ('lesson_', '')
+  else:
+    return joined
 
 def main (argv):
   if len (argv) != 2:

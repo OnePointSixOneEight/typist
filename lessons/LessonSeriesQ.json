@@ -1,118 +1,59 @@
 {
-  "copyright": [
-    "Typist 3.0 - improved typing tutor program for UNIX systems",
-    "Copyright (C) 1998-2018  Simon Baldwin (simon_baldwin@yahoo.com)",
-    "",
-    "This program is free software; you can redistribute it and/or",
-    "modify it under the terms of the GNU General Public License",
-    "as published by the Free Software Foundation; either version 2",
-    "of the License, or (at your option) any later version.",
-    "",
-    "This program is distributed in the hope that it will be useful,",
-    "but WITHOUT ANY WARRANTY; without even the implied warranty of",
-    "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the",
-    "GNU General Public License for more details.",
-    "",
-    "You should have received a copy of the GNU General Public License",
-    "along with this program; if not, write to the Free Software",
-    "Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA."
+  "_comment_1": [
+    "# Typist 3.0 - improved typing tutor program for UNIX systems",
+    "# Copyright (C) 1998-2018  Simon Baldwin (simon_baldwin@yahoo.com)"
   ],
   "typist": {
     "version": 2,
     "locale": "en_US.UTF-8",
-    "seriesName": "Q",
+
+    "seriesName": "Lesson series Q",
     "seriesDescription": "Quick QWERTY course (Q1 - Q5)",
+
+    "_comment_2": "# BEGIN MENU DEFINITIONS SECTION",
+
     "seriesMenu": {
-      "title": "The Q series contains the following 5 lessons",
+      "title": "This series contains the following lessons",
       "entries": [
         {
           "title": "Lesson Q1     a s d f j k l ; e i",
-          "lessons": [
-            "lesson_Q1.1",
-            "lesson_Q1.2",
-            "lesson_Q1.3",
-            "lesson_Q1.4",
-            "lesson_Q1.5",
-            "lesson_Q1.6",
-            "lesson_Q1.7",
-            "lesson_Q1.8",
-            "lesson_Q1.9",
-            "lesson_Q1.10",
-            "lesson_Q1.11",
-            "lesson_Q1.12"
-          ]
+          "lessons": ["Q1.1", "Q1.2", "Q1.3", "Q1.4", "Q1.5", "Q1.6", "Q1.7", "Q1.8", "Q1.9", "Q1.10", "Q1.11", "Q1.12"]
         },
         {
           "title": "Lesson Q2     h g o u n . t",
-          "lessons": [
-            "lesson_Q2.1",
-            "lesson_Q2.2",
-            "lesson_Q2.3",
-            "lesson_Q2.4",
-            "lesson_Q2.5",
-            "lesson_Q2.6",
-            "lesson_Q2.7",
-            "lesson_Q2.8",
-            "lesson_Q2.9"
-          ]
+          "lessons": ["Q2.1", "Q2.2", "Q2.3", "Q2.4", "Q2.5", "Q2.6", "Q2.7", "Q2.8", "Q2.9"]
         },
         {
           "title": "Lesson Q3     y r c , ? : p",
-          "lessons": [
-            "lesson_Q3.1",
-            "lesson_Q3.2",
-            "lesson_Q3.3",
-            "lesson_Q3.4",
-            "lesson_Q3.5",
-            "lesson_Q3.6",
-            "lesson_Q3.7",
-            "lesson_Q3.8",
-            "lesson_Q3.9",
-            "lesson_Q3.10",
-            "lesson_Q3.11",
-            "lesson_Q3.12"
-          ]
+          "lessons": ["Q3.1", "Q3.2", "Q3.3", "Q3.4", "Q3.5", "Q3.6", "Q3.7", "Q3.8", "Q3.9", "Q3.10", "Q3.11", "Q3.12"]
         },
         {
           "title": "Lesson Q4     m w v z x b q",
-          "lessons": [
-            "lesson_Q4.1",
-            "lesson_Q4.2",
-            "lesson_Q4.3",
-            "lesson_Q4.4",
-            "lesson_Q4.5",
-            "lesson_Q4.6",
-            "lesson_Q4.7",
-            "lesson_Q4.8",
-            "lesson_Q4.9",
-            "lesson_Q4.10",
-            "lesson_Q4.11",
-            "lesson_Q4.12",
-            "lesson_Q4.13"
-          ]
+          "lessons": ["Q4.1", "Q4.2", "Q4.3", "Q4.4", "Q4.5", "Q4.6", "Q4.7", "Q4.8", "Q4.9", "Q4.10", "Q4.11", "Q4.12", "Q4.13"]
         },
         {
           "title": "Lesson Q5     ' -",
-          "lessons": [
-            "lesson_Q5.1",
-            "lesson_Q5.2",
-            "lesson_Q5.3",
-            "lesson_Q5.4",
-            "lesson_Q5.5",
-            "lesson_Q5.6",
-            "lesson_Q5.7",
-            "lesson_Q5.8",
-            "lesson_Q5.9",
-            "lesson_Q5.10"
-          ]
+          "lessons": ["Q5.1", "Q5.2", "Q5.3", "Q5.4", "Q5.5", "Q5.6", "Q5.7", "Q5.8", "Q5.9", "Q5.10"]
+        },
+        {
+          "title": null
+        },
+        {
+          "title": "Finished      Leave this series",
+          "lessons": null
         }
       ]
     },
-    "lesson_Q1.1": {
+
+    "_comment_3": "# END MENU DEFINITIONS SECTION",
+
+    "_comment_4": "# BEGIN LESSONS DATA SECTION",
+
+    "Q1.1": {
       "title": "Lesson Q1.1: Tutorial",
       "type": "Tutorial",
       "text": [
-        "                Welcome to Lesson Q1",
+        "                        Welcome to Lesson Q1",
         "",
         "In the Q series of lessons, we will be learning to touch-type on the standard",
         "keyboard.  I will introduce you to each letter on the keyboard, one at a time.",
@@ -133,11 +74,12 @@
         "fairly quickly.  Or, you may want to go directly to the S series."
       ]
     },
-    "lesson_Q1.2": {
+
+    "Q1.2": {
       "title": "Lesson Q1.2: Tutorial",
       "type": "Tutorial",
       "text": [
-        "                The Home Keys",
+        "                        The Home Keys",
         "",
         "In order to hit the correct keys by touch alone, you must always know where your",
         "fingers are.  The way to do this is to have a special place for each finger.",
@@ -159,11 +101,12 @@
         "make sure they are in the HOME position.  Then don't look at them again."
       ]
     },
-    "lesson_Q1.3": {
+
+    "Q1.3": {
       "title": "Lesson Q1.3: Tutorial",
       "type": "Tutorial",
       "text": [
-        "                Drill Patterns",
+        "                        Drill Patterns",
         "",
         "For the rest of this lesson, I will display some text in an exercise, usually",
         "with some brief instructions above it.",
@@ -183,19 +126,22 @@
         "ideally none at all.  Don't forget to use your right thumb for the SPACE bar."
       ]
     },
-    "lesson_Q1.4": {
+
+    "Q1.4": {
       "title": "Lesson Q1.4: Drill",
       "type": "Drill",
       "instructions": "(1) Try this:",
       "text": "asdf ;lkj asdf ;lkj asdf ;lkj asdf ;lkj asdf ;lkj asdf ;lkj"
     },
-    "lesson_Q1.5": {
+
+    "Q1.5": {
       "title": "Lesson Q1.5: Drill",
       "type": "Drill",
       "instructions": "Now this:",
       "text": "asdef ;lkij asdef ;lkij asdef ;lkij asdef ;lkij asdef ;lkij"
     },
-    "lesson_Q1.6": {
+
+    "Q1.6": {
       "title": "Lesson Q1.6: Drill",
       "type": "Drill",
       "instructions": "(2) Some more:",
@@ -205,13 +151,15 @@
         "ki ai li si di ji fi ia il is ik id ij if dd ee ss ff ll ei"
       ]
     },
-    "lesson_Q1.7": {
+
+    "Q1.7": {
       "title": "Lesson Q1.7: Drill",
       "type": "Drill",
       "instructions": "(3) Hang in there; let's do some sentences...",
       "text": "Dad adds a salad  A lad asks  Salad falls as a lad asks Dad"
     },
-    "lesson_Q1.8": {
+
+    "Q1.8": {
       "title": "Lesson Q1.8: Drill",
       "type": "Drill",
       "instructions": "(4)",
@@ -220,7 +168,8 @@
         "Lease a lake  Add lake sales  Add deeds  Flee false deals"
       ]
     },
-    "lesson_Q1.9": {
+
+    "Q1.9": {
       "title": "Lesson Q1.9: Drill",
       "type": "Drill",
       "instructions": "(5)",
@@ -230,7 +179,8 @@
         "A deaf lad sells a false jade  Dad sells a deaf lad a sled"
       ]
     },
-    "lesson_Q1.10": {
+
+    "Q1.10": {
       "title": "Lesson Q1.10: Drill",
       "type": "Drill",
       "instructions": "(6)",
@@ -242,7 +192,8 @@
         "Dad slides all lilies aside  Dad is jaded"
       ]
     },
-    "lesson_Q1.11": {
+
+    "Q1.11": {
       "title": "Lesson Q1.11: Drill",
       "type": "Drill",
       "instructions": "(7)",
@@ -254,17 +205,19 @@
         "Faded sails fill  Idle isles slide aside as Sis sails"
       ]
     },
-    "lesson_Q1.12": {
+
+    "Q1.12": {
       "title": "Lesson Q1.12: Drill",
       "type": "Drill",
       "instructions": "(8)",
       "text": "Sid adds all sail as Dad sees a safe sea as idle as a lake"
     },
-    "lesson_Q2.1": {
+
+    "Q2.1": {
       "title": "Lesson Q2.1: Tutorial",
       "type": "Tutorial",
       "text": [
-        "                  (h g o u n . t)",
+        "                          (h g o u n . t)",
         "",
         "In this lesson you learn six new letters (H, G, O, U, N, T) and the period. (.).",
         "Be sure that the F-finger does not linger on the G-key  or the J-finger on the",
@@ -273,7 +226,8 @@
         "Note that you always follow a period with two spaces."
       ]
     },
-    "lesson_Q2.2": {
+
+    "Q2.2": {
       "title": "Lesson Q2.2: Drill",
       "type": "Drill",
       "instructions": "(1) Rhythm Drill",
@@ -283,7 +237,8 @@
         "l.  a.  l.  s.  l.  d.  l.  e.  l.  n.  l.  t.  l.  o."
       ]
     },
-    "lesson_Q2.3": {
+
+    "Q2.3": {
       "title": "Lesson Q2.3: Drill",
       "type": "Drill",
       "instructions": "(2) Balanced Keyboard Drill",
@@ -293,7 +248,8 @@
         "da do de du di au st oi sh oi ts ht oe nk ou nd ue ns ui th"
       ]
     },
-    "lesson_Q2.4": {
+
+    "Q2.4": {
       "title": "Lesson Q2.4: Drill",
       "type": "Drill",
       "instructions": "(3) Continuous Copy",
@@ -303,7 +259,8 @@
         "His shed is ashes.  Ed hides his head.  He heeds Sis."
       ]
     },
-    "lesson_Q2.5": {
+
+    "Q2.5": {
       "title": "Lesson Q2.5: Drill",
       "type": "Drill",
       "instructions": "(4)",
@@ -313,7 +270,8 @@
         "aids Sis.  So I see a soda is added.  Sis does like a soda."
       ]
     },
-    "lesson_Q2.6": {
+
+    "Q2.6": {
       "title": "Lesson Q2.6: Drill",
       "type": "Drill",
       "instructions": "(5)",
@@ -323,7 +281,8 @@
         "used dead deeds as issues.  Sid said I used deeds due Ada."
       ]
     },
-    "lesson_Q2.7": {
+
+    "Q2.7": {
       "title": "Lesson Q2.7: Drill",
       "type": "Drill",
       "instructions": "(6)",
@@ -333,7 +292,8 @@
         "data.  Sis teases Ed at tea.  As Ed eats I state diet data."
       ]
     },
-    "lesson_Q2.8": {
+
+    "Q2.8": {
       "title": "Lesson Q2.8: Drill",
       "type": "Drill",
       "instructions": "(7)",
@@ -343,17 +303,19 @@
         "he sees Sis and Ed inside.  At nine he sees Sis and Ed dine."
       ]
     },
-    "lesson_Q2.9": {
+
+    "Q2.9": {
       "title": "Lesson Q2.9: Drill",
       "type": "Drill",
       "instructions": "(8) Rhythmic Review",
       "text": "He sees that in a test he has to state and use a sane idea."
     },
-    "lesson_Q3.1": {
+
+    "Q3.1": {
       "title": "Lesson Q3.1: Tutorial",
       "type": "Tutorial",
       "text": [
-        "                  (y r c , ? : p)",
+        "                          (y r c , ? : p)",
         "",
         "You first learned the letters that are most frequently used in the English",
         "language.  They are repeated over and over again.",
@@ -364,7 +326,8 @@
         "The colon (:) introduces a list and is followed by two spaces."
       ]
     },
-    "lesson_Q3.2": {
+
+    "Q3.2": {
       "title": "Lesson Q3.2: Drill",
       "type": "Drill",
       "instructions": "(1) Rhythm Drill",
@@ -373,7 +336,8 @@
         "fgjh ;p;? jujy dedc lol. kik, fgju ;:;: frfk jujy dedc kik,"
       ]
     },
-    "lesson_Q3.3": {
+
+    "Q3.3": {
       "title": "Lesson Q3.3: Drill",
       "type": "Drill",
       "instructions": "(2) Balanced Keyboard Drill",
@@ -386,7 +350,8 @@
         "k, i, d, e, f, r, k, u, f, t, k, y, d, c, k, n, k, h, l, o,"
       ]
     },
-    "lesson_Q3.4": {
+
+    "Q3.4": {
       "title": "Lesson Q3.4: Drill",
       "type": "Drill",
       "instructions": "(3) Continuous Copy",
@@ -395,7 +360,8 @@
         "costs too.  In each such case a chance cause can hit costs."
       ]
     },
-    "lesson_Q3.5": {
+
+    "Q3.5": {
       "title": "Lesson Q3.5: Drill",
       "type": "Drill",
       "instructions": "(4)",
@@ -404,7 +370,8 @@
         "gun.  He is going to hunt again.  As night ends he sets out."
       ]
     },
-    "lesson_Q3.6": {
+
+    "Q3.6": {
       "title": "Lesson Q3.6: Drill",
       "type": "Drill",
       "instructions": "(5)",
@@ -413,7 +380,8 @@
         "shop and the phone sounds.  Pat is to paint and pass up noise."
       ]
     },
-    "lesson_Q3.7": {
+
+    "Q3.7": {
       "title": "Lesson Q3.7: Drill",
       "type": "Drill",
       "instructions": "(6)",
@@ -422,7 +390,8 @@
         "her red dress to our door.  She is sure that it is too dear."
       ]
     },
-    "lesson_Q3.8": {
+
+    "Q3.8": {
       "title": "Lesson Q3.8: Drill",
       "type": "Drill",
       "instructions": "(7)",
@@ -431,7 +400,8 @@
         "is sold.  Late sales still total less than the one old deal."
       ]
     },
-    "lesson_Q3.9": {
+
+    "Q3.9": {
       "title": "Lesson Q3.9: Drill",
       "type": "Drill",
       "instructions": "(8)",
@@ -440,7 +410,8 @@
         "dandy day.  I need to study.  It is not easy on the eyes."
       ]
     },
-    "lesson_Q3.10": {
+
+    "Q3.10": {
       "title": "Lesson Q3.10: Drill",
       "type": "Drill",
       "instructions": "(9)",
@@ -449,7 +420,8 @@
         "on soft sod and fish.  It is fun to feel a fish dash out fast."
       ]
     },
-    "lesson_Q3.11": {
+
+    "Q3.11": {
       "title": "Lesson Q3.11: Drill",
       "type": "Drill",
       "instructions": "(9A)",
@@ -460,17 +432,19 @@
         "odds and ends:  used suits, sun hats, shoes, and side tent?"
       ]
     },
-    "lesson_Q3.12": {
+
+    "Q3.12": {
       "title": "Lesson Q3.12: Drill",
       "type": "Drill",
       "instructions": "(10) Rhythmic Review",
       "text": "Papa can not plan to get us all there in such a car as this."
     },
-    "lesson_Q4.1": {
+
+    "Q4.1": {
       "title": "Lesson Q4.1: Tutorial",
       "type": "Tutorial",
       "text": [
-        "                (m w v z x b q ' -)",
+        "                        (m w v z x b q ' -)",
         "",
         "Self control is important in learning to type.  Concentrate on using the",
         "correct finger for each key.  In this lesson you learn the seven remaining",
@@ -479,7 +453,8 @@
         "The semicolon (;), like the comma, is followed by one space in a sentence."
       ]
     },
-    "lesson_Q4.2": {
+
+    "Q4.2": {
       "title": "Lesson Q4.2: Drill",
       "type": "Drill",
       "instructions": "(1) Rhythm Drill",
@@ -488,7 +463,8 @@
         "aqsw az;p sxl. fvjm fvjn fbjn aqsw az;p sxl. fvjm fvjn fbjn"
       ]
     },
-    "lesson_Q4.3": {
+
+    "Q4.3": {
       "title": "Lesson Q4.3: Drill",
       "type": "Drill",
       "instructions": "(2) Balanced Keyboard Drill",
@@ -499,7 +475,8 @@
         "bi xt sm sk sw kn ms nk wh tw ks wn dv s; o; n; d; l; e; t;"
       ]
     },
-    "lesson_Q4.4": {
+
+    "Q4.4": {
       "title": "Lesson Q4.4: Drill",
       "type": "Drill",
       "instructions": "(3) Continuous Copy",
@@ -508,7 +485,8 @@
         "a show.  We wanted to see news and not the widow who was wed."
       ]
     },
-    "lesson_Q4.5": {
+
+    "Q4.5": {
       "title": "Lesson Q4.5: Drill",
       "type": "Drill",
       "instructions": "(4)",
@@ -517,7 +495,8 @@
         "joint use.  Jane just intends to use it in June on a jaunt."
       ]
     },
-    "lesson_Q4.6": {
+
+    "Q4.6": {
       "title": "Lesson Q4.6: Drill",
       "type": "Drill",
       "instructions": "(5)",
@@ -526,7 +505,8 @@
         "him and Miss Smith.  I must see them some time this month."
       ]
     },
-    "lesson_Q4.7": {
+
+    "Q4.7": {
       "title": "Lesson Q4.7: Drill",
       "type": "Drill",
       "instructions": "(6)",
@@ -535,7 +515,8 @@
         "to use a kodak to take along on these keen skates and skis."
       ]
     },
-    "lesson_Q4.8": {
+
+    "Q4.8": {
       "title": "Lesson Q4.8: Drill",
       "type": "Drill",
       "instructions": "(7)",
@@ -544,7 +525,8 @@
         "Nevada is so vivid that Eva votes to have this visit saved."
       ]
     },
-    "lesson_Q4.9": {
+
+    "Q4.9": {
       "title": "Lesson Q4.9: Drill",
       "type": "Drill",
       "instructions": "(8)",
@@ -553,7 +535,8 @@
         "quite the queen in this quiet set and sets us quaint quotas."
       ]
     },
-    "lesson_Q4.10": {
+
+    "Q4.10": {
       "title": "Lesson Q4.10: Drill",
       "type": "Drill",
       "instructions": "(9)",
@@ -562,7 +545,8 @@
         "and then a dozen seize Dan.  In a daze he sees the zoo seized."
       ]
     },
-    "lesson_Q4.11": {
+
+    "Q4.11": {
       "title": "Lesson Q4.11: Drill",
       "type": "Drill",
       "instructions": "(9A)",
@@ -571,7 +555,8 @@
         "is bound to be a bit behind but boats beat both dust and heat."
       ]
     },
-    "lesson_Q4.12": {
+
+    "Q4.12": {
       "title": "Lesson Q4.12: Drill",
       "type": "Drill",
       "instructions": "(9B)",
@@ -580,13 +565,15 @@
         "taxi stand next to the sixth exit.  Taxis exist to aid one."
       ]
     },
-    "lesson_Q4.13": {
+
+    "Q4.13": {
       "title": "Lesson Q4.13: Drill",
       "type": "Drill",
       "instructions": "(10) Rhythmic Review",
       "text": "Ask them to let us have the car if they both go to the show."
     },
-    "lesson_Q5.1": {
+
+    "Q5.1": {
       "title": "Lesson Q5.1: Tutorial",
       "type": "Tutorial",
       "text": [
@@ -594,7 +581,8 @@
         "the apostrophe (')."
       ]
     },
-    "lesson_Q5.2": {
+
+    "Q5.2": {
       "title": "Lesson Q5.2: Drill",
       "type": "Drill",
       "instructions": "(1) Rhythm Drill",
@@ -603,7 +591,8 @@
         "frfk fvfb jujy jmjn aqsw azsw azsx ;plo ;p;- kik, ;p;-"
       ]
     },
-    "lesson_Q5.3": {
+
+    "Q5.3": {
       "title": "Lesson Q5.3: Drill",
       "type": "Drill",
       "instructions": "(2) Balanced Keyboard Drill",
@@ -613,7 +602,8 @@
         "l-t o-d s-c p-t o-d n-y r-o g-d r-h d-g n't t's l's y's I'l"
       ]
     },
-    "lesson_Q5.4": {
+
+    "Q5.4": {
       "title": "Lesson Q5.4: Drill",
       "type": "Drill",
       "instructions": "(3) Continuous Copy -- Review",
@@ -622,7 +612,8 @@
         "Yet Ann says an easy song any day is a sign to guess again."
       ]
     },
-    "lesson_Q5.5": {
+
+    "Q5.5": {
       "title": "Lesson Q5.5: Drill",
       "type": "Drill",
       "instructions": "(4)",
@@ -631,7 +622,8 @@
         "Ann is keen to ask him to use his kodak at the same time."
       ]
     },
-    "lesson_Q5.6": {
+
+    "Q5.6": {
       "title": "Lesson Q5.6: Drill",
       "type": "Drill",
       "instructions": "(5)",
@@ -640,7 +632,8 @@
         "He sheds his suit and shoes on the sand and is out in haste."
       ]
     },
-    "lesson_Q5.7": {
+
+    "Q5.7": {
       "title": "Lesson Q5.7: Drill",
       "type": "Drill",
       "instructions": "(6)",
@@ -649,7 +642,8 @@
         "on this idea with zest.  She has set seven visits as a quota."
       ]
     },
-    "lesson_Q5.8": {
+
+    "Q5.8": {
       "title": "Lesson Q5.8: Drill",
       "type": "Drill",
       "instructions": "(7)",
@@ -658,7 +652,8 @@
         "Christmas.  An Iowa aunt asks Ann to take in that state, too."
       ]
     },
-    "lesson_Q5.9": {
+
+    "Q5.9": {
       "title": "Lesson Q5.9: Drill",
       "type": "Drill",
       "instructions": "(8)",
@@ -667,11 +662,14 @@
         "in just the mood to end her quota of visits in sixteen weeks."
       ]
     },
-    "lesson_Q5.10": {
+
+    "Q5.10": {
       "title": "Lesson Q5.10: Drill",
       "type": "Drill",
       "instructions": "(9) Rhythmic Review",
       "text": "Two of the boys are to do it today and two of them next week."
-    }
+    },
+
+    "_comment_5": "# END LESSONS DATA SECTION"
   }
 }

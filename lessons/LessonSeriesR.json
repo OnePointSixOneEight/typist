@@ -1,270 +1,118 @@
 {
-  "copyright": [
-    "Typist 3.0 - improved typing tutor program for UNIX systems",
-    "Copyright (C) 1998-2018  Simon Baldwin (simon_baldwin@yahoo.com)",
-    "",
-    "This program is free software; you can redistribute it and/or",
-    "modify it under the terms of the GNU General Public License",
-    "as published by the Free Software Foundation; either version 2",
-    "of the License, or (at your option) any later version.",
-    "",
-    "This program is distributed in the hope that it will be useful,",
-    "but WITHOUT ANY WARRANTY; without even the implied warranty of",
-    "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the",
-    "GNU General Public License for more details.",
-    "",
-    "You should have received a copy of the GNU General Public License",
-    "along with this program; if not, write to the Free Software",
-    "Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA."
+  "_comment_1": [
+    "# Typist 3.0 - improved typing tutor program for UNIX systems",
+    "# Copyright (C) 1998-2018  Simon Baldwin (simon_baldwin@yahoo.com)"
   ],
   "typist": {
     "version": 2,
     "locale": "en_US.UTF-8",
-    "seriesName": "R",
+
+    "seriesName": "Lesson series R",
     "seriesDescription": "Long QWERTY course (R1 - R14)",
+
+    "_comment_2": "# BEGIN MENU DEFINITIONS SECTION",
+
     "seriesMenu": {
-      "title": "The R series contains the following 14 lessons",
+      "title": "This series contains the following lessons",
       "entries": [
         {
           "title": "Lesson R1     Practise",
-          "lessons": [
-            "lesson_R1.1",
-            "lesson_R1.2",
-            "lesson_R1.3",
-            "lesson_R1.4",
-            "lesson_R1.5",
-            "lesson_R1.6",
-            "lesson_R1.7",
-            "lesson_R1.8",
-            "lesson_R1.9",
-            "lesson_R1.10",
-            "lesson_R1.11",
-            "lesson_R1.12"
-          ]
+          "lessons": ["R1.1", "R1.2", "R1.3", "R1.4", "R1.5", "R1.6", "R1.7", "R1.8", "R1.9", "R1.10", "R1.11", "R1.12"]
         },
         {
           "title": "Lesson R2     Practise",
-          "lessons": [
-            "lesson_R2.1",
-            "lesson_R2.2",
-            "lesson_R2.3",
-            "lesson_R2.4",
-            "lesson_R2.5",
-            "lesson_R2.6",
-            "lesson_R2.7",
-            "lesson_R2.8",
-            "lesson_R2.9",
-            "lesson_R2.10"
-          ]
+          "lessons": ["R2.1", "R2.2", "R2.3", "R2.4", "R2.5", "R2.6", "R2.7", "R2.8", "R2.9", "R2.10"]
         },
         {
           "title": "Lesson R3     Practise",
-          "lessons": [
-            "lesson_R3.1",
-            "lesson_R3.2",
-            "lesson_R3.3",
-            "lesson_R3.4",
-            "lesson_R3.5",
-            "lesson_R3.6",
-            "lesson_R3.7",
-            "lesson_R3.8",
-            "lesson_R3.9",
-            "lesson_R3.10"
-          ]
+          "lessons": ["R3.1", "R3.2", "R3.3", "R3.4", "R3.5", "R3.6", "R3.7", "R3.8", "R3.9", "R3.10"]
         },
         {
           "title": "Lesson R4     Practise",
-          "lessons": [
-            "lesson_R4.1",
-            "lesson_R4.2",
-            "lesson_R4.3",
-            "lesson_R4.4",
-            "lesson_R4.5",
-            "lesson_R4.6",
-            "lesson_R4.7",
-            "lesson_R4.8",
-            "lesson_R4.9"
-          ]
+          "lessons": ["R4.1", "R4.2", "R4.3", "R4.4", "R4.5", "R4.6", "R4.7", "R4.8", "R4.9"]
         },
         {
           "title": "Lesson R5     Practise",
-          "lessons": [
-            "lesson_R5.1",
-            "lesson_R5.2",
-            "lesson_R5.3",
-            "lesson_R5.4",
-            "lesson_R5.5",
-            "lesson_R5.6",
-            "lesson_R5.7",
-            "lesson_R5.8",
-            "lesson_R5.9",
-            "lesson_R5.10"
-          ]
+          "lessons": ["R5.1", "R5.2", "R5.3", "R5.4", "R5.5", "R5.6", "R5.7", "R5.8", "R5.9", "R5.10"]
         },
         {
           "title": "Lesson R6     Practise",
-          "lessons": [
-            "lesson_R6.1",
-            "lesson_R6.2",
-            "lesson_R6.3",
-            "lesson_R6.4",
-            "lesson_R6.5",
-            "lesson_R6.6",
-            "lesson_R6.7",
-            "lesson_R6.8",
-            "lesson_R6.9",
-            "lesson_R6.10"
-          ]
+          "lessons": ["R6.1", "R6.2", "R6.3", "R6.4", "R6.5", "R6.6", "R6.7", "R6.8", "R6.9", "R6.10"]
         },
         {
           "title": "Lesson R7     Practise",
-          "lessons": [
-            "lesson_R7.1",
-            "lesson_R7.2",
-            "lesson_R7.3",
-            "lesson_R7.4",
-            "lesson_R7.5",
-            "lesson_R7.6",
-            "lesson_R7.7",
-            "lesson_R7.8",
-            "lesson_R7.9",
-            "lesson_R7.10"
-          ]
+          "lessons": ["R7.1", "R7.2", "R7.3", "R7.4", "R7.5", "R7.6", "R7.7", "R7.8", "R7.9", "R7.10"]
         },
         {
           "title": "Lesson R8     Practise",
-          "lessons": [
-            "lesson_R8.1",
-            "lesson_R8.2",
-            "lesson_R8.3",
-            "lesson_R8.4",
-            "lesson_R8.5",
-            "lesson_R8.6",
-            "lesson_R8.7",
-            "lesson_R8.8",
-            "lesson_R8.9",
-            "lesson_R8.10"
-          ]
+          "lessons": ["R8.1", "R8.2", "R8.3", "R8.4", "R8.5", "R8.6", "R8.7", "R8.8", "R8.9", "R8.10"]
         },
         {
           "title": "Lesson R9     Practise",
-          "lessons": [
-            "lesson_R9.1",
-            "lesson_R9.2",
-            "lesson_R9.3",
-            "lesson_R9.4",
-            "lesson_R9.5",
-            "lesson_R9.6",
-            "lesson_R9.7",
-            "lesson_R9.8",
-            "lesson_R9.9",
-            "lesson_R9.10",
-            "lesson_R9.11"
-          ]
+          "lessons": ["R9.1", "R9.2", "R9.3", "R9.4", "R9.5", "R9.6", "R9.7", "R9.8", "R9.9", "R9.10", "R9.11"]
         },
         {
           "title": "Lesson R10    Practise",
-          "lessons": [
-            "lesson_R10.1",
-            "lesson_R10.2",
-            "lesson_R10.3",
-            "lesson_R10.4",
-            "lesson_R10.5",
-            "lesson_R10.6",
-            "lesson_R10.7",
-            "lesson_R10.8",
-            "lesson_R10.9",
-            "lesson_R10.10",
-            "lesson_R10.11"
-          ]
+          "lessons": ["R10.1", "R10.2", "R10.3", "R10.4", "R10.5", "R10.6", "R10.7", "R10.8", "R10.9", "R10.10", "R10.11"]
         },
         {
           "title": "Lesson R11    Practise",
-          "lessons": [
-            "lesson_R11.1",
-            "lesson_R11.2",
-            "lesson_R11.3",
-            "lesson_R11.4",
-            "lesson_R11.5",
-            "lesson_R11.6",
-            "lesson_R11.7",
-            "lesson_R11.8",
-            "lesson_R11.9",
-            "lesson_R11.10"
-          ]
+          "lessons": ["R11.1", "R11.2", "R11.3", "R11.4", "R11.5", "R11.6", "R11.7", "R11.8", "R11.9", "R11.10"]
         },
         {
           "title": "Lesson R12    Practise",
-          "lessons": [
-            "lesson_R12.1",
-            "lesson_R12.2",
-            "lesson_R12.3",
-            "lesson_R12.4",
-            "lesson_R12.5",
-            "lesson_R12.6",
-            "lesson_R12.7",
-            "lesson_R12.8",
-            "lesson_R12.9",
-            "lesson_R12.10"
-          ]
+          "lessons": ["R12.1", "R12.2", "R12.3", "R12.4", "R12.5", "R12.6", "R12.7", "R12.8", "R12.9", "R12.10"]
         },
         {
           "title": "Lesson R13    Practise",
-          "lessons": [
-            "lesson_R13.1",
-            "lesson_R13.2",
-            "lesson_R13.3",
-            "lesson_R13.4",
-            "lesson_R13.5",
-            "lesson_R13.6",
-            "lesson_R13.7",
-            "lesson_R13.8",
-            "lesson_R13.9",
-            "lesson_R13.10"
-          ]
+          "lessons": ["R13.1", "R13.2", "R13.3", "R13.4", "R13.5", "R13.6", "R13.7", "R13.8", "R13.9", "R13.10"]
         },
         {
           "title": "Lesson R14    Practise",
-          "lessons": [
-            "lesson_R14.1",
-            "lesson_R14.2",
-            "lesson_R14.3",
-            "lesson_R14.4",
-            "lesson_R14.5",
-            "lesson_R14.6",
-            "lesson_R14.7",
-            "lesson_R14.8",
-            "lesson_R14.9",
-            "lesson_R14.10",
-            "lesson_R14.11"
-          ]
+          "lessons": ["R14.1", "R14.2", "R14.3", "R14.4", "R14.5", "R14.6", "R14.7", "R14.8", "R14.9", "R14.10", "R14.11"]
+        },
+        {
+          "title": null
+        },
+        {
+          "title": "Finished      Leave this series",
+          "lessons": null
         }
       ]
     },
-    "lesson_R1.1": {
+
+    "_comment_3": "# END MENU DEFINITIONS SECTION",
+
+    "_comment_4": "# BEGIN LESSONS DATA SECTION",
+
+    "R1.1": {
       "title": "Lesson R1.1: Tutorial",
       "type": "Tutorial",
       "text": "In the R series lessons we work on speed and accuracy."
     },
-    "lesson_R1.2": {
+
+    "R1.2": {
       "title": "Lesson R1.2: Drill",
       "type": "Drill",
       "instructions": "(1) Warming-Up Drill",
       "text": "Up to date I can not see that the thing is as good as this one."
     },
-    "lesson_R1.3": {
+
+    "R1.3": {
       "title": "Lesson R1.3: Drill",
       "type": "Drill",
       "instructions": "(2) Balanced Keyboard Drill",
       "text": "uch pos oug ept ing ope hic ati sch cou get ice con goo ght"
     },
-    "lesson_R1.4": {
+
+    "R1.4": {
       "title": "Lesson R1.4: Drill",
       "type": "Drill",
       "instructions": "(3) Continuous Copy",
       "text": "Nan is cute.  She can sing and dance.  She can tap a piano."
     },
-    "lesson_R1.5": {
+
+    "R1.5": {
       "title": "Lesson R1.5: Drill",
       "type": "Drill",
       "instructions": "(4)",
@@ -273,7 +121,8 @@
         "soon dashes into a dance.  Nan can dance.  The noise stops."
       ]
     },
-    "lesson_R1.6": {
+
+    "R1.6": {
       "title": "Lesson R1.6: Drill",
       "type": "Drill",
       "instructions": "(5)",
@@ -283,7 +132,8 @@
         "This chance scene passes too soon.  I hope it happens again."
       ]
     },
-    "lesson_R1.7": {
+
+    "R1.7": {
       "title": "Lesson R1.7: Drill",
       "type": "Drill",
       "instructions": "(6)",
@@ -294,7 +144,8 @@
         "As papa put it, such singing upsets him enough for one night."
       ]
     },
-    "lesson_R1.8": {
+
+    "R1.8": {
       "title": "Lesson R1.8: Drill",
       "type": "Drill",
       "instructions": "(7)",
@@ -306,11 +157,12 @@
         "enough cash is paid in so the cast need not stand the costs."
       ]
     },
-    "lesson_R1.9": {
+
+    "R1.9": {
       "title": "Lesson R1.9: Tutorial",
       "type": "Tutorial",
       "text": [
-        "                Speed Exercises",
+        "                        Speed Exercises",
         "",
         "From now on, I will be mixing speed exercises in with the lessons.",
         "",
@@ -324,24 +176,26 @@
         "errors as possible."
       ]
     },
-    "lesson_R1.10": {
+
+    "R1.10": {
       "title": "Lesson R1.10: Speed Test",
       "type": "Paragraph",
       "instructions": "(8) Pointed Paragraph (o e)",
       "text": [
-        "    Only too well do we know about your house.  Mother told",
+        "     Only too well do we know about your house.  Mother told",
         "me you hope to be settled there quite soon.  Of course she",
         "would enjoy seeing the whole house next week.  Before then",
         "please write her a letter to let her know how to get there",
         "from here.  We know you have moved to a very cozy new home."
       ]
     },
-    "lesson_R1.11": {
+
+    "R1.11": {
       "title": "Lesson R1.11: Speed Test",
       "type": "Paragraph",
       "instructions": "(9) Test Paragraph",
       "text": [
-        "    The High dance opens at eight and the gang is going.",
+        "     The High dance opens at eight and the gang is going.",
         "So Ted shuts the piano and stops at the phone to catch Ann.",
         "I ought to post Ted that he pounds the piano as I once did.",
         "I guess he is upset.  He has to catch Dad to get the cash.",
@@ -349,31 +203,36 @@
         "His auto is a cheap one and no good on a night such as this."
       ]
     },
-    "lesson_R1.12": {
+
+    "R1.12": {
       "title": "Lesson R1.12: Drill",
       "type": "Drill",
       "instructions": "(10) Rhythmic Review",
       "text": "The gang can use the piano and good songs to open the dance."
     },
-    "lesson_R2.1": {
+
+    "R2.1": {
       "title": "Lesson R2.1: Drill",
       "type": "Drill",
       "instructions": "(1) Warming-Up Drill",
       "text": "It is a good thing to use good habits each time you practice."
     },
-    "lesson_R2.2": {
+
+    "R2.2": {
       "title": "Lesson R2.2: Drill",
       "type": "Drill",
       "instructions": "(2) Balanced Keyboard Drill",
       "text": "thr pre rec ear ers ure urn gre art ore her are ter ere tru"
     },
-    "lesson_R2.3": {
+
+    "R2.3": {
       "title": "Lesson R2.3: Drill",
       "type": "Drill",
       "instructions": "(3) Continuous Copy",
       "text": "Dad and his son, Dan, are to go east on a great auto trip."
     },
-    "lesson_R2.4": {
+
+    "R2.4": {
       "title": "Lesson R2.4: Drill",
       "type": "Drill",
       "instructions": "(4)",
@@ -382,7 +241,8 @@
         "Soon the pair share a snug rug and start out in our red car."
       ]
     },
-    "lesson_R2.5": {
+
+    "R2.5": {
       "title": "Lesson R2.5: Drill",
       "type": "Drill",
       "instructions": "(5)",
@@ -392,7 +252,8 @@
         "and then turns around.  The horse runs east at a great rate."
       ]
     },
-    "lesson_R2.6": {
+
+    "R2.6": {
       "title": "Lesson R2.6: Drill",
       "type": "Drill",
       "instructions": "(6)",
@@ -403,7 +264,8 @@
         "seen or heard again, note its sort and end it right there."
       ]
     },
-    "lesson_R2.7": {
+
+    "R2.7": {
       "title": "Lesson R2.7: Drill",
       "type": "Drill",
       "instructions": "(7)",
@@ -415,12 +277,13 @@
         "She need not raise her rate too high.  Has she a good touch?"
       ]
     },
-    "lesson_R2.8": {
+
+    "R2.8": {
       "title": "Lesson R2.8: Speed Test",
       "type": "Paragraph",
       "instructions": "(8) Pointed Paragraph (t h)",
       "text": [
-        "    Hugh thought he ought to start that night although the",
+        "     Hugh thought he ought to start that night although the",
         "weather might hurt his health.  Hal thought they ought to go",
         "to Arizona together the thirtieth of June.  Both hastened",
         "through the streets to their very high hotel.  Hal hesitated",
@@ -428,12 +291,13 @@
         "hurt his health, Hugh started north quickly on the sixteenth."
       ]
     },
-    "lesson_R2.9": {
+
+    "R2.9": {
       "title": "Lesson R2.9: Speed Test",
       "type": "Paragraph",
       "instructions": "(9) Test Paragraph",
       "text": [
-        "    Dad and his son are to start on a trip in our red car.",
+        "     Dad and his son are to start on a trip in our red car.",
         "House cares are the sort that upset Dad and he is so tired",
         "that he tries a nap in order to rest.  It rains at a great",
         "rate.  Dan is too sure.  He has heard this road is poor in",
@@ -441,31 +305,36 @@
         "grade.  The car turns out and ends on its side.  Hurt?  No."
       ]
     },
-    "lesson_R2.10": {
+
+    "R2.10": {
       "title": "Lesson R2.10: Drill",
       "type": "Drill",
       "instructions": "(10) Rhythmic Review",
       "text": "Dad had a short rest in order to start on the hard car trip."
     },
-    "lesson_R3.1": {
+
+    "R3.1": {
       "title": "Lesson R3.1: Drill",
       "type": "Drill",
       "instructions": "(1) Warming-Up Drill",
       "text": "As a rule call earlier on all orders as long as this one."
     },
-    "lesson_R3.2": {
+
+    "R3.2": {
       "title": "Lesson R3.2: Drill",
       "type": "Drill",
       "instructions": "(2) Balanced Keyboard Drill",
       "text": "als ple gla ulo clo ile ill oul all eas onl ion tle lea ndl"
     },
-    "lesson_R3.3": {
+
+    "R3.3": {
       "title": "Lesson R3.3: Drill",
       "type": "Drill",
       "instructions": "(3) Continuous Copy",
       "text": "As a rule it is the real line drill that helps one to learn."
     },
-    "lesson_R3.4": {
+
+    "R3.4": {
       "title": "Lesson R3.4: Drill",
       "type": "Drill",
       "instructions": "(4)",
@@ -474,7 +343,8 @@
         "its sense.  This, indeed, helps to hold each line until done."
       ]
     },
-    "lesson_R3.5": {
+
+    "R3.5": {
       "title": "Lesson R3.5: Drill",
       "type": "Drill",
       "instructions": "(5)",
@@ -484,7 +354,8 @@
         "order to end an error one can drill all the old line again."
       ]
     },
-    "lesson_R3.6": {
+
+    "R3.6": {
       "title": "Lesson R3.6: Drill",
       "type": "Drill",
       "instructions": "(6)",
@@ -495,7 +366,8 @@
         "As soon as the usual rate is lost one can hear it as a slip."
       ]
     },
-    "lesson_R3.7": {
+
+    "R3.7": {
       "title": "Lesson R3.7: Drill",
       "type": "Drill",
       "instructions": "(7)",
@@ -507,36 +379,38 @@
         "letters.  Each one in the class can tell his total lines."
       ]
     },
-    "lesson_R3.8": {
+
+    "R3.8": {
       "title": "Lesson R3.8: Speed Test",
       "type": "Paragraph",
       "instructions": "(8) One- to three-letter words (a to l)",
       "text": [
         "Dear Ted,",
         "",
-        "    A day ago Ann got a bad cut on her arm and a few by her",
+        "     A day ago Ann got a bad cut on her arm and a few by her",
         "eye and ear.  It is an act of God she did not die.  Her car",
         "did the job.  It is the end of her car.  She has no use for a",
         "car.  The fee is to be big.  She is in bed, but she can not",
         "eat.  She can not eat a bit of egg.  It is no fun at all.",
         "",
-        "    It is hot.  It is too hot for her fur hat, but I can buy",
+        "     It is hot.  It is too hot for her fur hat, but I can buy",
         "a box for it.  I am due any day.  I can cut a day if I fly.",
         "It is not far if I go by air.  If I go by car, I add a day.",
         "",
-        "    How is Dan?  Did he get his job?  Dan had to beg for it",
+        "     How is Dan?  Did he get his job?  Dan had to beg for it",
         "if he did.  He is big and fat but not bad.  The boy can do",
         "it if he can act to fit his age.  Ask him not to act as a kid.",
         "",
         "Yours sincerely,"
       ]
     },
-    "lesson_R3.9": {
+
+    "R3.9": {
       "title": "Lesson R3.9: Speed Test",
       "type": "Paragraph",
       "instructions": "(9) Test Paragraph",
       "text": [
-        "    To tell this class all there is to learn is not a real",
+        "     To tell this class all there is to learn is not a real",
         "help later.  Let the class plan the loose ease that can hold",
         "each hand in place, or plan to end this or that poor slip,",
         "or plan to do its total lines in less hours.  As a rule, to",
@@ -545,25 +419,29 @@
         "The class has large plans; gains in hours and less slips."
       ]
     },
-    "lesson_R3.10": {
+
+    "R3.10": {
       "title": "Lesson R3.10: Drill",
       "type": "Drill",
       "instructions": "(10) Rhythmic Review",
       "text": "To learn to read or spell a rule helps less than to drill."
     },
-    "lesson_R4.1": {
+
+    "R4.1": {
       "title": "Lesson R4.1: Drill",
       "type": "Drill",
       "instructions": "(1) Warming-Up Drill",
       "text": "After that date I believe he can not say that it is not a fact."
     },
-    "lesson_R4.2": {
+
+    "R4.2": {
       "title": "Lesson R4.2: Drill",
       "type": "Drill",
       "instructions": "(2) Balanced Keyboard Drill",
       "text": "any for efo fte day fin you ful ery nly hey afk ays fro say"
     },
-    "lesson_R4.3": {
+
+    "R4.3": {
       "title": "Lesson R4.3: Drill",
       "type": "Drill",
       "instructions": "(3) Continuous Copy",
@@ -572,7 +450,8 @@
         "Forty-odd pounds is all that I can spare at this early date."
       ]
     },
-    "lesson_R4.4": {
+
+    "R4.4": {
       "title": "Lesson R4.4: Drill",
       "type": "Drill",
       "instructions": "(4)",
@@ -582,7 +461,8 @@
         "It is fine, fresh stuff and our first fancy fruit this year."
       ]
     },
-    "lesson_R4.5": {
+
+    "R4.5": {
       "title": "Lesson R4.5: Drill",
       "type": "Drill",
       "instructions": "(5)",
@@ -593,14 +473,15 @@
         "After at least four days you can order daily or on Friday."
       ]
     },
-    "lesson_R4.6": {
+
+    "R4.6": {
       "title": "Lesson R4.6: Speed Test",
       "type": "Paragraph",
       "instructions": "(6)",
       "text": [
         "Dear Ted,",
         "",
-        "    After I read your dandy note I felt sorry for the lady.",
+        "     After I read your dandy note I felt sorry for the lady.",
         "Here is plenty of cash if you young people agree to spend it",
         "sanely.  Is it for a natty sail or only for golf?  Did you and",
         "Dan play or fight?  Dan said he felt as if a full load of",
@@ -609,12 +490,13 @@
         "Yours sincerely,"
       ]
     },
-    "lesson_R4.7": {
+
+    "R4.7": {
       "title": "Lesson R4.7: Speed Test",
       "type": "Paragraph",
       "instructions": "(7) Pointed Paragraph (a s)",
       "text": [
-        "    Sadness possesses her as she stands against the panes",
+        "     Sadness possesses her as she stands against the panes",
         "that the sash separates.  She is sad because the same dress",
         "is not washed and in shape; and so she says it is useless to",
         "save it.  She is sad also because she has to stay in Alabama",
@@ -623,12 +505,13 @@
         "herself by drawing five or six quaint, small-sized maps."
       ]
     },
-    "lesson_R4.8": {
+
+    "R4.8": {
       "title": "Lesson R4.8: Speed Test",
       "type": "Paragraph",
       "instructions": "(8) Test Paragraph",
       "text": [
-        "    They say this fruit is the finest.  It is full and good.",
+        "     They say this fruit is the finest.  It is full and good.",
         "Dr. Ted feels the first fruit is too green for young or old.",
         "After one eats any of it he is sorry.  In fact, if I try it,",
         "that night in fancy I sail the South Seas for eight hours.",
@@ -637,31 +520,36 @@
         "There is no reply.  Only the seas run high and I feel ill."
       ]
     },
-    "lesson_R4.9": {
+
+    "R4.9": {
       "title": "Lesson R4.9: Drill",
       "type": "Drill",
       "instructions": "(9) Rhythmic Review",
       "text": "The young lady often has pounds of fruit and candy each day."
     },
-    "lesson_R5.1": {
+
+    "R5.1": {
       "title": "Lesson R5.1: Drill",
       "type": "Drill",
       "instructions": "(1) Warming-Up Drill",
       "text": "In any case there is only one order that is long past due."
     },
-    "lesson_R5.2": {
+
+    "R5.2": {
       "title": "Lesson R5.2: Drill",
       "type": "Drill",
       "instructions": "(2) Balanced Keyboard Drill",
       "text": "est ace ric ity red per der pro sel par ish ial ing eal let"
     },
-    "lesson_R5.3": {
+
+    "R5.3": {
       "title": "Lesson R5.3: Drill",
       "type": "Drill",
       "instructions": "(3) Continuous Copy--Review",
       "text": "To learn to type, first get a nice rate going, then hold it."
     },
-    "lesson_R5.4": {
+
+    "R5.4": {
       "title": "Lesson R5.4: Drill",
       "type": "Drill",
       "instructions": "(4)",
@@ -670,7 +558,8 @@
         "If you hear copy then use your eyes to hit sure and fast."
       ]
     },
-    "lesson_R5.5": {
+
+    "R5.5": {
       "title": "Lesson R5.5: Drill",
       "type": "Drill",
       "instructions": "(5)",
@@ -680,7 +569,8 @@
         "You can not type lightly and faster if you start to pound."
       ]
     },
-    "lesson_R5.6": {
+
+    "R5.6": {
       "title": "Lesson R5.6: Drill",
       "type": "Drill",
       "instructions": "(6)",
@@ -691,7 +581,8 @@
         "and learn to print the letters in any necessary order."
       ]
     },
-    "lesson_R5.7": {
+
+    "R5.7": {
       "title": "Lesson R5.7: Drill",
       "type": "Drill",
       "instructions": "(7)",
@@ -703,37 +594,39 @@
         "this fine class drill is to help the type fly in fair order."
       ]
     },
-    "lesson_R5.8": {
+
+    "R5.8": {
       "title": "Lesson R5.8: Speed Test",
       "type": "Paragraph",
       "instructions": "(8) One- to three-letter words (m to z)",
       "text": [
         "Dear Tom,",
         "",
-        "    Mr. May has one new car.  It has a low red top.  The top",
+        "     Mr. May has one new car.  It has a low red top.  The top",
         "is so low you can not see the sun if you sit in the car.  Mr.",
         "May has not let his own son use it.  I saw his son try to put",
         "the top up.  I ran and met him.  Why not be men and run the car",
         "out?  We did.  We set out to run it at six.  We two ran it off",
         "to an old lot by the sea.",
         "",
-        "    Did his pa see us?  Yes, sir, who but Pa was at No. Ten",
+        "     Did his pa see us?  Yes, sir, who but Pa was at No. Ten",
         "as we ran by in the car--and Ma, too.  Oh, it was war--his pa",
         "had a lot to say.  Let me lay out the law to you.  You may not",
         "use the car as you did not pay for it.  You are not yet a man.",
         "Son did not lie nor did he win his way.",
         "",
-        "    How are you all?  Now if you get a new car, let me run it.",
+        "     How are you all?  Now if you get a new car, let me run it.",
         "",
         "Yours sincerely,"
       ]
     },
-    "lesson_R5.9": {
+
+    "R5.9": {
       "title": "Lesson R5.9: Speed Test",
       "type": "Paragraph",
       "instructions": "(9) Pointed Paragraph (t c)",
       "text": [
-        "    Is it quite certain that the citizens could continue the",
+        "     Is it quite certain that the citizens could continue the",
         "old conditions if they voted a straight ticket?  If we accept",
         "as accurate the picture of recent conditions, we can not crave",
         "to continue them.  We lack the tact to get the citizens to",
@@ -741,19 +634,22 @@
         "vacant lots.  A discount for cash increases collections."
       ]
     },
-    "lesson_R5.10": {
+
+    "R5.10": {
       "title": "Lesson R5.10: Drill",
       "type": "Drill",
       "instructions": "(10) Rhythmic Review",
       "text": "In order to type fast you hit lightly after each short delay."
     },
-    "lesson_R6.1": {
+
+    "R6.1": {
       "title": "Lesson R6.1: Drill",
       "type": "Drill",
       "instructions": "(1) Warming-Up Drill",
       "text": "It seems to me that we want to know what was said just now."
     },
-    "lesson_R6.2": {
+
+    "R6.2": {
       "title": "Lesson R6.2: Drill",
       "type": "Drill",
       "instructions": "(2) Balanced Keyboard Drill",
@@ -762,13 +658,15 @@
         "ant may was way now job wit toi wri jus wil jul whi wou whe"
       ]
     },
-    "lesson_R6.3": {
+
+    "R6.3": {
       "title": "Lesson R6.3: Drill",
       "type": "Drill",
       "instructions": "(3) Continuous Copy",
       "text": "Let me have a horse where the wide West still runs wild."
     },
-    "lesson_R6.4": {
+
+    "R6.4": {
       "title": "Lesson R6.4: Drill",
       "type": "Drill",
       "instructions": "(4)",
@@ -777,7 +675,8 @@
         "I want to see a few cows among great rocks and sage brush."
       ]
     },
-    "lesson_R6.5": {
+
+    "R6.5": {
       "title": "Lesson R6.5: Drill",
       "type": "Drill",
       "instructions": "(5)",
@@ -787,7 +686,8 @@
         "At night, I want to enjoy a moon that shines on all the land."
       ]
     },
-    "lesson_R6.6": {
+
+    "R6.6": {
       "title": "Lesson R6.6: Drill",
       "type": "Drill",
       "instructions": "(6)",
@@ -798,7 +698,8 @@
         "I am sick of dark ways to make money, of bribery and fraud."
       ]
     },
-    "lesson_R6.7": {
+
+    "R6.7": {
       "title": "Lesson R6.7: Drill",
       "type": "Drill",
       "instructions": "(7)",
@@ -810,12 +711,13 @@
         "till the grade grows high and rough, in keen air out West."
       ]
     },
-    "lesson_R6.8": {
+
+    "R6.8": {
       "title": "Lesson R6.8: Speed Test",
       "type": "Paragraph",
       "instructions": "(8) Pointed Paragraph (p y)",
       "text": [
-        "    Please report the people who study typing.  You may",
+        "     Please report the people who study typing.  You may",
         "truly say that money paid for this study is happily spent.",
         "Today typing plays a very practical part in acquiring a",
         "paying position.  We can use plenty of these days for exact",
@@ -823,12 +725,13 @@
         "and Saturday.  Have you this sized type to print your copy?"
       ]
     },
-    "lesson_R6.9": {
+
+    "R6.9": {
       "title": "Lesson R6.9: Speed Test",
       "type": "Paragraph",
       "instructions": "(9) Test Paragraph",
       "text": [
-        "    Were you the judge in a case like this, could you do the",
+        "     Were you the judge in a case like this, could you do the",
         "just thing?  An old woman who keeps rooms hides her money",
         "under a clock.  A man using one of the rooms motors rapidly",
         "away.  The old woman says her money is gone.  We join in a",
@@ -838,31 +741,36 @@
         "in jail, the old woman finds her money still under the clock."
       ]
     },
-    "lesson_R6.10": {
+
+    "R6.10": {
       "title": "Lesson R6.10: Drill",
       "type": "Drill",
       "instructions": "(10) Rhythmic Review",
       "text": "How do we know which way so wild a horse will kick or jump?"
     },
-    "lesson_R7.1": {
+
+    "R7.1": {
       "title": "Lesson R7.1: Drill",
       "type": "Drill",
       "instructions": "(1) Warming-Up Drill",
       "text": "With that end in view I may soon have to put this question."
     },
-    "lesson_R7.2": {
+
+    "R7.2": {
       "title": "Lesson R7.2: Drill",
       "type": "Drill",
       "instructions": "(2) Balanced Keyboard Drill",
       "text": "ave hav eve ver ove quo not ive giv qui vis que ved eiv tha"
     },
-    "lesson_R7.3": {
+
+    "R7.3": {
       "title": "Lesson R7.3: Drill",
       "type": "Drill",
       "instructions": "(3) Continuous Copy",
       "text": "At our new villa a very novel event was given for the navy."
     },
-    "lesson_R7.4": {
+
+    "R7.4": {
       "title": "Lesson R7.4: Drill",
       "type": "Drill",
       "instructions": "(4)",
@@ -871,7 +779,8 @@
         "and queen were there with a quota of fair and lovely ladies."
       ]
     },
-    "lesson_R7.5": {
+
+    "R7.5": {
       "title": "Lesson R7.5: Drill",
       "type": "Drill",
       "instructions": "(5)",
@@ -881,7 +790,8 @@
         "In all their lives, to quote, was never a thing more grave."
       ]
     },
-    "lesson_R7.6": {
+
+    "R7.6": {
       "title": "Lesson R7.6: Drill",
       "type": "Drill",
       "instructions": "(6)",
@@ -892,7 +802,8 @@
         "With a move quite free and easy the lady let fall her glass."
       ]
     },
-    "lesson_R7.7": {
+
+    "R7.7": {
       "title": "Lesson R7.7: Drill",
       "type": "Drill",
       "instructions": "(7)",
@@ -904,12 +815,13 @@
         "one who gave an equal favor, the queen sang over the radio."
       ]
     },
-    "lesson_R7.8": {
+
+    "R7.8": {
       "title": "Lesson R7.8: Speed Test",
       "type": "Paragraph",
       "instructions": "(8) Pointed Paragraph (l s)",
       "text": [
-        "    The earliest possible sales lessen the total losses.",
+        "     The earliest possible sales lessen the total losses.",
         "Please enclose the latest details in those lists yourself.",
         "On almost all calls I could save six dollars, especially in",
         "July.  Tell the girls all the usual questions asked will be",
@@ -917,12 +829,13 @@
         "Last but not least, all else should still go on as usual."
       ]
     },
-    "lesson_R7.9": {
+
+    "R7.9": {
       "title": "Lesson R7.9: Speed Test",
       "type": "Paragraph",
       "instructions": "(9) Test Paragraph",
       "text": [
-        "    In our queen city I used to value two covers set every",
+        "     In our queen city I used to value two covers set every",
         "day.  At these I used to serve a young man and a girl.  I did",
         "love to see her quiet dress and quick smile favor her so.",
         "I have never quite seen her equal, or a girl so very alive.",
@@ -932,19 +845,22 @@
         "even if the papers did quote his prison term as five years."
       ]
     },
-    "lesson_R7.10": {
+
+    "R7.10": {
       "title": "Lesson R7.10: Drill",
       "type": "Drill",
       "instructions": "(10) Rhythmic Review",
       "text": "Even her very quick smile never makes us quite at our ease."
     },
-    "lesson_R8.1": {
+
+    "R8.1": {
       "title": "Lesson R8.1: Drill",
       "type": "Drill",
       "instructions": "(1) Warming-Up Drill",
       "text": "I don't know why he can't have a large-sized order for you."
     },
-    "lesson_R8.2": {
+
+    "R8.2": {
       "title": "Lesson R8.2: Drill",
       "type": "Drill",
       "instructions": "(2) Balanced Keyboard Drill",
@@ -953,13 +869,15 @@
         "e'l e's u'l h's d's n's s's e'r a's t's y's r's n't m's es'"
       ]
     },
-    "lesson_R8.3": {
+
+    "R8.3": {
       "title": "Lesson R8.3: Drill",
       "type": "Drill",
       "instructions": "(3) Continuous Copy",
       "text": "I'd never call Dan lazy; still, I can't say he wins prizes."
     },
-    "lesson_R8.4": {
+
+    "R8.4": {
       "title": "Lesson R8.4: Drill",
       "type": "Drill",
       "instructions": "(4)",
@@ -968,7 +886,8 @@
         "have to hold down the spacer and hit the apostrophe and period."
       ]
     },
-    "lesson_R8.5": {
+
+    "R8.5": {
       "title": "Lesson R8.5: Drill",
       "type": "Drill",
       "instructions": "(5)",
@@ -978,7 +897,8 @@
         "when he feels real zest, as:  Zip!  Let's go!  It's a fire!"
       ]
     },
-    "lesson_R8.6": {
+
+    "R8.6": {
       "title": "Lesson R8.6: Drill",
       "type": "Drill",
       "instructions": "(6)",
@@ -990,7 +910,8 @@
         "crazy maze of still fizzing ruins as a deck.  What a fizzle!"
       ]
     },
-    "lesson_R8.7": {
+
+    "R8.7": {
       "title": "Lesson R8.7: Drill",
       "type": "Drill",
       "instructions": "(7)",
@@ -1003,12 +924,13 @@
         "guess I'll sail in a zeppelin to see if you'll print that."
       ]
     },
-    "lesson_R8.8": {
+
+    "R8.8": {
       "title": "Lesson R8.8: Speed Test",
       "type": "Paragraph",
       "instructions": "(8) Pointed Paragraph (r n)",
       "text": [
-        "    A note from Ann says her friend prefers to change her",
+        "     A note from Ann says her friend prefers to change her",
         "return to Arizona from next February to November.  The reason",
         "is an error of the owner of the ranch who will not refund",
         "her rent.  The janitor is running some errand, for he has",
@@ -1017,12 +939,13 @@
         "Virginia can remain an afternoon and refrain from a quarrel."
       ]
     },
-    "lesson_R8.9": {
+
+    "R8.9": {
       "title": "Lesson R8.9: Speed Test",
       "type": "Paragraph",
       "instructions": "(9) Test Paragraph",
       "text": [
-        "    I'll admit I seize a chance to go with these dozen",
+        "     I'll admit I seize a chance to go with these dozen",
         "people.  We left under an azure sky, yet today it's rainy",
         "and hazy.  That Dr. Tedd is odd; he won't play; he's doing",
         "a report on how to zone cities of any size; so he won't let",
@@ -1032,31 +955,36 @@
         "crowd is at zero.  They don't and can't pass any play quiz."
       ]
     },
-    "lesson_R8.10": {
+
+    "R8.10": {
       "title": "Lesson R8.10: Drill",
       "type": "Drill",
       "instructions": "(10) Rhythmic Review",
       "text": "It's crazy for me to type news items on paper of this size!"
     },
-    "lesson_R9.1": {
+
+    "R9.1": {
       "title": "Lesson R9.1: Drill",
       "type": "Drill",
       "instructions": "(1) Warming-Up Drill",
       "text": "To some extent he has been able to do the next best thing."
     },
-    "lesson_R9.2": {
+
+    "R9.2": {
       "title": "Lesson R9.2: Drill",
       "type": "Drill",
       "instructions": "(2) Balanced Keyboard Drill",
       "text": "abo bet bee ble bou bef ext ber six sib nex abl aby mbe box"
     },
-    "lesson_R9.3": {
+
+    "R9.3": {
       "title": "Lesson R9.3: Drill",
       "type": "Drill",
       "instructions": "(3) Continuous Copy",
       "text": "Dad just about broke down at the bad news.  Bill has no job."
     },
-    "lesson_R9.4": {
+
+    "R9.4": {
       "title": "Lesson R9.4: Drill",
       "type": "Drill",
       "instructions": "(4)",
@@ -1065,7 +993,8 @@
         "next.  He has sixty bonds but the prices sent all below par."
       ]
     },
-    "lesson_R9.5": {
+
+    "R9.5": {
       "title": "Lesson R9.5: Drill",
       "type": "Drill",
       "instructions": "(5)",
@@ -1075,7 +1004,8 @@
         "Dad says they all may have to exist on home-grown wax beans."
       ]
     },
-    "lesson_R9.6": {
+
+    "R9.6": {
       "title": "Lesson R9.6: Drill",
       "type": "Drill",
       "instructions": "(6)",
@@ -1086,7 +1016,8 @@
         "boxed as an extra at a bazaar.  He is big, and able to box."
       ]
     },
-    "lesson_R9.7": {
+
+    "R9.7": {
       "title": "Lesson R9.7: Drill",
       "type": "Drill",
       "instructions": "(7)",
@@ -1098,12 +1029,13 @@
         "are fixed, as best for all, every person must do his bit."
       ]
     },
-    "lesson_R9.8": {
+
+    "R9.8": {
       "title": "Lesson R9.8: Speed Test",
       "type": "Paragraph",
       "instructions": "(8) Pointed Paragraph (f y)",
       "text": [
-        "    Satisfy yourself that it will be funny, but perfectly",
+        "     Satisfy yourself that it will be funny, but perfectly",
         "satisfactory, for forty or fifty of the faculty to fly from",
         "Buffalo to New York on the first Friday in February.  If",
         "they prefer, we will offer them waffles, jelly, and coffee",
@@ -1112,12 +1044,13 @@
         "from any family will be very cheerfully and fully answered."
       ]
     },
-    "lesson_R9.9": {
+
+    "R9.9": {
       "title": "Lesson R9.9: Speed Test",
       "type": "Paragraph",
       "instructions": "(8a) Pointed Paragraph (i d)",
       "text": [
-        "    Children find being quizzed in division, addition, and",
+        "     Children find being quizzed in division, addition, and",
         "reading difficult.  They studied daily during their third",
         "period and tried to be confident.  I think they did include",
         "Florida and Rhode Island in their wide reading; and have",
@@ -1125,12 +1058,13 @@
         "Providence, and Philadelphia next week."
       ]
     },
-    "lesson_R9.10": {
+
+    "R9.10": {
       "title": "Lesson R9.10: Speed Test",
       "type": "Paragraph",
       "instructions": "(9) Test Paragraph",
       "text": [
-        "    By using the new banks of keys on the new keyboard, you",
+        "     By using the new banks of keys on the new keyboard, you",
         "are able to learn or excel with less labor.  These new banks",
         "have been based on an exact table of words used.  You begin",
         "at once on the best bank.  On the old keyboard you have to",
@@ -1142,19 +1076,22 @@
         "The keys are fixed to keep both hands busy and in balance."
       ]
     },
-    "lesson_R9.11": {
+
+    "R9.11": {
       "title": "Lesson R9.11: Drill",
       "type": "Drill",
       "instructions": "(10) Rhythmic Review",
       "text": "Those boxes of books for New Mexico may be ready next week."
     },
-    "lesson_R10.1": {
+
+    "R10.1": {
       "title": "Lesson R10.1: Drill",
       "type": "Drill",
       "instructions": "(1) Warming-Up Drill",
       "text": "Next time we must ask to have you make them just as he does."
     },
-    "lesson_R10.2": {
+
+    "R10.2": {
       "title": "Lesson R10.2: Drill",
       "type": "Drill",
       "instructions": "(2) Balanced Keyboard Drill",
@@ -1163,13 +1100,15 @@
         "ate and een ind oon und one thi lix his ise wer jun ett exp"
       ]
     },
-    "lesson_R10.3": {
+
+    "R10.3": {
       "title": "Lesson R10.3: Drill",
       "type": "Drill",
       "instructions": "(3) Continuous Copy--Review",
       "text": "I am going to be lazy this weekend and do just what I want."
     },
-    "lesson_R10.4": {
+
+    "R10.4": {
       "title": "Lesson R10.4: Drill",
       "type": "Drill",
       "instructions": "(4)",
@@ -1178,7 +1117,8 @@
         "one extra bit of zest and join the exit from the big city."
       ]
     },
-    "lesson_R10.5": {
+
+    "R10.5": {
       "title": "Lesson R10.5: Drill",
       "type": "Drill",
       "instructions": "(5)",
@@ -1188,7 +1128,8 @@
         "Our boat is build for room.  Her cabin has a busy table."
       ]
     },
-    "lesson_R10.6": {
+
+    "R10.6": {
       "title": "Lesson R10.6: Drill",
       "type": "Drill",
       "instructions": "(6)",
@@ -1199,7 +1140,8 @@
         "We leave at an early hour when the sun is still under cover."
       ]
     },
-    "lesson_R10.7": {
+
+    "R10.7": {
       "title": "Lesson R10.7: Drill",
       "type": "Drill",
       "instructions": "(7)",
@@ -1211,12 +1153,13 @@
         "that exists between me and my boat.  She is a prize I value."
       ]
     },
-    "lesson_R10.8": {
+
+    "R10.8": {
       "title": "Lesson R10.8: Speed Test",
       "type": "Paragraph",
       "instructions": "(8) Pointed Paragraph (m w)",
       "text": [
-        "    Some women swim in the spring.  Some women swim in",
+        "     Some women swim in the spring.  Some women swim in",
         "the warm water of summer.  Women in Brazil may swim even in",
         "November.  Some women from Japan will swim tomorrow.  We want",
         "to show the women from New Mexico and Wyoming how to swim in",
@@ -1224,12 +1167,13 @@
         "go home we wonder if they will write from time to time."
       ]
     },
-    "lesson_R10.9": {
+
+    "R10.9": {
       "title": "Lesson R10.9: Speed Test",
       "type": "Paragraph",
       "instructions": "(8A) Pointed Paragraph (i o)",
       "text": [
-        "    I'm going to obtain oil options tonight and to file my",
+        "     I'm going to obtain oil options tonight and to file my",
         "copies without noise, or outside notice.  I am anxious to",
         "avoid an action.  If I voice an official opinion, I will omit",
         "serious points.  Knowing conditions, I am hoping that I'll",
@@ -1237,12 +1181,13 @@
         "join society and be social with juniors and seniors alike."
       ]
     },
-    "lesson_R10.10": {
+
+    "R10.10": {
       "title": "Lesson R10.10: Speed Test",
       "type": "Paragraph",
       "instructions": "(9) Test Paragraph",
       "text": [
-        "    Bound for some place where the sun sets in the west,",
+        "     Bound for some place where the sun sets in the west,",
         "soon it is the night that I favor.  Next to the night and",
         "boat and water, maybe I judge our sail by its excellent bill",
         "of fare.  Here I am very exact, as I never set a poor table.",
@@ -1252,13 +1197,15 @@
         "With a moon, I can name no event to equal a boat and water."
       ]
     },
-    "lesson_R10.11": {
+
+    "R10.11": {
       "title": "Lesson R10.11: Drill",
       "type": "Drill",
       "instructions": "(10) Rhythmic Review",
       "text": "It is good drill to keep going in even time for ten minutes."
     },
-    "lesson_R11.1": {
+
+    "R11.1": {
       "title": "Lesson R11.1: Tutorial",
       "type": "Tutorial",
       "text": [
@@ -1269,13 +1216,15 @@
         "Either the F-finger or the J-finger may press the 6-key."
       ]
     },
-    "lesson_R11.2": {
+
+    "R11.2": {
       "title": "Lesson R11.2: Drill",
       "type": "Drill",
       "instructions": "(1) Warming-Up Drill",
       "text": "She can tell us all there is to say on her side and what to do."
     },
-    "lesson_R11.3": {
+
+    "R11.3": {
       "title": "Lesson R11.3: Drill",
       "type": "Drill",
       "instructions": "(2) Rhythm and Keyboard Drill",
@@ -1284,13 +1233,15 @@
         "k9 d3 j8 f4 j7 f5 f6 l0 s2 j8 f4 j7 f5 j6 f6 k9 d3 ;- s2"
       ]
     },
-    "lesson_R11.4": {
+
+    "R11.4": {
       "title": "Lesson R11.4: Drill",
       "type": "Drill",
       "instructions": "(3) Continuous Copy",
       "text": "To buy an air-mail stamp I save 1, 2, 4, and at last 6 cents."
     },
-    "lesson_R11.5": {
+
+    "R11.5": {
       "title": "Lesson R11.5: Drill",
       "type": "Drill",
       "instructions": "(4)",
@@ -1299,7 +1250,8 @@
         "Buy at once:  4 candy balls,9 bars, 6 or 8 of gum, 2 cakes."
       ]
     },
-    "lesson_R11.6": {
+
+    "R11.6": {
       "title": "Lesson R11.6: Drill",
       "type": "Drill",
       "instructions": "(5)",
@@ -1309,7 +1261,8 @@
         "1 and 1 are 2; 3 and 1 are 4; 5 and 1 are 6; 7 and 1 are 8."
       ]
     },
-    "lesson_R11.7": {
+
+    "R11.7": {
       "title": "Lesson R11.7: Drill",
       "type": "Drill",
       "instructions": "(6)",
@@ -1320,7 +1273,8 @@
         "the home row.  Both Lessons 6 and 7 were in the bank above."
       ]
     },
-    "lesson_R11.8": {
+
+    "R11.8": {
       "title": "Lesson R11.8: Drill",
       "type": "Drill",
       "instructions": "(7)",
@@ -1332,7 +1286,8 @@
         "Most of the 810,000 typists in the last census are young."
       ]
     },
-    "lesson_R11.9": {
+
+    "R11.9": {
       "title": "Lesson R11.9: Speed Test",
       "type": "Paragraph",
       "instructions": "(8-9)",
@@ -1345,19 +1300,22 @@
         "You will spell these out more often than you will type them."
       ]
     },
-    "lesson_R11.10": {
+
+    "R11.10": {
       "title": "Lesson R11.10: Drill",
       "type": "Drill",
       "instructions": "(10) Rhythmic Review",
       "text": "I am vexed if my prize went to my old address, 55 Fifth Avenue."
     },
-    "lesson_R12.1": {
+
+    "R12.1": {
       "title": "Lesson R12.1: Drill",
       "type": "Drill",
       "instructions": "(1) Warming-Up Drill",
       "text": "I should like to arrange to have you see me here next week."
     },
-    "lesson_R12.2": {
+
+    "R12.2": {
       "title": "Lesson R12.2: Drill",
       "type": "Drill",
       "instructions": "(2) Rhythm and Keyboard Drill",
@@ -1366,13 +1324,15 @@
         "k98 d34 j87 f45 109 s23 k93 d39 j84 f48 j75 f57 j76 f56 102"
       ]
     },
-    "lesson_R12.3": {
+
+    "R12.3": {
       "title": "Lesson R12.3: Drill",
       "type": "Drill",
       "instructions": "(3) Continuous Copy",
       "text": "10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29"
     },
-    "lesson_R12.4": {
+
+    "R12.4": {
       "title": "Lesson R12.4: Drill",
       "type": "Drill",
       "instructions": "(4)",
@@ -1381,7 +1341,8 @@
         "later to 30, 36, 42, 48, or other rate that seems to fit."
       ]
     },
-    "lesson_R12.5": {
+
+    "R12.5": {
       "title": "Lesson R12.5: Drill",
       "type": "Drill",
       "instructions": "(5)",
@@ -1391,7 +1352,8 @@
         "cities.  Rain fell from .00 or .04 to .40 or to .68 inches."
       ]
     },
-    "lesson_R12.6": {
+
+    "R12.6": {
       "title": "Lesson R12.6: Drill",
       "type": "Drill",
       "instructions": "(6)",
@@ -1402,7 +1364,8 @@
         "chart.  See this curve grow higher each week.  Or use bars."
       ]
     },
-    "lesson_R12.7": {
+
+    "R12.7": {
       "title": "Lesson R12.7: Drill",
       "type": "Drill",
       "instructions": "(7)",
@@ -1414,12 +1377,13 @@
         "cent of the students may type less than 20 words per minute."
       ]
     },
-    "lesson_R12.8": {
+
+    "R12.8": {
       "title": "Lesson R12.8: Speed Test",
       "type": "Paragraph",
       "instructions": "(8) Pointed Paragraph (n v)",
       "text": [
-        "    Eleven invitations for Thanksgiving vacation arrived in",
+        "     Eleven invitations for Thanksgiving vacation arrived in",
         "advance of November.  In vain have a dozen relatives invited",
         "me to visit Vermont, Virginia, and Nevada.  I love being",
         "invited and I believe in never avoiding an invitation to any",
@@ -1428,12 +1392,13 @@
         "that novel Denver University on my vacation."
       ]
     },
-    "lesson_R12.9": {
+
+    "R12.9": {
       "title": "Lesson R12.9: Speed Test",
       "type": "Paragraph",
       "instructions": "(9) Test Paragraph",
       "text": [
-        "    How much do you weigh?  A young boy who is 5 feet tall",
+        "     How much do you weigh?  A young boy who is 5 feet tall",
         "may weigh 112 pounds; with an extra inch, 115 pounds.  Add 3",
         "pounds for any inch added.  Thus if 5 feet and 4 inches, he",
         "may weigh 124.  If taller, add 4 pounds for each added inch.",
@@ -1443,13 +1408,15 @@
         "may mean 158 pounds.  It is better to be a little over-weight."
       ]
     },
-    "lesson_R12.10": {
+
+    "R12.10": {
       "title": "Lesson R12.10: Drill",
       "type": "Drill",
       "instructions": "(10) Rhythmic Review",
       "text": "In order to park on Sixth at 11:05 we have to beat 135 cars!"
     },
-    "lesson_R13.1": {
+
+    "R13.1": {
       "title": "Lesson R13.1: Tutorial",
       "type": "Tutorial",
       "text": [
@@ -1458,13 +1425,15 @@
         "on the keyboard."
       ]
     },
-    "lesson_R13.2": {
+
+    "R13.2": {
       "title": "Lesson R13.2: Drill",
       "type": "Drill",
       "instructions": "(1) Warming-Up Drill",
       "text": "If you do not hear soon, I want you to write again and again."
     },
-    "lesson_R13.3": {
+
+    "R13.3": {
       "title": "Lesson R13.3: Drill",
       "type": "Drill",
       "instructions": "(2) Rhythm and Keyboard Drill",
@@ -1474,13 +1443,15 @@
         "\"A \"S \"O \"W \"E \"C \"P \"F \"I \"M \"E \"B e5\" t4\" u3\" h2\" u1' n6'"
       ]
     },
-    "lesson_R13.4": {
+
+    "R13.4": {
       "title": "Lesson R13.4: Drill",
       "type": "Drill",
       "instructions": "(3) Continuous Copy",
       "text": "Send at once:  Form #93* @ $18.50 per dozen, 12% discount."
     },
-    "lesson_R13.5": {
+
+    "R13.5": {
       "title": "Lesson R13.5: Drill",
       "type": "Drill",
       "instructions": "(4)",
@@ -1490,7 +1461,8 @@
         "@ 75 cents, $2.75."
       ]
     },
-    "lesson_R13.6": {
+
+    "R13.6": {
       "title": "Lesson R13.6: Drill",
       "type": "Drill",
       "instructions": "(5)",
@@ -1500,7 +1472,8 @@
         "@ 75 cents, $22.50; 4 files, Style 6**, @ $9 each, $26.....$58.50."
       ]
     },
-    "lesson_R13.7": {
+
+    "R13.7": {
       "title": "Lesson R13.7: Drill",
       "type": "Drill",
       "instructions": "(6)",
@@ -1513,7 +1486,8 @@
         "(4) The most desirable kinds of success are gained honestly."
       ]
     },
-    "lesson_R13.8": {
+
+    "R13.8": {
       "title": "Lesson R13.8: Drill",
       "type": "Drill",
       "instructions": "(7)",
@@ -1525,7 +1499,8 @@
         "the market improves the common and \"B\" stocks may pay 15%."
       ]
     },
-    "lesson_R13.9": {
+
+    "R13.9": {
       "title": "Lesson R13.9: Speed Test",
       "type": "Paragraph",
       "instructions": "(8)",
@@ -1538,27 +1513,30 @@
         "Ship to our general office, by express, the following order:",
         "",
         "75 boxes, style 2**, 14.25\" x 18.5\", @ 60 cents each . . . . .$45.00",
-        "5 boxes, style 3**, 16.25\" x 20.5\", @ 65 cents each . . . . .  3.25",
-        "9 dozen boxes, style #7, @ $2 a doz. (less 10%) . . . . . . . 16.20",
+        " 5 boxes, style 3**, 16.25\" x 20.5\", @ 65 cents each . . . . .  3.25",
+        " 9 dozen boxes, style #7, @ $2 a doz. (less 10%) . . . . . . . 16.20",
         "",
         "We will send our check January 4; less 2% for cash.",
         "",
         "Very truly yours,"
       ]
     },
-    "lesson_R13.10": {
+
+    "R13.10": {
       "title": "Lesson R13.10: Drill",
       "type": "Drill",
       "instructions": "(9) Rhythmic Review",
       "text": "He said, \"I long to get home after seven days in the country.\""
     },
-    "lesson_R14.1": {
+
+    "R14.1": {
       "title": "Lesson R14.1: Drill",
       "type": "Drill",
       "instructions": "(1) Warming-Up Drill",
       "text": "I trust that you will be able to call upon us very soon."
     },
-    "lesson_R14.2": {
+
+    "R14.2": {
       "title": "Lesson R14.2: Drill",
       "type": "Drill",
       "instructions": "(2) Rhythm and Keyboard Drill",
@@ -1568,7 +1546,8 @@
         "as\" nt\" et\" re\" us\" me\" is\" de\" it\" t.\" e.\" r,\" o,\" ?\" ?\" ?\""
       ]
     },
-    "lesson_R14.3": {
+
+    "R14.3": {
       "title": "Lesson R14.3: Drill",
       "type": "Drill",
       "text": [
@@ -1577,13 +1556,15 @@
         "as\" nt\" et\" re\" us\" me\" is\" de\" it\" t.\" e.\" r,\" o,\" ?\" ?\" ?\""
       ]
     },
-    "lesson_R14.4": {
+
+    "R14.4": {
       "title": "Lesson R14.4: Drill",
       "type": "Drill",
       "instructions": "(3) Continuous Copy",
       "text": "The Herald, the Daily News, and the Post reported the story."
     },
-    "lesson_R14.5": {
+
+    "R14.5": {
       "title": "Lesson R14.5: Drill",
       "type": "Drill",
       "instructions": "(4)",
@@ -1592,7 +1573,8 @@
         "may think that Snappy Stories has more news than Time."
       ]
     },
-    "lesson_R14.6": {
+
+    "R14.6": {
       "title": "Lesson R14.6: Drill",
       "type": "Drill",
       "instructions": "(5)",
@@ -1602,7 +1584,8 @@
         "He likes to go by bus (Overland Route), but it goes at 2:10."
       ]
     },
-    "lesson_R14.7": {
+
+    "R14.7": {
       "title": "Lesson R14.7: Drill",
       "type": "Drill",
       "instructions": "(6)",
@@ -1613,7 +1596,8 @@
         "\"That will be fine,\" the clerk said, \"I'll wait for him, too.\""
       ]
     },
-    "lesson_R14.8": {
+
+    "R14.8": {
       "title": "Lesson R14.8: Drill",
       "type": "Drill",
       "instructions": "(7)",
@@ -1625,12 +1609,13 @@
         "LATH AND PLASTER--Use #1 spruce 3/8 x 1.5\"; 2 coats plaster."
       ]
     },
-    "lesson_R14.9": {
+
+    "R14.9": {
       "title": "Lesson R14.9: Speed Test",
       "type": "Paragraph",
       "instructions": "(8) Pointed Paragraph (a o)",
       "text": [
-        "    To attain a personal association with so popular an",
+        "     To attain a personal association with so popular an",
         "author is an approved social ambition.  To loan him money or",
         "catalog his books we consider a favor.  Today his tailor, later",
         "with a coat, loads on him a thousand pardons.  A normal Mon-",
@@ -1640,13 +1625,14 @@
         "for another book, our author is anxious to go abroad."
       ]
     },
-    "lesson_R14.10": {
+
+    "R14.10": {
       "title": "Lesson R14.10: Speed Test",
       "type": "Paragraph",
       "instructions": "(9) Test Paragraph",
       "text": [
-        "    \"Has #4-4 gone?\" she asked, rushing in out of the cold.",
-        "    \"No--why $4?\" the station agent* answered (he had won-",
+        "     \"Has #4-4 gone?\" she asked, rushing in out of the cold.",
+        "     \"No--why $4?\" the station agent* answered (he had won-",
         "dered why she was so worried).  But he wasn't to find out--",
         "for a white hand pushed back $15 and picked up an old copy",
         "of Good Housekeeping from a seat.  She began to read.  When",
@@ -1655,11 +1641,14 @@
         "*Red Wild (heir to $750,000 at 5%, working on the B. & O.)."
       ]
     },
-    "lesson_R14.11": {
+
+    "R14.11": {
       "title": "Lesson R14.11: Drill",
       "type": "Drill",
       "instructions": "(10) Rhythmic Review",
       "text": "I said, \"There is the city and this bus won't be long now.\""
-    }
+    },
+
+    "_comment_5": "# END LESSONS DATA SECTION"
   }
 }
