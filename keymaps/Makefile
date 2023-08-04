@@ -46,7 +46,7 @@ uninstall:
 	$(DO) "for file in $(KEYMAP_FILES); do rm -f $(libdir)/typist/keymaps/\$$file; done"
 	-rmdir $(libdir)/typist/keymaps $(libdir)/typist
 
-check: $(KEYMAP_FILES)
+check:
 	$(DO) "tempfile=\$$(mktemp --suffix=.typ); echo 'X|' >\$$tempfile; \
 	for file in $(KEYMAP_FILES); \
 	  do echo ' ' | $(TYPIST) -# -S -k$(CURDIR)/\$$file,$(CURDIR)/\$$file \$$tempfile; echo PASS: \$$file; \
