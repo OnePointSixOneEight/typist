@@ -47,7 +47,7 @@ uninstall:
 	$(DO) "for file in $(LESSON_FILES); do rm -f $(libdir)/typist/\$$file; done"
 	-rmdir $(libdir)/typist
 
-check: default.json relaxed.json $(LESSON_FILES)
+check:
 	$(DO) "for file in $(LESSON_FILES); do $(TYPIST) -D -S $(CURDIR)/\$$file; echo PASS: \$$file; done"
 	$(DO) "$(TYPIST) -D -S $(CURDIR)/default.json; echo PASS: default.json"
 	$(DO) "$(TYPIST) -D $(CURDIR)/relaxed.json; echo PASS: relaxed.json"
